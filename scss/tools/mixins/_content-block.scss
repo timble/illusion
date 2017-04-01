@@ -1,4 +1,4 @@
-@mixin content-block($spacing: $spacing, $location: bottom ) {
+@mixin content-block($spacing: 1em, $location: bottom ) {
   @if $location == top {
     @include spacing(top, margin);
 

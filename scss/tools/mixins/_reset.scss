@@ -1,0 +1,18 @@
+// Reset elements
+@mixin reset($margin: true, $padding: true, $list-style: true, $border: true, $background: true) {
+  @if $margin == true {
+    margin: 0;
+  }
+  @if $padding == true {
+    padding: 0;
+  }
+  @if $list-style == true {
+    list-style: none;
+  }
+  @if $border == true {
+    border: none;
+  }
+  @if $background == true {
+    background: transparent;
+  }
+}

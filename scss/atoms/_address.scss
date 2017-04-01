@@ -1,0 +1,7 @@
+/* Address */
+
+address {
+  font-style: $weight-normal;
+  margin-top: 0;
+  @include content-block;
+}

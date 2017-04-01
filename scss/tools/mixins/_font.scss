@@ -1,0 +1,9 @@
+@mixin font($type) {
+  // DIN
+  @if $type == 'din' {
+    font-family: 'DINNext', 'Roboto', 'Arial', sans-serif;
+    font-weight: $bold;
+    font-style: italic;
+    text-transform: uppercase;
+  }
+}

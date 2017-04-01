@@ -1,0 +1,13 @@
+/* Headers */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-headers;
+  font-weight: $bold;
+  font-size: 1em;
+  margin-top: 0;
+  @include spacing(bottom, margin);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

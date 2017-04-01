@@ -1,0 +1,7 @@
+a {
+  color: inherit;
+
+  @include hover {
+    text-decoration: none;
+  }
+}

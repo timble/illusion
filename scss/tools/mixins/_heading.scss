@@ -1,0 +1,59 @@
+@mixin heading-huge {
+  font-size: 24px;
+
+  @include breakpoint($beta) {
+    font-size: 28px;
+  }
+
+  @include breakpoint($charlie) {
+    font-size: 32px;
+  }
+
+  @include breakpoint($delta) {
+    font-size: 48px;
+  }
+}
+
+@mixin heading-large {
+  font-size: 20px;
+
+  @include breakpoint($beta) {
+    font-size: 24px;
+  }
+
+  @include breakpoint($charlie) {
+    font-size: 28px;
+  }
+
+  @include breakpoint($delta) {
+    font-size: 32px;
+  }
+}
+
+@mixin heading-medium {
+  font-size: 18px;
+
+  @include breakpoint($beta) {
+    font-size: 22px;
+  }
+
+  @include breakpoint($charlie) {
+    font-size: 24px;
+  }
+
+  @include breakpoint($delta) {
+    font-size: 26px;
+  }
+}
+
+@mixin heading-small {
+  font-size: 18px;
+
+  @include breakpoint($charlie) {
+    font-size: 20px;
+  }
+
+  @include breakpoint($delta) {
+    font-size: 22px;
+  }
+}

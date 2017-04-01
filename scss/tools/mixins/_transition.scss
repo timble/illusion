@@ -1,0 +1,6 @@
+// Default transition
+@mixin transition($properties: all, $duration: .2s, $easing: cubic-bezier(0.195, 0.400, 0.450, 0.785)) {
+  transition: $properties $duration $easing;
+  // No 1 pixel jumps on smooth transitons
+  -webkit-backface-visibility: hidden;
+}

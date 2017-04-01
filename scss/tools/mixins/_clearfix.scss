@@ -1,0 +1,18 @@
+// Own better clearfix
+@mixin clearfix($reset: false) {
+  &:before,
+  &:after {
+    display: table;
+    content: " ";
+  }
+
+  &:after {
+    clear: both;
+  }
+
+  @if $reset != false {
+    &:before, &:after {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+// Psuedo elements (styling mostly)
+@mixin psuedo($psuedo: after, $parent-position: true, $position: true, $content: true) {
+  @if $parent-position == true {
+    position: relative;
+  }
+
+  &:#{$psuedo} {
+    display: block;
+    @if $position == true {
+      position: absolute;
+    }
+    @if $content == true {
+      content: " ";
+    }
+    @content;
+  }
+}

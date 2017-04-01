@@ -1,0 +1,16 @@
+@mixin content-block($spacing: $spacing, $location: bottom ) {
+  @if $location == top {
+    @include spacing(top, margin);
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  @if $location == bottom {
+    @include spacing(bottom, margin);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

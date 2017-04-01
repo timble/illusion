@@ -1,0 +1,12 @@
+// JS enabled
+@mixin js-enabled {
+  @at-root .js & {
+    @content;
+  }
+}
+
+@mixin js-disabled {
+  @at-root .no-js & {
+    @content;
+  }
+}

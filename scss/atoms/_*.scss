@@ -1,0 +1,5 @@
+/* Border box everything */
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}

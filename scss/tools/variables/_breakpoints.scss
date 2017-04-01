@@ -1,0 +1,16 @@
+// Breakpoints
+
+$alpha:                 320px !default;
+$alpha--plus:           440px !default;
+$alpha--plus--min:      $alpha--plus - 1px !default;
+$beta:                  560px !default;
+$beta--min:             $beta - 1px !default;
+$charlie:               768px !default;
+$charlie--min:          $charlie - 1px !default;
+$delta:                 1024px !default;
+$delta--min:            $delta - 1px !default;
+$echo:                  1280px !default;
+$echo--min:             $echo - 1px !default;
+
+$gridder-breakpoint-m:  $beta !default;
+$gridder-breakpoint-l:  $charlie !default;

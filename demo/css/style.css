@@ -1,0 +1,159 @@
+/* Border box everything */
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+}
+
+a:hover, a:focus {
+  text-decoration: none;
+}
+
+/* Address */
+address {
+  font-style: 400;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+@media (min-width: 512px) {
+  address {
+    margin-bottom: 24px;
+  }
+}
+
+@media (min-width: 768px) {
+  address {
+    margin-bottom: 32px;
+  }
+}
+
+address:last-child {
+  margin-bottom: 0;
+}
+
+/* Body */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+/* Fieldset */
+fieldset {
+  width: 100%;
+  border: 0 none;
+  padding: 0;
+  margin: 0;
+}
+
+fieldset legend {
+  margin-bottom: 16px;
+}
+
+@media (min-width: 512px) {
+  fieldset legend {
+    margin-bottom: 24px;
+  }
+}
+
+@media (min-width: 768px) {
+  fieldset legend {
+    margin-bottom: 32px;
+  }
+}
+
+/* Headers */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  font-size: inherit;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+@media (min-width: 512px) {
+  h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 24px;
+  }
+}
+
+@media (min-width: 768px) {
+  h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 32px;
+  }
+}
+
+h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, h6:last-child {
+  margin-bottom: 0;
+}
+
+/* Image */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+img:only-child {
+  vertical-align: middle;
+}
+
+/* Paragraph */
+p {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+@media (min-width: 512px) {
+  p {
+    margin-bottom: 24px;
+  }
+}
+
+@media (min-width: 768px) {
+  p {
+    margin-bottom: 32px;
+  }
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+/* Picture */
+picture img {
+  vertical-align: middle;
+}
+
+/* SVG */
+svg {
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+}
+
+.svg-sprite {
+  display: none;
+}
+
+html {
+  background: #eee;
+}
+
+body {
+  max-width: 500px;
+  background: white;
+  border-right: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+:root body {
+  max-width: calc(100%);
+  border: none;
+  margin: 0 auto;
+  background: inherit;
+}

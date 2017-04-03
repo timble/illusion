@@ -1,6 +1,6 @@
 // Gallery mixin
 
-@mixin gallery($span: $columns of $container, $fromto: false to false, $amount: false, $bottom: true, $float: left) {
+@mixin gallery($span: $columns of $container, $fromto: false to false, $amount: 1, $bottom: true, $float: left) {
 
   // Span values
   $spanColumns: nth($span, 1);

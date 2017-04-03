@@ -1,14 +1,10 @@
 // Breakpoint
-@mixin breakpoint($width, $type: min, $width--max: false) {
-  @if $type == min {
+@mixin breakpoint($width, $width--max: false) {
+  @if $width--max == false {
     @media screen and (min-width: $width) {
       @content;
     }
-  } @else if $type == max {
-    @media screen and (max-width: $width) {
-      @content;
-    }
-  } @else if $type == range {
+  } @else {
     @media screen and (min-width: $width) and (max-width: $width--max) {
       @content;
     }

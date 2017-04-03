@@ -157,3 +157,138 @@ body {
   margin: 0 auto;
   background: inherit;
 }
+
+.gallery {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1376px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.gallery:before, .gallery:after {
+  display: table;
+  content: " ";
+}
+
+.gallery:after {
+  clear: both;
+}
+
+@media (min-width: 512px) {
+  .gallery {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media (min-width: 768px) {
+  .gallery {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+.gallery__item {
+  background: rgba(0, 0, 0, 0.1);
+  float: left;
+  width: calc((100% - 16px) / 2);
+  margin-left: calc(16px);
+  margin-bottom: calc(16px);
+  float: left;
+  width: calc((100% - 24px) / 2);
+  margin-left: calc(24px);
+  margin-bottom: calc(24px);
+}
+
+.gallery__item:nth-child(n) {
+  clear: none;
+}
+
+.gallery__item:nth-child(n) {
+  margin-left: calc(16px);
+}
+
+.gallery__item:nth-child(2n+1) {
+  margin-left: 0;
+  clear: left;
+}
+
+.gallery__item:first-child:nth-child(n) {
+  margin-left: 0;
+}
+
+.gallery__item:first-child {
+  margin-left: 0;
+}
+
+.gallery__item:nth-child(n) {
+  clear: none;
+}
+
+.gallery__item:nth-child(n) {
+  margin-left: calc(24px);
+}
+
+.gallery__item:nth-child(2n+1) {
+  margin-left: 0;
+  clear: left;
+}
+
+.gallery__item:first-child:nth-child(n) {
+  margin-left: 0;
+}
+
+.gallery__item:first-child {
+  margin-left: 0;
+}
+
+@media (min-width: 560px) {
+  .gallery__item {
+    float: left;
+    width: calc((100% - 48px) / 3);
+    margin-left: calc(24px);
+    margin-bottom: calc(24px);
+  }
+  .gallery__item:nth-child(n) {
+    clear: none;
+  }
+  .gallery__item:nth-child(n) {
+    margin-left: calc(24px);
+  }
+  .gallery__item:nth-child(3n+1) {
+    margin-left: 0;
+    clear: left;
+  }
+  .gallery__item:first-child:nth-child(n) {
+    margin-left: 0;
+  }
+  .gallery__item:first-child {
+    margin-left: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .gallery__item {
+    float: left;
+    width: calc((100% - 96px) / 4);
+    margin-left: calc(32px);
+    margin-bottom: calc(32px);
+  }
+  .gallery__item:nth-child(n) {
+    clear: none;
+  }
+  .gallery__item:nth-child(n) {
+    margin-left: calc(32px);
+  }
+  .gallery__item:nth-child(4n+1) {
+    margin-left: 0;
+    clear: left;
+  }
+  .gallery__item:first-child:nth-child(n) {
+    margin-left: 0;
+  }
+  .gallery__item:first-child {
+    margin-left: 0;
+  }
+}

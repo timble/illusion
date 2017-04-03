@@ -63,23 +63,3 @@
   }
   @return $gutter;
 }
-
-
-// Borrowed from NEAT
-//
-
-$parent-columns: $gridder-container;
-$grid-default-width: round($gridder-gutter-l * 4);
-$grid-default-gutter: $gridder-gutter-l;
-$grid-max-columns: $gridder-container;
-
-@function calculatePercentageWidth($columns, $container-columns: $grid-max-columns) {
-  $width: $columns * $grid-default-width + ($columns - 1) * $grid-default-gutter;
-  $container-width: $container-columns * $grid-default-width + ($container-columns - 1) * $grid-default-gutter;
-  @return percentage($width / $container-width);
-}
-
-@function calculatePercentageGutter($container-columns: $grid-max-columns, $gutter: $grid-default-gutter) {
-  $container-width: $container-columns * $grid-default-width + ($container-columns - 1) * $grid-default-gutter;
-  @return percentage($gutter / $container-width);
-}

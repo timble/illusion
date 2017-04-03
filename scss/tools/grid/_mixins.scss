@@ -18,36 +18,6 @@
 }
 
 
-// Do or don't use calc
-
-@mixin ifCalc() {
-  @if $useCalc == true {
-    @content;
-  }
-}
-
-
-// Do or don't use modernizr depending on variable setting
-
-@mixin ifModernizr($modernizr: '.csscalc') {
-  @if $useModernizr == false {
-    @include ifCalc {
-      @content;
-    }
-  }
-
-  @if $useModernizr == true {
-    @at-root {
-      #{$modernizr} & {
-        @include ifCalc {
-          @content
-        }
-      }
-    }
-  }
-}
-
-
 // Do or don't use breakpoint depending on width
 
 @mixin ifBreakpoint($width) {
@@ -68,23 +38,11 @@
 @mixin setSpan($breakpoint, $width, $container, $columns, $columnWidth, $columnMargin, $bottom, $omega, $float) {
   @include ifBreakpoint($breakpoint) {
     float: $float;
+    width: $columnWidth;
+    margin-left: $columnMargin;
 
-    @if $useFallback == true {
-      margin-left: calculatePercentageGutter($container);
-      width: calculatePercentageWidth($columns, $container);
-
-      @if $bottom != false {
-        margin-bottom: calculatePercentageGutter($container);
-      }
-    }
-
-    @include ifModernizr() {
-      width: $columnWidth;
-      margin-left: $columnMargin;
-
-      @if $bottom != false {
-        margin-bottom: $columnMargin;
-      }
+    @if $bottom != false {
+      margin-bottom: $columnMargin;
     }
 
     @if $omega != false {
@@ -94,21 +52,11 @@
       }
 
       &:nth-child(n) {
-        @if $useFallback == true {
-          margin-left: calculatePercentageGutter($container);
-        }
-        @include ifModernizr() {
-          margin-left: $columnMargin;
-        }
+        margin-left: $columnMargin;
       }
 
       &:nth-child(#{$omega}n+1) {
-        @if $useFallback == true {
-          margin-left: 0;
-        }
-        @include ifModernizr() {
-          margin-left: 0;
-        }
+        margin-left: 0;
         clear: left;
       }
 
@@ -367,25 +315,14 @@
     @include ifBreakpoint(map-get($values, width)) {
       position: relative;
 
-      // Use fallback?
-      @if $useFallback == true {
-        $marginLeft: $columns * calculatePercentageWidth(1, $container) + $columns * calculatePercentageGutter($container);
-        @if $negative == true {
-          $marginLeft: -($columns * calculatePercentageWidth(1, $container) + ($columns - 1) * calculatePercentageGutter($container));
-        }
-        left: $marginLeft;
-      }
-
       // Use modernizr?
-      @include ifModernizr {
-        $marginLeft: calc(((100% - #{$totalgutter}) / #{$amount}) + #{map-get($values, gutter)});
-        // Negative number?
-        @if $negative == true {
-          $marginLeft: calc(((-100% - #{map-get($values, gutter)}) / #{$amount}));
-        }
-
-        left: $marginLeft;
+      $marginLeft: calc(((100% - #{$totalgutter}) / #{$amount}) + #{map-get($values, gutter)});
+      // Negative number?
+      @if $negative == true {
+        $marginLeft: calc(((-100% - #{map-get($values, gutter)}) / #{$amount}));
       }
+
+      left: $marginLeft;
     }
   }
 }

@@ -1,4 +1,13 @@
 // Variables
 @import "variables";
 @import "functions";
-@import "mixins";
+
+// Helpers
+@import "helpers/breakpoint";
+
+// Mixins
+@import "mixins/container";
+@import "mixins/span";
+@import "mixins/gallery";
+@import "mixins/spacing";
+@import "mixins/shift";

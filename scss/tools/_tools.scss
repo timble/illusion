@@ -6,9 +6,7 @@
 @import "variables/containerwidth";
 
 // Third party
-@import 'grid/variables';
-@import 'grid/functions';
-@import 'grid/mixins';
+@import 'grid/grid';
 
 // Mixins
 @import "mixins/accessibility";

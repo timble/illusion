@@ -5,14 +5,57 @@
 //.gallery {
 //  @include container;
 //}
+//
+//.gallery__item {
+//  background: rgba(0, 0, 0, 0.1);
+//  //@include span(6, 0 to $beta);
+//  //@include span(4, $beta to $charlie);
+//  //@include span(3, $charlie);
+//  @include gallery(4, $beta, 2);
+//  //@include spacing($amount: half);
+//}
 
-.gallery__item {
-  //background: rgba(0, 0, 0, 0.1);
-  //@include span(6, 0 to $beta);
-  //@include span(4, $beta to $charlie);
-  //@include span(3, $charlie);
-  @include span(3);
+
+
+.container {
+  @include container;
 }
 
+.container__item {
+  background: rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  @include spacing;
 
+  &:first-child {
+    @include span(6, 0 to $beta);
+    @include shift(6, 0 to $beta);
+    @include span(8, $beta to $charlie, 2);
+    @include shift(4, $beta to $charlie, 2);
+    @include span(8, $charlie to $delta, 1);
+    @include shift(4, $charlie to $delta, 1);
+    @include shift(0, $delta);
+  }
 
+  &:last-child {
+    @include span(6, 0 to $beta);
+    @include shift(-6, 0 to $beta);
+    @include span(4, $beta to $charlie, 2);
+    @include shift(-8, $beta to $charlie, 2);
+    @include span(4, $charlie to $delta, 1);
+    @include shift(-8, $charlie to $delta, 1);
+    @include shift(0, $delta);
+  }
+}
+
+.container2__item {
+  background: black;
+  box-sizing: border-box;
+
+  &:first-child {
+    @include span(4, $beta, 2);
+  }
+
+  &:last-child {
+    @include span(8, $beta, 2);
+  }
+}

@@ -1,0 +1,62 @@
+// Span mixin
+
+@mixin span($span: $columns of $container, $fromto: false to false, $amount: 1, $bottom: false, $omega: false, $float: left) {
+
+  // Get new SCSS map
+  $grid-breakpoints: grid-breakpoints($fromto);
+
+  // Loop
+  @each $breakpoint, $values in $grid-breakpoints {
+
+    // Breakpoint values
+    $breakpointGutter: map-get($values, gutter);
+    $breakpointWidth: map-get($values, width);
+
+    // Span values
+    $spanColumns: nth($span, 1);
+    $spanContainer: getcontainer($span);
+    $spanAmount: $spanContainer / $spanColumns;
+
+    // Column values
+    $columnGutter: ($spanAmount - 1) * $breakpointGutter * $amount;
+    $columnWidth: calc((100% - #{$columnGutter}) / #{$spanAmount});
+    $columnMargin: calc(#{$breakpointGutter * $amount});
+
+    // Only run between starting and stopping breakpoints
+    @include ifBreakpoint($breakpointWidth) {
+      float: $float;
+      width: $columnWidth;
+      margin-left: $columnMargin;
+
+      @if $bottom != false {
+        margin-bottom: $columnMargin;
+      }
+
+      @if $omega != false {
+        // Reset all previous NTH values
+        &:nth-child(n) {
+          clear: none;
+        }
+
+        &:nth-child(n) {
+          margin-left: $columnMargin;
+        }
+
+        &:nth-child(#{$omega}n+1) {
+          margin-left: 0;
+          clear: left;
+        }
+
+        // No margin for first child
+        &:first-child:nth-child(n) {
+          margin-left: 0;
+        }
+      }
+
+      // No margin for last child
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+}

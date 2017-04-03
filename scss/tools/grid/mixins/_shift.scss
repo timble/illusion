@@ -1,0 +1,54 @@
+// Shift
+
+@mixin shift($shift: $columns of $container, $fromto: false to false, $amount: 1) {
+
+  // Get new SCSS map
+  $grid-breakpoints: grid-breakpoints($fromto);
+
+  // Loop
+  @each $breakpoint, $values in $grid-breakpoints {
+
+    // Breakpoint values
+    $breakpointGutter: map-get($values, gutter);
+    $breakpointWidth: map-get($values, width);
+
+    // Shift values
+    $spanColumns: nth($shift, 1);
+    $spanContainer: getcontainer($shift);
+    $spanAmount: $spanContainer / $spanColumns;
+
+    // Negative
+    $negative: false;
+    @if $spanColumns < 0 {
+      $spanColumns: $spanColumns * -1;
+      $negative: true;
+    }
+
+    // Calculate after negative test
+    @if $spanColumns != 0 {
+      $spanAmount: $spanContainer / $spanColumns;
+    }
+
+    // Only run between starting and stopping breakpoints
+    @include ifBreakpoint($breakpointWidth) {
+
+      // Relative positioning for shifting with `left`
+      position: relative;
+      $left: auto;
+
+      @if $spanColumns != 0 {
+        // Column values
+        $columnGutter: ($spanAmount - 1) * $breakpointGutter * $amount;
+
+        // Calculate left
+        $left: calc(((100% - #{$columnGutter}) / #{$spanAmount}) + #{$breakpointGutter * $amount});
+        @if $negative == true {
+          $left: calc(((-100% - #{$breakpointGutter * $amount}) / #{$spanAmount}));
+        }
+      }
+
+      // Set left
+      left: $left;
+    }
+  }
+}

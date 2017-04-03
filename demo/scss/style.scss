@@ -2,13 +2,17 @@
 @import "../../scss/illusion";
 
 
-.gallery {
-  @include container;
-}
+//.gallery {
+//  @include container;
+//}
 
 .gallery__item {
-  background: rgba(0, 0, 0, 0.1);
-  @include gallery(6, 0 to $beta);
-  @include gallery(4, $beta to $delta);
-  @include gallery(3, $delta);
+  //background: rgba(0, 0, 0, 0.1);
+  //@include span(6, 0 to $beta);
+  //@include span(4, $beta to $charlie);
+  //@include span(3, $charlie);
+  @include span(3);
 }
+
+
+

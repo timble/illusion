@@ -109,7 +109,11 @@ module.exports = function(grunt) {
             sass: {
                 files: [
                     'demo/scss/*.scss',
-                    'demo/scss/**/*.scss'
+                    'demo/scss/**/*.scss',
+                    'scss/*.scss',
+                    'scss/**/*.scss',
+                    'scss/**/**/*.scss',
+                    'scss/**/**/**/*.scss'
                 ],
                 // tasks: ['sass', 'cssmin', 'autoprefixer'],
                 tasks: ['sass', 'autoprefixer'],

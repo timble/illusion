@@ -26,24 +26,11 @@
 
 @function getFrom($fromto) {
   $from: nth($fromto, 1);
-  @if $from == 0 {
-    $from: false
+  @if $from == 0 or $from == false {
+    $from: 0
   }
   @return $from;
 }
-
-
-// Gets the to size and returns false when it's not set
-
-@function getTo($fromto) {
-  @if length($fromto) == 3 {
-    $to: nth($fromto, 3);
-    @return $to;
-  } @else if length($fromto) == 1 {
-    @return false;
-  }
-}
-
 
 // Loop through breakpoints
 @function largestWidth() {
@@ -55,6 +42,32 @@
 }
 
 
+// Gets the to size and returns false when it's not set
+
+@function getTo($fromto) {
+  @if length($fromto) == 3 {
+    $to: nth($fromto, 3);
+    @if $to == false {
+      $to: largestWidth() + 1;
+    }
+    @return $to;
+  } @else if length($fromto) == 1 {
+    $to: largestWidth() + 1;
+    @return $to;
+  }
+}
+
+// Get last map value
+@function lastValue() {
+  $value: false;
+  @each $breakpoint, $values in $gridder-breakpoints {
+    $value: $breakpoint;
+  }
+  @return $value;
+}
+
+
+
 // Loop through breakpoints
 @function largestGutter() {
   $gutter: false;
@@ -62,4 +75,118 @@
     $gutter: map-get($values, gutter);
   }
   @return $gutter;
+}
+
+// https://medium.com/@pentzzsolt/a-non-destructive-map-merge-function-for-sass-f91637f87b2e
+@function non-destructive-map-merge($parent-map, $child-map) {
+  $result: $parent-map;
+  @each $key, $value in $child-map {
+    @if (not map-has-key($result, $key)) or (type-of(map-get($result, $key)) != type-of($value)) or (not (type-of(map-get($result, $key)) == map and type-of($value) == map)) {
+      $result: map-merge($result, ($key: $value));
+    }
+    @else {
+      $result: map-merge($result, ($key: non-destructive-map-merge(map-get($result, $key), $value)));
+    }
+  }
+  @return $result;
+}
+
+// https://css-tricks.com/snippets/sass/deep-getset-maps/
+@function map-deep-get($map, $keys...) {
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+  @return $map;
+}
+
+// https://gist.github.com/agorilla/9df052eb1e15d8aea446
+@function map-get-next($map, $key, $fallback: false) {
+
+  // Check if map is valid
+  @if type_of($map) == map {
+
+    // Check if key exists in map
+    @if map_has_key($map, $key) {
+
+      // Init index counter variable
+      $i: 0;
+
+      // Init key index
+      $key-index: false;
+
+      // Traverse map for key
+      @each $map-key, $map-value in $map {
+        // Update index
+        $i: $i + 1;
+
+        // If map key found, set key index
+        @if $map-key == $key {
+          $key-index: $i;
+        }
+
+        // If next index return next value
+        @if $i == $key-index + 1 {
+          @return $map-key;
+        }
+
+        // If last entry return false
+        @if $i == length($map) {
+          @return $fallback;
+        }
+      }
+
+      @warn 'No next map item for key #{$key}';
+      @return $fallback;
+    }
+
+    @warn 'No valid key #{$key} in map';
+    @return $fallback;
+  }
+
+  @warn 'No valid map';
+  @return $fallback;
+}
+
+// Create a new merged map
+@function grid-breakpoints($fromto) {
+
+  // Variables
+  $from: getFrom($fromto);
+  $to: getTo($fromto);
+  $new-map: ();
+
+  // Run through each breakpoint and create a new map
+  @each $breakpoint, $values in $gridder-breakpoints {
+
+    // Values
+    $width: map-get($values, width);
+    $gutter: map-get($values, gutter);
+    $nextKey: map-get-next($gridder-breakpoints, $breakpoint, #{lastValue()});
+    $nextWidth: map-deep-get($gridder-breakpoints, $nextKey, "width");
+    $largestWidth: largestWidth();
+
+    // Create new temporary map and merge it with the current one
+    @if $width >= $from and $width < $to {
+      $map: (
+              #{$breakpoint}: (
+                      width: map-get($values, width),
+                      gutter: map-get($values, gutter)
+              )
+      );
+      $new-map: non-destructive-map-merge($new-map, $map);
+    }
+
+    // Add custom from inbetween
+    @if ($from > $width and $from < $nextWidth) or ($from > $largestWidth) {
+      $map: (
+              customFrom: (
+                      width: $from,
+                      gutter: map-get($values, gutter)
+              )
+      );
+      $new-map: non-destructive-map-merge($new-map, $map);
+    }
+  }
+
+  @return $new-map;
 }

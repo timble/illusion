@@ -1,31 +1,20 @@
-$gridder-font-size:             16px !default;
-$gridder-line-height:           round($gridder-font-size * 1.5) !default;
-$gridder-maxwidth:              round($gridder-font-size * 86) !default;
-$gridder-container:             12 !default;
-
-$gridder-multiplier-s:          1 !default;
-$gridder-multiplier-m:          1.5 !default;
-$gridder-multiplier-l:          2 !default;
-
-$gridder-gutter-s:              round($gridder-font-size * $gridder-multiplier-s) !default;
-$gridder-gutter-m:              round($gridder-font-size * $gridder-multiplier-m) !default;
-$gridder-gutter-l:              round($gridder-font-size * $gridder-multiplier-l) !default;
-
-$gridder-breakpoint-s:          0 !default;
-$gridder-breakpoint-m:          round($gridder-font-size * 32) !default;
-$gridder-breakpoint-l:          round($gridder-font-size * 48) !default;
-
+$gridder-container: 12 !default;
+$gridder-maxwidth: $echo !default;
 $gridder-breakpoints:   (
+        default: (
+                width: 0,
+                gutter: 16px
+        ),
         small: (
-                width: $gridder-breakpoint-s,
-                gutter: $gridder-gutter-s
+                width: $beta,
+                gutter: 24px
         ),
         medium: (
-                width: $gridder-breakpoint-m,
-                gutter: $gridder-gutter-m
+                width: $charlie,
+                gutter: 50px
         ),
         large: (
-                width: $gridder-breakpoint-l,
-                gutter: $gridder-gutter-l
+                width: $echo,
+                gutter: 40px
         )
 ) !default;

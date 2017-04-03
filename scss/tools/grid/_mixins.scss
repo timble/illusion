@@ -1,23 +1,3 @@
-// Clearfix
-@mixin clearfix($reset: false) {
-  &:before,
-  &:after {
-    display: table;
-    content: " ";
-  }
-
-  &:after {
-    clear: both;
-  }
-
-  @if $reset != false {
-    &:before, &:after {
-      display: none;
-    }
-  }
-}
-
-
 // Do or don't use breakpoint depending on width
 
 @mixin ifBreakpoint($width) {
@@ -35,165 +15,19 @@
 }
 
 
-@mixin setSpan($breakpoint, $width, $container, $columns, $columnWidth, $columnMargin, $bottom, $omega, $float) {
-  @include ifBreakpoint($breakpoint) {
-    float: $float;
-    width: $columnWidth;
-    margin-left: $columnMargin;
-
-    @if $bottom != false {
-      margin-bottom: $columnMargin;
-    }
-
-    @if $omega != false {
-      // Reset all previous NTH values
-      &:nth-child(n) {
-        clear: none;
-      }
-
-      &:nth-child(n) {
-        margin-left: $columnMargin;
-      }
-
-      &:nth-child(#{$omega}n+1) {
-        margin-left: 0;
-        clear: left;
-      }
-
-      // No margin for first child
-      &:first-child:nth-child(n) {
-        margin-left: 0;
-      }
-    }
-
-    // No margin for last child
-    &:first-child {
-      margin-left: 0;
-    }
-  }
-}
-
-
-
-@mixin fromTo($previousGutter, $previousWidth, $from, $to, $values, $span, $size, $starting, $stopping) {
-  // Get values
-  $spacing: map-get($values, gutter);
-  $width: map-get($values, width);
-
-  // Set starting breakpoint
-  @if $from == false {
-    $starting: 0;
-  }
-  @else {
-    @if $from > $previousWidth and $from < $width {
-      $starting: $from;
-    }
-    @else if $from == $width {
-      $starting: $width;
-    }
-      // Reset
-    @else if $from == $starting {
-      $starting: $width
-    }
-  }
-
-  // Set stopping breakpoint
-  @if $to != false {
-    @if $to <= $width {
-      $stopping: true;
-    }
-  }
-
-  @if $size != false {
-    $spacing: map-get($values, gutter) * $size;
-  }
-
-  // Get values
-  $columns: nth($span, 1);
-  $container: getcontainer($span);
-  $amount: $container / $columns;
-  $gutter: ($amount - 1) * $spacing;
-  $columnWidth: calc((100% - #{$gutter}) / #{$amount});
-  $columnMargin: calc(#{$spacing});
-
-  // If $from is not an existing breakpoint give it it's own media querie
-  @if $from != false and $from == $starting and $from != $previousWidth and $from != $width {
-    @content;
-  }
-
-  // Only run between starting and stopping breakpoints
-  @if $starting != false and $stopping != true {
-    @content;
-  }
-
-  @if $previousWidth != $width {
-    $previousWidth: map-get($values, width);
-  }
-
-  @if $previousGutter != $gutter {
-    $previousGutter: map-get($values, gutter);
-  }
-}
-
-
-
-
-
-
+// Span mixin
 
 @mixin span($span: $columns of $container, $fromto: false to false, $size: 1, $bottom: false, $omega: false, $float: left) {
 
-  // Set default values for starting and stopping
-  $starting: false;
-  $stopping: false;
-  $previousWidth: 0;
-  $previousGutter: false;
+  // Get new SCSS map
+  $grid-breakpoints: grid-breakpoints($fromto);
 
-  // Fromto
-  $from: getFrom($fromto);
-  $to: getTo($fromto);
+  // Loop
+  @each $breakpoint, $values in $grid-breakpoints {
 
-  // Largest values
-  $largestWidth: largestWidth();
-  $largestGutter: largestGutter();
-
-  // Run through each breakpoint
-  @each $breakpoint, $values in $gridder-breakpoints {
-
-    // Get values
+    //Get values
     $spacing: map-get($values, gutter);
     $width: map-get($values, width);
-
-    // Set starting breakpoint
-    @if $from == false {
-      $starting: 0;
-    }
-    @else {
-      @if $from > $previousWidth and $from < $width {
-        $starting: $from;
-      }
-      @else if $from == $width {
-        $starting: $width;
-      }
-      @else if($width == $largestWidth and $from > $largestWidth) {
-        $starting: $from;
-      }
-      // Reset
-      @else if $from == $starting {
-        $starting: $width
-      }
-    }
-
-    // Set stopping breakpoint
-    @if $to != false {
-      @if $to <= $width {
-        $stopping: true;
-      }
-    }
-
-    @if $size != false {
-      $spacing: map-get($values, gutter) * $size;
-    }
 
     // Get values
     $columns: nth($span, 1);
@@ -203,50 +37,47 @@
     $columnWidth: calc((100% - #{$gutter}) / #{$amount});
     $columnMargin: calc(#{$spacing});
 
-    // If $from is not an existing breakpoint give it it's own media querie
-    @if $from != false and $from == $starting and $from != $previousWidth and $from != $width {
-      @if $size != false {
-        $previousGutter: $spacing;
-      }
-
-      @if $from > $largestWidth {
-        $previousGutter: $largestGutter;
-      }
-
-      // Set margin to previous gutter amount
-      $columnMargin: calc(#{$previousGutter});
-      $columnWidth: calc((100% - #{($amount - 1) * $previousGutter}) / #{$amount});
-
-      // Set span
-      @include setSpan($starting, $width, $container, $columns, $columnWidth, $columnMargin, $bottom, $omega, $float);
-
-      // Reset for default breakpoints
-      $columnWidth: calc((100% - #{$gutter}) / #{$amount});
-      $columnMargin: calc(#{$spacing});
-    }
-
     // Only run between starting and stopping breakpoints
-    @else if $starting != false and $stopping != true {
-      @include setSpan($starting, $width, $container, $columns, $columnWidth, $columnMargin, $bottom, $omega, $float);
-    }
+    @include ifBreakpoint($width) {
+      float: $float;
+      width: $columnWidth;
+      margin-left: $columnMargin;
 
-    @if $previousWidth != $width {
-      $previousWidth: map-get($values, width);
-    }
+      @if $bottom != false {
+        margin-bottom: $columnMargin;
+      }
 
-    @if $previousGutter != $gutter {
-      $previousGutter: map-get($values, gutter);
-    }
+      @if $omega != false {
+        // Reset all previous NTH values
+        &:nth-child(n) {
+          clear: none;
+        }
 
+        &:nth-child(n) {
+          margin-left: $columnMargin;
+        }
+
+        &:nth-child(#{$omega}n+1) {
+          margin-left: 0;
+          clear: left;
+        }
+
+        // No margin for first child
+        &:first-child:nth-child(n) {
+          margin-left: 0;
+        }
+      }
+
+      // No margin for last child
+      &:first-child {
+        margin-left: 0;
+      }
+    }
   }
-
-  // Reset
-  $starting: false !global;
-  $stopping: false !global;
-  $previousWidth: false !global;
-  $previousGutter: false !global;
 }
 
+
+// Gallery mixin
 
 @mixin gallery($span: $columns of $container, $fromto: false to false, $size: false, $bottom: true, $float: left) {
 
@@ -259,6 +90,8 @@
   @include span($span, $fromto, $size, $bottom, $omega);
 }
 
+
+// Container
 
 @mixin container($flexbox: false) {
 
@@ -284,14 +117,13 @@
 
       // Hide psuedo elements
       // They are in the way for wrapping flex items on certain browsers
-      &:before, &:after {
-        display: none;
-      }
+      @include clearfix(reset);
     }
   }
 }
 
 
+// Shift
 
 @mixin shift($shift: $columns of $container) {
 
@@ -327,6 +159,8 @@
   }
 }
 
+
+// Spacer
 
 @mixin setSpacer($breakpoint, $side, $skip, $type, $spacing) {
   @include ifBreakpoint($breakpoint) {
@@ -468,3 +302,4 @@
     }
   }
 }
+

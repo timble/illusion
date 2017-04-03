@@ -23,39 +23,53 @@
 
 .container__item {
   background: rgba(0, 0, 0, 0.1);
-  box-sizing: border-box;
-  @include spacing;
 
-  &:first-child {
-    @include span(6, 0 to $beta);
-    @include shift(6, 0 to $beta);
-    @include span(8, $beta to $charlie, 2);
-    @include shift(4, $beta to $charlie, 2);
-    @include span(8, $charlie to $delta, 1);
-    @include shift(4, $charlie to $delta, 1);
-    @include shift(0, $delta);
+  @include breakpoint(600px) {
+    padding-top: spacing();
+    margin-top: spacing();
   }
 
-  &:last-child {
-    @include span(6, 0 to $beta);
-    @include shift(-6, 0 to $beta);
-    @include span(4, $beta to $charlie, 2);
-    @include shift(-8, $beta to $charlie, 2);
-    @include span(4, $charlie to $delta, 1);
-    @include shift(-8, $charlie to $delta, 1);
-    @include shift(0, $delta);
+  @include breakpoint(1300px) {
+    padding-top: spacing(0.5);
+    margin-top: spacing(0.5);
   }
 }
 
-.container2__item {
-  background: black;
-  box-sizing: border-box;
-
-  &:first-child {
-    @include span(4, $beta, 2);
-  }
-
-  &:last-child {
-    @include span(8, $beta, 2);
-  }
-}
+//.container__item {
+//  background: rgba(0, 0, 0, 0.1);
+//  box-sizing: border-box;
+//  @include spacing;
+//
+//  &:first-child {
+//    @include span(6, 0 to $beta);
+//    @include shift(6, 0 to $beta);
+//    @include span(8, $beta to $charlie, 2);
+//    @include shift(4, $beta to $charlie, 2);
+//    @include span(8, $charlie to $delta, 1);
+//    @include shift(4, $charlie to $delta, 1);
+//    @include shift(0, $delta);
+//  }
+//
+//  &:last-child {
+//    @include span(6, 0 to $beta);
+//    @include shift(-6, 0 to $beta);
+//    @include span(4, $beta to $charlie, 2);
+//    @include shift(-8, $beta to $charlie, 2);
+//    @include span(4, $charlie to $delta, 1);
+//    @include shift(-8, $charlie to $delta, 1);
+//    @include shift(0, $delta);
+//  }
+//}
+//
+//.container2__item {
+//  background: black;
+//  box-sizing: border-box;
+//
+//  &:first-child {
+//    @include span(4, $beta, 2);
+//  }
+//
+//  &:last-child {
+//    @include span(8, $beta, 2);
+//  }
+//}

@@ -1,0 +1,28 @@
+// Calculate current spacing when
+@function spacing($amount: 1) {
+
+  @if ($amount != -0.5 and $amount != 0.5 and $amount != -1 and $amount != 1 and $amount != -2 and $amount != 2) {
+    @warn 'The `spacing` function is designed to work best with the following values: -0.5 | 0.5 | -1 | 1 | -2 | 2';
+  }
+
+  // Set default gutter to smallest one
+  $breakpointGutter: smallestGutter() * $amount;
+
+  // Run through each breakpoint and create a new map
+  @each $breakpoint, $values in $gridder-breakpoints {
+
+    // Values
+    $width: map-get($values, width);
+    $gutter: map-get($values, gutter) * $amount;
+    $nextKey: map-get-next($gridder-breakpoints, $breakpoint, #{lastValue()});
+    $nextWidth: map-deep-get($gridder-breakpoints, $nextKey, "width");
+    $largestWidth: largestWidth();
+
+    // Create new temporary map and merge it with the current one
+    @if ($inside-breakpoint >= $width and $inside-breakpoint < $nextWidth) or ($inside-breakpoint > $largestWidth) {
+      $breakpointGutter: $gutter;
+    }
+  }
+
+  @return $breakpointGutter;
+}

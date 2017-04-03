@@ -1,0 +1,11 @@
+// Loop through breakpoints
+@function smallestGutter() {
+  $gutter: false;
+  @each $breakpoint, $values in $gridder-breakpoints {
+    // Only run on the first one
+    @if $gutter == false {
+      $gutter: map-get($values, gutter);
+    }
+  }
+  @return $gutter;
+}

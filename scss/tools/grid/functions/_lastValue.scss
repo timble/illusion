@@ -1,0 +1,8 @@
+// Get last map value
+@function lastValue() {
+  $value: false;
+  @each $breakpoint, $values in $gridder-breakpoints {
+    $value: $breakpoint;
+  }
+  @return $value;
+}

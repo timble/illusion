@@ -1,6 +1,23 @@
 // Variables
 @import "variables";
-@import "functions";
+
+// Functions
+@import "functions/mapGet";
+@import "functions/mapGetNext";
+@import "functions/mapMerge";
+
+@import "functions/smallestGutter";
+@import "functions/largestWidth";
+@import "functions/largestGutter";
+@import "functions/lastValue";
+
+@import "functions/getContainer";
+@import "functions/getFrom";
+@import "functions/getTo";
+@import "functions/getSides";
+
+@import "functions/breakpointMap";
+@import "functions/spacing";
 
 // Helpers
 @import "helpers/ifBreakpoint";

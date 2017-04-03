@@ -1,0 +1,10 @@
+// Gets the container size and returns the default settings variable when it's not set
+
+@function getcontainer($span) {
+  @if length($span) == 3 {
+    $container: nth($span, 3);
+    @return $container;
+  } @else if length($span) == 1 {
+    @return $gridder-container;
+  }
+}

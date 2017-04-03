@@ -1,0 +1,10 @@
+// Gets the sides and returns false when it's not set
+
+@function getsides($sides) {
+  @if length($sides) == 3 {
+    $skip: nth($sides, 3);
+    @return $skip;
+  } @else if length($sides) == 1 {
+    @return false;
+  }
+}

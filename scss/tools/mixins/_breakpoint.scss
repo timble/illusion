@@ -1,5 +1,6 @@
 // Breakpoint
 @mixin breakpoint($width, $width--max: false) {
+  $inside-breakpoint: $width !global;
   @if $width--max == false {
     @media screen and (min-width: $width) {
       @content;
@@ -9,4 +10,5 @@
       @content;
     }
   }
+  $inside-breakpoint: false !global;
 }

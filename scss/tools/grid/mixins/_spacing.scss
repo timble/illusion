@@ -1,4 +1,4 @@
-@mixin spacing($sides: all minus none, $type: padding, $amount: 1, $fromto: false to false) {
+@mixin spacing($sides: all minus none, $type: padding, $amount: 1, $fromto: false to false, $lastchildnone: false) {
 
   @if ($amount != -0.5 and $amount != 0.5 and $amount != -1 and $amount != 1 and $amount != -2 and $amount != 2) {
     @warn 'The `spacing` mixin is designed to work best with the following values: -0.5 | 0.5 | -1 | 1 | -2 | 2';
@@ -26,21 +26,45 @@
     @include ifBreakpoint($width) {
       @if ($side == all or $side == vertical or $side == top) and $skip != top {
         #{$type}-top: $spacing;
+
+        @if $lastchildnone != false {
+          &:last-child {
+            #{$type}-top: 0;
+          }
+        }
       }
 
       // Right
       @if ($side == all or $side == horizontal or $side == right) and $skip != right {
         #{$type}-right: $spacing;
+
+        @if $lastchildnone != false {
+          &:last-child {
+            #{$type}-right: 0;
+          }
+        }
       }
 
       // Bottom
       @if ($side == all or $side == vertical or $side == bottom) and $skip != bottom {
         #{$type}-bottom: $spacing;
+
+        @if $lastchildnone != false {
+          &:last-child {
+            #{$type}-bottom: 0;
+          }
+        }
       }
 
       // Left
       @if ($side == all or $side == horizontal or $side == left) and $skip != left {
         #{$type}-left: $spacing;
+
+        @if $lastchildnone != false {
+          &:last-child {
+            #{$type}-left: 0;
+          }
+        }
       }
     }
   }

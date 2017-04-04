@@ -6,7 +6,7 @@
     margin: 0;
 
     legend {
-      @include spacing(bottom, margin);
+      @include content-block;
     }
   }
 }

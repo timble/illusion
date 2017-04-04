@@ -3,7 +3,7 @@
     font-weight: $weight-bold;
     font-size: inherit;
     margin-top: 0;
-    @include spacing(bottom, margin);
+    @include content-block;
 
     &:last-child {
       margin-bottom: 0;

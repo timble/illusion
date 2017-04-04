@@ -1,7 +1,7 @@
 @if $extendalize == true {
   p {
     margin-top: 0;
-    @include spacing(bottom, margin);
+    @include content-block;
 
     &:last-child {
       margin-bottom: 0;

@@ -35,50 +35,22 @@ fieldset {
 }
 
 fieldset legend {
-  margin-bottom: 16px;
+  margin-bottom: 24px;
 }
 
-@media screen and (min-width: 560px) {
-  fieldset legend {
-    margin-bottom: 24px;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  fieldset legend {
-    margin-bottom: 32px;
-  }
-}
-
-@media screen and (min-width: 1280px) {
-  fieldset legend {
-    margin-bottom: 40px;
-  }
+fieldset legend:last-child {
+  margin-bottom: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   font-size: inherit;
   margin-top: 0;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
 }
 
-@media screen and (min-width: 560px) {
-  h1, h2, h3, h4, h5, h6 {
-    margin-bottom: 24px;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  h1, h2, h3, h4, h5, h6 {
-    margin-bottom: 32px;
-  }
-}
-
-@media screen and (min-width: 1280px) {
-  h1, h2, h3, h4, h5, h6 {
-    margin-bottom: 40px;
-  }
+h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, h6:last-child {
+  margin-bottom: 0;
 }
 
 h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, h6:last-child {
@@ -96,25 +68,11 @@ img:only-child {
 
 p {
   margin-top: 0;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
 }
 
-@media screen and (min-width: 560px) {
-  p {
-    margin-bottom: 24px;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  p {
-    margin-bottom: 32px;
-  }
-}
-
-@media screen and (min-width: 1280px) {
-  p {
-    margin-bottom: 40px;
-  }
+p:last-child {
+  margin-bottom: 0;
 }
 
 p:last-child {

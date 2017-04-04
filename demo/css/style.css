@@ -13,25 +13,7 @@ a:hover, a:focus {
 address {
   font-style: normal;
   margin-top: 0;
-  margin-bottom: 16px;
-}
-
-@media screen and (min-width: 560px) {
-  address {
-    margin-bottom: 24px;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  address {
-    margin-bottom: 32px;
-  }
-}
-
-@media screen and (min-width: 1280px) {
-  address {
-    margin-bottom: 40px;
-  }
+  margin-bottom: 24px;
 }
 
 address:last-child {

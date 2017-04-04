@@ -324,6 +324,106 @@ body {
   }
 }
 
+@media screen and (min-width: 1024px) {
+  .gallery__item {
+    float: left;
+    width: calc((100% - 160px) / 6);
+    margin-left: calc(32px);
+    margin-bottom: calc(32px);
+  }
+  .gallery__item:nth-child(n) {
+    clear: none;
+  }
+  .gallery__item:nth-child(n) {
+    margin-left: calc(32px);
+  }
+  .gallery__item:nth-child(6n+1) {
+    margin-left: 0;
+    clear: left;
+  }
+  .gallery__item:first-child:nth-child(n) {
+    margin-left: 0;
+  }
+  .gallery__item:first-child {
+    margin-left: 0;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .gallery__item {
+    float: left;
+    width: calc((100% - 200px) / 6);
+    margin-left: calc(40px);
+    margin-bottom: calc(40px);
+  }
+  .gallery__item:nth-child(n) {
+    clear: none;
+  }
+  .gallery__item:nth-child(n) {
+    margin-left: calc(40px);
+  }
+  .gallery__item:nth-child(6n+1) {
+    margin-left: 0;
+    clear: left;
+  }
+  .gallery__item:first-child:nth-child(n) {
+    margin-left: 0;
+  }
+  .gallery__item:first-child {
+    margin-left: 0;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .gallery__item {
+    float: left;
+    width: calc((100% - 352px) / 12);
+    margin-left: calc(32px);
+    margin-bottom: calc(32px);
+  }
+  .gallery__item:nth-child(n) {
+    clear: none;
+  }
+  .gallery__item:nth-child(n) {
+    margin-left: calc(32px);
+  }
+  .gallery__item:nth-child(12n+1) {
+    margin-left: 0;
+    clear: left;
+  }
+  .gallery__item:first-child:nth-child(n) {
+    margin-left: 0;
+  }
+  .gallery__item:first-child {
+    margin-left: 0;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .gallery__item {
+    float: left;
+    width: calc((100% - 440px) / 12);
+    margin-left: calc(40px);
+    margin-bottom: calc(40px);
+  }
+  .gallery__item:nth-child(n) {
+    clear: none;
+  }
+  .gallery__item:nth-child(n) {
+    margin-left: calc(40px);
+  }
+  .gallery__item:nth-child(12n+1) {
+    margin-left: 0;
+    clear: left;
+  }
+  .gallery__item:first-child:nth-child(n) {
+    margin-left: 0;
+  }
+  .gallery__item:first-child {
+    margin-left: 0;
+  }
+}
+
 .container {
   margin-left: auto;
   margin-right: auto;

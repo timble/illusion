@@ -11,6 +11,8 @@
   @include gallery(6, 0 to $beta);
   @include gallery(4, $beta to $charlie);
   @include gallery(3, $charlie);
+  @include gallery(2, $delta);
+  @include gallery(1, 1200px);
   //@include gallery(4, $beta, 2);
   //@include spacing($amount: half);
 }

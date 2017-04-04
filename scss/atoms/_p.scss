@@ -1,10 +1,10 @@
-/* Paragraph */
+@if $extendalize == true {
+  p {
+    margin-top: 0;
+    @include spacing(bottom, margin);
 
-p {
-  margin-top: 0;
-  @include spacing(bottom, margin);
-
-  &:last-child {
-    margin-bottom: 0;
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }

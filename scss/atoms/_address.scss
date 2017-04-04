@@ -1,7 +1,7 @@
-/* Address */
-
-address {
-  font-style: normal;
-  margin-top: 0;
-  @include content-block;
+@if $extendalize == true {
+  address {
+    font-style: normal;
+    margin-top: 0;
+    @include content-block;
+  }
 }

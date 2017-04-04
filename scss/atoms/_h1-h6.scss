@@ -1,12 +1,12 @@
-/* Headers */
+@if $extendalize == true {
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: $weight-bold;
+    font-size: inherit;
+    margin-top: 0;
+    @include spacing(bottom, margin);
 
-h1, h2, h3, h4, h5, h6 {
-  font-weight: $weight-bold;
-  font-size: inherit;
-  margin-top: 0;
-  @include spacing(bottom, margin);
-
-  &:last-child {
-    margin-bottom: 0;
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }

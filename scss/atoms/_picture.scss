@@ -1,7 +1,7 @@
-/* Picture */
-
-picture {
-  img {
-    vertical-align: middle;
+@if $extendalize == true {
+  picture {
+    img {
+      vertical-align: middle;
+    }
   }
 }

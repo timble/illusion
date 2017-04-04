@@ -1,5 +1,5 @@
-/* Border box everything */
-
-*, *:before, *:after {
-  box-sizing: border-box;
+@if $extendalize == true {
+  *, *:before, *:after {
+    box-sizing: border-box;
+  }
 }

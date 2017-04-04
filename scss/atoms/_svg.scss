@@ -1,11 +1,11 @@
-/* SVG */
+@if $extendalize == true {
+  svg {
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+  }
 
-svg {
-  width: 1em;
-  height: 1em;
-  fill: currentColor;
-}
-
-.svg-sprite {
-  display: none;
+  .svg-sprite {
+    display: none;
+  }
 }

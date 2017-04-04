@@ -1,7 +1,9 @@
-a {
-  color: inherit;
+@if $extendalize == true {
+  a {
+    color: inherit;
 
-  @include hover {
-    text-decoration: none;
+    @include hover {
+      text-decoration: none;
+    }
   }
 }

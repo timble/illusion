@@ -1,8 +1,0 @@
-// Loop through breakpoints
-@function largestGutter() {
-  $gutter: false;
-  @each $breakpoint, $values in $gridder-breakpoints {
-    $gutter: map-get($values, gutter);
-  }
-  @return $gutter;
-}

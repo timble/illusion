@@ -1,4 +1,6 @@
-// Create a new merged map
+// Create a new map for the grid
+// Adds $from width at correct position
+
 @function grid-breakpoints($fromto) {
 
   // Variables
@@ -6,17 +8,17 @@
   $to: getTo($fromto);
   $new-map: ();
 
-  // Run through each breakpoint and create a new map
-  @each $breakpoint, $values in $gridder-breakpoints {
+  // Run through each breakpoint
+  @each $breakpoint, $values in $ill-grid-breakpoints {
 
     // Values
     $width: map-get($values, width);
     $gutter: map-get($values, gutter);
-    $nextKey: map-get-next($gridder-breakpoints, $breakpoint, #{lastValue()});
-    $nextWidth: map-deep-get($gridder-breakpoints, $nextKey, "width");
+    $nextKey: map-get-next($ill-grid-breakpoints, $breakpoint, #{lastValue()});
+    $nextWidth: map-deep-get($ill-grid-breakpoints, $nextKey, "width");
     $largestWidth: largestWidth();
 
-    // Create new temporary map and merge it with the current one
+    // Create new temporary map and merge it with the current (looped) one
     @if $width >= $from and $width < $to {
       $map: (
               #{$breakpoint}: (
@@ -27,7 +29,7 @@
       $new-map: non-destructive-map-merge($new-map, $map);
     }
 
-    // Add custom from inbetween
+    // Add custom from in between and merge it with the current (looped) one
     @if ($from > $width and $from < $nextWidth) or ($from > $largestWidth) {
       $map: (
               customFrom: (
@@ -39,5 +41,6 @@
     }
   }
 
+  // Return the new map
   @return $new-map;
 }

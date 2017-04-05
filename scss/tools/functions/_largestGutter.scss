@@ -1,0 +1,9 @@
+// Loop through breakpoints to get the largest gutter
+
+@function largestGutter() {
+  $gutter: false;
+  @each $breakpoint, $values in $ill-grid-breakpoints {
+    $gutter: map-get($values, gutter);
+  }
+  @return $gutter;
+}

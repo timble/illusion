@@ -1,14 +1,33 @@
 // Variables
 @import "variables/breakpoints";
 @import "variables/color";
-@import "variables/flexbox";
-@import "variables/type";
 @import "variables/containerwidth";
-@import "variables/spacing";
 @import "variables/extendalize";
+@import "variables/flexbox";
+@import "variables/grid";
+@import "variables/spacing";
+@import "variables/type";
 
-// Third party
-@import 'grid/grid';
+// Functions
+@import "functions/mapGet";
+@import "functions/mapGetNext";
+@import "functions/mapMerge";
+
+@import "functions/smallestGutter";
+@import "functions/largestWidth";
+@import "functions/largestGutter";
+@import "functions/lastValue";
+
+@import "functions/getContainer";
+@import "functions/getFrom";
+@import "functions/getTo";
+@import "functions/getSides";
+
+@import "functions/breakpointMap";
+@import "functions/spacing";
+
+// Helpers
+@import "helpers/ifBreakpoint";
 
 // Mixins
 @import "mixins/accessibility";
@@ -25,3 +44,9 @@
 @import "mixins/ratio-block";
 @import "mixins/reset";
 @import "mixins/transition";
+
+@import "mixins/container";
+@import "mixins/span";
+@import "mixins/gallery";
+@import "mixins/shift";
+@import "mixins/spacing";

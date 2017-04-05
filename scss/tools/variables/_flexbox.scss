@@ -1,5 +1,9 @@
 // Flexbox
+//
+// 1. When set to false you can easily test the fallback for non-flexbox browsers
+// 2. Used with the flexbox mixin, will only flex from set width, overwriteable per mixin
+// 3. Used with the flexbox mixin, will only flex from set height, overwriteable per mixin
 
-$flexbox:               true !default;
-$flexbox-horizontal:    0 !default;
-$flexbox-vertical:      0 !default;
+$flexbox:               true !default; // 1
+$flexbox-horizontal:    0 !default; // 2
+$flexbox-vertical:      0 !default; // 3

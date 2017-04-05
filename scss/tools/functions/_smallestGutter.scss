@@ -1,7 +1,8 @@
-// Loop through breakpoints
+// Loop through breakpoints to get the smallest gutter
+
 @function smallestGutter() {
   $gutter: false;
-  @each $breakpoint, $values in $gridder-breakpoints {
+  @each $breakpoint, $values in $ill-grid-breakpoints {
     // Only run on the first one
     @if $gutter == false {
       $gutter: map-get($values, gutter);

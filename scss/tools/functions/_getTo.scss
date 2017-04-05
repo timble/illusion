@@ -1,4 +1,4 @@
-// Gets the to size and returns the largest grid width when false
+// Gets the to size and returns the largest grid width width when false
 
 @function getTo($fromto) {
   @if length($fromto) == 3 {

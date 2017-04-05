@@ -1,0 +1,9 @@
+// Get last value of the grid map
+
+@function lastValue() {
+  $value: false;
+  @each $breakpoint, $values in $ill-grid-breakpoints {
+    $value: $breakpoint;
+  }
+  @return $value;
+}

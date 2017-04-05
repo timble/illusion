@@ -1,8 +1,0 @@
-// Loop through breakpoints
-@function largestWidth() {
-  $width: false;
-  @each $breakpoint, $values in $gridder-breakpoints {
-    $width: map-get($values, width);
-  }
-  @return $width;
-}

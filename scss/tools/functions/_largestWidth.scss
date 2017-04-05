@@ -1,0 +1,9 @@
+// Loop through breakpoints to get the largest width
+
+@function largestWidth() {
+  $width: false;
+  @each $breakpoint, $values in $ill-grid-breakpoints {
+    $width: map-get($values, width);
+  }
+  @return $width;
+}

@@ -1,4 +1,12 @@
+// Map deep get
+// @author Hugo Giraudel
+// @access public
+// @param {Map} $map - Map
+// @param {Arglist} $keys - Key chain
+// @return {*} - Desired value
+//
 // https://css-tricks.com/snippets/sass/deep-getset-maps/
+
 @function map-deep-get($map, $keys...) {
   @each $key in $keys {
     $map: map-get($map, $key);

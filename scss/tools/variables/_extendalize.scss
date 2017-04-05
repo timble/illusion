@@ -1,9 +1,10 @@
 // Extendalize variables
 //
 // Default extendalize is set to false while all children are set to true
-// To enable all extendalize options just set `$ill-extendalize` to true
+//
+// 1. To enable all extendalize options just set to true
 
-$ill-extendalize: false !default;
+$ill-extendalize: false !default; // 1
 $ill-extendalize-boxsizing: true !default;
 $ill-extendalize-anchor: true !default;
 $ill-extendalize-address: true !default;

@@ -1,4 +1,39 @@
+// Function to get next map item
+// returns next map item or fallback value if map, key or next item does not exist
+//
+// @author Simon Koch
+//
+// @access public
+//
+// @param {Map} $map - Sass list map
+// @param {String} $key - List map key
+// @param {String} $fallback (false) - Fallback value if map, key or next item does not exist
+//
+// @example scss - Usage
+// $map: (
+// 	a: 100px,
+// 	b: 200px
+// );
+//
+// .foo {
+// 	width: map-get-next($map, a);
+// }
+//
+// .bar {
+//	width: map-get-next($map, b, auto);
+// }
+//
+// @example css - CSS output
+// .foo {
+// 	width: 200px;
+// }
+//
+// .bar {
+// 	width: auto;
+// }
+//
 // https://gist.github.com/agorilla/9df052eb1e15d8aea446
+
 @function map-get-next($map, $key, $fallback: false) {
 
   // Check if map is valid

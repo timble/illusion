@@ -1,4 +1,4 @@
-@if $ill-body-fallback == true {
+@if $illusion-body-fallback == true {
   /** Body width fallback for older non CSS calc capable browsers
    *
    * This just sets the width. For an optimal effect it's best to set:
@@ -10,14 +10,14 @@
    */
 
   body {
-    width: $ill-body-fallback-width;
+    width: $illusion-body-fallback-width;
 
-    @if $ill-body-fallback-align == center {
+    @if $illusion-body-fallback-align == center {
       margin-left: auto;
       margin-right: auto;
     }
 
-    @if $ill-body-fallback-align == right {
+    @if $illusion-body-fallback-align == right {
       margin-left: auto;
       margin-right: 0;
     }

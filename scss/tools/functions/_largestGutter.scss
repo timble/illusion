@@ -2,7 +2,7 @@
 
 @function largestGutter() {
   $gutter: false;
-  @each $breakpoint, $values in $ill-grid-breakpoints {
+  @each $breakpoint, $values in $illusion-grid-breakpoints {
     $gutter: map-get($values, gutter);
   }
   @return $gutter;

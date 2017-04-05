@@ -2,7 +2,7 @@
 
 @function largestWidth() {
   $width: false;
-  @each $breakpoint, $values in $ill-grid-breakpoints {
+  @each $breakpoint, $values in $illusion-grid-breakpoints {
     $width: map-get($values, width);
   }
   @return $width;

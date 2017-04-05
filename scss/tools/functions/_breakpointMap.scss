@@ -9,13 +9,13 @@
   $new-map: ();
 
   // Run through each breakpoint
-  @each $breakpoint, $values in $ill-grid-breakpoints {
+  @each $breakpoint, $values in $illusion-grid-breakpoints {
 
     // Values
     $width: map-get($values, width);
     $gutter: map-get($values, gutter);
-    $nextKey: map-get-next($ill-grid-breakpoints, $breakpoint, #{lastValue()});
-    $nextWidth: map-deep-get($ill-grid-breakpoints, $nextKey, "width");
+    $nextKey: map-get-next($illusion-grid-breakpoints, $breakpoint, #{lastValue()});
+    $nextWidth: map-deep-get($illusion-grid-breakpoints, $nextKey, "width");
     $largestWidth: largestWidth();
 
     // Create new temporary map and merge it with the current (looped) one

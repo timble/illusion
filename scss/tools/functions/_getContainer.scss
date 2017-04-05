@@ -5,6 +5,6 @@
     $container: nth($span, 3);
     @return $container;
   } @else if length($span) == 1 {
-    @return $ill-grid-container;
+    @return $illusion-grid-container;
   }
 }

@@ -1,4 +1,4 @@
-@if $ill-form == true {
+@if $illusion-form == true {
   /**
    * Form defaults
    */
@@ -40,7 +40,7 @@
   .form__input {
     width: 100%;
     padding: $spacing-xs $spacing-s;
-    border: $ill-form-border-width solid;
+    border: $illusion-form-border-width solid;
     line-height: $line-height + $spacing-xs;
     border-radius: 0;
 
@@ -85,7 +85,7 @@
     [type=radio] + label:before,
     [type=checkbox] + label:before {
       content: "";
-      border: $ill-form-border-width solid;
+      border: $illusion-form-border-width solid;
       background: transparent;
       width: 40px;
       height: 40px;

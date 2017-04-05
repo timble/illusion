@@ -2,7 +2,7 @@
 
 @function lastValue() {
   $value: false;
-  @each $breakpoint, $values in $ill-grid-breakpoints {
+  @each $breakpoint, $values in $illusion-grid-breakpoints {
     $value: $breakpoint;
   }
   @return $value;

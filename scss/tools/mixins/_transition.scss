@@ -6,8 +6,8 @@
   // Default values
   $property: all;
   $duration: .2s;
-  $easing: $ill-transition-easing;
-  $delay: $ill-transition-delay;
+  $easing: $illusion-transition-easing;
+  $delay: $illusion-transition-delay;
   $defaultProperties: ($property, $duration, $easing, $delay);
 
   // Grab transition properties if they exist

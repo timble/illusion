@@ -2,7 +2,7 @@
 
 @function smallestGutter() {
   $gutter: false;
-  @each $breakpoint, $values in $ill-grid-breakpoints {
+  @each $breakpoint, $values in $illusion-grid-breakpoints {
     // Only run on the first one
     @if $gutter == false {
       $gutter: map-get($values, gutter);

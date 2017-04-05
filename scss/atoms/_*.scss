@@ -1,8 +1,8 @@
-/**
- * Border-box everything
- */
-
 @if $ill-extendalize == true and $ill-extendalize-boxsizing == true {
+  /**
+   * Border-box everything
+   */
+
   *, *:before, *:after {
     box-sizing: border-box;
   }

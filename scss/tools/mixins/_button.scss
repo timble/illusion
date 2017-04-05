@@ -1,0 +1,15 @@
+// Button
+//
+// Can be used inside your own @mixin button(); and other elements that should bahve like a button
+//
+// 1. Reset appearance for submit buttons
+// 2. Allows us to style paddings and margins
+// 3. Line buttons vertically
+// 4. Appear clickable
+
+@mixin button-structure {
+  -webkit-appearance: none;
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+}

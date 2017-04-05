@@ -6,12 +6,14 @@
 @import "variables/flexbox";
 @import "variables/grid";
 @import "variables/spacing";
+@import "variables/transition";
 @import "variables/type";
 
 // Functions
 @import "functions/mapGet";
 @import "functions/mapGetNext";
 @import "functions/mapMerge";
+@import "functions/stringExplode";
 
 @import "functions/smallestGutter";
 @import "functions/largestWidth";
@@ -32,6 +34,7 @@
 // Mixins
 @import "mixins/accessibility";
 @import "mixins/arrows";
+@import "mixins/button";
 @import "mixins/breakpoint";
 @import "mixins/clearfix";
 @import "mixins/content-block";

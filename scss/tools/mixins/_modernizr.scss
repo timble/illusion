@@ -1,9 +1,30 @@
 // Modernizr
-// Use: @include modernizr('.k-appearance.k-checked') { ... }
+//
+// Usage example:
+// .foo {
+//   @include modernizr(flexbox, flexwrap) {
+//     display: flex;
+//   }
+// }
+//
+// Result:
+// .flexbox.flexwrap .foo {
+//   display: flex;
+// }
 
-@mixin modernizr($classes) {
+@mixin modernizr($classes...) {
   @at-root {
-    #{$classes} & {
+
+    // Create new classlist variable
+    $classlist: '';
+
+    // Run through all classes and add classes to classlist
+    @each $class in $classes {
+      $klasses: '#{$classlist}.#{$class}';
+    }
+
+    // print classlist
+    #{$classlist} & {
       @content
     }
   }

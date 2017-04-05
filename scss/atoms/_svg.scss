@@ -1,11 +1,19 @@
-@if $extendalize == true {
+/**
+ * SVG
+ *
+ * 1. Set with and height to 1em for easy use as icons
+ * 2. Set fill to currentcolor for easy use as icons
+ * 3. Hide svg-sprite for default when used as icons
+ */
+
+@if $ill-extendalize == true and $ill-extendalize-svg == true {
   svg {
-    width: 1em;
-    height: 1em;
-    fill: currentColor;
+    width: 1em; /* 1 */
+    height: 1em; /* 1 */
+    fill: currentColor; /* 2 */
   }
 
   .svg-sprite {
-    display: none;
+    display: none; /* 3 */
   }
 }

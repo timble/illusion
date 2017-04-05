@@ -1,4 +1,10 @@
-@if $extendalize == true {
+/**
+ * Body
+ *
+ * Set font values coming from variables
+ */
+
+@if $ill-extendalize == true and $ill-extendalize-body == true {
   body {
     font-family: $font-family;
     font-size: $font-size;

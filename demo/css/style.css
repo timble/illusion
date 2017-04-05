@@ -1,98 +1,62 @@
-*, *:before, *:after {
-  box-sizing: border-box;
-}
-
-a {
-  color: inherit;
-}
-
-a:hover, a:focus {
-  text-decoration: none;
-}
-
-address {
-  font-style: normal;
-  margin-top: 0;
-  margin-bottom: 24px;
-}
-
-address:last-child {
-  margin-bottom: 0;
-}
-
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
-}
-
-fieldset {
-  width: 100%;
-  border: 0 none;
-  padding: 0;
-  margin: 0;
-}
-
-fieldset legend {
-  margin-bottom: 24px;
-}
-
-fieldset legend:last-child {
-  margin-bottom: 0;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 700;
-  font-size: inherit;
-  margin-top: 0;
-  margin-bottom: 24px;
-}
-
-h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, h6:last-child {
-  margin-bottom: 0;
-}
-
-h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, h6:last-child {
-  margin-bottom: 0;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-img:only-child {
-  vertical-align: middle;
-}
-
-p {
-  margin-top: 0;
-  margin-bottom: 24px;
-}
-
-p:last-child {
-  margin-bottom: 0;
-}
-
-p:last-child {
-  margin-bottom: 0;
-}
-
-picture img {
-  vertical-align: middle;
-}
-
-svg {
-  width: 1em;
-  height: 1em;
-  fill: currentColor;
-}
-
-.svg-sprite {
-  display: none;
-}
-
+/**
+ * Border-box everything
+ */
+/**
+ * Anchors
+ *
+ * 1. Inherit color to follow current text color. Useful in footer blocks etc.
+      Probably wise to change the anchor color in the main text to stand out a bit more
+ * 2. Remove text-decoration on hover and focus
+ */
+/**
+ * Address
+ *
+ * 1. Normal font style
+ * 2. Remove top-margin, margins should live on bottom of elements
+ * 3. Set bottom margin to default line-height and remove for last-child
+ */
+/**
+ * Body
+ *
+ * Set font values coming from variables
+ */
+/**
+ * Fieldset
+ */
+/**
+ * Heading
+ *
+ * 1. Set font-weight to bold to stand out
+ * 2. Reset font-size to be as big as parent font size.
+      Set font-sizes with classes
+ * 3. Remove top-margin, margins should live on bottom of elements
+ * 4. Set bottom margin to default line-height and remove for last-child
+ */
+/**
+ * Image
+ *
+ * 1. Set max-width for responsive images
+ * 2. Set ehight to auto to keep aspect ratio
+ * 3. Vertical align middle for only child images to remove line-height bug when used in an anchor for example
+ */
+/**
+ * Paragraph
+ *
+ * 1. Remove top-margin, margins should live on bottom of elements
+ * 2. Set bottom margin to default line-height and remove for last-child
+ */
+/**
+ * Picture
+ *
+ * 1. Set img vertical align to middle within picture element
+ */
+/**
+ * SVG
+ *
+ * 1. Set with and height to 1em for easy use as icons
+ * 2. Set fill to currentcolor for easy use as icons
+ * 3. Hide svg-sprite for default when used as icons
+ */
 html {
   background: #eee;
 }

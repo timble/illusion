@@ -1,4 +1,8 @@
-@if $extendalize == true {
+/**
+ * Fieldset
+ */
+
+@if $ill-extendalize == true and $ill-extendalize-fieldset == true {
   fieldset {
     width: 100%;
     border: 0 none;

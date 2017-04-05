@@ -1,7 +1,13 @@
-@if $extendalize == true {
+/**
+ * Picture
+ *
+ * 1. Set img vertical align to middle within picture element
+ */
+
+@if $ill-extendalize == true and $ill-extendalize-picture == true {
   picture {
     img {
-      vertical-align: middle;
+      vertical-align: middle; /* 1 */
     }
   }
 }

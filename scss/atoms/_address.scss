@@ -1,7 +1,15 @@
-@if $extendalize == true {
+/**
+ * Address
+ *
+ * 1. Normal font style
+ * 2. Remove top-margin, margins should live on bottom of elements
+ * 3. Set bottom margin to default line-height and remove for last-child
+ */
+
+@if $ill-extendalize == true and $ill-extendalize-address == true {
   address {
-    font-style: normal;
-    margin-top: 0;
-    @include content-block;
+    font-style: normal; /* 1 */
+    margin-top: 0; /* 2 */
+    @include content-block; /* 3 */
   }
 }

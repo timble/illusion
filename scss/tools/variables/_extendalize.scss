@@ -1,0 +1,16 @@
+// Extendalize variables
+//
+// Default extendalize is set to false while all children are set to true
+// To enable all extendalize options just set `$ill-extendalize` to true
+
+$ill-extendalize: false !default;
+$ill-extendalize-boxsizing: true !default;
+$ill-extendalize-anchor: true !default;
+$ill-extendalize-address: true !default;
+$ill-extendalize-body: true !default;
+$ill-extendalize-fieldset: true !default;
+$ill-extendalize-heading: true !default;
+$ill-extendalize-image: true !default;
+$ill-extendalize-paragraph: true !default;
+$ill-extendalize-picture: true !default;
+$ill-extendalize-svg: true !default;

@@ -5,8 +5,7 @@
 @import "variables/type";
 @import "variables/containerwidth";
 @import "variables/spacing";
-
-$extendalize: false !default;
+@import "variables/extendalize";
 
 // Third party
 @import 'grid/grid';

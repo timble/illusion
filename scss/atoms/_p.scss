@@ -1,10 +1,13 @@
-@if $extendalize == true {
-  p {
-    margin-top: 0;
-    @include content-block;
+/**
+ * Paragraph
+ *
+ * 1. Remove top-margin, margins should live on bottom of elements
+ * 2. Set bottom margin to default line-height and remove for last-child
+ */
 
-    &:last-child {
-      margin-bottom: 0;
-    }
+@if $ill-extendalize == true and $ill-extendalize-paragraph == true {
+  p {
+    margin-top: 0; /* 1 */
+    @include content-block; /* 2 */
   }
 }

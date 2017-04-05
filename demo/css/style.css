@@ -1,24 +1,356 @@
-html {
-  background: #eee;
+/**
+   * Border-box everything
+   */
+*, *:before, *:after {
+  box-sizing: border-box;
 }
 
+/**
+   * Anchors
+   *
+   * 1. Inherit color to follow current text color. Useful in footer blocks etc.
+        Probably wise to change the anchor color in the main text to stand out a bit more
+   * 2. Remove text-decoration on hover and focus
+   */
+a {
+  color: inherit;
+  /* 1 */
+}
+
+a:hover, a:focus {
+  text-decoration: none;
+  /* 2 */
+}
+
+/**
+   * Address
+   *
+   * 1. Normal font style
+   * 2. Remove top-margin, margins should live on bottom of elements
+   * 3. Set bottom margin to default line-height and remove for last-child
+   */
+address {
+  font-style: normal;
+  /* 1 */
+  margin-top: 0;
+  /* 2 */
+  margin-bottom: 24px;
+  /* 3 */
+}
+
+address:last-child {
+  margin-bottom: 0;
+}
+
+/**
+   * Body
+   *
+   * Set font values coming from variables
+   */
 body {
-  max-width: 500px;
-  background: white;
-  border-right: 1px solid #ddd;
-  border-left: 1px solid #ddd;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+/**
+   * Fieldset
+   */
+fieldset {
+  width: 100%;
+  border: 0 none;
+  padding: 0;
+  margin: 0;
+}
+
+fieldset legend {
+  margin-bottom: 24px;
+}
+
+fieldset legend:last-child {
+  margin-bottom: 0;
+}
+
+/**
+   * Heading
+   *
+   * 1. Set font-weight to bold to stand out
+   * 2. Reset font-size to be as big as parent font size.
+        Set font-sizes with classes
+   * 3. Remove top-margin, margins should live on bottom of elements
+   * 4. Set bottom margin to default line-height and remove for last-child
+   */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  /* 1 */
+  font-size: inherit;
+  /* 2 */
+  margin-top: 0;
+  /* 3 */
+  margin-bottom: 24px;
+  /* 4 */
+}
+
+h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, h6:last-child {
+  margin-bottom: 0;
+}
+
+/**
+   * Image
+   *
+   * 1. Set max-width for responsive images
+   * 2. Set ehight to auto to keep aspect ratio
+   * 3. Vertical align middle for only child images to remove line-height bug when used in an anchor for example
+   */
+img {
+  max-width: 100%;
+  /* 1 */
+  height: auto;
+  /* 2 */
+}
+
+img:only-child {
+  vertical-align: middle;
+  /* 3 */
+}
+
+/**
+   * Paragraph
+   *
+   * 1. Remove top-margin, margins should live on bottom of elements
+   * 2. Set bottom margin to default line-height and remove for last-child
+   */
+p {
+  margin-top: 0;
+  /* 1 */
+  margin-bottom: 24px;
+  /* 2 */
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+/**
+   * Picture
+   *
+   * 1. Set img vertical align to middle within picture element
+   */
+picture img {
+  vertical-align: middle;
+  /* 1 */
+}
+
+/**
+   * SVG
+   *
+   * 1. Set with and height to 1em for easy use as icons
+   * 2. Set fill to currentcolor for easy use as icons
+   * 3. Hide svg-sprite for default when used as icons
+   */
+svg {
+  width: 1em;
+  /* 1 */
+  height: 1em;
+  /* 1 */
+  fill: currentColor;
+  /* 2 */
+}
+
+.svg-sprite {
+  display: none;
+  /* 3 */
+}
+
+/** Body width fallback for older non CSS calc capable browsers
+   *
+   * This just sets the width. For an optimal effect it's best to set:
+   * - A background color for <html>
+   * - A background color for <body>
+   * - An optional left and right border for <body>
+   *
+   * 1. Add :root so CSSmin won't merge the two
+   */
+body {
+  width: 560px;
   margin-left: auto;
   margin-right: auto;
 }
 
+/* 1 */
 :root body {
-  max-width: calc(100%);
-  border: none;
-  margin: 0 auto;
-  background: inherit;
+  width: calc(100%);
 }
 
-.container {
-  -webkit-transition: opacity 0.2s cubic-bezier(0.195, 0.4, 0.45, 0.785) 0;
-          transition: opacity 0.2s cubic-bezier(0.195, 0.4, 0.45, 0.785) 0;
+/**
+   * Form defaults
+   */
+.form {
+  margin-bottom: 16px;
+}
+
+@media screen and (min-width: 560px) {
+  .form {
+    margin-bottom: 24px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .form {
+    margin-bottom: 32px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .form {
+    margin-bottom: 40px;
+  }
+}
+
+.form:last-child {
+  margin-bottom: 0;
+}
+
+/**
+   * Form group
+   */
+.form__group {
+  margin-bottom: 24px;
+}
+
+.form__group:last-child {
+  margin-bottom: 0;
+}
+
+/**
+   * Form controls
+   */
+.form__label,
+.form__input {
+  -webkit-appearance: none;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.form__label {
+  display: inline-block;
+  padding-bottom: 8px;
+}
+
+.form__input {
+  width: 100%;
+  padding: 4px 8px;
+  border: 2px solid;
+  line-height: 28px;
+  border-radius: 0;
+}
+
+.form__input:focus {
+  outline: 3px solid #febd22;
+  outline-offset: 0;
+}
+
+.form__multiple-choice {
+  display: block;
+  float: none;
+  clear: left;
+  position: relative;
+  padding: 0 0 0 40px;
+  margin-bottom: 16px;
+}
+
+@media screen and (min-width: 560px) {
+  .form__multiple-choice {
+    float: left;
+  }
+}
+
+.form__multiple-choice input {
+  position: absolute;
+  cursor: pointer;
+  left: 0;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  z-index: 1;
+  margin: 0;
+  opacity: 0;
+}
+
+.form__multiple-choice label {
+  cursor: pointer;
+  padding: 8px 16px;
+  display: block;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+}
+
+.form__multiple-choice [type=radio] + label:before,
+.form__multiple-choice [type=checkbox] + label:before {
+  content: "";
+  border: 2px solid;
+  background: transparent;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.form__multiple-choice [type=radio] + label::before {
+  border-radius: 50%;
+}
+
+.form__multiple-choice [type=radio] + label::after,
+.form__multiple-choice [type=checkbox] + label::after {
+  content: "";
+  border: 12px solid;
+  position: absolute;
+  opacity: 0;
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+  -webkit-transition: all 0.2s cubic-bezier(0.195, 0.4, 0.45, 0.785) 0ms;
+          transition: all 0.2s cubic-bezier(0.195, 0.4, 0.45, 0.785) 0ms;
+}
+
+.form__multiple-choice [type=radio] + label::after {
+  width: 0;
+  height: 0;
+  top: 8px;
+  left: 8px;
+  border-radius: 50%;
+}
+
+.form__multiple-choice [type=checkbox] + label::after {
+  border-width: 0 0 6px 6px;
+  background: transparent;
+  width: 22px;
+  height: 12px;
+  top: 12px;
+  left: 9px;
+  -webkit-transform: rotate(-45deg) scale(0.5);
+          transform: rotate(-45deg) scale(0.5);
+}
+
+.form__multiple-choice [type=checkbox]:focus + label::before,
+.form__multiple-choice [type=radio]:focus + label::before {
+  box-shadow: 0 0 0 3px #ffbf47;
+}
+
+.form__multiple-choice input:checked + label::after {
+  opacity: 1;
+  -webkit-transform: rotate(-45deg) scale(1);
+          transform: rotate(-45deg) scale(1);
+}
+
+[type=submit] {
+  -webkit-appearance: none;
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+[type=submit]:focus {
+  outline: 3px solid #febd22;
 }

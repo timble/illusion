@@ -35,6 +35,9 @@
 
 @mixin transition($transitions...) {
   $unfoldedTransitions: ();
+  @if length($transitions) == 0 {
+    $unfoldedTransitions: append($unfoldedTransitions, unfoldTransition(all), comma);
+  }
   @each $transition in $transitions {
     $unfoldedTransitions: append($unfoldedTransitions, unfoldTransition($transition), comma);
   }

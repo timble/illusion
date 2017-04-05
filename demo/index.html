@@ -14,6 +14,54 @@
     <h1>Illusion grid demo</h1>
 </div>
 
+<form action="" method="get" class="form">
+    <div class="form__group">
+        <label class="form__label" for="firstname">Voornaam</label>
+        <input required class="form__input" type="text" name="firstname" value="" id="firstname">
+    </div>
+    <div class="form__group">
+        <label class="form__label" for="lastname">Achternaam</label>
+        <input required class="form__input" type="text" name="lastname" value="" id="lastname">
+    </div>
+    <div class="form__group">
+        <label class="form__label" for="email">Email</label>
+        <input required class="form__input" type="email" name="email" value="" id="email">
+    </div>
+
+    <div class="form__group">
+        <label class="form__label" for="message">Vraag</label>
+        <textarea class="form__input" rows="4" cols="50" name="message" id="message"></textarea>
+    </div>
+
+    <div class="form__group">
+        <fieldset>
+            <div class="form__multiple-choice">
+                <input id="check-newsletter1" type="checkbox" name="newsletter" value="Yes">
+                <label for="check-newsletter1">Ja, houd me op de hoogte van de laatste nieuwtjes</label>
+            </div>
+            <div class="form__multiple-choice">
+                <input id="check-newsletter2" type="checkbox" name="newsletter" value="Yes">
+                <label for="check-newsletter2">Ja, houd me op de hoogte van de laatste nieuwtjes</label>
+            </div>
+        </fieldset>
+    </div>
+    <div class="form__group">
+        <fieldset>
+            <div class="form__multiple-choice">
+                <input id="radio-newsletter1" type="radio" name="newsletter" value="Yes">
+                <label for="radio-newsletter1">Ja, houd me op de hoogte van de laatste nieuwtjes</label>
+            </div>
+            <div class="form__multiple-choice">
+                <input id="radio-newsletter2" type="radio" name="newsletter" value="Yes">
+                <label for="radio-newsletter2">Ja, houd me op de hoogte van de laatste nieuwtjes</label>
+            </div>
+        </fieldset>
+    </div>
+
+    <button type="submit" class="button button--primary">Versturen</button>
+</form>
+
+
 <div class="gallery">
     <div class="gallery__item">Item</div>
     <div class="gallery__item">Item</div>

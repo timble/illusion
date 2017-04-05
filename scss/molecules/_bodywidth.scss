@@ -1,0 +1,30 @@
+@if $ill-body-fallback == true {
+  /** Body width fallback for older non CSS calc capable browsers
+   *
+   * This just sets the width. For an optimal effect it's best to set:
+   * - A background color for <html>
+   * - A background color for <body>
+   * - An optional left and right border for <body>
+   *
+   * 1. Add :root so CSSmin won't merge the two
+   */
+
+  body {
+    width: $ill-body-fallback-width;
+
+    @if $ill-body-fallback-align == center {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @if $ill-body-fallback-align == right {
+      margin-left: auto;
+      margin-right: 0;
+    }
+  }
+
+  /* 1 */
+  :root body {
+    width: calc(100%);
+  }
+}

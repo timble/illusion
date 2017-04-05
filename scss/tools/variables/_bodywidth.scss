@@ -1,0 +1,9 @@
+// Body width fallback
+//
+// 1. Default is set to false since Illusion doesn't create code by default
+// 2. Align body to the left, right or center. Defaults to center
+// 3. Width of the body, defaults to $beta breakpoint
+
+$ill-body-fallback: false !default;
+$ill-body-fallback-align: center !default;
+$ill-body-fallback-width: $beta !default;

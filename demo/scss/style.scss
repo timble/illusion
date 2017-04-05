@@ -1,13 +1,9 @@
-$extendalize: true;
-$mf-containerwidth: true;
+$ill-extendalize: true;
+$ill-form: true;
+$ill-body-fallback: true;
 
 // Import Illusion
 @import "../../scss/illusion";
-
-.container {
-  @include transition(opacity);
-}
-
 
 //.gallery {
 //  @include container;
@@ -68,3 +64,4 @@ $mf-containerwidth: true;
 //    @include span(8, $beta);
 //  }
 //}
+

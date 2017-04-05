@@ -1,0 +1,152 @@
+@if $ill-form == true {
+  /**
+   * Form defaults
+   */
+
+  .form {
+    @include spacing(bottom, margin);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+
+  /**
+   * Form group
+   */
+
+  .form__group {
+    @include content-block;
+  }
+
+
+  /**
+   * Form controls
+   */
+
+  .form__label,
+  .form__input {
+    -webkit-appearance: none;
+    font-size: inherit;
+    line-height: inherit;
+  }
+
+  .form__label {
+    display: inline-block;
+    padding-bottom: $spacing-s;
+  }
+
+  .form__input {
+    width: 100%;
+    padding: $spacing-xs $spacing-s;
+    border: $ill-form-border-width solid;
+    line-height: $line-height + $spacing-xs;
+    border-radius: 0;
+
+    &:focus {
+      outline: 3px solid $color-focus;
+      outline-offset: 0;
+    }
+  }
+
+  .form__multiple-choice {
+    display: block;
+    float: none;
+    clear: left;
+    position: relative;
+    padding: 0 0 0 40px;
+    margin-bottom: $spacing-m;
+
+    @include breakpoint($beta) {
+      float: left;
+    }
+
+    input {
+      position: absolute;
+      cursor: pointer;
+      left: 0;
+      top: 0;
+      width: 40px;
+      height: 40px;
+      z-index: 1;
+      margin: 0;
+      opacity: 0;
+    }
+
+    label {
+      cursor: pointer;
+      padding: $spacing-s $spacing-m;
+      display: block;
+      touch-action: manipulation;
+    }
+
+    // Box
+    [type=radio] + label:before,
+    [type=checkbox] + label:before {
+      content: "";
+      border: $ill-form-border-width solid;
+      background: transparent;
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    // Rounded box
+    [type=radio] + label::before {
+      border-radius: 50%;
+    }
+
+    // Dot & Checkmark
+    [type=radio] + label::after,
+    [type=checkbox] + label::after {
+      content: "";
+      border: 12px solid;
+      position: absolute;
+      opacity: 0;
+      transform: scale(0.5);
+      @include transition;
+    }
+
+    // Dot
+    [type=radio] + label::after {
+      width: 0;
+      height: 0;
+      top: 8px;
+      left: 8px;
+      border-radius: 50%;
+    }
+
+    // Checkmark
+    [type=checkbox] + label::after {
+      border-width: 0 0 6px 6px;
+      background: transparent;
+      width: 22px;
+      height: 12px;
+      top: 12px;
+      left: 9px;
+      transform: rotate(-45deg) scale(0.5);
+    }
+
+    // Focus styling
+    [type=checkbox]:focus + label::before,
+    [type=radio]:focus + label::before {
+      box-shadow: 0 0 0 3px #ffbf47;
+    }
+
+    input:checked + label::after {
+      opacity: 1;
+      transform: rotate(-45deg) scale(1);
+    }
+  }
+
+  [type=submit] {
+    @include button-structure;
+
+    &:focus {
+      outline: 3px solid $color-focus;
+    }
+  }
+}

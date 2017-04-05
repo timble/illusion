@@ -3,65 +3,63 @@ $illusion-form: true;
 $illusion-body-fallback: true;
 
 // Import Illusion
+@import "normalize";
 @import "../../scss/illusion";
 
-//.gallery {
-//  @include container;
-//}
-//
-//.gallery__item {
-//  background: rgba(0, 0, 0, 0.1);
-//  @include gallery(6, 0 to $beta);
-//  @include gallery(4, $beta to $charlie);
-//  @include gallery(3, $charlie);
-//  @include gallery(2, $delta);
-//  @include gallery(1, 1200px);
-//  //@include gallery(4, $beta, 2);
-//  //@include spacing($amount: half);
-//}
-//
-//
-//
-//.container {
-//  @include container;
-//}
-//
-//
-//.container__item {
-//  background: rgba(0, 0, 0, 0.1);
-//  box-sizing: border-box;
-//  @include spacing;
-//  @include spacing(bottom, margin);
-//
-//  &:first-child {
-//    @include span(6, 0 to $beta);
-//    @include shift(6, 0 to $beta);
-//    @include span(8, $charlie to $delta);
-//    @include shift(4, $charlie to $delta);
-//    @include shift(0, $delta);
-//  }
-//
-//  &:last-child {
-//    @include span(6, 0 to $beta);
-//    @include shift(-6, 0 to $beta);
-//    @include span(4, $charlie to $delta);
-//    @include shift(-8, $charlie to $delta);
-//    @include shift(0, $delta);
-//  }
-//}
-//
-//.container2__item {
-//  background: rgba(0, 0, 0, 0.1);
-//  box-sizing: border-box;
-//  @include spacing;
-//  @include spacing(bottom, margin);
-//
-//  &:first-child {
-//    @include span(4, $beta);
-//  }
-//
-//  &:last-child {
-//    @include span(8, $beta);
-//  }
-//}
+.container {
+  @include container;
+}
 
+.container-flex {
+  @include container(flex);
+}
+
+header,
+footer {
+  background: #34495e;
+  color: #ecf0f1;
+}
+
+header {
+  @include spacing(vertical);
+}
+
+.button {
+  background: #bdc3c7;
+  padding: $spacing-m $spacing-l;
+  border: none;
+  font-size: inherit;
+  @include transition;
+
+  @include hover {
+    background: #95a5a6;
+    color: white;
+  }
+}
+
+aside {
+  @include span(4);
+  background: #bdc3c7;
+  @include spacing(vertical);
+  @include spacing(horizontal, padding, 1, 0 to $charlie);
+}
+
+article {
+  @include span(8);
+  @include spacing(vertical);
+}
+
+footer {
+  @include spacing(vertical, padding, 1, 0 to $charlie)
+}
+
+.gallery {
+  @include clearfix;
+  @include spacing(bottom, margin, -1);
+}
+
+.gallery__item {
+  background: #bdc3c7;
+  @include gallery(4);
+  padding: $spacing-m
+}

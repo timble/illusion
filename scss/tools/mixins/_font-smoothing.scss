@@ -1,0 +1,9 @@
+// Font smoothing
+//
+// Best to only use for light text on dark backgrounds.
+// For regular dark text on light backgrounds the browser default is better
+
+@mixin font-smoothing {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

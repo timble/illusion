@@ -50,6 +50,11 @@
     }
   }
 
+
+  /**
+   * Multiple choice
+   */
+
   .form__multiple-choice {
     display: block;
     float: none;
@@ -81,7 +86,9 @@
       touch-action: manipulation;
     }
 
-    // Box
+
+    /* Box */
+
     [type=radio] + label:before,
     [type=checkbox] + label:before {
       content: "";
@@ -94,12 +101,16 @@
       left: 0;
     }
 
-    // Rounded box
+
+    /* Rounded box */
+
     [type=radio] + label::before {
       border-radius: 50%;
     }
 
-    // Dot & Checkmark
+
+    /* Dot and checkmark */
+
     [type=radio] + label::after,
     [type=checkbox] + label::after {
       content: "";
@@ -110,7 +121,9 @@
       @include transition;
     }
 
-    // Dot
+
+    /* Dot */
+
     [type=radio] + label::after {
       width: 0;
       height: 0;
@@ -119,7 +132,9 @@
       border-radius: 50%;
     }
 
-    // Checkmark
+
+    /* Checkmark */
+
     [type=checkbox] + label::after {
       border-width: 0 0 6px 6px;
       background: transparent;
@@ -130,17 +145,25 @@
       transform: rotate(-45deg) scale(0.5);
     }
 
-    // Focus styling
-    [type=checkbox]:focus + label::before,
-    [type=radio]:focus + label::before {
-      box-shadow: 0 0 0 3px #ffbf47;
-    }
+
+    /* Checked styling */
 
     input:checked + label::after {
       opacity: 1;
       transform: rotate(-45deg) scale(1);
     }
+
+
+    /* Focus styling */
+
+    [type=checkbox]:focus + label::before,
+    [type=radio]:focus + label::before {
+      box-shadow: 0 0 0 3px #ffbf47;
+    }
   }
+
+
+  /* Submit button */
 
   [type=submit] {
     @include button-structure;

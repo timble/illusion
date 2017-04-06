@@ -6,13 +6,13 @@
    * 2. Reset font-size to be as big as parent font size.
         Set font-sizes with classes
    * 3. Remove top-margin, margins should live on bottom of elements
-   * 4. Set bottom margin to default line-height and remove for last-child
+   * 4. Set bottom margin to default line-height and remove for last-child. A bit smaller to visually group headings with content below
    */
 
   h1, h2, h3, h4, h5, h6 {
     font-weight: $weight-bold; /* 1 */
     font-size: inherit; /* 2 */
     margin-top: 0; /* 3 */
-    @include content-block; /* 4 */
+    @include content-block($spacing-m); /* 4 */
   }
 }

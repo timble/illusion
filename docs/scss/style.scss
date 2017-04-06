@@ -1,0 +1,116 @@
+$illusion-extendalize: true;
+$illusion-form: true;
+$illusion-body-fallback: true;
+
+// Import Illusion
+@import "normalize";
+@import "../../scss/illusion";
+
+body {
+  color: $color-type;
+}
+
+.container {
+  @include container;
+}
+
+.container-flex {
+  @include container(flex);
+}
+
+header,
+footer {
+  background: #34495e;
+  color: #ecf0f1;
+  @include font-smoothing;
+}
+
+header {
+  @include spacing(vertical);
+}
+
+aside {
+  @include span(4);
+  @include spacing(vertical);
+  @include spacing(horizontal, padding, 1, 0 to $charlie);
+  background: #bdc3c7;
+}
+
+article {
+  @include span(8);
+  @include spacing(vertical);
+}
+
+footer {
+  @include spacing(vertical, padding, 1, 0 to $charlie)
+}
+
+h1 {
+  font-size: 32px;
+  line-height: 40px;
+}
+
+h2 {
+  font-size: 24px;
+  line-height: 32px;
+}
+
+h3 {
+  font-size: 20px;
+  line-height: 24px;
+}
+
+hr {
+  border: none;
+  height: 2px;
+  background: rgba(0, 0, 0, 0.2);
+  @include spacing(vertical, margin);
+}
+
+pre {
+  margin-top: 0;
+  @include content-block;
+}
+
+table {
+  border-collapse: collapse;
+  font-size: 15px;
+  line-height: 24px;
+  @include content-block;
+}
+
+th {
+  text-align: left;
+  padding: $spacing-s $spacing-m $spacing-s 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+td {
+  text-align: left;
+  padding: $spacing-s $spacing-m $spacing-s 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.button {
+  background: #bdc3c7;
+  padding: $spacing-m $spacing-l;
+  border: none;
+  font-size: inherit;
+  @include transition;
+
+  @include hover {
+    background: #95a5a6;
+    color: white;
+  }
+}
+
+.gallery {
+  @include clearfix;
+  @include spacing(bottom, margin, -1);
+}
+
+.gallery__item {
+  background: #bdc3c7;
+  @include gallery(4);
+  padding: $spacing-m
+}

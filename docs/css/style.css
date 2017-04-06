@@ -413,8 +413,12 @@ template {
 /**
    * Border-box everything
    */
-*, *:before, *:after {
+html {
   box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
 /**
@@ -492,7 +496,7 @@ fieldset legend:last-child {
    * 2. Reset font-size to be as big as parent font size.
         Set font-sizes with classes
    * 3. Remove top-margin, margins should live on bottom of elements
-   * 4. Set bottom margin to default line-height and remove for last-child
+   * 4. Set bottom margin to default line-height and remove for last-child. A bit smaller to visually group headings with content below
    */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
@@ -501,7 +505,7 @@ h1, h2, h3, h4, h5, h6 {
   /* 2 */
   margin-top: 0;
   /* 3 */
-  margin-bottom: 24px;
+  margin-bottom: 16px;
   /* 4 */
 }
 
@@ -526,6 +530,23 @@ img {
 img:only-child {
   vertical-align: middle;
   /* 3 */
+}
+
+/**
+   * List
+   *
+   * 1. Remove top-margin, margins should live on bottom of elements
+   * 2. Set bottom margin to default line-height and remove for last-child
+   */
+ul, ol {
+  margin-top: 0;
+  /* 1 */
+  margin-bottom: 24px;
+  /* 2 */
+}
+
+ul:last-child, ol:last-child {
+  margin-bottom: 0;
 }
 
 /**
@@ -664,6 +685,9 @@ body {
   outline-offset: 0;
 }
 
+/**
+   * Multiple choice
+   */
 .form__multiple-choice {
   display: block;
   float: none;
@@ -671,6 +695,13 @@ body {
   position: relative;
   padding: 0 0 0 40px;
   margin-bottom: 16px;
+  /* Box */
+  /* Rounded box */
+  /* Dot and checkmark */
+  /* Dot */
+  /* Checkmark */
+  /* Checked styling */
+  /* Focus styling */
 }
 
 @media screen and (min-width: 560px) {
@@ -746,17 +777,18 @@ body {
           transform: rotate(-45deg) scale(0.5);
 }
 
-.form__multiple-choice [type=checkbox]:focus + label::before,
-.form__multiple-choice [type=radio]:focus + label::before {
-  box-shadow: 0 0 0 3px #ffbf47;
-}
-
 .form__multiple-choice input:checked + label::after {
   opacity: 1;
   -webkit-transform: rotate(-45deg) scale(1);
           transform: rotate(-45deg) scale(1);
 }
 
+.form__multiple-choice [type=checkbox]:focus + label::before,
+.form__multiple-choice [type=radio]:focus + label::before {
+  box-shadow: 0 0 0 3px #ffbf47;
+}
+
+/* Submit button */
 [type=submit] {
   -webkit-appearance: none;
   display: inline-block;
@@ -766,6 +798,10 @@ body {
 
 [type=submit]:focus {
   outline: 3px solid #febd22;
+}
+
+body {
+  color: #0b0c0c;
 }
 
 .container {
@@ -869,6 +905,8 @@ header,
 footer {
   background: #34495e;
   color: #ecf0f1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 header {
@@ -897,29 +935,15 @@ header {
   }
 }
 
-.button {
-  background: #bdc3c7;
-  padding: 16px 24px;
-  border: none;
-  font-size: inherit;
-  -webkit-transition: all 0.2s cubic-bezier(0.195, 0.4, 0.45, 0.785) 0ms;
-          transition: all 0.2s cubic-bezier(0.195, 0.4, 0.45, 0.785) 0ms;
-}
-
-.button:hover, .button:focus {
-  background: #95a5a6;
-  color: white;
-}
-
 aside {
   float: left;
   width: calc((100% - 32px) / 3);
   margin-left: calc(16px);
-  background: #bdc3c7;
   padding-top: 16px;
   padding-bottom: 16px;
   padding-right: 16px;
   padding-left: 16px;
+  background: #bdc3c7;
 }
 
 aside:first-child {
@@ -1063,6 +1087,96 @@ footer {
     padding-top: 24px;
     padding-bottom: 24px;
   }
+}
+
+h1 {
+  font-size: 32px;
+  line-height: 40px;
+}
+
+h2 {
+  font-size: 24px;
+  line-height: 32px;
+}
+
+h3 {
+  font-size: 20px;
+  line-height: 24px;
+}
+
+hr {
+  border: none;
+  height: 2px;
+  background: rgba(0, 0, 0, 0.2);
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+@media screen and (min-width: 560px) {
+  hr {
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  hr {
+    margin-top: 32px;
+    margin-bottom: 32px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  hr {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+}
+
+pre {
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+
+pre:last-child {
+  margin-bottom: 0;
+}
+
+table {
+  border-collapse: collapse;
+  font-size: 15px;
+  line-height: 24px;
+  margin-bottom: 24px;
+}
+
+table:last-child {
+  margin-bottom: 0;
+}
+
+th {
+  text-align: left;
+  padding: 8px 16px 8px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+td {
+  text-align: left;
+  padding: 8px 16px 8px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.button {
+  background: #bdc3c7;
+  padding: 16px 24px;
+  border: none;
+  font-size: inherit;
+  -webkit-transition: all 0.2s cubic-bezier(0.195, 0.4, 0.45, 0.785) 0ms;
+          transition: all 0.2s cubic-bezier(0.195, 0.4, 0.45, 0.785) 0ms;
+}
+
+.button:hover, .button:focus {
+  background: #95a5a6;
+  color: white;
 }
 
 .gallery {

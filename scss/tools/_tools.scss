@@ -29,9 +29,6 @@
 @import "functions/breakpointMap";
 @import "functions/spacing";
 
-// Helpers
-@import "helpers/ifBreakpoint";
-
 // Mixins
 @import "mixins/accessibility";
 @import "mixins/arrows";
@@ -41,6 +38,7 @@
 @import "mixins/content-block";
 @import "mixins/coverall";
 @import "mixins/flexbox";
+@import "mixins/font-smoothing";
 @import "mixins/hover";
 @import "mixins/js-enabled";
 @import "mixins/modernizr";
@@ -49,6 +47,8 @@
 @import "mixins/reset";
 @import "mixins/transition";
 
+// Grid
+@import "mixins/ifBreakpoint";
 @import "mixins/container";
 @import "mixins/span";
 @import "mixins/gallery";

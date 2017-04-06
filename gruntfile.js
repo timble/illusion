@@ -17,7 +17,7 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
-                    'demo/css/style.css': 'demo/scss/style.scss'
+                    'docs/css/style.css': 'docs/scss/style.scss'
                 }
             }
         },
@@ -28,13 +28,13 @@ module.exports = function(grunt) {
             dev: {
                 bsFiles: {
                     src: [
-                        "demo/css/*.css",
-                        "demo/index.html"
+                        "docs/css/*.css",
+                        "docs/index.html"
                     ]
                 },
                 options: {
                     server: {
-                        baseDir: "./demo/"
+                        baseDir: "./docs/"
                     },
                     port: 4558, // Illu(sion) on phone numpad
                     open: true, // Opens site in your default browser, no need to remember the port
@@ -55,7 +55,7 @@ module.exports = function(grunt) {
             },
             site: {
                 files: {
-                    'demo/css/style.css': 'demo/css/style.css'
+                    'docs/css/style.css': 'docs/css/style.css'
                 }
             }
         },
@@ -69,8 +69,8 @@ module.exports = function(grunt) {
             files: {
                 expand: true,
                 flatten: true,
-                src: 'demo/css/*.css',
-                dest: 'demo/css/'
+                src: 'docs/css/*.css',
+                dest: 'docs/css/'
             }
         },
 
@@ -79,7 +79,7 @@ module.exports = function(grunt) {
         modernizr: {
             dist: {
                 "cache": true,
-                "dest": "demo/js/modernizr.js",
+                "dest": "docs/js/modernizr.js",
                 "options": [
                     "html5shiv",
                     "prefixedCSS",
@@ -108,8 +108,8 @@ module.exports = function(grunt) {
         watch: {
             sass: {
                 files: [
-                    'demo/scss/*.scss',
-                    'demo/scss/**/*.scss',
+                    'docs/scss/*.scss',
+                    'docs/scss/**/*.scss',
                     'scss/*.scss',
                     'scss/**/*.scss',
                     'scss/**/**/*.scss',

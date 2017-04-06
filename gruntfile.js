@@ -50,7 +50,7 @@ module.exports = function(grunt) {
         cssmin: {
             options: {
                 roundingPrecision: -1,
-                sourceMap: true,
+                sourceMap: false,
                 level: 2
             },
             site: {
@@ -116,7 +116,7 @@ module.exports = function(grunt) {
                     'scss/**/**/**/*.scss'
                 ],
                 // tasks: ['sass', 'cssmin', 'autoprefixer'],
-                tasks: ['sass', 'autoprefixer'],
+                tasks: ['sass', 'autoprefixer', 'cssmin'],
                 options: {
                     interrupt: true,
                     atBegin: true

@@ -104,6 +104,10 @@ td {
   }
 }
 
+.pull-top {
+  margin-top: -($spacing-m);
+}
+
 .gallery {
   @include clearfix;
   @include spacing(bottom, margin, -1);

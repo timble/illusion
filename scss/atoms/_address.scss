@@ -1,4 +1,4 @@
-@if $illusion-extendalize == true and $illusion-extendalize-address == true {
+@if $illusion-extendalize == true or $illusion-extendalize-address == true {
   /**
    * Address
    *

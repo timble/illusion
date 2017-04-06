@@ -5,14 +5,14 @@
 // 1. To enable all extendalize options just set to true
 
 $illusion-extendalize: false !default; // 1
-$illusion-extendalize-boxsizing: true !default;
-$illusion-extendalize-anchor: true !default;
-$illusion-extendalize-address: true !default;
-$illusion-extendalize-body: true !default;
-$illusion-extendalize-fieldset: true !default;
-$illusion-extendalize-heading: true !default;
-$illusion-extendalize-image: true !default;
-$illusion-extendalize-list: true !default;
-$illusion-extendalize-paragraph: true !default;
-$illusion-extendalize-picture: true !default;
-$illusion-extendalize-svg: true !default;
+$illusion-extendalize-boxsizing: false !default;
+$illusion-extendalize-anchor: false !default;
+$illusion-extendalize-address: false !default;
+$illusion-extendalize-body: false !default;
+$illusion-extendalize-fieldset: false !default;
+$illusion-extendalize-heading: false !default;
+$illusion-extendalize-image: false !default;
+$illusion-extendalize-list: false !default;
+$illusion-extendalize-paragraph: false !default;
+$illusion-extendalize-picture: false !default;
+$illusion-extendalize-svg: false !default;

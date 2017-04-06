@@ -26,28 +26,43 @@
         </aside>
         <article>
             <h2>What is Illusion?</h2>
-            <p>Illusion is an opinionated, mobile-first, progressive enhanced, accessible, SCSS base kit to kickstart websites with.</p>
-            <p>Illusion is built to be used on top of <a href="#">Modernizr</a> and <a href="#">Normalize</a>. When included, Illusion does nothing. Enable features by <a href="#">setting SCSS variables</a>.</p>
+            <p>Illusion is an opinionated, mobile-first, progressive enhanced, accessible, SCSS base kit to kickstart websites with and helps you keep a maintainable SCSS code base.</p>
+            <p>Illusion is built to be used on top of <a href="#">Modernizr</a> and <a href="#">Normalize</a>. When included, Illusion does nothing. Enable features by <a href="#">setting SCSS variables</a> or using mixins.</p>
+            <p>Illusion let's you write consistent and clean code in less time. Based on an 8 point grid for harmonized design. Illusion is a combination of modern web-design philosophies, base styling and a mixin library.</p>
             <h3>Features</h3>
             <ul>
                 <li><a href="#">Grid mixins</a></li>
                 <li><a href="#">8 point grid</a></li>
-                <li><a href="#">Accessible forms</a></li>
                 <li><a href="#">Useful functions</a></li>
                 <li><a href="#">Useful mixins</a></li>
+                <li><a href="#">Accessible forms</a></li>
             </ul>
-            <h3>Why use Illusion?</h3>
-            <p>Write consistent and clean code in less time. Based on an 8 point grid for harmonized design</p>
             <hr>
             <h2>Getting started</h2>
-            <p>Bower install, or NPM, or whatever</p>
+            <p>Bower install, or NPM, or ...</p>
             <p>Include Modernizr and add at least JS - No JS detection and flexbox detection if you're gonna use flexbox</p>
-            <p>Include Normalize and include it before anything else</p>
+            <p>Include Normalize and include it before anything else (Not included in Illusion)</p>
             <p>Define your variables before loading illusion</p>
+            <p>Load illusion</p>
             <p>Add your own mixins after illusion</p>
+            <p>Ready to go!</p>
+            <h3>Your base SCSS file might look like this:</h3>
+            <pre>
+            <code>// Normalize
+            @import "normalize";
+
+            // Variables
+            @import: "variables"; // Hold your own variables as well as Illusion overrides
+
+            // Import Illusion
+            @import "illusion";
+
+            // Mixins
+            @import "mixins"; // You can overwrite Illusion mixins here if you wish</code>
+            </pre>
             <hr>
             <h2>Grid mixins</h2>
-            <p>One of the most important aspects of a website is the grid is based on. It can make a page feel balanced and in harmony when used right, but when used wrong a page can look very untrustworthy.</p>
+            <p>One of the most important aspects of a website is the grid it's based on. It can make a page feel balanced and in harmony when used right, but when used wrong a page may appear untrustworthy.</p>
             <p>Illusion uses a grid that:</p>
             <ol>
                 <li>Is based on an 8 point grid</li>
@@ -55,9 +70,9 @@
                 <li>Is using calc() and pixels so vertical gutters follow horizontal ones</li>
                 <li>Comes with an optional fallback for the <code>body</code> element to have a set-width</li>
             </ol>
-            <h3>Grid mixins:</h3>
-            <h4>Container</h4>
-            <p>Use for outer containers only. Add clearfix when used without flexbox and removes clearfix when used as flexbox.</p>
+            <h3>Available mixins:</h3>
+            <h4><code>@mixin container</code></h4>
+            <p>Shouldn't be nested. Adds clearfix when used without flexbox and removes clearfix when used as flexbox. Adds left and right padding following the responsive gutters.</p>
             <h5>Arguments</h5>
             <table>
                 <thead>
@@ -77,7 +92,7 @@
                 </tr>
                 </tbody>
             </table>
-            <h5>Dependency</h5>
+            <h5>Dependencies</h5>
             <p>For flexbox to work properly it uses Modernizr .flexbox.flexwrap</p>
             <h5>SCSS</h5>
             <pre>
@@ -116,24 +131,41 @@
             </pre>
             <hr>
             <h2>The 8 point grid</h2>
-            <p>By placing everything on an 8 point grid you ensure that your design looks grisp on all screens. Even screens with a 1.5 dpi.</p>
+            <p>By placing everything on an 8 point grid you ensure that your design looks grisp on all screens. Even screens with a 1.5 dpi. <a href="https://builttoadapt.io/intro-to-the-8-point-grid-system-d2573cde8632">Read more</a></p>
             <p>Another great advantage is that your whole design looks very balanced.</p>
-            <p>Exceptions coul be fonts and their line-heights. For an optimal result you should try to maintain the line-height on the 8pt grid as much as possible. Whenever that's impossible you can always fall back to 4 pixel instead of. You can have a line-height of 20px for example.</p>
+            <p>Exceptions could be fonts and their line-heights. For an optimal result you should try to maintain the line-height on the 8pt grid as much as possible. Whenever that's impossible because it looks weird you can always fall back to 4 pixel instead. You can have a line-height of 20px for example. It's adviced to keep the bottom margin on the 8pt grid.</p>
             <h3>How to maintain your 8pt grid</h3>
-            <p>For the grid mixins everything is in the 8pt grid.</p>
-            <p>Paragraphs, headings and other styled block elements there's a standard 24px bottom with an exception for the headings. They have 16px to form groups with their content below.</p>
-            <p>For all other elements we have two more options to use</p>
+            <p>The grid mixins are fully based on the 8pt grid so there's nothing special you'll have to do there</p>
+            <p>Paragraphs, headings and other styled block elements have a standard 24px bottom-margin with an exception for the headings. Headings have a 16px bottom-margin be a bit closer to the content it's representing to form a visual group.</p>
+            <p>For all other elements there are three more options to use</p>
             <ol>
-                <li>Use our spacing mixin to follow the responsive gutter.</li>
-                <li>If you don't want to follow the responsive gutter you can use our spacing function.</li>
+                <li>Use good old spacing variables that don't grow with the responisve gutters.</li>
+                <li>Use the spacing mixin to follow the responsive gutter.</li>
+                <li>If you don't want to automatically follow the responsive gutter you can use the spacing function.</li>
             </ol>
+            <h4>Spacing variables</h4>
+            <p>...</p>
+            <p class="pull-top"><a href="#">See spacing variables</a></p>
             <h4>Spacing mixin</h4>
-            <p>The mixin follows the responsive breakpoints so you don't have to worry about it yourself. You can also stop the 'growing' at any breakpoint (or custom width), it will keep the spacing from that breakpoint. It also accepts 0.5, 1 and 2 as an argument for the amount of spacing.</p>
+            <p>The mixin follows the responsive breakpoints so you don't have to worry about that yourself. You can also stop the 'growing gutters' at any breakpoint (or custom width), it will keep the spacing from that breakpoint. It also accepts 0.5, 1 and 2 as an argument for the amount of spacing.</p>
+            <p class="pull-top"><a href="#">See spacing mixin</a></p>
             <h4>Spacing function</h4>
             <p>Accepts a value of 0.5, 1 or 2. If used in @include breakpoint it uses that current gutter. Also possible to define which 'size' it should use.</p>
+            <p class="pull-top"><a href="#">See spacing function</a></p>
             <h3>Why the $illusion- prefix for some variables?</h3>
             <p>We make a difference between 'settings variables' and 'regular variables'. Settings variables are prefixed with <code>$illusion-</code> because they won’t change once set. Regular variables like <code>$spacing-</code> and <code>$color-</code> will be used inside your own SCSS, so we want to keep them short and memorisable</p>
-            <h2>Grid example</h2>
+            <hr>
+            <h2>Useful functions</h2>
+            <p>De private grid functions hoeven hier niet bij</p>
+            <hr>
+            <h2>Useful mixins</h2>
+            <p>Allemaal useful</p>
+            <hr>
+            <h2>Accessible forms</h2>
+            <p>Forms are very important elements on your website. It is the way of getting connected with your audience. A lot of website hide their forms inside the styling of the page. Light grey borders with rounded corners and light shadows. More often that not these forms are not very accessible color contrast wise.</p>
+            <p>You can include the forms by setting the $illusion-form: to yes. Large fileds and large radio and checkboxes.</p>
+            <p>Based on BEM</p>
+            <p class="pull-top"><a href="#">See example form</a></p>
         </article>
     </div>
 </main>

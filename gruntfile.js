@@ -57,7 +57,11 @@ module.exports = function(grunt) {
             options: {
                 roundingPrecision: -1,
                 sourceMap: false,
-                level: 2
+                level: 2,
+                mergeSemantically: true,
+                restructureRules: true,
+                mergeNonAdjacentByBody: true,
+                mergeMediaQueries: true
             },
             site: {
                 files: {

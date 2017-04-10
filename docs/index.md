@@ -67,24 +67,10 @@ Illusion uses a grid that:
 Shouldn't be nested. Adds clearfix when used without flexbox and removes clearfix when used as flexbox. Adds left and right padding following the responsive gutters.
 
 ##### Arguments
-<table>
-    <thead>
-    <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Default</th>
-        <th>Description</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td>flexbox</td>
-        <td>string</td>
-        <td>false</td>
-        <td>Can be anything but false to work. For example both @include container(flex); and @include container(true); will enable flexbox</td>
-    </tr>
-    </tbody>
-</table>
+
+| Name | Type | Default | Description |
+| ---- | ---- | ------- | ----------- |
+| `flexbox` | `string` | `false` | Can be anything but false to work. For example both `@include container(flex);` and `@include container(true);` will enable flexbox |
 
 ##### Dependencies
 For flexbox to work properly it uses Modernizr .flexbox.flexwrap

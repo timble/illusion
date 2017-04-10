@@ -37,9 +37,9 @@ header {
 aside {
   display: block;
   width: 100%;
-  @include span(4, $beta);
   @include spacing(vertical);
   @include spacing(horizontal, padding, 1, 0 to $charlie);
+  @include span(4, $beta);
   background: #bdc3c7;
 }
 

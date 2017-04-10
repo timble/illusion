@@ -10,6 +10,21 @@ module.exports = function(grunt) {
     grunt.initConfig({
 
 
+        // Copy bower files
+        copy: {
+            css: {
+                files: [
+                    {
+                        expand: true,
+                        src: ['docs/css/*.css'],
+                        dest: 'docs/_site/css',
+                        flatten: true
+                    }
+                ]
+            }
+        },
+
+
         // Compile sass files
         sass: {
             options: {
@@ -17,31 +32,22 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
-                    'docs/css/style.css': 'docs/scss/style.scss'
+                    'docs/css/style.css': 'docs/_scss/style.scss'
                 }
             }
         },
 
 
-        // Browser Sync
-        browserSync: {
-            dev: {
-                bsFiles: {
-                    src: [
-                        "docs/css/*.css",
-                        "docs/index.html"
-                    ]
-                },
-                options: {
-                    server: {
-                        baseDir: "./docs/"
-                    },
-                    port: 4558, // Illu(sion) on phone numpad
-                    open: true, // Opens site in your default browser, no need to remember the port
-                    notify: false,
-                    watchTask: true,
-                    injectChanges: false
-                }
+        // Autoprefixer
+        autoprefixer: {
+            options: {
+                browsers: ['> 5%', 'last 2 versions']
+            },
+            files: {
+                expand: true,
+                flatten: true,
+                src: 'docs/css/*.css',
+                dest: 'docs/css/'
             }
         },
 
@@ -61,16 +67,26 @@ module.exports = function(grunt) {
         },
 
 
-        // Autoprefixer
-        autoprefixer: {
-            options: {
-                browsers: ['> 5%', 'last 2 versions']
-            },
-            files: {
-                expand: true,
-                flatten: true,
-                src: 'docs/css/*.css',
-                dest: 'docs/css/'
+        // Browser Sync
+        browserSync: {
+            dev: {
+                bsFiles: {
+                    src: [
+                        "docs/_site/*.*",
+                        "docs/_site/css/*.css",
+                        "docs/_site/js/*.js"
+                    ]
+                },
+                options: {
+                    port: 4558, // Illu(sion) on phone numpad
+                    open: true, // Opens site in your default browser, no need to remember the port
+                    notify: false,
+                    watchTask: true,
+                    injectChanges: true,
+                    server: {
+                        baseDir: "docs/_site"
+                    }
+                }
             }
         },
 
@@ -98,27 +114,44 @@ module.exports = function(grunt) {
 
         // Shell commands
         shell: {
-            updateCanIUse: {
-                command: 'npm update caniuse-db'
+            jekyllBuild: {
+                command: 'cd docs; bundle exec jekyll build --safe --future --incremental --config _config.yml,_config.local.yml'
             }
         },
 
 
         // Watch files
         watch: {
-            sass: {
+            css: {
                 files: [
-                    'docs/scss/*.scss',
-                    'docs/scss/**/*.scss',
+                    'docs/_scss/*.scss',
+                    'docs/_scss/**/*.scss',
                     'scss/*.scss',
                     'scss/**/*.scss',
                     'scss/**/**/*.scss',
                     'scss/**/**/**/*.scss'
                 ],
                 // tasks: ['sass', 'cssmin', 'autoprefixer'],
-                tasks: ['sass', 'autoprefixer', 'cssmin'],
+                tasks: ['sass', 'cssmin', 'autoprefixer', 'copy:css'],
                 options: {
                     interrupt: true,
+                    atBegin: true
+                }
+            },
+            jekyll: {
+                files: [
+                    'docs/_includes/*.*',
+                    'docs/_includes/**/*.*',
+                    'docs/_layouts/*.*',
+                    'docs/images/*.*',
+                    'docs/images/**/*.*',
+                    'docs/images/**/**/*.*',
+                    'docs/index.md',
+                    'docs/config.yml'
+                ],
+                tasks: ['shell:jekyllBuild'],
+                options: {
+                    interrupt: false,
                     atBegin: true
                 }
             }

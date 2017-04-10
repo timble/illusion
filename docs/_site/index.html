@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Illusion - Illusion</title>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="text/html; charset=utf-8" http-equiv="content-type"  />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name=”mobile-web-app-capable” content=”yes” />
+<meta name="apple-mobile-web-app-title" content="Illusion">
+
+<meta name="twitter:title" content="Illusion" />
+<meta property="og:title" content="Illusion" />
+
+<meta property="og:url" content="http://localhost:4558/docs/" />
+<meta property="og:locale" content="nl_BE" />
+<meta property="og:site_name" content="Illusion" />
+
+
+
+
+
+
+
+
+<meta name="description" content="## What is Illusion?
+Illusion is an opinionated, mobile-first, progressive enhanced, accessible, SCSS base kit to kickstart websites with and helps you keep ..." />
+<meta name="twitter:description" content="## What is Illusion?
+Illusion is an opinionated, mobile-first, progressive enhanced, accessible, SCSS base kit to kickstart websites with and helps you keep ..." />
+<meta property="og:description" content="## What is Illusion?
+Illusion is an opinionated, mobile-first, progressive enhanced, accessible, SCSS base kit to kickstart websites with and helps you keep ..." />
+
+
+
+
+
+
+
+<meta property="og:type" content="article" />
+<meta property="og:image" content="/images.jpg?w=3200&h1600" />
+<meta name="twitter:card" content="summary_large_image">
+
+
+    <link href="/images/favicon.ico" rel="shortcut icon" type="image/ico"/>
+    <link href="/images/favicon.png" rel="shortcut icon" type="image/png"/>
+    <link href="/images/xtouch-icon.png" rel="apple-touch-icon" type="image/png"/>
+    <link rel="stylesheet" href="/css/style.css?1491830130">
+    <script src="/js/modernizr.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="skip">
+    <div class="container">
+        <a href="#content">Skip to content</a>
+    </div>
+</div>
+
+<header>
+    <div class="container">
+        <h1>Illusion docs</h1>
+    </div>
+</header>
+
+
+<main>
+    <div class="container-flex">
+        <aside>
+            <h2>Menu</h2>
+            <ul>
+                <li><a href="#n1">Number 1</a></li>
+            </ul>
+        </aside>
+        <article>
+            <h2 id="what-is-illusion">What is Illusion?</h2>
+<p>Illusion is an opinionated, mobile-first, progressive enhanced, accessible, SCSS base kit to kickstart websites with and helps you keep a maintainable SCSS code base.</p>
+
+<p>Illusion is built to be used on top of <a href="#">Modernizr</a> and <a href="#">Normalize</a>. When included, Illusion does nothing. Enable features by <a href="#">setting SCSS variables</a> or using mixins.</p>
+
+<p>Illusion let’s you write consistent and clean code in less time. Based on an 8 point grid for harmonized design. Illusion is a combination of modern web-design philosophies, base styling and a mixin library.</p>
+
+<h3 id="features">Features</h3>
+<ul>
+  <li><a href="#">Grid mixins</a></li>
+  <li><a href="#">8 point grid</a></li>
+  <li><a href="#">Useful functions</a></li>
+  <li><a href="#">Useful mixins</a></li>
+  <li><a href="#">Accessible forms</a></li>
+</ul>
+
+<hr />
+
+<h2 id="getting-started">Getting started</h2>
+<p>Bower install, or NPM, or …</p>
+
+<p>Include Modernizr and add at least JS - No JS detection and flexbox detection if you’re gonna use flexbox</p>
+
+<p>Include Normalize and include it before anything else (Not included in Illusion)</p>
+
+<p>Define your variables before loading illusion</p>
+
+<p>Load illusion</p>
+
+<p>Add your own mixins after illusion</p>
+
+<p>Ready to go!</p>
+
+<h3 id="your-base-scss-file-might-look-like-this">Your base SCSS file might look like this:</h3>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="o">//</span> <span class="nt">Normalize</span>
+<span class="k">@import</span> <span class="s1">"normalize"</span><span class="p">;</span>
+
+<span class="o">//</span> <span class="nt">Variables</span>
+<span class="k">@import</span><span class="p">:</span> <span class="s1">"variables"</span><span class="p">;</span> <span class="o">//</span> <span class="nt">Hold</span> <span class="nt">your</span> <span class="nt">own</span> <span class="nt">variables</span> <span class="nt">as</span> <span class="nt">well</span> <span class="nt">as</span> <span class="nt">Illusion</span> <span class="nt">overrides</span>
+
+<span class="o">//</span> <span class="nt">Import</span> <span class="nt">Illusion</span>
+<span class="k">@import</span> <span class="s1">"illusion"</span><span class="p">;</span>
+
+<span class="o">//</span> <span class="nt">Mixins</span>
+<span class="k">@import</span> <span class="s1">"mixins"</span><span class="p">;</span> <span class="o">//</span> <span class="nt">You</span> <span class="nt">can</span> <span class="nt">overwrite</span> <span class="nt">Illusion</span> <span class="nt">mixins</span> <span class="nt">here</span> <span class="nt">if</span> <span class="nt">you</span> <span class="nt">wish</span><span class="o">&lt;/</span><span class="nt">code</span><span class="o">&gt;</span></code></pre></figure>
+
+<hr />
+
+<h2 id="grid-mixins">Grid mixins</h2>
+
+<p>One of the most important aspects of a website is the grid it’s based on. It can make a page feel balanced and in harmony when used right, but when used wrong a page may appear untrustworthy.</p>
+
+<p>Illusion uses a grid that:</p>
+<ol>
+  <li>Is based on an 8 point grid</li>
+  <li>Has responsive gutters ranging from 16px to 40px</li>
+  <li>Is using calc() and pixels so vertical gutters follow horizontal ones</li>
+  <li>Comes with an optional fallback for the <code>body</code> element to have a set-width</li>
+</ol>
+
+<h3 id="available-mixins">Available mixins:</h3>
+
+<h4 id="mixin-container">@mixin container</h4>
+<p>Shouldn’t be nested. Adds clearfix when used without flexbox and removes clearfix when used as flexbox. Adds left and right padding following the responsive gutters.</p>
+
+<h5 id="arguments">Arguments</h5>
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Default</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>flexbox</td>
+        <td>string</td>
+        <td>false</td>
+        <td>Can be anything but false to work. For example both @include container(flex); and @include container(true); will enable flexbox</td>
+    </tr>
+    </tbody>
+</table>
+
+<h5 id="dependencies">Dependencies</h5>
+<p>For flexbox to work properly it uses Modernizr .flexbox.flexwrap</p>
+
+<h5 id="scss">SCSS</h5>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.foo</span> <span class="p">{</span>
+  <span class="err">@include</span> <span class="err">container();</span>
+<span class="p">}</span>
+<span class="nc">.bar</span> <span class="p">{</span>
+  <span class="err">@include</span> <span class="err">container(flex);</span>
+<span class="p">}</span></code></pre></figure>
+
+<h5 id="css">CSS</h5>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.foo</span> <span class="p">{</span>
+    <span class="nl">margin-left</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span>
+    <span class="nl">margin-right</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span>
+    <span class="nl">max-width</span><span class="p">:</span> <span class="m">1280px</span><span class="p">;</span>
+    <span class="nl">padding-left</span><span class="p">:</span> <span class="m">16px</span><span class="p">;</span>
+    <span class="nl">padding-right</span><span class="p">:</span> <span class="m">16px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.foo</span><span class="nd">:before</span><span class="o">,</span>
+<span class="nc">.foo</span><span class="nd">:after</span> <span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="n">table</span><span class="p">;</span>
+    <span class="nl">content</span><span class="p">:</span> <span class="s1">" "</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.foo</span><span class="nd">:after</span> <span class="p">{</span>
+    <span class="nl">clear</span><span class="p">:</span> <span class="nb">both</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.flexbox.flexwrap</span> <span class="nc">.bar</span> <span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+    <span class="nl">flex-wrap</span><span class="p">:</span> <span class="n">wrap</span><span class="p">;</span>
+    <span class="err">//</span> <span class="err">And</span> <span class="err">more...</span>
+<span class="p">}</span></code></pre></figure>
+
+<hr />
+
+<h2 id="the-8-point-grid">The 8 point grid</h2>
+<p>By placing everything on an 8 point grid you ensure that your design looks grisp on all screens. Even screens with a 1.5 dpi. <a href="https://builttoadapt.io/intro-to-the-8-point-grid-system-d2573cde8632">Read more</a></p>
+
+<p>Another great advantage is that your whole design looks very balanced.</p>
+
+<p>Exceptions could be fonts and their line-heights. For an optimal result you should try to maintain the line-height on the 8pt grid as much as possible. Whenever that’s impossible because it looks weird you can always fall back to 4 pixel instead. You can have a line-height of 20px for example. It’s adviced to keep the bottom margin on the 8pt grid.</p>
+
+<h3 id="how-to-maintain-your-8pt-grid">How to maintain your 8pt grid</h3>
+<p>The grid mixins are fully based on the 8pt grid so there’s nothing special you’ll have to do there</p>
+
+<p>Paragraphs, headings and other styled block elements have a standard 24px bottom-margin with an exception for the headings. Headings have a 16px bottom-margin be a bit closer to the content it’s representing to form a visual group.</p>
+
+<p>For all other elements there are three more options to use</p>
+<ol>
+  <li>Use good old spacing variables that don’t grow with the responisve gutters.</li>
+  <li>Use the spacing mixin to follow the responsive gutter.</li>
+  <li>If you don’t want to automatically follow the responsive gutter you can use the spacing function.</li>
+</ol>
+
+<h4 id="spacing-variables">Spacing variables</h4>
+<p>…</p>
+
+<p class="pull-top"><a href="#">See spacing variables</a>
+
+#### Spacing mixin
+The mixin follows the responsive breakpoints so you don't have to worry about that yourself. You can also stop the 'growing gutters' at any breakpoint (or custom width), it will keep the spacing from that breakpoint. It also accepts 0.5, 1 and 2 as an argument for the amount of spacing.
+
+<p class="pull-top"><a href="#">See spacing mixin</a>
+
+#### Spacing function
+Accepts a value of 0.5, 1 or 2. If used in @include breakpoint it uses that current gutter. Also possible to define which 'size' it should use.
+
+<p class="pull-top"><a href="#">See spacing function</a>
+
+### Why the $illusion- prefix for some variables?
+We make a difference between 'settings variables' and 'regular variables'. Settings variables are prefixed with <code>$illusion-</code> because they won’t change once set. Regular variables like <code>$spacing-</code> and <code>$color-</code> will be used inside your own SCSS, so we want to keep them short and memorisable
+
+---
+
+## Useful functions
+De private grid functions hoeven hier niet bij
+
+---
+
+## Useful mixins
+Allemaal useful
+
+---
+
+## Accessible forms
+Forms are very important elements on your website. It is the way of getting connected with your audience. A lot of website hide their forms inside the styling of the page. Light grey borders with rounded corners and light shadows. More often that not these forms are not very accessible color contrast wise.
+
+You can include the forms by setting the $illusion-form: to yes. Large fileds and large radio and checkboxes.
+
+Based on BEM
+<p class="pull-top"><a href="#">See example form</a>
+</p></p></p></p>
+
+        </article>
+    </div>
+</main>
+
+<hr>
+
+<section>
+    <div class="container">
+        <h1>Examples</h1>
+        <h2>Grid example</h2>
+        <div class="gallery">
+            <div class="gallery__item">Item</div>
+            <div class="gallery__item">Item</div>
+            <div class="gallery__item">Item</div>
+            <div class="gallery__item">Item</div>
+            <div class="gallery__item">Item</div>
+            <div class="gallery__item">Item</div>
+            <div class="gallery__item">Item</div>
+            <div class="gallery__item">Item</div>
+            <div class="gallery__item">Item</div>
+            <div class="gallery__item">Item</div>
+            <div class="gallery__item">Item</div>
+            <div class="gallery__item">Item</div>
+        </div>
+        <h2>Form example</h2>
+        <form action="" method="get" class="form">
+            <div class="form__group">
+                <label class="form__label" for="firstname">Name</label>
+                <input required class="form__input" type="text" name="firstname" value="" id="firstname">
+            </div>
+            <div class="form__group">
+                <label class="form__label" for="email">Email</label>
+                <input required class="form__input" type="email" name="email" value="" id="email">
+            </div>
+
+            <div class="form__group">
+                <label class="form__label" for="message">Message</label>
+                <textarea class="form__input" rows="4" cols="50" name="message" id="message"></textarea>
+            </div>
+
+            <div class="form__group">
+                <fieldset>
+                    <div class="form__multiple-choice">
+                        <input id="check-newsletter1" type="checkbox" name="newsletter" value="Yes">
+                        <label for="check-newsletter1">Option 1</label>
+                    </div>
+                    <div class="form__multiple-choice">
+                        <input id="check-newsletter2" type="checkbox" name="newsletter" value="Yes">
+                        <label for="check-newsletter2">Option 2</label>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="form__group">
+                <fieldset>
+                    <div class="form__multiple-choice">
+                        <input id="radio-newsletter1" type="radio" name="newsletter" value="Yes">
+                        <label for="radio-newsletter1">Option 1</label>
+                    </div>
+                    <div class="form__multiple-choice">
+                        <input id="radio-newsletter2" type="radio" name="newsletter" value="Yes">
+                        <label for="radio-newsletter2">Option 2</label>
+                    </div>
+                </fieldset>
+            </div>
+            <button type="submit" class="button">Submit</button>
+        </form>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        Copyright
+    </div>
+</footer>
+
+<script src="/js/scripts.js?1491830130" async></script>
+
+</body>
+</html>

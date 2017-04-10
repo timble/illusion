@@ -3,9 +3,12 @@
   "description": "Illusion",
   "author": "Timble",
   "devDependencies": {
+    "bower": "^1.8.0",
+    "caniuse-db": "*",
     "grunt": "^1.0.1",
     "grunt-autoprefixer": "^3.0.*",
     "grunt-browser-sync": "^2.2.*",
+    "grunt-contrib-copy": "*",
     "grunt-contrib-cssmin": "^1.0.*",
     "grunt-contrib-watch": "^1.0.*",
     "grunt-modernizr": "1.0.*",

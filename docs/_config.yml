@@ -1,0 +1,32 @@
+# Site info
+name: Illusion
+url: https://illusion.timble.net
+
+# Default permalink
+permalink: /blog/:year/:month/:title/
+
+# Blog separator
+excerpt_separator: <!--more-->
+
+# Social channels
+#twitter:
+#facebook:
+#facebook_page:
+
+# imgix.com configuration
+#imgix_source: 'https://reisspecialist.imgix.net'
+#imgix_parameters: '&auto=format&q=85&lossless=true'
+
+# Google API key
+#google_api_key: 'AIzaSyBcVyJfyXWTYkYdsOwVFbc17tATsY5ZJQw'
+
+# Build settings
+exclude:
+  - CNAME
+  - Gemfile
+  - README.md
+  - node_modules
+  - Gruntfile.js
+  - package.json
+  - '*.lock'
+  - '*.map'

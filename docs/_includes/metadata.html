@@ -1,0 +1,55 @@
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="text/html; charset=utf-8" http-equiv="content-type"  />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name=”mobile-web-app-capable” content=”yes” />
+<meta name="apple-mobile-web-app-title" content="{{ site.name }}">
+
+<meta name="twitter:title" content="{{ page.title | strip_html }}" />
+<meta property="og:title" content="{{ page.title | strip_html }}" />
+
+<meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+<meta property="og:locale" content="nl_BE" />
+<meta property="og:site_name" content="{{ site.name }}" />
+
+{% if site.twitter %}
+<meta name="twitter:site" content="{{ site.twitter }}">
+{% endif %}
+
+{% if site.facebook %}
+<meta content="https://www.facebook.com/{{ site.facebook }}" property="article:publisher" />
+{% endif %}
+
+{% if site.facebook_page %}
+<meta property="fb:pages" content="{{ site.facebook_page }}" />
+{% endif %}
+
+{% if page.description %}
+<meta name="description" content="{{ page.description | strip_html | truncate: 160 }}" />
+<meta name="twitter:description" content="{{ page.description | strip_html | truncate: 160 }}" />
+<meta property="og:description" content="{{ page.description | strip_html | truncate: 160 }}" />
+{% else %}
+<meta name="description" content="{{ page.content | strip_html | truncate: 160 }}" />
+<meta name="twitter:description" content="{{ page.content | strip_html | truncate: 160 }}" />
+<meta property="og:description" content="{{ page.content | strip_html | truncate: 160 }}" />
+{% endif %}
+
+{% if page.image %}
+{% assign path = page.image %}
+{% else %}
+{% assign path = page.url | prepend: 'images' | split: '/' | join: '/' | prepend: '/' | append: '.jpg' %}
+{% endif %}
+
+{% assign image = path | prepend: site.imgix_source | append: '?w=3200&h1600' | append: site.imgix_parameters %}
+
+{% if page.layout == 'home' %}
+<meta property="og:type" content="website" />
+<meta property="og:image" content="{{ site.url }}/images/logo.jpg" />
+<meta name="twitter:card" content="summary">
+{% else %}
+<meta property="og:type" content="article" />
+<meta property="og:image" content="{{ image }}" />
+<meta name="twitter:card" content="summary_large_image">
+{% endif %}

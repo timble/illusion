@@ -6,6 +6,11 @@ $illusion-body-fallback: true;
 @import "normalize";
 @import "../../scss/illusion";
 
+// Skip link
+@import "skip";
+@import "highlight";
+
+// Styling
 body {
   color: $color-type;
 }
@@ -30,14 +35,18 @@ header {
 }
 
 aside {
-  @include span(4);
+  display: block;
+  width: 100%;
+  @include span(4, $beta);
   @include spacing(vertical);
   @include spacing(horizontal, padding, 1, 0 to $charlie);
   background: #bdc3c7;
 }
 
 article {
-  @include span(8);
+  display: block;
+  width: 100%;
+  @include span(8, $beta);
   @include spacing(vertical);
 }
 

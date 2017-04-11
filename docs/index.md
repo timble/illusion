@@ -46,7 +46,7 @@ Ready to go!
 @import "illusion";
 
 // Mixins
-@import "mixins"; // You can overwrite Illusion mixins here if you wish</code>
+@import "mixins"; // You can overwrite Illusion mixins here if you wish
 {% endhighlight %}
 
 ---
@@ -59,7 +59,7 @@ Illusion uses a grid that:
 1. Is based on an 8 point grid
 1. Has responsive gutters ranging from 16px to 40px
 1. Is using calc() and pixels so vertical gutters follow horizontal ones
-1. Comes with an optional fallback for the <code>body</code> element to have a set-width
+1. Comes with an optional fallback for the `<body>` element to have a set-width
 
 ### Available mixins:
 
@@ -146,7 +146,7 @@ Accepts a value of 0.5, 1 or 2. If used in @include breakpoint it uses that curr
 <p class="pull-top"><a href="#">See spacing function</a>
 
 ### Why the $illusion- prefix for some variables?
-We make a difference between 'settings variables' and 'regular variables'. Settings variables are prefixed with <code>$illusion-</code> because they won’t change once set. Regular variables like <code>$spacing-</code> and <code>$color-</code> will be used inside your own SCSS, so we want to keep them short and memorisable
+We make a difference between 'settings variables' and 'regular variables'. Settings variables are prefixed with `$illusion-` because they won’t change once set. Regular variables like `$spacing-` and `$color-` will be used inside your own SCSS, so we want to keep them short and memorisable
 
 ---
 

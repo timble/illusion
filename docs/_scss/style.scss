@@ -12,6 +12,7 @@ $illusion-body-fallback: true;
 
 // Styling
 body {
+  position: relative;
   color: $color-type;
 }
 
@@ -73,7 +74,7 @@ hr {
   border: none;
   height: 2px;
   background: rgba(0, 0, 0, 0.2);
-  @include spacing(vertical, margin);
+  @include spacing(vertical, margin, $minus: 2px);
 }
 
 pre {
@@ -128,3 +129,5 @@ td {
   padding: $spacing-m
 }
 
+// Grid
+@import "grid";

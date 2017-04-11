@@ -20,11 +20,11 @@ green     #859900  operators, other keywords
   width: 100%;
 
   pre {
-    padding: 1em 0 1em 1em;
+    padding: $spacing-m 0 $spacing-m $spacing-m;
   }
 
   code {
-    padding-right: 1em;
+    padding-right: $spacing-m;
   }
 }
 

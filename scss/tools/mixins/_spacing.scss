@@ -1,4 +1,4 @@
-@mixin spacing($sides: all minus none, $type: padding, $amount: 1, $fromto: false to false, $lastchildnone: false) {
+@mixin spacing($sides: all minus none, $type: padding, $amount: 1, $fromto: false to false, $lastchildnone: false, $minus: 0) {
 
   @if ($amount != -0.5 and $amount != 0.5 and $amount != -1 and $amount != 1 and $amount != -2 and $amount != 2) {
     @warn 'The `spacing` mixin is designed to work best with the following values: -0.5 | 0.5 | -1 | 1 | -2 | 2';
@@ -21,11 +21,18 @@
     $skip: getsides($sides);
     $spacing: map-get($values, gutter) * $amount;
     $width: map-get($values, width);
+    $subtract: $minus;
+
+    @debug $skip;
 
     // Only run between starting and stopping breakpoints
     @include ifBreakpoint($width) {
       @if ($side == all or $side == vertical or $side == top) and $skip != top {
-        #{$type}-top: $spacing;
+        @if ($side == all or $side == vertical) and ($skip != bottom) {
+          @if ($minus % 2 != 0) { @warn '$minus should be an even number'; }
+          $subtract: $minus / 2;
+        }
+        #{$type}-top: $spacing - $subtract;
 
         @if $lastchildnone != false {
           &:last-child {
@@ -36,7 +43,11 @@
 
       // Right
       @if ($side == all or $side == horizontal or $side == right) and $skip != right {
-        #{$type}-right: $spacing;
+        @if ($side == all or $side == horizontal) and ($skip != left) {
+          @if ($minus % 2 != 0) { @warn '$minus should be an even number'; }
+          $subtract: $minus / 2;
+        }
+        #{$type}-right: $spacing - $subtract;
 
         @if $lastchildnone != false {
           &:last-child {
@@ -47,7 +58,11 @@
 
       // Bottom
       @if ($side == all or $side == vertical or $side == bottom) and $skip != bottom {
-        #{$type}-bottom: $spacing;
+        @if ($side == all or $side == vertical) and ($skip != top) {
+          @if ($minus % 2 != 0) { @warn '$minus should be an even number'; }
+          $subtract: $minus / 2;
+        }
+        #{$type}-bottom: $spacing - $subtract;
 
         @if $lastchildnone != false {
           &:last-child {
@@ -58,7 +73,11 @@
 
       // Left
       @if ($side == all or $side == horizontal or $side == left) and $skip != left {
-        #{$type}-left: $spacing;
+        @if ($side == all or $side == horizontal) and ($skip != right) {
+          @if ($minus % 2 != 0) { @warn '$minus should be an even number'; }
+          $subtract: $minus / 2;
+        }
+        #{$type}-left: $spacing - $subtract;
 
         @if $lastchildnone != false {
           &:last-child {

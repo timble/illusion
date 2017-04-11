@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Illusion - Illusion</title>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="text/html; charset=utf-8" http-equiv="content-type"  />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name=”mobile-web-app-capable” content=”yes” />
+<meta name="apple-mobile-web-app-title" content="Illusion">
+
+<meta name="twitter:title" content="Illusion" />
+<meta property="og:title" content="Illusion" />
+
+<meta property="og:url" content="http://localhost:4558//examples/" />
+<meta property="og:locale" content="nl_BE" />
+<meta property="og:site_name" content="Illusion" />
+
+
+
+
+
+
+
+
+<meta name="description" content="
+    
+        Examples
+        Grid example
+        
+            Item
+            Item
+            Item
+            Item
+            Item
+            Item
+  ..." />
+<meta name="twitter:description" content="
+    
+        Examples
+        Grid example
+        
+            Item
+            Item
+            Item
+            Item
+            Item
+            Item
+  ..." />
+<meta property="og:description" content="
+    
+        Examples
+        Grid example
+        
+            Item
+            Item
+            Item
+            Item
+            Item
+            Item
+  ..." />
+
+
+
+
+
+
+
+<meta property="og:type" content="article" />
+<meta property="og:image" content="/images/examples.jpg?w=3200&h1600" />
+<meta name="twitter:card" content="summary_large_image">
+
+
+    <link href="/images/favicon.ico" rel="shortcut icon" type="image/ico"/>
+    <link href="/images/favicon.png" rel="shortcut icon" type="image/png"/>
+    <link href="/images/xtouch-icon.png" rel="apple-touch-icon" type="image/png"/>
+    <link rel="stylesheet" href="/css/style.css?1491905818">
+    <script src="/js/modernizr.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="skip">
+    <div class="container">
+        <a href="#content">Skip to content</a>
+    </div>
+</div>
+
+<header>
+    <div class="container">
+        <a href="http://localhost:4558/">Illusion docs</a>
+    </div>
+</header>
+
+
+
+<section>
+    <div class="container">
+        <h1>Examples</h1>
+        <h2>Grid example</h2>
+        <div class="gallery">
+            <div class="gallery__item">Item</div>
+            <div class="gallery__item">Item</div>
+            <div class="gallery__item">Item</div>
+            <div class="gallery__item">Item</div>
+            <div class="gallery__item">Item</div>
+            <div class="gallery__item">Item</div>
+            <div class="gallery__item">Item</div>
+            <div class="gallery__item">Item</div>
+            <div class="gallery__item">Item</div>
+            <div class="gallery__item">Item</div>
+            <div class="gallery__item">Item</div>
+            <div class="gallery__item">Item</div>
+        </div>
+        <h2>Form example</h2>
+        <form action="" method="get" class="form">
+            <div class="form__group">
+                <label class="form__label" for="firstname">Name</label>
+                <input required class="form__input" type="text" name="firstname" value="" id="firstname">
+            </div>
+            <div class="form__group">
+                <label class="form__label" for="email">Email</label>
+                <input required class="form__input" type="email" name="email" value="" id="email">
+            </div>
+
+            <div class="form__group">
+                <label class="form__label" for="message">Message</label>
+                <textarea class="form__input" rows="4" cols="50" name="message" id="message"></textarea>
+            </div>
+
+            <div class="form__group">
+                <fieldset>
+                    <div class="form__multiple-choice">
+                        <input id="check-newsletter1" type="checkbox" name="newsletter" value="Yes">
+                        <label for="check-newsletter1">Option 1</label>
+                    </div>
+                    <div class="form__multiple-choice">
+                        <input id="check-newsletter2" type="checkbox" name="newsletter" value="Yes">
+                        <label for="check-newsletter2">Option 2</label>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="form__group">
+                <fieldset>
+                    <div class="form__multiple-choice">
+                        <input id="radio-newsletter1" type="radio" name="newsletter" value="Yes">
+                        <label for="radio-newsletter1">Option 1</label>
+                    </div>
+                    <div class="form__multiple-choice">
+                        <input id="radio-newsletter2" type="radio" name="newsletter" value="Yes">
+                        <label for="radio-newsletter2">Option 2</label>
+                    </div>
+                </fieldset>
+            </div>
+            <button type="submit" class="button">Submit</button>
+        </form>
+    </div>
+</section>
+
+
+<footer>
+    <div class="container">
+        Copyright
+    </div>
+</footer>
+
+<link rel="stylesheet" href="/css/grid.css">
+
+<div class="overlay-grid-container" style="display: none;">
+    <div class="overlay-grid">
+        <div class="overlay-grid__item"></div>
+        <div class="overlay-grid__item"></div>
+        <div class="overlay-grid__item"></div>
+        <div class="overlay-grid__item"></div>
+        <div class="overlay-grid__item"></div>
+        <div class="overlay-grid__item"></div>
+        <div class="overlay-grid__item"></div>
+        <div class="overlay-grid__item"></div>
+        <div class="overlay-grid__item"></div>
+        <div class="overlay-grid__item"></div>
+        <div class="overlay-grid__item"></div>
+        <div class="overlay-grid__item"></div>
+    </div>
+    <div class="overlay-8pixel"></div>
+    <script>
+        var isCtrl = false;
+        document.onkeyup = function(e) {
+            if ( e.keyCode == 17 ) isCtrl = false;
+        };
+
+        document.onkeydown = function(e) {
+            e = e || window.event;
+            if ( e.keyCode == 17 ) isCtrl = true;
+
+            // Grid (G key)
+            if (e.keyCode == 71 && isCtrl == true) {
+                var gridContainer = document.getElementsByClassName('overlay-grid-container')[0];
+                if (gridContainer.style.display == 'none') {
+                    gridContainer.style.display = 'block';
+                } else {
+                    gridContainer.style.display = 'none';
+                }
+            }
+
+            // Remove all modernizr classes
+            if (e.keyCode == 77 && isCtrl == true) { // M key
+                document.documentElement.className = "";
+            }
+        };
+    </script>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+@import "../../scss/illusion";
+
+/* A visual grid to show if elements are correctly inside the grid */
+
+.overlay-grid-container {
+  position: absolute; // Fill complete page
+  top: 0; // Fill complete page
+  right: 0; // Fill complete page
+  bottom: 0; // Fill complete page
+  left: 0; // Fill complete page
+  height: 100%; // Fill complete page
+  pointer-events: none; // So we can use devtools on elements behind it when grid is visible
+}
+
+.overlay-grid {
+  @include container;
+  @include coverall;
+  outline: 1px solid magenta; // Use outline not to mess with css positioning
+  overflow: hidden;
+}
+
+.overlay-grid__item {
+  outline: 1px solid magenta; // Use outline not to mess with css positioning
+  height: 100%; // Fill complete page
+
+  @include gallery(6, 0 to $alpha--plus);
+  @include gallery(3, $alpha--plus to $beta);
+  @include gallery(2, $beta to $charlie);
+  @include gallery(1, $charlie);
+}
+
+.overlay-8pixel {
+  @include coverall;
+  background-size: 8px 8px;
+  background-image: repeating-linear-gradient(0deg, rgba(magenta, 0.33), rgba(magenta, 0.33) 1px, transparent 1px, transparent 8px);
+}

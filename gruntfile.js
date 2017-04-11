@@ -150,6 +150,8 @@ module.exports = function(grunt) {
                     'docs/images/*.*',
                     'docs/images/**/*.*',
                     'docs/images/**/**/*.*',
+                    'docs/example/**/*.*',
+                    'docs/example/*.*',
                     'docs/index.md',
                     'docs/config.yml'
                 ],

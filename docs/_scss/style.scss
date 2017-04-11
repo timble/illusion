@@ -2,6 +2,10 @@ $illusion-extendalize: true;
 $illusion-form: true;
 $illusion-body-fallback: true;
 
+$color1: #8cc63f;
+$color2: #37b549;
+$color3: #089448;
+
 // Import Illusion
 @import "normalize";
 @import "../../scss/illusion";
@@ -20,28 +24,49 @@ body {
   @include container;
 }
 
-.container-flex {
-  @include container(flex);
-}
-
-header,
-footer {
-  background: #34495e;
-  color: #ecf0f1;
-  @include font-smoothing;
+main {
+  position: relative;
 }
 
 header {
   @include spacing(vertical);
+  background: linear-gradient(to right, $color1 0%, $color2 100%);
+}
+
+nav {
+  @include clearfix;
+  padding: $spacing-m;
+}
+
+.logo {
+  display: block;
+  float: left;
+  width: 166px;
+}
+
+.navigation {
+  float: right;
+  @include reset;
+  margin: $spacing-s 0;
+
+  li {
+    float: left;
+    margin-left: 2em;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
 }
 
 aside {
+  position: sticky;
+  top: 0;
   display: block;
   width: 100%;
   @include spacing(vertical);
   @include spacing(horizontal, padding, 1, 0 to $charlie);
   @include span(4, $beta);
-  background: #bdc3c7;
 }
 
 article {
@@ -52,7 +77,10 @@ article {
 }
 
 footer {
-  @include spacing(vertical, padding, 1, 0 to $charlie)
+  @include spacing(vertical, padding, 1, 0 to $charlie);
+  background: $color3;
+  color: white;
+  @include font-smoothing;
 }
 
 h1 {

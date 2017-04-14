@@ -26,6 +26,21 @@ Illusion is very opinionated. We believe in certain values and philosophies. Ill
 ---
 
 ### 8 point responsive grid
+By placing everything on an 8 point grid you ensure that your design looks crisp on all screens. Even screens with a 1.5 dpi. <a href="https://builttoadapt.io/intro-to-the-8-point-grid-system-d2573cde8632">Read more</a>
+
+Another great advantage is that your whole design looks very harmonized and in balance.
+
+Exceptions could be fonts and their line-heights. For an optimal result you should try to maintain the line-height on the 8pt grid as much as possible. Whenever that's impossible because it looks weird you can always fall back to 4 pixel instead. You can have a line-height of 20px for example. It's adviced to keep the bottom margin on the 8pt grid.
+
+#### How to maintain your 8pt grid
+The grid mixins (span, gallery, spacing etc.) are fully based on the 8pt grid so there's nothing special you'll have to do there
+
+Paragraphs, headings and other styled block elements have a standard 24px bottom-margin with an exception for the headings. Headings have a 16px bottom-margin to be a bit closer to the content it's representing to form a visual group.
+
+For all other elements there are three more options to use
+1. Use good old [spacing variables](#) that don't grow with the responsive gutters.
+1. Use the [spacing mixin](#) to follow the responsive gutter.
+1. If you don't want to automatically follow the responsive gutter you can use the [spacing function](#).
 
 ---
 

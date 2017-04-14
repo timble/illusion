@@ -64,7 +64,7 @@ Include Modernizr and at least add ..." />
     <link href="/images/favicon.ico" rel="shortcut icon" type="image/ico"/>
     <link href="/images/favicon.png" rel="shortcut icon" type="image/png"/>
     <link href="/images/xtouch-icon.png" rel="apple-touch-icon" type="image/png"/>
-    <link rel="stylesheet" href="/css/style.css?1492172018">
+    <link rel="stylesheet" href="/css/style.css?1492174825">
     <script src="/js/modernizr.js" type="text/javascript"></script>
     <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600,700" rel="stylesheet">
 </head>
@@ -89,6 +89,9 @@ Include Modernizr and at least add ..." />
                 <a href="/examples">Examples</a>
             </li>
             <li>
+                <a href="/faq">FAQ</a>
+            </li>
+            <li>
                 <a href="https://www.github.com/timble/illusion">Github</a>
             </li>
         </ul>
@@ -109,8 +112,7 @@ Include Modernizr and at least add ..." />
         <aside>
             <h2>Menu</h2>
             <ul>
-                <li><a href="#n1">What is Illusion</a></li>
-                <li><a href="#n1">Getting started</a></li>
+                <li><a href="#getting-started">Getting started</a></li>
                 <li><a href="#n1">Grid</a></li>
                 <li><a href="#n1">Functions</a></li>
                 <li><a href="#n1">Mixins</a></li>
@@ -128,7 +130,7 @@ Include Modernizr and at least add ..." />
 
 <h3 id="step-3">Step 3</h3>
 <ul>
-  <li>Include Normalize and include it before anything else (Not included in Illusion). For example:</li>
+  <li>Include Normalize and include it before anything else (Not included in Illusion).</li>
   <li>Define your variables before loading illusion</li>
   <li>Load illusion</li>
   <li>Add your own mixins after illusion</li>
@@ -229,62 +231,39 @@ Include Modernizr and at least add ..." />
 <hr />
 
 <h2 id="the-8-point-grid">The 8 point grid</h2>
-<p>By placing everything on an 8 point grid you ensure that your design looks grisp on all screens. Even screens with a 1.5 dpi. <a href="https://builttoadapt.io/intro-to-the-8-point-grid-system-d2573cde8632">Read more</a></p>
 
-<p>Another great advantage is that your whole design looks very balanced.</p>
+<hr />
 
-<p>Exceptions could be fonts and their line-heights. For an optimal result you should try to maintain the line-height on the 8pt grid as much as possible. Whenever that’s impossible because it looks weird you can always fall back to 4 pixel instead. You can have a line-height of 20px for example. It’s adviced to keep the bottom margin on the 8pt grid.</p>
+<h2 id="useful-functions">Useful functions</h2>
+<p>De private grid functions hoeven hier niet bij</p>
 
-<h3 id="how-to-maintain-your-8pt-grid">How to maintain your 8pt grid</h3>
-<p>The grid mixins are fully based on the 8pt grid so there’s nothing special you’ll have to do there</p>
+<hr />
 
-<p>Paragraphs, headings and other styled block elements have a standard 24px bottom-margin with an exception for the headings. Headings have a 16px bottom-margin be a bit closer to the content it’s representing to form a visual group.</p>
+<h2 id="useful-mixins">Useful mixins</h2>
+<p>Allemaal useful</p>
 
-<p>For all other elements there are three more options to use</p>
-<ol>
-  <li>Use good old spacing variables that don’t grow with the responisve gutters.</li>
-  <li>Use the spacing mixin to follow the responsive gutter.</li>
-  <li>If you don’t want to automatically follow the responsive gutter you can use the spacing function.</li>
-</ol>
+<hr />
 
-<h4 id="spacing-variables">Spacing variables</h4>
-<p>…</p>
+<h2 id="accessible-forms">Accessible forms</h2>
+<p>Forms are very important elements on your website. It is the way of getting connected with your audience. A lot of website hide their forms inside the styling of the page. Light grey borders with rounded corners and light shadows. More often that not these forms are not very accessible color contrast wise.</p>
 
-<p class="pull-top"><a href="#">See spacing variables</a>
+<p>You can include the forms by setting the $illusion-form: to yes. Large fileds and large radio and checkboxes.</p>
 
-#### Spacing mixin
-The mixin follows the responsive breakpoints so you don't have to worry about that yourself. You can also stop the 'growing gutters' at any breakpoint (or custom width), it will keep the spacing from that breakpoint. It also accepts 0.5, 1 and 2 as an argument for the amount of spacing.
+<p>Based on BEM</p>
 
-<p class="pull-top"><a href="#">See spacing mixin</a>
+<h5 id="spacing-variables">Spacing variables</h5>
 
-#### Spacing function
-Accepts a value of 0.5, 1 or 2. If used in @include breakpoint it uses that current gutter. Also possible to define which 'size' it should use.
+<p>See spacing variables</p>
 
-<p class="pull-top"><a href="#">See spacing function</a>
+<h5 id="spacing-mixin">Spacing mixin</h5>
+<p>The mixin follows the responsive breakpoints so you don’t have to worry about that yourself. You can also stop the ‘growing gutters’ at any breakpoint (or custom width), it will keep the spacing from that breakpoint. It also accepts 0.5, 1 and 2 as an argument for the amount of spacing.</p>
 
-### Why the $illusion- prefix for some variables?
-We make a difference between 'settings variables' and 'regular variables'. Settings variables are prefixed with `$illusion-` because they won’t change once set. Regular variables like `$spacing-` and `$color-` will be used inside your own SCSS, so we want to keep them short and memorisable
+<p>See spacing mixin</p>
 
----
+<h5 id="spacing-function">Spacing function</h5>
+<p>Accepts a value of 0.5, 1 or 2. If used in @include breakpoint it uses that current gutter. Also possible to define which ‘size’ it should use.</p>
 
-## Useful functions
-De private grid functions hoeven hier niet bij
-
----
-
-## Useful mixins
-Allemaal useful
-
----
-
-## Accessible forms
-Forms are very important elements on your website. It is the way of getting connected with your audience. A lot of website hide their forms inside the styling of the page. Light grey borders with rounded corners and light shadows. More often that not these forms are not very accessible color contrast wise.
-
-You can include the forms by setting the $illusion-form: to yes. Large fileds and large radio and checkboxes.
-
-Based on BEM
-<p class="pull-top"><a href="#">See example form</a>
-</p></p></p></p>
+<p>See spacing function</p>
 
         </article>
     </div>

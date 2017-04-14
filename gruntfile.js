@@ -153,6 +153,8 @@ module.exports = function(grunt) {
                     'site/docs/*.*',
                     'site/examples/**/*.*',
                     'site/examples/*.*',
+                    'site/faq/**/*.*',
+                    'site/faq/*.*',
                     'site/index.md',
                     'site/config.yml'
                 ],

@@ -22,7 +22,7 @@ header {
   @include spacing(vertical);
   background: linear-gradient(248deg, $color1, $color2, $color3);
   background-size: 200% 200%;
-  animation: headerAnimate 30s ease infinite;
+  animation: headerAnimate 20s ease infinite;
 }
 
 .header--large {
@@ -78,19 +78,24 @@ nav {
 }
 
 aside {
-  position: sticky;
-  top: 0;
   display: block;
   width: 100%;
   @include spacing(vertical);
   @include spacing(horizontal, padding, 1, 0 to $charlie);
-  @include span(4, $beta);
+  @include span(4, $beta to $delta);
+  @include span(3, $delta);
+
+  @include breakpoint($beta) {
+    position: sticky;
+    top: 0;
+  }
 }
 
 article {
   display: block;
   width: 100%;
-  @include span(8, $beta);
+  @include span(8, $beta to $delta);
+  @include span(9, $delta);
   @include spacing(vertical);
 
   h1, h2, h3 {

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Frequently Asked Questions - Illusion</title>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="text/html; charset=utf-8" http-equiv="content-type"  />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name=”mobile-web-app-capable” content=”yes” />
+<meta name="apple-mobile-web-app-title" content="Illusion">
+
+<meta name="twitter:title" content="Frequently Asked Questions" />
+<meta property="og:title" content="Frequently Asked Questions" />
+
+<meta property="og:url" content="http://localhost:4558//faq/" />
+<meta property="og:locale" content="nl_BE" />
+<meta property="og:site_name" content="Illusion" />
+
+
+
+
+
+
+
+
+<meta name="description" content="## Why the $illusion- prefix for some variables?
+We make a difference between 'settings variables' and 'regular variables'. Settings variables are prefixed w..." />
+<meta name="twitter:description" content="## Why the $illusion- prefix for some variables?
+We make a difference between 'settings variables' and 'regular variables'. Settings variables are prefixed w..." />
+<meta property="og:description" content="## Why the $illusion- prefix for some variables?
+We make a difference between 'settings variables' and 'regular variables'. Settings variables are prefixed w..." />
+
+
+
+
+
+
+
+<meta property="og:type" content="article" />
+<meta property="og:image" content="/images/faq.jpg?w=3200&h1600" />
+<meta name="twitter:card" content="summary_large_image">
+
+
+    <link href="/images/favicon.ico" rel="shortcut icon" type="image/ico"/>
+    <link href="/images/favicon.png" rel="shortcut icon" type="image/png"/>
+    <link href="/images/xtouch-icon.png" rel="apple-touch-icon" type="image/png"/>
+    <link rel="stylesheet" href="/css/style.css?1492174775">
+    <script src="/js/modernizr.js" type="text/javascript"></script>
+    <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600,700" rel="stylesheet">
+</head>
+<body>
+
+<div class="skip">
+    <div class="container">
+        <a href="#content">Skip to content</a>
+    </div>
+</div>
+
+<nav>
+    <div class="container">
+        <a href="http://localhost:4558/" class="logo">
+            <img src="/images/illusion-logo.png" alt="Illusion logo" />
+        </a>
+        <ul class="navigation">
+            <li>
+                <a href="/docs">Docs</a>
+            </li>
+            <li>
+                <a href="/examples">Examples</a>
+            </li>
+            <li>
+                <a href="/faq">FAQ</a>
+            </li>
+            <li>
+                <a href="https://www.github.com/timble/illusion">Github</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<header class="header header--">
+    <div class="container">
+        
+        <h1>Frequently Asked Questions</h1>
+        
+    </div>
+</header>
+
+
+<main>
+    <div class="container">
+        <aside>
+            <h2>Menu</h2>
+            <ul>
+                <li><a href="#getting-started">Getting started</a></li>
+                <li><a href="#n1">Grid</a></li>
+                <li><a href="#n1">Functions</a></li>
+                <li><a href="#n1">Mixins</a></li>
+                <li><a href="#n1">Elements</a></li>
+            </ul>
+        </aside>
+        <article>
+            <h2 id="why-the-illusion--prefix-for-some-variables">Why the $illusion- prefix for some variables?</h2>
+<p>We make a difference between ‘settings variables’ and ‘regular variables’. Settings variables are prefixed with <code class="highlighter-rouge">$illusion-</code> because they won’t change once set. Regular variables like <code class="highlighter-rouge">$spacing-</code> and <code class="highlighter-rouge">$color-</code> will be used inside your own SCSS, so we want to keep them short and memorisable</p>
+
+<h2 id="question">Question</h2>
+<p>Answer</p>
+
+        </article>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        Copyright 2017, Timble, all rights reserved
+    </div>
+</footer>
+
+<link rel="stylesheet" href="/css/grid.css">
+
+<div class="overlay-grid-container" style="display: none;">
+    <div class="overlay-grid">
+        <div class="overlay-grid__item"></div>
+        <div class="overlay-grid__item"></div>
+        <div class="overlay-grid__item"></div>
+        <div class="overlay-grid__item"></div>
+        <div class="overlay-grid__item"></div>
+        <div class="overlay-grid__item"></div>
+        <div class="overlay-grid__item"></div>
+        <div class="overlay-grid__item"></div>
+        <div class="overlay-grid__item"></div>
+        <div class="overlay-grid__item"></div>
+        <div class="overlay-grid__item"></div>
+        <div class="overlay-grid__item"></div>
+    </div>
+    <div class="overlay-8pixel"></div>
+    <script>
+        var isCtrl = false;
+        document.onkeyup = function(e) {
+            if ( e.keyCode == 17 ) isCtrl = false;
+        };
+
+        document.onkeydown = function(e) {
+            e = e || window.event;
+            if ( e.keyCode == 17 ) isCtrl = true;
+
+            // Grid (G key)
+            if (e.keyCode == 71 && isCtrl == true) {
+                var gridContainer = document.getElementsByClassName('overlay-grid-container')[0];
+                if (gridContainer.style.display == 'none') {
+                    gridContainer.style.display = 'block';
+                } else {
+                    gridContainer.style.display = 'none';
+                }
+            }
+
+            // Remove all modernizr classes
+            if (e.keyCode == 77 && isCtrl == true) { // M key
+                document.documentElement.className = "";
+            }
+        };
+    </script>
+</div>
+
+</body>
+</html>

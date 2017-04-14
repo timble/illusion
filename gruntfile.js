@@ -17,7 +17,7 @@ module.exports = function(grunt) {
                     {
                         expand: true,
                         src: ['docs/css/*.css'],
-                        dest: 'docs/_docs/css',
+                        dest: 'docs/_site/css',
                         flatten: true
                     }
                 ]
@@ -76,8 +76,8 @@ module.exports = function(grunt) {
             dev: {
                 bsFiles: {
                     src: [
-                        "docs/_docs/*.*",
-                        "docs/_docs/css/*.css",
+                        "docs/_site/*.*",
+                        "docs/_site/css/*.css",
                         "docs/_docs/js/*.js"
                     ]
                 },

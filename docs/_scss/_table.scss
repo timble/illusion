@@ -1,0 +1,103 @@
+// Heavily inspired by David bushell
+// https://dbushell.com/2012/01/05/responsive-tables-2/
+
+// Regular
+table {
+  border-collapse: collapse;
+  font-size: 14px;
+  line-height: 24px;
+  @include content-block;
+}
+
+th,
+td {
+  padding: 8px 12px 7px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  height: 40px;
+}
+
+th {
+  background: #eee;
+  text-align: left;
+}
+
+// Responsive
+@include breakpoint(0, $charlie) {
+
+  table {
+    vertical-align: top;
+    max-width: 100%;
+    white-space: nowrap;
+    border-right: 1px solid #ddd;
+    display: flex;
+    overflow: hidden;
+    background: none;
+  }
+
+  thead {
+    display: flex;
+    flex-shrink: 0;
+  }
+
+  tbody {
+    -webkit-overflow-scrolling: touch;
+    background: radial-gradient(ellipse at left, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 75%) 0 center, radial-gradient(ellipse at right, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 75%) 100% center;
+    background-size: 10px 100%, 10px 100%;
+    background-attachment: scroll, scroll;
+    background-repeat: no-repeat;
+    display: flex;
+    position: relative;
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    tr:first-child {
+      @include psuedo(before) {
+        z-index: 1;
+        width: 20px;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-image: linear-gradient(to right, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
+      }
+    }
+
+    tr:last-child {
+      @include psuedo(after) {
+        z-index: 1;
+        width: 20px;
+        height: 100%;
+        top: 0;
+        right: 0;
+        background-image: linear-gradient(to left, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
+      }
+    }
+  }
+
+  tr {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+
+    &:last-child {
+      td {
+        border-right: 0;
+      }
+    }
+  }
+
+  th,
+  td {
+    position: relative;
+    z-index: 2;
+    display: block;
+  }
+
+  td {
+    border-left: none;
+  }
+
+  th:not(:last-child),
+  td:not(:last-child) {
+    border-bottom: 0;
+  }
+}

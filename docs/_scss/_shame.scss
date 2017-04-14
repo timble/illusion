@@ -173,24 +173,6 @@ pre {
   @include content-block;
 }
 
-table {
-  border-collapse: collapse;
-  font-size: 15px;
-  line-height: 24px;
-  @include content-block;
-}
-
-th {
-  text-align: left;
-  padding: $spacing-s $spacing-m $spacing-s 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-td {
-  text-align: left;
-  padding: $spacing-s $spacing-m $spacing-s 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
 
 .button {
   background: #bdc3c7;
@@ -233,4 +215,8 @@ td {
     @include gallery(2, $charlie to $delta);
     @include gallery(1, $delta);
   }
+}
+
+.spaced-vertical {
+  @include spacing(vertical);
 }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Illusion - Illusion</title>
+    <title>Documentation - Illusion</title>
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta content="text/html; charset=utf-8" http-equiv="content-type"  />
@@ -11,10 +11,10 @@
 <meta name=”mobile-web-app-capable” content=”yes” />
 <meta name="apple-mobile-web-app-title" content="Illusion">
 
-<meta name="twitter:title" content="Illusion" />
-<meta property="og:title" content="Illusion" />
+<meta name="twitter:title" content="Documentation" />
+<meta property="og:title" content="Documentation" />
 
-<meta property="og:url" content="http://localhost:4558//" />
+<meta property="og:url" content="http://localhost:4558//docs/" />
 <meta property="og:locale" content="nl_BE" />
 <meta property="og:site_name" content="Illusion" />
 
@@ -25,12 +25,30 @@
 
 
 
-<meta name="description" content="## What is Illusion?
-Illusion is an opinionated, mobile-first, progressive enhanced, accessible, SCSS base kit to kickstart websites with and helps you keep ..." />
-<meta name="twitter:description" content="## What is Illusion?
-Illusion is an opinionated, mobile-first, progressive enhanced, accessible, SCSS base kit to kickstart websites with and helps you keep ..." />
-<meta property="og:description" content="## What is Illusion?
-Illusion is an opinionated, mobile-first, progressive enhanced, accessible, SCSS base kit to kickstart websites with and helps you keep ..." />
+<meta name="description" content="## Getting started
+### Step 1
+{% highlight bash %}
+$ bower install illusion --save //@TODO
+{% endhighlight %}
+
+### Step 2
+Include Modernizr and at least add ..." />
+<meta name="twitter:description" content="## Getting started
+### Step 1
+{% highlight bash %}
+$ bower install illusion --save //@TODO
+{% endhighlight %}
+
+### Step 2
+Include Modernizr and at least add ..." />
+<meta property="og:description" content="## Getting started
+### Step 1
+{% highlight bash %}
+$ bower install illusion --save //@TODO
+{% endhighlight %}
+
+### Step 2
+Include Modernizr and at least add ..." />
 
 
 
@@ -39,15 +57,16 @@ Illusion is an opinionated, mobile-first, progressive enhanced, accessible, SCSS
 
 
 <meta property="og:type" content="article" />
-<meta property="og:image" content="/images.jpg?w=3200&h1600" />
+<meta property="og:image" content="/images/docs.jpg?w=3200&h1600" />
 <meta name="twitter:card" content="summary_large_image">
 
 
     <link href="/images/favicon.ico" rel="shortcut icon" type="image/ico"/>
     <link href="/images/favicon.png" rel="shortcut icon" type="image/png"/>
     <link href="/images/xtouch-icon.png" rel="apple-touch-icon" type="image/png"/>
-    <link rel="stylesheet" href="/css/style.css?1492163952">
+    <link rel="stylesheet" href="/css/style.css?1492170496">
     <script src="/js/modernizr.js" type="text/javascript"></script>
+    <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600,700" rel="stylesheet">
 </head>
 <body>
 
@@ -76,12 +95,12 @@ Illusion is an opinionated, mobile-first, progressive enhanced, accessible, SCSS
     </div>
 </nav>
 
-<header>
+<header class="header header--">
     <div class="container">
-        A thing that is or is likely to be wrongly perceived or interpreted by the senses.
+        <h1>A thing that is or is likely to be wrongly perceived or interpreted by the senses.</h1>
+        <h2>(Also known as a mixin library etc. etc. etc. (the real tagline))</h2>
     </div>
 </header>
-
 
 
 <main>
@@ -98,52 +117,35 @@ Illusion is an opinionated, mobile-first, progressive enhanced, accessible, SCSS
             </ul>
         </aside>
         <article>
-            <h2 id="what-is-illusion">What is Illusion?</h2>
-<p>Illusion is an opinionated, mobile-first, progressive enhanced, accessible, SCSS base kit to kickstart websites with and helps you keep a maintainable SCSS code base.</p>
+            <h2 id="getting-started">Getting started</h2>
+<h3 id="step-1">Step 1</h3>
 
-<p>Illusion is built to be used on top of <a href="#">Modernizr</a> and <a href="#">Normalize</a>. When included, Illusion does nothing. Enable features by <a href="#">setting SCSS variables</a> or using mixins.</p>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>bower install illusion --save //@TODO</code></pre></figure>
 
-<p>Illusion let’s you write consistent and clean code in less time. Based on an 8 point grid for harmonized design. Illusion is a combination of modern web-design philosophies, base styling and a mixin library.</p>
+<h3 id="step-2">Step 2</h3>
+<p>Include Modernizr and at least add <code class="highlighter-rouge">JS - No JS detection</code> and <code class="highlighter-rouge">flexbox detection</code> if you’re gonna use flexbox.</p>
 
-<h3 id="features">Features</h3>
+<h3 id="step-3">Step 3</h3>
 <ul>
-  <li><a href="#">Grid mixins</a></li>
-  <li><a href="#">8 point grid</a></li>
-  <li><a href="#">Useful functions</a></li>
-  <li><a href="#">Useful mixins</a></li>
-  <li><a href="#">Accessible forms</a></li>
+  <li>Include Normalize and include it before anything else (Not included in Illusion). For example:</li>
+  <li>Define your variables before loading illusion</li>
+  <li>Load illusion</li>
+  <li>Add your own mixins after illusion</li>
 </ul>
 
-<hr />
-
-<h2 id="getting-started">Getting started</h2>
-<p>Bower install, or NPM, or …</p>
-
-<p>Include Modernizr and add at least JS - No JS detection and flexbox detection if you’re gonna use flexbox</p>
-
-<p>Include Normalize and include it before anything else (Not included in Illusion)</p>
-
-<p>Define your variables before loading illusion</p>
-
-<p>Load illusion</p>
-
-<p>Add your own mixins after illusion</p>
-
-<p>Ready to go!</p>
-
-<h3 id="your-base-scss-file-might-look-like-this">Your base SCSS file might look like this:</h3>
+<h4 id="your-base-scss-file-might-look-like-this">Your base SCSS file might look like this:</h4>
 
 <figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="o">//</span> <span class="nt">Normalize</span>
-<span class="k">@import</span> <span class="s1">"normalize"</span><span class="p">;</span>
+<span class="k">@import</span> <span class="s1">"bower_components/normalize"</span><span class="p">;</span>
 
-<span class="o">//</span> <span class="nt">Variables</span>
-<span class="k">@import</span><span class="p">:</span> <span class="s1">"variables"</span><span class="p">;</span> <span class="o">//</span> <span class="nt">Hold</span> <span class="nt">your</span> <span class="nt">own</span> <span class="nt">variables</span> <span class="nt">as</span> <span class="nt">well</span> <span class="nt">as</span> <span class="nt">Illusion</span> <span class="nt">overrides</span>
+<span class="o">//</span> <span class="nt">Variables</span> <span class="nt">-</span> <span class="nt">Hold</span> <span class="nt">your</span> <span class="nt">own</span> <span class="nt">variables</span> <span class="nt">as</span> <span class="nt">well</span> <span class="nt">as</span> <span class="nt">Illusion</span> <span class="nt">overrides</span>
+<span class="k">@import</span><span class="p">:</span> <span class="s1">"variables"</span><span class="p">;</span> 
 
 <span class="o">//</span> <span class="nt">Import</span> <span class="nt">Illusion</span>
-<span class="k">@import</span> <span class="s1">"illusion"</span><span class="p">;</span>
+<span class="k">@import</span> <span class="s1">"bower_components/illusion"</span><span class="p">;</span>
 
-<span class="o">//</span> <span class="nt">Mixins</span>
-<span class="k">@import</span> <span class="s1">"mixins"</span><span class="p">;</span> <span class="o">//</span> <span class="nt">You</span> <span class="nt">can</span> <span class="nt">overwrite</span> <span class="nt">Illusion</span> <span class="nt">mixins</span> <span class="nt">here</span> <span class="nt">if</span> <span class="nt">you</span> <span class="nt">wish</span></code></pre></figure>
+<span class="o">//</span> <span class="nt">Mixins</span> <span class="nt">-</span> <span class="nt">You</span> <span class="nt">can</span> <span class="nt">overwrite</span> <span class="nt">Illusion</span> <span class="nt">mixins</span> <span class="nt">here</span> <span class="nt">if</span> <span class="nt">you</span> <span class="nt">wish</span>
+<span class="k">@import</span> <span class="s1">"mixins"</span><span class="p">;</span></code></pre></figure>
 
 <hr />
 
@@ -289,7 +291,7 @@ Based on BEM
 
 <footer>
     <div class="container">
-        Copyright
+        Copyright 2017, Timble, all rights reserved
     </div>
 </footer>
 

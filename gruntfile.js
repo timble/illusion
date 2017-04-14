@@ -16,8 +16,8 @@ module.exports = function(grunt) {
                 files: [
                     {
                         expand: true,
-                        src: ['docs/css/*.css'],
-                        dest: 'docs/_site/css',
+                        src: ['site/css/*.css'],
+                        dest: 'site/_site/css',
                         flatten: true
                     }
                 ]
@@ -32,7 +32,7 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
-                    'docs/css/style.css': 'docs/_scss/style.scss'
+                    'site/css/style.css': 'site/_scss/style.scss'
                 }
             }
         },
@@ -46,8 +46,8 @@ module.exports = function(grunt) {
             files: {
                 expand: true,
                 flatten: true,
-                src: 'docs/css/*.css',
-                dest: 'docs/css/'
+                src: 'site/css/*.css',
+                dest: 'site/css/'
             }
         },
 
@@ -65,7 +65,7 @@ module.exports = function(grunt) {
             },
             site: {
                 files: {
-                    'docs/css/style.css': 'docs/css/style.css'
+                    'site/css/style.css': 'site/css/style.css'
                 }
             }
         },
@@ -76,9 +76,9 @@ module.exports = function(grunt) {
             dev: {
                 bsFiles: {
                     src: [
-                        "docs/_site/*.*",
-                        "docs/_site/css/*.css",
-                        "docs/_site/js/*.js"
+                        "site/_site/*.*",
+                        "site/_site/css/*.css",
+                        "site/_site/js/*.js"
                     ]
                 },
                 options: {
@@ -88,7 +88,7 @@ module.exports = function(grunt) {
                     watchTask: true,
                     injectChanges: true,
                     server: {
-                        baseDir: "docs/_site"
+                        baseDir: "site/_site"
                     }
                 }
             }
@@ -99,7 +99,7 @@ module.exports = function(grunt) {
         modernizr: {
             dist: {
                 "cache": true,
-                "dest": "docs/js/modernizr.js",
+                "dest": "site/js/modernizr.js",
                 "options": [
                     "html5shiv",
                     "prefixedCSS",
@@ -119,7 +119,7 @@ module.exports = function(grunt) {
         // Shell commands
         shell: {
             jekyllBuild: {
-                command: 'cd docs; bundle exec jekyll build --safe --future --incremental --config _config.yml,_config.local.yml'
+                command: 'cd site; bundle exec jekyll build --safe --future --incremental --config _config.yml,_config.local.yml'
             }
         },
 
@@ -128,14 +128,13 @@ module.exports = function(grunt) {
         watch: {
             css: {
                 files: [
-                    'docs/_scss/*.scss',
-                    'docs/_scss/**/*.scss',
+                    'site/_scss/*.scss',
+                    'site/_scss/**/*.scss',
                     'scss/*.scss',
                     'scss/**/*.scss',
                     'scss/**/**/*.scss',
                     'scss/**/**/**/*.scss'
                 ],
-                // tasks: ['sass', 'cssmin', 'autoprefixer'],
                 tasks: ['sass', 'cssmin', 'autoprefixer', 'copy:css'],
                 options: {
                     interrupt: true,
@@ -144,16 +143,18 @@ module.exports = function(grunt) {
             },
             jekyll: {
                 files: [
-                    'docs/_includes/*.*',
-                    'docs/_includes/**/*.*',
-                    'docs/_layouts/*.*',
-                    'docs/images/*.*',
-                    'docs/images/**/*.*',
-                    'docs/images/**/**/*.*',
-                    'docs/example/**/*.*',
-                    'docs/example/*.*',
-                    'docs/index.md',
-                    'docs/config.yml'
+                    'site/_includes/*.*',
+                    'site/_includes/**/*.*',
+                    'site/_layouts/*.*',
+                    'site/images/*.*',
+                    'site/images/**/*.*',
+                    'site/images/**/**/*.*',
+                    'site/docs/**/*.*',
+                    'site/docs/*.*',
+                    'site/examples/**/*.*',
+                    'site/examples/*.*',
+                    'site/index.md',
+                    'site/config.yml'
                 ],
                 tasks: ['shell:jekyllBuild'],
                 options: {

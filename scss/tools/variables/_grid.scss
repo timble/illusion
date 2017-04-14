@@ -5,16 +5,12 @@ $illusion-grid-breakpoints:   (
                 width: 0,
                 gutter: 16px
         ),
-        small: (
+        beta: (
                 width: $beta,
                 gutter: 24px
         ),
-        medium: (
-                width: $charlie,
+        delta: (
+                width: $delta,
                 gutter: 32px
-        ),
-        large: (
-                width: $echo,
-                gutter: 40px
         )
 ) !default;

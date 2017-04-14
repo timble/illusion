@@ -1,19 +1,3 @@
-$illusion-extendalize: true;
-$illusion-form: true;
-$illusion-body-fallback: true;
-
-$color1: #8cc63f;
-$color2: #37b549;
-$color3: #089448;
-
-// Import Illusion
-@import "normalize";
-@import "../../scss/illusion";
-
-// Skip link
-@import "skip";
-@import "highlight";
-
 // Styling
 body {
   position: relative;
@@ -36,8 +20,35 @@ footer {
 
 header {
   @include spacing(vertical);
-  background: linear-gradient(to right, $color2 0%, $color1 100%);
-  font-size: 24px;
+  background: linear-gradient(248deg, $color1, $color2, $color3);
+  background-size: 200% 200%;
+  animation: headerAnimate 30s ease infinite;
+}
+
+.header--large {
+  @include spacing(vertical, padding, 2);
+
+  h1 {
+    font-size: 48px;
+    line-height: 56px;
+  }
+
+  h2 {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+@keyframes headerAnimate {
+  0% {
+    background-position: 0% 0%
+  }
+  50% {
+    background-position: 100% 100%
+  }
+  100% {
+    background-position: 0% 0%
+  }
 }
 
 nav {
@@ -81,6 +92,10 @@ article {
   width: 100%;
   @include span(8, $beta);
   @include spacing(vertical);
+
+  a {
+    color: $color3;
+  }
 }
 
 footer {
@@ -177,5 +192,3 @@ td {
   }
 }
 
-// Grid
-@import "grid";

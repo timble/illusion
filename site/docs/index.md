@@ -1,52 +1,36 @@
 ---
 layout: default
-title: Illusion
----
-
-## What is Illusion?
-Illusion is an opinionated, mobile-first, progressive enhanced, accessible, SCSS base kit to kickstart websites with and helps you keep a maintainable SCSS code base.
-
-Illusion is built to be used on top of <a href="#">Modernizr</a> and <a href="#">Normalize</a>. When included, Illusion does nothing. Enable features by <a href="#">setting SCSS variables</a> or using mixins.
-
-Illusion let's you write consistent and clean code in less time. Based on an 8 point grid for harmonized design. Illusion is a combination of modern web-design philosophies, base styling and a mixin library.
-
-### Features
-* [Grid mixins](#)
-* [8 point grid](#)
-* [Useful functions](#)
-* [Useful mixins](#)
-* [Accessible forms](#)
-
+title: Documentation
 ---
 
 ## Getting started
-Bower install, or NPM, or ...
+### Step 1
+{% highlight bash %}
+$ bower install illusion --save //@TODO
+{% endhighlight %}
 
-Include Modernizr and add at least JS - No JS detection and flexbox detection if you're gonna use flexbox
+### Step 2
+Include Modernizr and at least add `JS - No JS detection` and `flexbox detection` if you're gonna use flexbox.
 
-Include Normalize and include it before anything else (Not included in Illusion)
+### Step 3
+- Include Normalize and include it before anything else (Not included in Illusion). For example:
+- Define your variables before loading illusion
+- Load illusion
+- Add your own mixins after illusion
 
-Define your variables before loading illusion
-
-Load illusion
-
-Add your own mixins after illusion
-
-Ready to go!
-
-### Your base SCSS file might look like this:
+#### Your base SCSS file might look like this:
 {% highlight css %}
 // Normalize
-@import "normalize";
+@import "bower_components/normalize";
 
-// Variables
-@import: "variables"; // Hold your own variables as well as Illusion overrides
+// Variables - Hold your own variables as well as Illusion overrides
+@import: "variables"; 
 
 // Import Illusion
-@import "illusion";
+@import "bower_components/illusion";
 
-// Mixins
-@import "mixins"; // You can overwrite Illusion mixins here if you wish
+// Mixins - You can overwrite Illusion mixins here if you wish
+@import "mixins";
 {% endhighlight %}
 
 ---

@@ -41,7 +41,7 @@ One of the most important aspects of a website is the grid it's based on. It can
 
 Illusion uses a grid that:
 1. Is based on an 8 point grid
-1. Has responsive gutters ranging from 16px to 40px
+1. Has responsive gutters ranging from 16px to 32px (can be overwritten)
 1. Is using calc() and pixels so vertical gutters follow horizontal ones
 1. Comes with an optional fallback for the `<body>` element to have a set-width
 
@@ -95,10 +95,6 @@ For flexbox to work properly it uses Modernizr .flexbox.flexwrap
     // And more...
 }
 {% endhighlight %}
----
-
-## The 8 point grid
-
 ---
 
 ## Useful functions

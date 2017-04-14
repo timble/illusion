@@ -18,6 +18,7 @@ $green: #859900; // operators, other keywords
   background-color: $base3;
   color: $base01;
   overflow: auto;
+  -webkit-overflow-scrolling: touch;
   width: 100%;
 
   pre {

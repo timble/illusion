@@ -64,7 +64,7 @@ Include Modernizr and at least add ..." />
     <link href="/images/favicon.ico" rel="shortcut icon" type="image/ico"/>
     <link href="/images/favicon.png" rel="shortcut icon" type="image/png"/>
     <link href="/images/xtouch-icon.png" rel="apple-touch-icon" type="image/png"/>
-    <link rel="stylesheet" href="/css/style.css?1492184231">
+    <link rel="stylesheet" href="/css/style.css?1492184828">
     <script src="/js/modernizr.js" type="text/javascript"></script>
     <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600,700" rel="stylesheet">
 </head>
@@ -196,7 +196,7 @@ Include Modernizr and at least add ..." />
 <h5 id="scss">SCSS</h5>
 
 <figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.foo</span> <span class="p">{</span>
-  <span class="err">@include</span> <span class="err">container();</span>
+  <span class="err">@include</span> <span class="err">container;</span>
 <span class="p">}</span>
 <span class="nc">.bar</span> <span class="p">{</span>
   <span class="err">@include</span> <span class="err">container(flex);</span>
@@ -210,6 +210,13 @@ Include Modernizr and at least add ..." />
     <span class="nl">max-width</span><span class="p">:</span> <span class="m">1280px</span><span class="p">;</span>
     <span class="nl">padding-left</span><span class="p">:</span> <span class="m">16px</span><span class="p">;</span>
     <span class="nl">padding-right</span><span class="p">:</span> <span class="m">16px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">@media</span> <span class="n">screen</span> <span class="n">and</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">560px</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nc">.foo</span> <span class="p">{</span>
+        <span class="nl">padding-left</span><span class="p">:</span> <span class="m">24px</span><span class="p">;</span>
+        <span class="nl">padding-right</span><span class="p">:</span> <span class="m">24px</span><span class="p">;</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 
 <span class="nc">.foo</span><span class="nd">:before</span><span class="o">,</span>
@@ -317,3 +324,4 @@ Include Modernizr and at least add ..." />
 
 </body>
 </html>
+

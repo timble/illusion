@@ -62,7 +62,7 @@ For flexbox to work properly it uses Modernizr .flexbox.flexwrap
 ##### SCSS
 {% highlight css %}
 .foo {
-  @include container();
+  @include container;
 }
 .bar {
   @include container(flex);
@@ -77,6 +77,13 @@ For flexbox to work properly it uses Modernizr .flexbox.flexwrap
     max-width: 1280px;
     padding-left: 16px;
     padding-right: 16px;
+}
+
+@media screen and (min-width: 560px) {
+    .foo {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
 }
 
 .foo:before,

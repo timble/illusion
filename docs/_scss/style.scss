@@ -28,9 +28,16 @@ main {
   position: relative;
 }
 
+header,
+footer {
+  color: white;
+  @include font-smoothing;
+}
+
 header {
   @include spacing(vertical);
-  background: linear-gradient(to right, $color1 0%, $color2 100%);
+  background: linear-gradient(to right, $color2 0%, $color1 100%);
+  font-size: 24px;
 }
 
 nav {
@@ -79,8 +86,6 @@ article {
 footer {
   @include spacing(vertical, padding, 1, 0 to $charlie);
   background: $color3;
-  color: white;
-  @include font-smoothing;
 }
 
 h1 {
@@ -146,15 +151,30 @@ td {
   margin-top: -($spacing-m);
 }
 
-.gallery {
+.gallery-3,
+.gallery-12 {
   @include clearfix;
   @include spacing(bottom, margin, -1);
 }
 
 .gallery__item {
   background: #bdc3c7;
-  @include gallery(4);
   padding: $spacing-m
+}
+
+.gallery-3 {
+  .gallery__item {
+    @include gallery(4);
+  }
+}
+
+.gallery-12 {
+  .gallery__item {
+    @include gallery(4, 0 to $beta);
+    @include gallery(3, $beta to $charlie);
+    @include gallery(2, $charlie to $delta);
+    @include gallery(1, $delta);
+  }
 }
 
 // Grid

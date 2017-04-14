@@ -23,8 +23,6 @@
     $width: map-get($values, width);
     $subtract: $minus;
 
-    @debug $skip;
-
     // Only run between starting and stopping breakpoints
     @include ifBreakpoint($width) {
       @if ($side == all or $side == vertical or $side == top) and $skip != top {

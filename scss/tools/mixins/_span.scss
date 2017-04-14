@@ -40,6 +40,7 @@
         // Reset all previous NTH values
         &:nth-child(n) {
           clear: none;
+          margin-right: 0;
         }
 
         &:nth-child(n) {
@@ -51,15 +52,25 @@
           clear: left;
         }
 
+        // sub-pixel rounding fix
+        &:nth-child(#{$omega}n) {
+          margin-right: -1px;
+        }
+
         // No margin for first child
         &:first-child:nth-child(n) {
           margin-left: 0;
         }
       }
 
-      // No margin for last child
+      // No margin for first child
       &:first-child {
         margin-left: 0;
+      }
+
+      // sub-pixel rounding fix
+      &:last-child {
+        margin-right: -1px;
       }
     }
   }

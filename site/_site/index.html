@@ -46,7 +46,7 @@ Illusion is an opinionated, mobile-first, progressive enhanced, accessible, SCSS
     <link href="/images/favicon.ico" rel="shortcut icon" type="image/ico"/>
     <link href="/images/favicon.png" rel="shortcut icon" type="image/png"/>
     <link href="/images/xtouch-icon.png" rel="apple-touch-icon" type="image/png"/>
-    <link rel="stylesheet" href="/css/style.css?1492170496">
+    <link rel="stylesheet" href="/css/style.css?1492172018">
     <script src="/js/modernizr.js" type="text/javascript"></script>
     <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600,700" rel="stylesheet">
 </head>
@@ -68,10 +68,10 @@ Illusion is an opinionated, mobile-first, progressive enhanced, accessible, SCSS
                 <a href="/docs">Docs</a>
             </li>
             <li>
-                <a href="https://www.github.com/timble/illusion">Github</a>
+                <a href="/examples">Examples</a>
             </li>
             <li>
-                <a href="/examples">Examples</a>
+                <a href="https://www.github.com/timble/illusion">Github</a>
             </li>
         </ul>
     </div>
@@ -79,8 +79,10 @@ Illusion is an opinionated, mobile-first, progressive enhanced, accessible, SCSS
 
 <header class="header header--large">
     <div class="container">
+        
         <h1>A thing that is or is likely to be wrongly perceived or interpreted by the senses.</h1>
         <h2>(Also known as a mixin library etc. etc. etc. (the real tagline))</h2>
+        
     </div>
 </header>
 
@@ -90,12 +92,11 @@ Illusion is an opinionated, mobile-first, progressive enhanced, accessible, SCSS
         <aside>
             <h2>Menu</h2>
             <ul>
-                <li><a href="#n1">What is Illusion</a></li>
-                <li><a href="#n1">Getting started</a></li>
-                <li><a href="#n1">Grid</a></li>
-                <li><a href="#n1">Functions</a></li>
-                <li><a href="#n1">Mixins</a></li>
-                <li><a href="#n1">Elements</a></li>
+                <li><a href="#illusion">What is Illusion</a></li>
+                <li><a href="#opinionated">Opinionated</a></li>
+                <li><a href="#grid">8 point grid</a></li>
+                <li><a href="#base-styling">Base styling</a></li>
+                <li><a href="#mixins">Mixins</a></li>
             </ul>
         </aside>
         <article>
@@ -106,14 +107,50 @@ Illusion is an opinionated, mobile-first, progressive enhanced, accessible, SCSS
 
 <p>Illusion let’s you write consistent and clean code in less time. Based on an 8 point grid for harmonized design. Illusion is a combination of modern web-design philosophies, base styling and a mixin library.</p>
 
-<h3 id="features">Features</h3>
+<p>The reason Illusion exists is because we found ourselves copy-pasting code from project to project even though we already used several libraries. The solution for a developer is an easy one then: just create your own!</p>
+
+<hr />
+
+<h3 id="opinionated">Opinionated</h3>
+<p>Illusion is very opinionated. We believe in certain values and philosophies. Illusion could be very useful to you if you share the same ideas:</p>
+
 <ul>
-  <li><a href="#">Grid mixins</a></li>
-  <li><a href="#">8 point grid</a></li>
-  <li><a href="#">Useful functions</a></li>
-  <li><a href="#">Useful mixins</a></li>
-  <li><a href="#">Accessible forms</a></li>
+  <li>Mobile first philosophy and design</li>
+  <li>Progressive enhancement</li>
+  <li>Accessibility</li>
+  <li>Maintainable CSS</li>
+  <li>Harmonized design</li>
 </ul>
+
+<hr />
+
+<h3 id="8-point-responsive-grid">8 point responsive grid</h3>
+
+<hr />
+
+<h3 id="base-styling">Base styling</h3>
+
+<p>To stop all the copy pasting in this world we added some base styling. There are two levels that create base styling.</p>
+
+<h4 id="level-1">Level 1</h4>
+
+<p>The first level we call “Extendalize” and it basically extends Normalize styling the way we like it.</p>
+
+<p>For example we remove top margins of elements and apply a bottom margin to block level elements that need it. We also remove the bottom margin from the last element in a parent.</p>
+
+<p>Enable all extendalize features by setting the <code class="highlighter-rouge">$illusion-extendalize</code> to <code class="highlighter-rouge">true</code></p>
+
+<p>Individual features can be enabled by leaving <code class="highlighter-rouge">$illusion-extendalize</code> to <code class="highlighter-rouge">false</code> and set the feature itself to <code class="highlighter-rouge">true</code>. For example: <code class="highlighter-rouge">$illusion-extendalize-boxsizing: true;</code></p>
+
+<h4 id="level-2">Level 2</h4>
+
+<p>The second level adds default styling for forms and sets a fallback for the body element for older browsers.</p>
+
+<hr />
+
+<h3 id="mixins">Mixins</h3>
+
+<p>Illusion comes with a great mixin and function library. More info here</p>
 
         </article>
     </div>

@@ -28,10 +28,10 @@
                 <a href="/docs">Docs</a>
             </li>
             <li>
-                <a href="https://www.github.com/timble/illusion">Github</a>
+                <a href="/examples">Examples</a>
             </li>
             <li>
-                <a href="/examples">Examples</a>
+                <a href="https://www.github.com/timble/illusion">Github</a>
             </li>
         </ul>
     </div>
@@ -39,7 +39,11 @@
 
 <header class="header header--{{ include.header }}">
     <div class="container">
+        {% if include.header %}
         <h1>A thing that is or is likely to be wrongly perceived or interpreted by the senses.</h1>
         <h2>(Also known as a mixin library etc. etc. etc. (the real tagline))</h2>
+        {% else %}
+        <h1>{{ page.title }}</h1>
+        {% endif %}
     </div>
 </header>

@@ -20,9 +20,18 @@ footer {
 
 header {
   @include spacing(vertical);
-  background: linear-gradient(248deg, $color1, $color2, $color3);
-  background-size: 200% 200%;
-  animation: headerAnimate 20s ease infinite;
+  overflow: hidden;
+
+  @include psuedo(before) {
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(248deg, $color1, $color2, $color3);
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    animation: headerAnimate 20s ease infinite;
+  }
 }
 
 .header--large {
@@ -41,13 +50,13 @@ header {
 
 @keyframes headerAnimate {
   0% {
-    background-position: 0% 0%
+    transform: translate(0, 0) rotate(0deg) scale(1);
   }
   50% {
-    background-position: 100% 100%
+    transform: translate(-50%, -50%) rotate(5deg) scale(1.25);
   }
   100% {
-    background-position: 0% 0%
+    transform: translate(0, 0) rotate(0deg) scale(1);
   }
 }
 
@@ -200,4 +209,3 @@ td {
     @include gallery(1, $delta);
   }
 }
-

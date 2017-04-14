@@ -26,10 +26,10 @@ header {
     z-index: -1;
     top: 0;
     left: 0;
-    width: 200%;
-    height: 200%;
+    width: 220%;
+    height: 220%;
     background: linear-gradient(248deg, $color1, $color2, $color3);
-    transform: translate(0, 0) rotate(0deg) scale(1);
+    transform: translate(0, 0) rotate(0deg);
     animation: headerAnimate 20s ease infinite;
   }
 
@@ -60,13 +60,13 @@ header {
 
 @keyframes headerAnimate {
   0% {
-    transform: translate(0, 0) rotate(0deg) scale(1);
+    transform: translate(0, 0) rotate(0deg);
   }
   50% {
-    transform: translate(-50%, -50%) rotate(5deg) scale(1.25);
+    transform: translate(-50%, -50%) rotate(3deg);
   }
   100% {
-    transform: translate(0, 0) rotate(0deg) scale(1);
+    transform: translate(0, 0) rotate(0deg);
   }
 }
 

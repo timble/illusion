@@ -32,15 +32,25 @@ header {
     transform: translate(0, 0) rotate(0deg) scale(1);
     animation: headerAnimate 20s ease infinite;
   }
+
+  h1 {
+    font-size: 24px;
+    line-height: 32px;
+
+    @include breakpoint($beta) {
+      font-size: 32px;
+      line-height: 48px;
+    }
+
+    @include breakpoint($charlie) {
+      font-size: 48px;
+      line-height: 56px;
+    }
+  }
 }
 
 .header--large {
   @include spacing(vertical, padding, 2);
-
-  h1 {
-    font-size: 48px;
-    line-height: 56px;
-  }
 
   h2 {
     font-size: 16px;
@@ -62,23 +72,39 @@ header {
 
 nav {
   @include clearfix;
-  padding: $spacing-m;
+  padding: $spacing-m 0;
+  text-align: center;
 }
 
 .logo {
-  display: block;
-  float: left;
+  display: inline-block;
   width: 166px;
+
+  @include breakpoint($beta) {
+    display: block;
+    float: left;
+  }
 }
 
 .navigation {
-  float: right;
   @include reset;
-  margin: $spacing-s 0;
+  margin: $spacing-m 0;
+  display: flex;
+  justify-content: space-around;
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include breakpoint($beta) {
+    float: right;
+    margin: $spacing-s 0;
+  }
 
   li {
-    float: left;
-    margin-left: 2em;
+    @include breakpoint($beta) {
+      float: left;
+      margin-left: $spacing-l;
+    }
 
     &:first-child {
       margin-left: 0;
@@ -90,7 +116,6 @@ aside {
   display: block;
   width: 100%;
   @include spacing(vertical);
-  @include spacing(horizontal, padding, 1, 0 to $charlie);
   @include span(4, $beta to $delta);
   @include span(3, $delta);
 

@@ -118,6 +118,8 @@ aside {
   @include spacing(vertical);
   @include span(4, $beta to $delta);
   @include span(3, $delta);
+  max-height: 100vh;
+  overflow: auto;
 
   @include breakpoint($beta) {
     position: sticky;

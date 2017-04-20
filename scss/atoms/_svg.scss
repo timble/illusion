@@ -1,4 +1,4 @@
-@if $illusion-extendalize == true or $illusion-extendalize-svg == true {
+@if ($illusion-extendalize == true and $illusion-extendalize-svg != false) or $illusion-extendalize-svg == true {
   /**
    * SVG
    *

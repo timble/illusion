@@ -1,29 +1,32 @@
 // Container
+
 @mixin container($flexbox: false) {
 
   // Set default styling
-  @include clearfix;
   margin-left: auto;
   margin-right: auto;
   max-width: $illusion-grid-maxwidth + (largestGutter() * 2);
 
-  // Run through each breakpoint
-  @each $breakpoint, $values in $illusion-grid-breakpoints {
-    @include ifBreakpoint(map-get($values, width)) {
-      padding-left: map-get($values, gutter);
-      padding-right: map-get($values, gutter);
-    }
-  }
-
   // Flexbox
+  @if $flexbox == false {
+    @include clearfix;
+  }
   @if $flexbox != false {
-    @include modernizr('.flexbox.flexwrap') {
+    @include modernizr(flexbox, flexwrap) {
       display: flex;
       flex-wrap: wrap;
 
       // Hide psuedo elements
       // They are in the way for wrapping flex items on certain browsers
       @include clearfix(reset);
+    }
+  }
+
+  // Run through each breakpoint
+  @each $breakpoint, $values in $illusion-grid-breakpoints {
+    @include ifBreakpoint(map-get($values, width)) {
+      padding-left: map-get($values, gutter);
+      padding-right: map-get($values, gutter);
     }
   }
 }

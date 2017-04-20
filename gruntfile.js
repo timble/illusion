@@ -32,7 +32,8 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
-                    'docs/css/style.css': 'docs/_scss/style.scss'
+                    'docs/css/style.css': 'docs/_scss/style.scss',
+                    'tests/tests.css': 'tests/tests.scss'
                 }
             }
         },
@@ -133,7 +134,10 @@ module.exports = function(grunt) {
                     'scss/*.scss',
                     'scss/**/*.scss',
                     'scss/**/**/*.scss',
-                    'scss/**/**/**/*.scss'
+                    'scss/**/**/**/*.scss',
+                    'tests/*.scss',
+                    'tests/**/*.scss',
+                    'tests/**/**/*.scss'
                 ],
                 tasks: ['sass', 'cssmin', 'autoprefixer', 'copy:css'],
                 options: {

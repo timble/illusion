@@ -20,7 +20,7 @@
 
     // Run through all classes and add classes to classlist
     @each $class in $classes {
-      $klasses: '#{$classlist}.#{$class}';
+      $classlist: '#{$classlist}.#{$class}';
     }
 
     // print classlist

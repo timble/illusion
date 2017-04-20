@@ -1,13 +1,18 @@
-// Own better clearfix
-@mixin clearfix($reset: false) {
-  &:before,
-  &:after {
-    display: table;
-    content: " ";
-  }
+// Clearfix
+// Also clearing top-margin
+// Still using single colon for better browser compatibility
 
-  &:after {
-    clear: both;
+@mixin clearfix($reset: false) {
+  @if $reset == false {
+    &:before,
+    &:after {
+      display: table;
+      content: " ";
+    }
+
+    &:after {
+      clear: both;
+    }
   }
 
   @if $reset != false {

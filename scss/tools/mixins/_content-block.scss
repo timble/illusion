@@ -1,3 +1,5 @@
+// Content block
+
 @mixin content-block($spacing: $line-height, $location: bottom ) {
   @if $location == top {
     margin-top: $spacing;

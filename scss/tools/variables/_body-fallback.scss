@@ -4,6 +4,6 @@
 // 2. Align body to the left, right or center. Defaults to center
 // 3. Width of the body, defaults to $beta breakpoint
 
-$illusion-body-fallback: false !default;
-$illusion-body-fallback-align: center !default;
-$illusion-body-fallback-width: $beta !default;
+$illusion-body-fallback: false !default; // 1
+$illusion-body-fallback-align: center !default; // 2
+$illusion-body-fallback-width: $beta !default; // 3

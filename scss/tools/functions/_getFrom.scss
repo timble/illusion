@@ -1,4 +1,4 @@
-// Gets the from width and returns to 0
+// Gets the from width and returns to 0 when false
 
 @function getFrom($fromto) {
   $from: nth($fromto, 1);

@@ -1,0 +1,5 @@
+.foo {
+  @include shift(6, 0 to $beta);
+  @include shift(4, $beta to $charlie, $defaultProperties: false);
+  @include shift(3, $charlie to $delta, $defaultProperties: false);
+}

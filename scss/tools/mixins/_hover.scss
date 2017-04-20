@@ -1,3 +1,6 @@
+// Hover mixin
+// Sets styling for both hover and focus
+
 @mixin hover {
   &:hover,
   &:focus {

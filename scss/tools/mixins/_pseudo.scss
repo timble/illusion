@@ -1,4 +1,5 @@
 // Psuedo elements (styling mostly)
+
 @mixin psuedo($psuedo: after, $parent-position: relative, $position: absolute, $content: " ", $display: block) {
   @if $parent-position != false {
     position: relative;

@@ -1,3 +1,7 @@
+// Spacing
+//
+// Responsive spacing that follows the grid breakpoints
+
 @mixin spacing($sides: all minus none, $type: padding, $amount: 1, $fromto: false to false, $lastchildnone: false, $minus: 0) {
 
   @if ($amount != -0.5 and $amount != 0.5 and $amount != -1 and $amount != 1 and $amount != -2 and $amount != 2) {

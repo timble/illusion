@@ -1,6 +1,6 @@
 // Shift
 
-@mixin shift($shift: $columns of $container, $fromto: false to false, $amount: 1) {
+@mixin shift($shift: $columns of $container, $fromto: false to false, $amount: 1, $defaultProperties: true) {
 
   @if ($amount != -0.5 and $amount != 0.5 and $amount != -1 and $amount != 1 and $amount != -2 and $amount != 2) {
     @warn 'The `shift` mixin is designed to work best with the following values: -0.5 | 0.5 | -1 | 1 | -2 | 2';
@@ -36,8 +36,7 @@
     // Only run between starting and stopping breakpoints
     @include ifBreakpoint($breakpointWidth) {
 
-      // Relative positioning for shifting with `left`
-      position: relative;
+      // Set variable
       $left: auto;
 
       @if $spanColumns != 0 {
@@ -53,6 +52,14 @@
 
       // Set left
       left: $left;
+
+      @if $defaultProperties == true {
+        // Relative positioning for shifting with `left`
+        position: relative;
+
+        // Set to true so it only runs once
+        $defaultProperties: false;
+      }
     }
   }
 }

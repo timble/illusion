@@ -1,4 +1,4 @@
-@if $illusion-extendalize == true or $illusion-extendalize-body == true {
+@if ($illusion-extendalize == true and $illusion-extendalize-body != false) or $illusion-extendalize-body == true {
   /**
    * Body
    *

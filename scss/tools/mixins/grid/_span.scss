@@ -1,6 +1,6 @@
 // Span mixin
 
-@mixin span($span: $columns of $container, $fromto: false to false, $amount: 1, $bottom: false, $omega: false, $float: left) {
+@mixin span($span: $columns of $container, $fromto: false to false, $amount: 1, $bottom: false, $float: left, $defaultProperties: true, $omega: null) {
 
   @if ($amount != -0.5 and $amount != 0.5 and $amount != -1 and $amount != 1 and $amount != -2 and $amount != 2) {
     @warn 'The `span` mixin is designed to work best with the following values: -0.5 | 0.5 | -1 | 1 | -2 | 2';
@@ -28,7 +28,6 @@
 
     // Only run between starting and stopping breakpoints
     @include ifBreakpoint($breakpointWidth) {
-      float: $float;
       width: $columnWidth;
       margin-left: $columnMargin;
 
@@ -36,20 +35,14 @@
         margin-bottom: $columnMargin;
       }
 
-      @if $omega != false {
-        // Reset all previous NTH values
-        &:nth-child(n) {
-          clear: none;
-          margin-right: 0;
-        }
-
-        &:nth-child(n) {
-          margin-left: $columnMargin;
-        }
-
-        &:nth-child(#{$omega}n+1) {
-          margin-left: 0;
-          clear: left;
+      @if $omega != null {
+        // Reset all previous NTH values and set new spacing
+        @if $breakpointWidth != 0 {
+          &:nth-child(n) {
+            clear: none;
+            margin-left: $columnMargin;
+            margin-right: 0;
+          }
         }
 
         // sub-pixel rounding fix
@@ -57,20 +50,31 @@
           margin-right: -1px;
         }
 
-        // No margin for first child
-        &:first-child:nth-child(n) {
+        // Clear the item after omega
+        &:nth-child(#{$omega}n+1) {
           margin-left: 0;
+          clear: left;
         }
       }
 
-      // No margin for first child
-      &:first-child {
-        margin-left: 0;
-      }
+      @if $defaultProperties == true {
+        // Float item
+        float: $float;
 
-      // sub-pixel rounding fix
-      &:last-child {
-        margin-right: -1px;
+        // No margin for first child
+        &:first-child {
+          margin-left: 0;
+        }
+
+        // sub-pixel rounding fix
+        @if $omega == null {
+          &:last-child {
+            margin-right: -1px;
+          }
+        }
+
+        // Set to true so it only runs once
+        $defaultProperties: false;
       }
     }
   }

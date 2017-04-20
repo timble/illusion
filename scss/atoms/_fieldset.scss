@@ -1,4 +1,4 @@
-@if $illusion-extendalize == true or $illusion-extendalize-fieldset == true {
+@if ($illusion-extendalize == true and $illusion-extendalize-fieldset != false) or $illusion-extendalize-fieldset == true {
   /**
    * Fieldset
    */

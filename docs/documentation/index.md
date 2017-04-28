@@ -37,7 +37,6 @@ Include Modernizr and at least add `JS - No JS detection` and `flexbox detection
 
 ## Grid
 
-
 ### @mixin container
 Shouldn't be nested. Adds clearfix when used without flexbox and removes clearfix when used as flexbox. Adds a max-width and left and right padding following the responsive gutters.
 
@@ -100,11 +99,10 @@ For flexbox to work properly it uses Modernizr `.flexbox.flexwrap`
 
 | Name | Type | Default | Description |
 | ---- | ---- | ------- | ----------- |
-| `span` | `list` | - | .....  |
+| `span` | `list` | - | Accepts amount of columns to span amount of total columns. Total columns defaults to `$illusion-grid-container: 12`. Accepts both `span(6)` and `span(6 of 12)` values. |
 | `fromto` | `list` | `false to false` | .....  |
 | `amount` | `number` | `1` | Gutter amount. defaults to `1` and can be set to `0.5`, `1` or `2` |
 | `bottom` | `boolean` | `false` | When set to `true` it also adds a bottom gutter  |
-| `float` | `string` | `left` | .....  |
 | `defaultProperties` | `boolean` | `true` | If set to `false` the mixin won't add the `float` property nor the `margin` property on `:first-child` and `:last-child` |
 | `omega` | `number` | `null` | Used by the `gallery mixin` |
 
@@ -350,12 +348,12 @@ It's best not to use this mixin inside a breakpoint since the mixin itself is cr
 
 ---
 
-## Useful functions
+## Functions
 De private grid functions hoeven hier niet bij
 
 ---
 
-## Useful mixins
+## Mixins
 Allemaal useful
 
 ---

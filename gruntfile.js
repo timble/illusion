@@ -117,6 +117,23 @@ module.exports = function(grunt) {
         },
 
 
+        // Uglify
+        uglify: {
+            options: {
+                sourceMap: false
+            },
+            build: {
+                files: {
+                    'docs/js/scripts.js': [
+                        'node_modules/smooth-scroll/dist/js/smooth-scroll.min.js',
+                        'node_modules/gumshoe/dist/js/gumshoe.js',
+                        'docs/_scripts/main.js'
+                    ]
+                }
+            }
+        },
+
+
         // Shell commands
         shell: {
             jekyllBuild: {
@@ -140,6 +157,16 @@ module.exports = function(grunt) {
                     'tests/**/**/*.scss'
                 ],
                 tasks: ['sass', 'cssmin', 'autoprefixer', 'copy:css'],
+                options: {
+                    interrupt: true,
+                    atBegin: true
+                }
+            },
+            javascript: {
+                files: [
+                    'docs/_scripts/*.js'
+                ],
+                tasks: ['uglify'],
                 options: {
                     interrupt: true,
                     atBegin: true

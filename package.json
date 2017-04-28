@@ -10,11 +10,14 @@
     "grunt-browser-sync": "^2.2.*",
     "grunt-contrib-copy": "*",
     "grunt-contrib-cssmin": "^1.0.*",
+    "grunt-contrib-uglify": "^2.3.0",
     "grunt-contrib-watch": "^1.0.*",
     "grunt-modernizr": "1.0.*",
     "grunt-sass": "^1.1.*",
     "grunt-shell": "^1.3.*",
+    "gumshoe": "git+https://github.com/cferdinandi/gumshoe.git#master",
     "jit-grunt": "^0.10.*",
+    "smooth-scroll": "git+https://github.com/cferdinandi/smooth-scroll.git#master",
     "time-grunt": "^1.3.*"
   }
 }

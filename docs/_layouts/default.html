@@ -3,13 +3,13 @@
 <main>
     <div class="container">
         <aside>
-            <h2>Menu</h2>
-            <ul>
-                <li><a href="#getting-started">Getting started</a></li>
-                <li><a href="#n1">Grid</a></li>
-                <li><a href="#n1">Functions</a></li>
-                <li><a href="#n1">Mixins</a></li>
-                <li><a href="#n1">Elements</a></li>
+            <h2>Sections</h2>
+            <ul class="section-list" data-gumshoe>
+                <li><a data-scroll href="#getting-started">Getting started</a></li>
+                <li><a data-scroll href="#grid">Grid</a></li>
+                <li><a data-scroll href="#functions">Functions</a></li>
+                <li><a data-scroll href="#mixins">Mixins</a></li>
+                <li><a data-scroll href="#elements">Elements</a></li>
             </ul>
         </aside>
         <article>
@@ -17,6 +17,13 @@
         </article>
     </div>
 </main>
+
+<script>
+    smoothScroll.init();
+    gumshoe.init({
+        activeClass: 'is-active'
+    });
+</script>
 
 {% include footer.html %}
 

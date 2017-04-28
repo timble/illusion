@@ -1,7 +1,7 @@
 // Triangle
 // CSS only triangles using borders
 
-@mixin arrow($direction: right, $size: 4px, $color: false) {
+@mixin triangle($direction: right, $size: 4px, $color: false) {
 
   // Top and bottom arrows
 

@@ -64,8 +64,9 @@ Include Modernizr and at least add ..." />
     <link href="/images/favicon.ico" rel="shortcut icon" type="image/ico"/>
     <link href="/images/favicon.png" rel="shortcut icon" type="image/png"/>
     <link href="/images/xtouch-icon.png" rel="apple-touch-icon" type="image/png"/>
-    <link rel="stylesheet" href="/css/style.css?1492708865">
+    <link rel="stylesheet" href="/css/style.css?1493365713">
     <script src="/js/modernizr.js" type="text/javascript"></script>
+    <script src="/js/scripts.js" type="text/javascript"></script>
     <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600,700" rel="stylesheet">
 </head>
 <body>
@@ -110,13 +111,13 @@ Include Modernizr and at least add ..." />
 <main>
     <div class="container">
         <aside>
-            <h2>Menu</h2>
-            <ul>
-                <li><a href="#getting-started">Getting started</a></li>
-                <li><a href="#n1">Grid</a></li>
-                <li><a href="#n1">Functions</a></li>
-                <li><a href="#n1">Mixins</a></li>
-                <li><a href="#n1">Elements</a></li>
+            <h2>Sections</h2>
+            <ul class="section-list" data-gumshoe>
+                <li><a data-scroll href="#getting-started">Getting started</a></li>
+                <li><a data-scroll href="#grid">Grid</a></li>
+                <li><a data-scroll href="#functions">Functions</a></li>
+                <li><a data-scroll href="#mixins">Mixins</a></li>
+                <li><a data-scroll href="#elements">Elements</a></li>
             </ul>
         </aside>
         <article>
@@ -582,12 +583,12 @@ Include Modernizr and at least add ..." />
 
 <hr />
 
-<h2 id="useful-functions">Useful functions</h2>
+<h2 id="functions">Functions</h2>
 <p>De private grid functions hoeven hier niet bij</p>
 
 <hr />
 
-<h2 id="useful-mixins">Useful mixins</h2>
+<h2 id="mixins">Mixins</h2>
 <p>Allemaal useful</p>
 
 <hr />
@@ -616,6 +617,13 @@ Include Modernizr and at least add ..." />
         </article>
     </div>
 </main>
+
+<script>
+    smoothScroll.init();
+    gumshoe.init({
+        activeClass: 'is-active'
+    });
+</script>
 
 <footer>
     <div class="container">

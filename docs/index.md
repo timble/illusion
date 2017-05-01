@@ -1,7 +1,10 @@
 ---
-layout: home
+layout: default
 title: Illusion
+header: large
 ---
+
+{% include layout/splitter.md title="Features" %}
 
 ## What is Illusion?
 Illusion is an opinionated, mobile-first, progressive enhanced, accessible, SCSS base kit to kickstart websites with and helps you keep a maintainable SCSS code base.
@@ -18,7 +21,7 @@ The reason Illusion exists is because we found ourselves copy-pasting code from 
 
 ---
 
-### Opinionated
+## Opinionated
 Illusion is very opinionated. We believe in certain values and philosophies. Illusion could be very useful to you if you share the same ideas:
 
 - Mobile first philosophy and design
@@ -29,7 +32,7 @@ Illusion is very opinionated. We believe in certain values and philosophies. Ill
 
 ---
 
-### 8 point responsive grid
+## 8 point responsive grid
 One of the most important aspects of a website is the grid it's based on. It can make a page feel balanced and in harmony when used right, but when used wrong a page may appear untrustworthy.
 
 Illusion uses a grid that:
@@ -42,7 +45,7 @@ By placing everything on an 8 point grid you ensure that your design looks crisp
 
 Exceptions could be fonts and their line-heights. For an optimal result you should try to maintain the line-height on the 8pt grid as much as possible. Whenever that's impossible because it looks weird you can always fall back to 4 pixel instead. You can have a line-height of 20px for example. It's adviced to keep the bottom margin on the 8pt grid.
 
-#### How to maintain your 8pt grid
+### How to maintain your 8pt grid
 The grid mixins (span, gallery, spacing etc.) are fully based on the 8pt grid so there's nothing special you'll have to do there
 
 Paragraphs, headings and other styled block elements have a standard 24px bottom-margin with an exception for the headings. Headings have a 16px bottom-margin to be a bit closer to the content it's representing to form a visual group.
@@ -54,23 +57,23 @@ For all other elements there are three more options to use
 
 ---
 
-### Base styling
+## Base styling
 
 To stop all the copy pasting in this world we added some base styling. There are two levels that create base styling.
 
-#### Level 1
+### Level 1
 
 The first level we call "Extendalize" and it basically extends Normalize styling the way we like it.
 
 For example we remove top margins of elements and apply a bottom margin to block level elements that need it. We also remove the bottom margin from the last element in a parent.
 
-##### Enable all extendalize features:
+#### Enable all extendalize features:
 
 {% highlight css %}
 $illusion-extendalize: true;
 {% endhighlight %}
 
-##### Enable individual extendalize features:
+#### Enable individual extendalize features:
 
 {% highlight css %}
 $illusion-extendalize: false;
@@ -78,7 +81,7 @@ $illusion-extendalize-boxsizing: true;
 $illusion-extendalize-svg: true;
 {% endhighlight %}
 
-##### Disable individual extendalize features:
+#### Disable individual extendalize features:
 
 {% highlight css %}
 $illusion-extendalize: true;
@@ -86,7 +89,7 @@ $illusion-extendalize-image: false;
 $illusion-extendalize-paragraph: false;
 {% endhighlight %}
 
-#### Level 2
+### Level 2
 
 The second level adds default styling for forms and sets a fallback for the body element for older browsers.
 
@@ -94,6 +97,6 @@ Todo: explanantion
 
 ---
 
-### Mixins
+## Mixins
 
 Illusion comes with a great mixin and function library. More info here

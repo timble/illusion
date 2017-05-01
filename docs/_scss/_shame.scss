@@ -223,22 +223,31 @@ pre {
   @include spacing(vertical);
 }
 
-.section-list {
+#markdown-toc {
   @include reset;
 
   li {
     @include psuedo(before) {
       left: 0;
-      top: 50%;
-      margin-top: -4px;
+      top: 8px;
       @include triangle(right, 4px, $color3);
       opacity: 0;
-      transform: translateX(-16px);
       @include transition;
+      transform: translateX(-16px);
     }
 
     &, a {
       @include transition;
+    }
+
+    ul {
+      @include reset;
+      padding-left: 16px;
+    }
+
+    li {
+      font-size: 15px;
+      line-height: 24px;
     }
   }
 
@@ -250,7 +259,7 @@ pre {
       transform: translateX(0);
     }
 
-    a {
+    & > a {
       text-decoration: none;
       color: $color2;
     }

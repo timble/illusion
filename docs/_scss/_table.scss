@@ -37,6 +37,11 @@ th {
   thead {
     display: flex;
     flex-shrink: 0;
+
+    th:last-child {
+      height: auto;
+      flex: 1 1 auto;
+    }
   }
 
   tbody {
@@ -94,6 +99,13 @@ th {
 
   td {
     border-left: none;
+
+    &:last-child {
+      height: auto;
+      white-space: normal;
+      max-width: 280px;
+      flex: 1 1 auto;
+    }
   }
 
   th:not(:last-child),

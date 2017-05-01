@@ -3,6 +3,8 @@ layout: default
 title: Documentation
 ---
 
+{% include layout/splitter.md %}
+
 ## Getting started
 ### Step 1
 {% highlight bash %}
@@ -380,3 +382,5 @@ See spacing mixin
 Accepts a value of 0.5, 1 or 2. If used in @include breakpoint it uses that current gutter. Also possible to define which 'size' it should use.
 
 See spacing function
+
+

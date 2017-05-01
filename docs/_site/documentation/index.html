@@ -25,30 +25,36 @@
 
 
 
-<meta name="description" content="## Getting started
+<meta name="description" content="{% include layout/splitter.md %}
+
+## Getting started
 ### Step 1
 {% highlight bash %}
 $ bower install illusion --save //@TODO
 {% endhighlight %}
 
 ### Step 2
-Include Modernizr and at least add ..." />
-<meta name="twitter:description" content="## Getting started
+I..." />
+<meta name="twitter:description" content="{% include layout/splitter.md %}
+
+## Getting started
 ### Step 1
 {% highlight bash %}
 $ bower install illusion --save //@TODO
 {% endhighlight %}
 
 ### Step 2
-Include Modernizr and at least add ..." />
-<meta property="og:description" content="## Getting started
+I..." />
+<meta property="og:description" content="{% include layout/splitter.md %}
+
+## Getting started
 ### Step 1
 {% highlight bash %}
 $ bower install illusion --save //@TODO
 {% endhighlight %}
 
 ### Step 2
-Include Modernizr and at least add ..." />
+I..." />
 
 
 
@@ -64,7 +70,7 @@ Include Modernizr and at least add ..." />
     <link href="/images/favicon.ico" rel="shortcut icon" type="image/ico"/>
     <link href="/images/favicon.png" rel="shortcut icon" type="image/png"/>
     <link href="/images/xtouch-icon.png" rel="apple-touch-icon" type="image/png"/>
-    <link rel="stylesheet" href="/css/style.css?1493365713">
+    <link rel="stylesheet" href="/css/style.css?1493634074">
     <script src="/js/modernizr.js" type="text/javascript"></script>
     <script src="/js/scripts.js" type="text/javascript"></script>
     <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600,700" rel="stylesheet">
@@ -87,10 +93,10 @@ Include Modernizr and at least add ..." />
                 <a href="/documentation">Docs</a>
             </li>
             <li>
-                <a href="/examples">Examples</a>
+                <a href="/faq">FAQ</a>
             </li>
             <li>
-                <a href="/faq">FAQ</a>
+                <a href="/examples">Examples</a>
             </li>
             <li>
                 <a href="https://www.github.com/timble/illusion">Github</a>
@@ -108,38 +114,55 @@ Include Modernizr and at least add ..." />
 </header>
 
 
+
 <main>
     <div class="container">
-        <aside>
-            <h2>Sections</h2>
-            <ul class="section-list" data-gumshoe>
-                <li><a data-scroll href="#getting-started">Getting started</a></li>
-                <li><a data-scroll href="#grid">Grid</a></li>
-                <li><a data-scroll href="#functions">Functions</a></li>
-                <li><a data-scroll href="#mixins">Mixins</a></li>
-                <li><a data-scroll href="#elements">Elements</a></li>
-            </ul>
-        </aside>
-        <article>
-            <h2 id="getting-started">Getting started</h2>
-<h3 id="step-1">Step 1</h3>
+        
+<aside>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>bower install illusion --save //@TODO</code></pre></figure>
+  <h2>Contents</h2>
 
-<h3 id="step-2">Step 2</h3>
-<p>Include Modernizr and at least add <code class="highlighter-rouge">JS - No JS detection</code> and <code class="highlighter-rouge">flexbox detection</code> if you’re gonna use flexbox.</p>
-
-<h3 id="step-3">Step 3</h3>
-<ul>
-  <li>Include Normalize and include it before anything else (Not included in Illusion).</li>
-  <li>Define your variables before loading illusion</li>
-  <li>Load illusion</li>
-  <li>Add your own mixins after illusion</li>
+<ul id="markdown-toc">
+  <li><a href="#getting-started" id="markdown-toc-getting-started">Getting started</a>    <ul>
+      <li><a href="#step-1" id="markdown-toc-step-1">Step 1</a></li>
+      <li><a href="#step-2" id="markdown-toc-step-2">Step 2</a></li>
+      <li><a href="#step-3" id="markdown-toc-step-3">Step 3</a></li>
+    </ul>
+  </li>
+  <li><a href="#grid" id="markdown-toc-grid">Grid</a>    <ul>
+      <li><a href="#mixin-container" id="markdown-toc-mixin-container">@mixin container</a></li>
+      <li><a href="#mixin-span" id="markdown-toc-mixin-span">@mixin span</a></li>
+      <li><a href="#mixin-gallery" id="markdown-toc-mixin-gallery">@mixin gallery</a></li>
+      <li><a href="#mixin-shift" id="markdown-toc-mixin-shift">@mixin shift</a></li>
+    </ul>
+  </li>
+  <li><a href="#functions" id="markdown-toc-functions">Functions</a></li>
+  <li><a href="#mixins" id="markdown-toc-mixins">Mixins</a></li>
+  <li><a href="#accessible-forms" id="markdown-toc-accessible-forms">Accessible forms</a></li>
 </ul>
 
-<h4 id="your-base-scss-file-might-look-like-this">Your base SCSS file might look like this:</h4>
+</aside>
+<article>
 
-<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="o">//</span> <span class="nt">Normalize</span>
+  <h2 id="getting-started">Getting started</h2>
+  <h3 id="step-1">Step 1</h3>
+
+  <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>bower install illusion --save //@TODO</code></pre></figure>
+
+  <h3 id="step-2">Step 2</h3>
+  <p>Include Modernizr and at least add <code class="highlighter-rouge">JS - No JS detection</code> and <code class="highlighter-rouge">flexbox detection</code> if you’re gonna use flexbox.</p>
+
+  <h3 id="step-3">Step 3</h3>
+  <ul>
+    <li>Include Normalize and include it before anything else (Not included in Illusion).</li>
+    <li>Define your variables before loading illusion</li>
+    <li>Load illusion</li>
+    <li>Add your own mixins after illusion</li>
+  </ul>
+
+  <h4 id="your-base-scss-file-might-look-like-this">Your base SCSS file might look like this:</h4>
+
+  <figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="o">//</span> <span class="nt">Normalize</span>
 <span class="k">@import</span> <span class="s1">"bower_components/normalize"</span><span class="p">;</span>
 
 <span class="o">//</span> <span class="nt">Variables</span> <span class="nt">-</span> <span class="nt">Hold</span> <span class="nt">your</span> <span class="nt">own</span> <span class="nt">variables</span> <span class="nt">as</span> <span class="nt">well</span> <span class="nt">as</span> <span class="nt">Illusion</span> <span class="nt">overrides</span>
@@ -151,46 +174,46 @@ Include Modernizr and at least add ..." />
 <span class="o">//</span> <span class="nt">Mixins</span> <span class="nt">-</span> <span class="nt">You</span> <span class="nt">can</span> <span class="nt">overwrite</span> <span class="nt">Illusion</span> <span class="nt">mixins</span> <span class="nt">here</span> <span class="nt">if</span> <span class="nt">you</span> <span class="nt">wish</span>
 <span class="k">@import</span> <span class="s1">"mixins"</span><span class="p">;</span></code></pre></figure>
 
-<hr />
+  <hr />
 
-<h2 id="grid">Grid</h2>
+  <h2 id="grid">Grid</h2>
 
-<h3 id="mixin-container">@mixin container</h3>
-<p>Shouldn’t be nested. Adds clearfix when used without flexbox and removes clearfix when used as flexbox. Adds a max-width and left and right padding following the responsive gutters.</p>
+  <h3 id="mixin-container">@mixin container</h3>
+  <p>Shouldn’t be nested. Adds clearfix when used without flexbox and removes clearfix when used as flexbox. Adds a max-width and left and right padding following the responsive gutters.</p>
 
-<h4 id="arguments">Arguments</h4>
+  <h4 id="arguments">Arguments</h4>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="highlighter-rouge">flexbox</code></td>
-      <td><code class="highlighter-rouge">boolean</code></td>
-      <td><code class="highlighter-rouge">false</code></td>
-      <td>Enables flexbox on container. For example <code class="highlighter-rouge">@include container(true);</code> will enable flexbox</td>
-    </tr>
-  </tbody>
-</table>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Default</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code class="highlighter-rouge">flexbox</code></td>
+        <td><code class="highlighter-rouge">boolean</code></td>
+        <td><code class="highlighter-rouge">false</code></td>
+        <td>Enables flexbox on container. For example <code class="highlighter-rouge">@include container(true);</code> will enable flexbox</td>
+      </tr>
+    </tbody>
+  </table>
 
-<h4 id="dependencies">Dependencies</h4>
-<p>For flexbox to work properly it uses Modernizr <code class="highlighter-rouge">.flexbox.flexwrap</code></p>
+  <h4 id="dependencies">Dependencies</h4>
+  <p>For flexbox to work properly it uses Modernizr <code class="highlighter-rouge">.flexbox.flexwrap</code></p>
 
-<h4 id="scss">SCSS</h4>
+  <h4 id="scss">SCSS</h4>
 
-<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.foo</span> <span class="p">{</span>
+  <figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.foo</span> <span class="p">{</span>
   <span class="err">@include</span> <span class="err">container;</span>
 <span class="p">}</span></code></pre></figure>
 
-<h4 id="css">CSS</h4>
+  <h4 id="css">CSS</h4>
 
-<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.foo</span> <span class="p">{</span>
+  <figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.foo</span> <span class="p">{</span>
   <span class="nl">margin-left</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span>
   <span class="nl">margin-right</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span>
   <span class="nl">max-width</span><span class="p">:</span> <span class="m">1176px</span><span class="p">;</span>
@@ -221,77 +244,71 @@ Include Modernizr and at least add ..." />
   <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
-<hr />
+  <hr />
 
-<h3 id="mixin-span">@mixin span</h3>
-<p>…</p>
+  <h3 id="mixin-span">@mixin span</h3>
+  <p>…</p>
 
-<h4 id="arguments-1">Arguments</h4>
+  <h4 id="arguments-1">Arguments</h4>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="highlighter-rouge">span</code></td>
-      <td><code class="highlighter-rouge">list</code></td>
-      <td>-</td>
-      <td>…..</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">fromto</code></td>
-      <td><code class="highlighter-rouge">list</code></td>
-      <td><code class="highlighter-rouge">false to false</code></td>
-      <td>…..</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">amount</code></td>
-      <td><code class="highlighter-rouge">number</code></td>
-      <td><code class="highlighter-rouge">1</code></td>
-      <td>Gutter amount. defaults to <code class="highlighter-rouge">1</code> and can be set to <code class="highlighter-rouge">0.5</code>, <code class="highlighter-rouge">1</code> or <code class="highlighter-rouge">2</code></td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">bottom</code></td>
-      <td><code class="highlighter-rouge">boolean</code></td>
-      <td><code class="highlighter-rouge">false</code></td>
-      <td>When set to <code class="highlighter-rouge">true</code> it also adds a bottom gutter</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">float</code></td>
-      <td><code class="highlighter-rouge">string</code></td>
-      <td><code class="highlighter-rouge">left</code></td>
-      <td>…..</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">defaultProperties</code></td>
-      <td><code class="highlighter-rouge">boolean</code></td>
-      <td><code class="highlighter-rouge">true</code></td>
-      <td>If set to <code class="highlighter-rouge">false</code> the mixin won’t add the <code class="highlighter-rouge">float</code> property nor the <code class="highlighter-rouge">margin</code> property on <code class="highlighter-rouge">:first-child</code> and <code class="highlighter-rouge">:last-child</code></td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">omega</code></td>
-      <td><code class="highlighter-rouge">number</code></td>
-      <td><code class="highlighter-rouge">null</code></td>
-      <td>Used by the <code class="highlighter-rouge">gallery mixin</code></td>
-    </tr>
-  </tbody>
-</table>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Default</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code class="highlighter-rouge">span</code></td>
+        <td><code class="highlighter-rouge">list</code></td>
+        <td>-</td>
+        <td>Accepts amount of columns to span amount of total columns. Total columns defaults to <code class="highlighter-rouge">$illusion-grid-container: 12</code>. Accepts both <code class="highlighter-rouge">span(6)</code> and <code class="highlighter-rouge">span(6 of 12)</code> values.</td>
+      </tr>
+      <tr>
+        <td><code class="highlighter-rouge">fromto</code></td>
+        <td><code class="highlighter-rouge">list</code></td>
+        <td><code class="highlighter-rouge">false to false</code></td>
+        <td>…..</td>
+      </tr>
+      <tr>
+        <td><code class="highlighter-rouge">amount</code></td>
+        <td><code class="highlighter-rouge">number</code></td>
+        <td><code class="highlighter-rouge">1</code></td>
+        <td>Gutter amount. defaults to <code class="highlighter-rouge">1</code> and can be set to <code class="highlighter-rouge">0.5</code>, <code class="highlighter-rouge">1</code> or <code class="highlighter-rouge">2</code></td>
+      </tr>
+      <tr>
+        <td><code class="highlighter-rouge">bottom</code></td>
+        <td><code class="highlighter-rouge">boolean</code></td>
+        <td><code class="highlighter-rouge">false</code></td>
+        <td>When set to <code class="highlighter-rouge">true</code> it also adds a bottom gutter</td>
+      </tr>
+      <tr>
+        <td><code class="highlighter-rouge">defaultProperties</code></td>
+        <td><code class="highlighter-rouge">boolean</code></td>
+        <td><code class="highlighter-rouge">true</code></td>
+        <td>If set to <code class="highlighter-rouge">false</code> the mixin won’t add the <code class="highlighter-rouge">float</code> property nor the <code class="highlighter-rouge">margin</code> property on <code class="highlighter-rouge">:first-child</code> and <code class="highlighter-rouge">:last-child</code></td>
+      </tr>
+      <tr>
+        <td><code class="highlighter-rouge">omega</code></td>
+        <td><code class="highlighter-rouge">number</code></td>
+        <td><code class="highlighter-rouge">null</code></td>
+        <td>Used by the <code class="highlighter-rouge">gallery mixin</code></td>
+      </tr>
+    </tbody>
+  </table>
 
-<h4 id="scss-1">SCSS</h4>
+  <h4 id="scss-1">SCSS</h4>
 
-<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.foo</span> <span class="p">{</span>
+  <figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.foo</span> <span class="p">{</span>
   <span class="err">@include</span> <span class="err">span(6);</span>
 <span class="p">}</span></code></pre></figure>
 
-<h4 id="css-1">CSS</h4>
+  <h4 id="css-1">CSS</h4>
 
-<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.foo</span> <span class="p">{</span>
+  <figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.foo</span> <span class="p">{</span>
   <span class="nl">width</span><span class="p">:</span> <span class="n">calc</span><span class="p">((</span><span class="m">100%</span> <span class="n">-</span> <span class="m">16px</span><span class="p">)</span> <span class="p">/</span> <span class="m">2</span><span class="p">);</span>
   <span class="nl">margin-left</span><span class="p">:</span> <span class="n">calc</span><span class="p">(</span><span class="m">16px</span><span class="p">);</span>
   <span class="nl">float</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
@@ -319,10 +336,10 @@ Include Modernizr and at least add ..." />
   <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
-<h5 id="breakpoints-use">Breakpoints use</h5>
-<p>It’s best not to use this mixin inside a breakpoint since the mixin itself is creating media queries. So to avoid creating a LOT of duplicate code rather use the mixin itself to create breakpoints:</p>
+  <h5 id="breakpoints-use">Breakpoints use</h5>
+  <p>It’s best not to use this mixin inside a breakpoint since the mixin itself is creating media queries. So to avoid creating a LOT of duplicate code rather use the mixin itself to create breakpoints:</p>
 
-<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="c1">// BAD
+  <figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="c1">// BAD
 </span><span class="nc">.foo</span> <span class="p">{</span>
     <span class="k">@include</span> <span class="nd">span</span><span class="p">(</span><span class="m">6</span><span class="p">);</span>
     <span class="k">@include</span> <span class="nd">breakpoint</span><span class="p">(</span><span class="nv">$beta</span><span class="p">)</span> <span class="p">{</span>
@@ -340,71 +357,71 @@ Include Modernizr and at least add ..." />
 <span class="c1">// $defaultProperties set to false on all except first mixin
 </span><span class="o">//</span> <span class="nt">While</span> <span class="nt">this</span> <span class="nt">is</span> <span class="nt">not</span> <span class="nt">mandatory</span> <span class="nt">it</span> <span class="nt">is</span> <span class="nt">adviced</span> <span class="nt">to</span> <span class="nt">minimize</span> <span class="nt">compiled</span> <span class="nt">code</span></code></pre></figure>
 
-<hr />
+  <hr />
 
-<h3 id="mixin-gallery">@mixin gallery</h3>
-<p>Shortcut to create gallery-style grids. Adds clearing on nth-child items.</p>
+  <h3 id="mixin-gallery">@mixin gallery</h3>
+  <p>Shortcut to create gallery-style grids. Adds clearing on nth-child items.</p>
 
-<h4 id="arguments-2">Arguments</h4>
+  <h4 id="arguments-2">Arguments</h4>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="highlighter-rouge">span</code></td>
-      <td><code class="highlighter-rouge">list</code></td>
-      <td>-</td>
-      <td>…..</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">fromto</code></td>
-      <td><code class="highlighter-rouge">list</code></td>
-      <td><code class="highlighter-rouge">false to false</code></td>
-      <td>…..</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">amount</code></td>
-      <td><code class="highlighter-rouge">number</code></td>
-      <td><code class="highlighter-rouge">1</code></td>
-      <td>Gutter amount. defaults to <code class="highlighter-rouge">1</code> and can be set to <code class="highlighter-rouge">0.5</code>, <code class="highlighter-rouge">1</code> or <code class="highlighter-rouge">2</code></td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">bottom</code></td>
-      <td><code class="highlighter-rouge">boolean</code></td>
-      <td><code class="highlighter-rouge">true</code></td>
-      <td>Set to <code class="highlighter-rouge">false</code> if you don’t want bottom gutters</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">float</code></td>
-      <td><code class="highlighter-rouge">string</code></td>
-      <td><code class="highlighter-rouge">left</code></td>
-      <td>…..</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">defaultProperties</code></td>
-      <td><code class="highlighter-rouge">boolean</code></td>
-      <td><code class="highlighter-rouge">true</code></td>
-      <td>If set to <code class="highlighter-rouge">false</code> the mixin won’t add the <code class="highlighter-rouge">float</code> property nor the <code class="highlighter-rouge">margin</code> property on <code class="highlighter-rouge">:first-child</code> and <code class="highlighter-rouge">:last-child</code></td>
-    </tr>
-  </tbody>
-</table>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Default</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code class="highlighter-rouge">span</code></td>
+        <td><code class="highlighter-rouge">list</code></td>
+        <td>-</td>
+        <td>…..</td>
+      </tr>
+      <tr>
+        <td><code class="highlighter-rouge">fromto</code></td>
+        <td><code class="highlighter-rouge">list</code></td>
+        <td><code class="highlighter-rouge">false to false</code></td>
+        <td>…..</td>
+      </tr>
+      <tr>
+        <td><code class="highlighter-rouge">amount</code></td>
+        <td><code class="highlighter-rouge">number</code></td>
+        <td><code class="highlighter-rouge">1</code></td>
+        <td>Gutter amount. defaults to <code class="highlighter-rouge">1</code> and can be set to <code class="highlighter-rouge">0.5</code>, <code class="highlighter-rouge">1</code> or <code class="highlighter-rouge">2</code></td>
+      </tr>
+      <tr>
+        <td><code class="highlighter-rouge">bottom</code></td>
+        <td><code class="highlighter-rouge">boolean</code></td>
+        <td><code class="highlighter-rouge">true</code></td>
+        <td>Set to <code class="highlighter-rouge">false</code> if you don’t want bottom gutters</td>
+      </tr>
+      <tr>
+        <td><code class="highlighter-rouge">float</code></td>
+        <td><code class="highlighter-rouge">string</code></td>
+        <td><code class="highlighter-rouge">left</code></td>
+        <td>…..</td>
+      </tr>
+      <tr>
+        <td><code class="highlighter-rouge">defaultProperties</code></td>
+        <td><code class="highlighter-rouge">boolean</code></td>
+        <td><code class="highlighter-rouge">true</code></td>
+        <td>If set to <code class="highlighter-rouge">false</code> the mixin won’t add the <code class="highlighter-rouge">float</code> property nor the <code class="highlighter-rouge">margin</code> property on <code class="highlighter-rouge">:first-child</code> and <code class="highlighter-rouge">:last-child</code></td>
+      </tr>
+    </tbody>
+  </table>
 
-<h4 id="scss-2">SCSS</h4>
+  <h4 id="scss-2">SCSS</h4>
 
-<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.foo</span> <span class="p">{</span>
+  <figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.foo</span> <span class="p">{</span>
   <span class="err">@include</span> <span class="err">gallery(4);</span>
 <span class="p">}</span></code></pre></figure>
 
-<h4 id="css-2">CSS</h4>
+  <h4 id="css-2">CSS</h4>
 
-<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.foo</span> <span class="p">{</span>
+  <figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.foo</span> <span class="p">{</span>
     <span class="nl">width</span><span class="p">:</span> <span class="n">calc</span><span class="p">((</span><span class="m">100%</span> <span class="n">-</span> <span class="m">32px</span><span class="p">)</span> <span class="p">/</span> <span class="m">3</span><span class="p">);</span>
     <span class="nl">margin-left</span><span class="p">:</span> <span class="n">calc</span><span class="p">(</span><span class="m">16px</span><span class="p">);</span>
     <span class="nl">margin-bottom</span><span class="p">:</span> <span class="n">calc</span><span class="p">(</span><span class="m">16px</span><span class="p">);</span>
@@ -470,10 +487,10 @@ Include Modernizr and at least add ..." />
     <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
-<h5 id="breakpoints-use-1">Breakpoints use</h5>
-<p>It’s best not to use this mixin inside a breakpoint since the mixin itself is creating media queries. So to avoid creating a LOT of duplicate code rather use the mixin itself to create breakpoints:</p>
+  <h5 id="breakpoints-use-1">Breakpoints use</h5>
+  <p>It’s best not to use this mixin inside a breakpoint since the mixin itself is creating media queries. So to avoid creating a LOT of duplicate code rather use the mixin itself to create breakpoints:</p>
 
-<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="c1">// BAD
+  <figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="c1">// BAD
 </span><span class="nc">.foo</span> <span class="p">{</span>
     <span class="k">@include</span> <span class="nd">gallery</span><span class="p">(</span><span class="m">6</span><span class="p">);</span>
     <span class="k">@include</span> <span class="nd">breakpoint</span><span class="p">(</span><span class="nv">$beta</span><span class="p">)</span> <span class="p">{</span>
@@ -491,59 +508,59 @@ Include Modernizr and at least add ..." />
 <span class="c1">// $defaultProperties set to false on all except first mixin
 </span><span class="o">//</span> <span class="nt">While</span> <span class="nt">this</span> <span class="nt">is</span> <span class="nt">not</span> <span class="nt">mandatory</span> <span class="nt">it</span> <span class="nt">is</span> <span class="nt">adviced</span> <span class="nt">to</span> <span class="nt">minimize</span> <span class="nt">compiled</span> <span class="nt">code</span></code></pre></figure>
 
-<hr />
+  <hr />
 
-<h3 id="mixin-shift">@mixin shift</h3>
-<p>Visually change the order of elements…</p>
+  <h3 id="mixin-shift">@mixin shift</h3>
+  <p>Visually change the order of elements…</p>
 
-<h4 id="arguments-3">Arguments</h4>
+  <h4 id="arguments-3">Arguments</h4>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="highlighter-rouge">shift</code></td>
-      <td><code class="highlighter-rouge">list</code></td>
-      <td>-</td>
-      <td>…..</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">fromto</code></td>
-      <td><code class="highlighter-rouge">list</code></td>
-      <td><code class="highlighter-rouge">false to false</code></td>
-      <td>…..</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">amount</code></td>
-      <td><code class="highlighter-rouge">number</code></td>
-      <td><code class="highlighter-rouge">1</code></td>
-      <td>Gutter amount. defaults to <code class="highlighter-rouge">1</code> and can be set to <code class="highlighter-rouge">0.5</code>, <code class="highlighter-rouge">1</code> or <code class="highlighter-rouge">2</code></td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">defaultProperties</code></td>
-      <td><code class="highlighter-rouge">boolean</code></td>
-      <td><code class="highlighter-rouge">true</code></td>
-      <td>If set to <code class="highlighter-rouge">false</code> the mixin won’t add the <code class="highlighter-rouge">position</code> property</td>
-    </tr>
-  </tbody>
-</table>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Default</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code class="highlighter-rouge">shift</code></td>
+        <td><code class="highlighter-rouge">list</code></td>
+        <td>-</td>
+        <td>…..</td>
+      </tr>
+      <tr>
+        <td><code class="highlighter-rouge">fromto</code></td>
+        <td><code class="highlighter-rouge">list</code></td>
+        <td><code class="highlighter-rouge">false to false</code></td>
+        <td>…..</td>
+      </tr>
+      <tr>
+        <td><code class="highlighter-rouge">amount</code></td>
+        <td><code class="highlighter-rouge">number</code></td>
+        <td><code class="highlighter-rouge">1</code></td>
+        <td>Gutter amount. defaults to <code class="highlighter-rouge">1</code> and can be set to <code class="highlighter-rouge">0.5</code>, <code class="highlighter-rouge">1</code> or <code class="highlighter-rouge">2</code></td>
+      </tr>
+      <tr>
+        <td><code class="highlighter-rouge">defaultProperties</code></td>
+        <td><code class="highlighter-rouge">boolean</code></td>
+        <td><code class="highlighter-rouge">true</code></td>
+        <td>If set to <code class="highlighter-rouge">false</code> the mixin won’t add the <code class="highlighter-rouge">position</code> property</td>
+      </tr>
+    </tbody>
+  </table>
 
-<h4 id="scss-3">SCSS</h4>
+  <h4 id="scss-3">SCSS</h4>
 
-<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.foo</span> <span class="p">{</span>
+  <figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.foo</span> <span class="p">{</span>
   <span class="err">@include</span> <span class="err">shift(4);</span>
 <span class="p">}</span></code></pre></figure>
 
-<h4 id="css-3">CSS</h4>
+  <h4 id="css-3">CSS</h4>
 
-<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.foo</span> <span class="p">{</span>
+  <figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.foo</span> <span class="p">{</span>
     <span class="nl">left</span><span class="p">:</span> <span class="n">calc</span><span class="p">(((</span><span class="m">100%</span> <span class="n">-</span> <span class="m">16px</span><span class="p">)</span> <span class="p">/</span> <span class="m">2</span><span class="p">)</span> <span class="err">+</span> <span class="m">16px</span><span class="p">);</span>
     <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>
 <span class="p">}</span>
@@ -560,10 +577,10 @@ Include Modernizr and at least add ..." />
     <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
-<h5 id="breakpoints-use-2">Breakpoints use</h5>
-<p>It’s best not to use this mixin inside a breakpoint since the mixin itself is creating media queries. So to avoid creating a LOT of duplicate code rather use the mixin itself to create breakpoints:</p>
+  <h5 id="breakpoints-use-2">Breakpoints use</h5>
+  <p>It’s best not to use this mixin inside a breakpoint since the mixin itself is creating media queries. So to avoid creating a LOT of duplicate code rather use the mixin itself to create breakpoints:</p>
 
-<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="c1">// BAD
+  <figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="c1">// BAD
 </span><span class="nc">.foo</span> <span class="p">{</span>
     <span class="k">@include</span> <span class="nd">shift</span><span class="p">(</span><span class="m">6</span><span class="p">);</span>
     <span class="k">@include</span> <span class="nd">breakpoint</span><span class="p">(</span><span class="nv">$beta</span><span class="p">)</span> <span class="p">{</span>
@@ -581,46 +598,52 @@ Include Modernizr and at least add ..." />
 <span class="c1">// $defaultProperties set to false on all except first mixin
 </span><span class="o">//</span> <span class="nt">While</span> <span class="nt">this</span> <span class="nt">is</span> <span class="nt">not</span> <span class="nt">mandatory</span> <span class="nt">it</span> <span class="nt">is</span> <span class="nt">adviced</span> <span class="nt">to</span> <span class="nt">minimize</span> <span class="nt">compiled</span> <span class="nt">code</span></code></pre></figure>
 
-<hr />
+  <hr />
 
-<h2 id="functions">Functions</h2>
-<p>De private grid functions hoeven hier niet bij</p>
+  <h2 id="functions">Functions</h2>
+  <p>De private grid functions hoeven hier niet bij</p>
 
-<hr />
+  <hr />
 
-<h2 id="mixins">Mixins</h2>
-<p>Allemaal useful</p>
+  <h2 id="mixins">Mixins</h2>
+  <p>Allemaal useful</p>
 
-<hr />
+  <hr />
 
-<h2 id="accessible-forms">Accessible forms</h2>
-<p>Forms are very important elements on your website. It is the way of getting connected with your audience. A lot of website hide their forms inside the styling of the page. Light grey borders with rounded corners and light shadows. More often that not these forms are not very accessible color contrast wise.</p>
+  <h2 id="accessible-forms">Accessible forms</h2>
+  <p>Forms are very important elements on your website. It is the way of getting connected with your audience. A lot of website hide their forms inside the styling of the page. Light grey borders with rounded corners and light shadows. More often that not these forms are not very accessible color contrast wise.</p>
 
-<p>You can include the forms by setting the $illusion-form: to yes. Large fileds and large radio and checkboxes.</p>
+  <p>You can include the forms by setting the $illusion-form: to yes. Large fileds and large radio and checkboxes.</p>
 
-<p>Based on BEM</p>
+  <p>Based on BEM</p>
 
-<h5 id="spacing-variables">Spacing variables</h5>
+  <h5 id="spacing-variables">Spacing variables</h5>
 
-<p>See spacing variables</p>
+  <p>See spacing variables</p>
 
-<h5 id="spacing-mixin">Spacing mixin</h5>
-<p>The mixin follows the responsive breakpoints so you don’t have to worry about that yourself. You can also stop the ‘growing gutters’ at any breakpoint (or custom width), it will keep the spacing from that breakpoint. It also accepts 0.5, 1 and 2 as an argument for the amount of spacing.</p>
+  <h5 id="spacing-mixin">Spacing mixin</h5>
+  <p>The mixin follows the responsive breakpoints so you don’t have to worry about that yourself. You can also stop the ‘growing gutters’ at any breakpoint (or custom width), it will keep the spacing from that breakpoint. It also accepts 0.5, 1 and 2 as an argument for the amount of spacing.</p>
 
-<p>See spacing mixin</p>
+  <p>See spacing mixin</p>
 
-<h5 id="spacing-function">Spacing function</h5>
-<p>Accepts a value of 0.5, 1 or 2. If used in @include breakpoint it uses that current gutter. Also possible to define which ‘size’ it should use.</p>
+  <h5 id="spacing-function">Spacing function</h5>
+  <p>Accepts a value of 0.5, 1 or 2. If used in @include breakpoint it uses that current gutter. Also possible to define which ‘size’ it should use.</p>
 
-<p>See spacing function</p>
+  <p>See spacing function</p>
+
+</article>
 
         </article>
     </div>
 </main>
 
 <script>
-    smoothScroll.init();
+    smoothScroll.init({
+        selector: '#markdown-toc a',
+        offset: 24
+    });
     gumshoe.init({
+        selector: '#markdown-toc a',
         activeClass: 'is-active'
     });
 </script>

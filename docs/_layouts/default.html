@@ -2,25 +2,18 @@
 
 <main>
     <div class="container">
-        <aside>
-            <h2>Sections</h2>
-            <ul class="section-list" data-gumshoe>
-                <li><a data-scroll href="#getting-started">Getting started</a></li>
-                <li><a data-scroll href="#grid">Grid</a></li>
-                <li><a data-scroll href="#functions">Functions</a></li>
-                <li><a data-scroll href="#mixins">Mixins</a></li>
-                <li><a data-scroll href="#elements">Elements</a></li>
-            </ul>
-        </aside>
-        <article>
-            {{ content }}
-        </article>
+        {{ content }}
+        </article>{{ Leave like this, get's opened by the splitter include }}
     </div>
 </main>
 
 <script>
-    smoothScroll.init();
+    smoothScroll.init({
+        selector: '#markdown-toc a',
+        offset: 24
+    });
     gumshoe.init({
+        selector: '#markdown-toc a',
         activeClass: 'is-active'
     });
 </script>

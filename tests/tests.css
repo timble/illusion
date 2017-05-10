@@ -1,16 +1,24 @@
 .foo {
-  left: calc(((100% - 16px) / 2) + 16px);
-  position: relative;
+  padding-top: 16px;
+  padding-right: 16px;
+  padding-bottom: 16px;
+  padding-left: 16px;
 }
 
 @media screen and (min-width: 560px) {
   .foo {
-    left: calc(((100% - 48px) / 3) + 24px);
+    padding-top: 24px;
+    padding-right: 24px;
+    padding-bottom: 24px;
+    padding-left: 24px;
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
   .foo {
-    left: calc(((100% - 72px) / 4) + 24px);
+    padding-top: 32px;
+    padding-right: 32px;
+    padding-bottom: 32px;
+    padding-left: 32px;
   }
 }

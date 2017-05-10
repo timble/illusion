@@ -356,7 +356,55 @@ De private grid functions hoeven hier niet bij
 ---
 
 ## Mixins
-Allemaal useful
+
+### @mixin spacing
+...
+
+#### Arguments
+
+| Name | Type | Default | Description |
+| ---- | ---- | ------- | ----------- |
+| `sides` | `list` | `all minus none` | ... |
+| `type` | `text` | `padding` | ... |
+| `amount` | `number` | `1` | ... |
+| `fromto` | `list` | `false to false` | ... |
+| `lastchildnone` | `boolen` | `false` | ... |
+| `minus` | `number` | `0` | ... |
+
+#### SCSS
+{% highlight css %}
+.foo {
+  @include spacing;
+}
+{% endhighlight %}
+
+#### CSS
+{% highlight css %}
+.foo {
+  padding-top: 16px;
+  padding-right: 16px;
+  padding-bottom: 16px;
+  padding-left: 16px;
+}
+
+@media screen and (min-width: 560px) {
+  .foo {
+    padding-top: 24px;
+    padding-right: 24px;
+    padding-bottom: 24px;
+    padding-left: 24px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .foo {
+    padding-top: 32px;
+    padding-right: 32px;
+    padding-bottom: 32px;
+    padding-left: 32px;
+  }
+}
+{% endhighlight %}
 
 ---
 
@@ -382,5 +430,3 @@ See spacing mixin
 Accepts a value of 0.5, 1 or 2. If used in @include breakpoint it uses that current gutter. Also possible to define which 'size' it should use.
 
 See spacing function
-
-

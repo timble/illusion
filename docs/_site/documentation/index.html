@@ -70,7 +70,7 @@ I..." />
     <link href="/images/favicon.ico" rel="shortcut icon" type="image/ico"/>
     <link href="/images/favicon.png" rel="shortcut icon" type="image/png"/>
     <link href="/images/xtouch-icon.png" rel="apple-touch-icon" type="image/png"/>
-    <link rel="stylesheet" href="/css/style.css?1493634074">
+    <link rel="stylesheet" href="/css/style.css?1494445265">
     <script src="/js/modernizr.js" type="text/javascript"></script>
     <script src="/js/scripts.js" type="text/javascript"></script>
     <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600,700" rel="stylesheet">
@@ -137,7 +137,10 @@ I..." />
     </ul>
   </li>
   <li><a href="#functions" id="markdown-toc-functions">Functions</a></li>
-  <li><a href="#mixins" id="markdown-toc-mixins">Mixins</a></li>
+  <li><a href="#mixins" id="markdown-toc-mixins">Mixins</a>    <ul>
+      <li><a href="#mixin-spacing" id="markdown-toc-mixin-spacing">@mixin spacing</a></li>
+    </ul>
+  </li>
   <li><a href="#accessible-forms" id="markdown-toc-accessible-forms">Accessible forms</a></li>
 </ul>
 
@@ -606,7 +609,93 @@ I..." />
   <hr />
 
   <h2 id="mixins">Mixins</h2>
-  <p>Allemaal useful</p>
+
+  <h3 id="mixin-spacing">@mixin spacing</h3>
+  <p>…</p>
+
+  <h4 id="arguments-4">Arguments</h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Default</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code class="highlighter-rouge">sides</code></td>
+        <td><code class="highlighter-rouge">list</code></td>
+        <td><code class="highlighter-rouge">all minus none</code></td>
+        <td>…</td>
+      </tr>
+      <tr>
+        <td><code class="highlighter-rouge">type</code></td>
+        <td><code class="highlighter-rouge">text</code></td>
+        <td><code class="highlighter-rouge">padding</code></td>
+        <td>…</td>
+      </tr>
+      <tr>
+        <td><code class="highlighter-rouge">amount</code></td>
+        <td><code class="highlighter-rouge">number</code></td>
+        <td><code class="highlighter-rouge">1</code></td>
+        <td>…</td>
+      </tr>
+      <tr>
+        <td><code class="highlighter-rouge">fromto</code></td>
+        <td><code class="highlighter-rouge">list</code></td>
+        <td><code class="highlighter-rouge">false to false</code></td>
+        <td>…</td>
+      </tr>
+      <tr>
+        <td><code class="highlighter-rouge">lastchildnone</code></td>
+        <td><code class="highlighter-rouge">boolen</code></td>
+        <td><code class="highlighter-rouge">false</code></td>
+        <td>…</td>
+      </tr>
+      <tr>
+        <td><code class="highlighter-rouge">minus</code></td>
+        <td><code class="highlighter-rouge">number</code></td>
+        <td><code class="highlighter-rouge">0</code></td>
+        <td>…</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4 id="scss-4">SCSS</h4>
+
+  <figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.foo</span> <span class="p">{</span>
+  <span class="err">@include</span> <span class="err">spacing;</span>
+<span class="p">}</span></code></pre></figure>
+
+  <h4 id="css-4">CSS</h4>
+
+  <figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.foo</span> <span class="p">{</span>
+  <span class="nl">padding-top</span><span class="p">:</span> <span class="m">16px</span><span class="p">;</span>
+  <span class="nl">padding-right</span><span class="p">:</span> <span class="m">16px</span><span class="p">;</span>
+  <span class="nl">padding-bottom</span><span class="p">:</span> <span class="m">16px</span><span class="p">;</span>
+  <span class="nl">padding-left</span><span class="p">:</span> <span class="m">16px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">@media</span> <span class="n">screen</span> <span class="n">and</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">560px</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nc">.foo</span> <span class="p">{</span>
+    <span class="nl">padding-top</span><span class="p">:</span> <span class="m">24px</span><span class="p">;</span>
+    <span class="nl">padding-right</span><span class="p">:</span> <span class="m">24px</span><span class="p">;</span>
+    <span class="nl">padding-bottom</span><span class="p">:</span> <span class="m">24px</span><span class="p">;</span>
+    <span class="nl">padding-left</span><span class="p">:</span> <span class="m">24px</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">@media</span> <span class="n">screen</span> <span class="n">and</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">1024px</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nc">.foo</span> <span class="p">{</span>
+    <span class="nl">padding-top</span><span class="p">:</span> <span class="m">32px</span><span class="p">;</span>
+    <span class="nl">padding-right</span><span class="p">:</span> <span class="m">32px</span><span class="p">;</span>
+    <span class="nl">padding-bottom</span><span class="p">:</span> <span class="m">32px</span><span class="p">;</span>
+    <span class="nl">padding-left</span><span class="p">:</span> <span class="m">32px</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
 
   <hr />
 
@@ -630,7 +719,6 @@ I..." />
   <p>Accepts a value of 0.5, 1 or 2. If used in @include breakpoint it uses that current gutter. Also possible to define which ‘size’ it should use.</p>
 
   <p>See spacing function</p>
-
 </article>
 
         </article>

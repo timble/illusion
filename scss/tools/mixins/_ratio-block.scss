@@ -1,5 +1,4 @@
 // Aspect ratio blocks
-// Probably needs a coverall @mixin as a child
 
 @mixin ratio-block($ratio: 16 to 9) {
 
@@ -10,7 +9,14 @@
 
   &:before {
     display: block;
+    float: left;
     content: " ";
     padding-top: $percent;
+  }
+
+  &:after {
+    content: " ";
+    clear: left;
+    display: table;
   }
 }

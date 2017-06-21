@@ -23,7 +23,7 @@
       $largestWidth: largestWidth();
 
       // Create new temporary map and merge it with the current one
-      @if ($inside-breakpoint >= $width and $inside-breakpoint < $nextWidth) or ($inside-breakpoint > $largestWidth) {
+      @if ($inside-breakpoint >= $width and $inside-breakpoint < $nextWidth) or ($inside-breakpoint >= $largestWidth) {
         $breakpointGutter: $gutter;
       }
     }

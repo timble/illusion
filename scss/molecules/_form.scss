@@ -42,12 +42,16 @@
     padding: $spacing-xs $spacing-s;
     border: $illusion-form-border-width solid;
     line-height: $line-height + $spacing-xs;
-    border-radius: 0;
 
     &:focus {
       outline: 3px solid $color-focus;
       outline-offset: 0;
     }
+  }
+
+  input.form__input,
+  textarea.form__input {
+    border-radius: 0;
   }
 
 

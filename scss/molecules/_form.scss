@@ -27,7 +27,6 @@
 
   .form__label,
   .form__input {
-    -webkit-appearance: none;
     font-size: inherit;
     line-height: inherit;
   }
@@ -51,6 +50,7 @@
 
   input.form__input,
   textarea.form__input {
+    -webkit-appearance: none;
     border-radius: 0;
   }
 

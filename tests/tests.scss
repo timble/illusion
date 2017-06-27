@@ -2,8 +2,29 @@
 
 @import "../scss/illusion";
 
-//@import "grid/container";
-//@import "grid/span";
-//@import "grid/gallery";
-//@import "grid/shift";
-@import "mixins/spacing";
+// Mixins
+//@import "mixins/container";
+//@import "mixins/span";
+//@import "mixins/gallery";
+//@import "mixins/shift";
+
+//@import "mixins/accessibility";
+//@import "mixins/breakpoint";
+//@import "mixins/button";
+//@import "mixins/clearfix";
+//@import "mixins/content-block";
+//@import "mixins/coverall";
+//@import "mixins/flexbox";
+//@import "mixins/font-smoothing";
+//@import "mixins/hover";
+//@import "mixins/js-enabled";
+//@import "mixins/modernizr";
+//@import "mixins/pseudo";
+//@import "mixins/ratio-block";
+//@import "mixins/reset";
+//@import "mixins/spacing";
+//@import "mixins/transition";
+//@import "mixins/triangle";
+
+// Functions
+@import "functions/spacing";

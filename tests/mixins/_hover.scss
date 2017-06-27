@@ -1,0 +1,5 @@
+.foo {
+  @include hover {
+    text-decoration: underline;
+  }
+}

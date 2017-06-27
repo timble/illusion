@@ -1,0 +1,7 @@
+.bar {
+  @include visually-hidden;
+}
+
+.foo .bar {
+  @include visually-shown;
+}

@@ -1,0 +1,7 @@
+.bar {
+  @include clearfix;
+}
+
+.foo .bar {
+  @include clearfix(reset);
+}

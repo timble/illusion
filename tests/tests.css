@@ -1,24 +1,5 @@
-.foo {
-  padding-top: 16px;
-  padding-right: 16px;
-  padding-bottom: 16px;
-  padding-left: 16px;
-}
-
 @media screen and (min-width: 560px) {
   .foo {
     padding-top: 24px;
-    padding-right: 24px;
-    padding-bottom: 24px;
-    padding-left: 24px;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .foo {
-    padding-top: 32px;
-    padding-right: 32px;
-    padding-bottom: 32px;
-    padding-left: 32px;
   }
 }

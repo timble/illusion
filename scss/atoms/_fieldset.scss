@@ -10,7 +10,7 @@
     margin: 0;
 
     legend {
-      @include content-block;
+      @include content-block($spacing-m);
     }
   }
 }

@@ -6,7 +6,7 @@
    * - A background color for <body>
    * - An optional left and right border for <body>
    *
-   * 1. Add :root so CSSmin won't merge the two
+   * 1. Add :root so CSSmin won't merge the two. This will set the width to 100% for capable browsers
    */
 
   body {

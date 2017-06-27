@@ -1,10 +1,13 @@
 @if $illusion-form == true {
+
   // Form section is used to wrap .form-group
   .form {
-    @include spacing(bottom, margin);
+    @include spacing(bottom, margin, $lastchildnone: true);
 
-    &:last-child {
-      margin-bottom: 0;
+    // Lighter fields for disabled fields
+    [disabled] {
+      cursor: not-allowed;
+      opacity: 0.6;
     }
   }
 
@@ -41,5 +44,10 @@
   textarea.form__input {
     -webkit-appearance: none;
     border-radius: 0;
+  }
+
+  // Set a height for select elements
+  select {
+    height: $line-height + ($spacing-xs * 4);
   }
 }

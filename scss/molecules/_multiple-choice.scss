@@ -100,8 +100,13 @@
     }
 
     // Disabled state
-    input:disabled + label {
-      opacity: 0.5;
+    input:disabled {
+      opacity: 0;
+
+      + label {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
     }
   }
 

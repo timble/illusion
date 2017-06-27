@@ -1,8 +1,5 @@
 @if $illusion-form == true {
-  /**
-   * Form defaults
-   */
-
+  // Form section is used to wrap .form-group
   .form {
     @include spacing(bottom, margin);
 
@@ -11,19 +8,10 @@
     }
   }
 
-
-  /**
-   * Form group
-   */
-
+  // Form group is used to wrap label and input pairs
   .form__group {
     @include content-block;
   }
-
-
-  /**
-   * Form controls
-   */
 
   .form__label,
   .form__input {
@@ -48,6 +36,7 @@
     }
   }
 
+  // Allow a qualifying element, remove rounded corners from inputs and textareas
   input.form__input,
   textarea.form__input {
     -webkit-appearance: none;

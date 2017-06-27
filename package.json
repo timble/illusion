@@ -1,7 +1,17 @@
 {
   "name": "illusion",
   "description": "Illusion",
-  "author": "Timble",
+  "version": "0.0.1",
+  "homepage": "https://illusion.timble.net",
+  "author": "The Illusion Authors (https://github.com/timble/illusion/graphs/contributors)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/timble/illusion.git"
+  },
+  "bugs": {
+    "url": "https://github.com/timble/illusion/issues"
+  },
+  "license": "MIT",
   "devDependencies": {
     "bower": "^1.8.0",
     "caniuse-db": "*",

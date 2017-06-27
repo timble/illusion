@@ -1,0 +1,118 @@
+@if $illusion-form == true {
+  // Radio buttons & checkboxes
+
+  // By default, multiple choice inputs stack vertically
+  .multiple-choice {
+    display: block;
+    float: none;
+    clear: left;
+    position: relative;
+
+    padding: 0 0 0 40px;
+    margin-bottom: $spacing-m;
+
+    @include breakpoint($beta) {
+      float: left;
+    }
+
+    // Absolutely position inputs within label, to allow text to wrap
+    input {
+      position: absolute;
+      cursor: pointer;
+      left: 0;
+      top: 0;
+      width: 40px;
+      height: 40px;
+      z-index: 1;
+
+      margin: 0;
+      opacity: 0;
+    }
+
+    label {
+      cursor: pointer;
+      padding: $spacing-s $spacing-m;
+      display: block;
+
+      // remove 300ms pause on mobile
+      touch-action: manipulation;
+    }
+
+    // Bordered box for radio buttons and checkbox
+    [type=radio] + label:before,
+    [type=checkbox] + label:before {
+      content: "";
+      border: $illusion-form-border-width solid;
+      background: transparent;
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    // Rounded box for radio buttons
+    [type=radio] + label::before {
+      border-radius: 50%;
+    }
+
+    // Dot and checkmark
+    [type=radio] + label::after,
+    [type=checkbox] + label::after {
+      content: "";
+      border: 12px solid;
+      position: absolute;
+      opacity: 0;
+      transform: scale(0.5);
+      @include transition;
+    }
+
+    // Dot
+    [type=radio] + label::after {
+      width: 0;
+      height: 0;
+      top: 8px;
+      left: 8px;
+      border-radius: 50%;
+    }
+
+    // Checkmark
+    [type=checkbox] + label::after {
+      border-width: 0 0 6px 6px;
+      background: transparent;
+      width: 22px;
+      height: 12px;
+      top: 12px;
+      left: 9px;
+      transform: rotate(-45deg) scale(0.5);
+    }
+
+    // Selected state
+    input:checked + label::after {
+      opacity: 1;
+      transform: rotate(-45deg) scale(1);
+    }
+
+    // Focused state
+    [type=checkbox]:focus + label::before,
+    [type=radio]:focus + label::before {
+      box-shadow: 0 0 0 3px $illusion-form-focus-color;
+    }
+
+    // Disabled state
+    input:disabled + label {
+      opacity: 0.5;
+    }
+  }
+
+
+  /* Submit button */
+
+  [type=submit] {
+    @include button-structure;
+
+    &:focus {
+      outline: 3px solid $color-focus;
+    }
+  }
+}

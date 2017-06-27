@@ -1,0 +1,116 @@
+### @mixin gallery
+
+Shortcut to create gallery-style grids. Adds clearing on nth-child items.
+
+#### Arguments
+
+| Name | Type | Default | Description |
+| ---- | ---- | ------- | ----------- |
+| `span` | `list` | - | .....  |
+| `fromto` | `list` | `false to false` | .....  |
+| `amount` | `number` | `1` | Gutter amount. defaults to `1` and can be set to `0.5`, `1` or `2` |
+| `bottom` | `boolean` | `true` | Set to `false` if you don't want bottom gutters  |
+| `float` | `string` | `left` | .....  |
+| `defaultProperties` | `boolean` | `true` | If set to `false` the mixin won't add the `float` property nor the `margin` property on `:first-child` and `:last-child` |
+
+#### SCSS
+
+{% highlight css %}
+.foo {
+  @include gallery(4);
+}
+{% endhighlight %}
+
+#### CSS
+
+{% highlight css %}
+.foo {
+    width: calc((100% - 32px) / 3);
+    margin-left: calc(16px);
+    margin-bottom: calc(16px);
+    float: left;
+}
+
+.foo:nth-child(3n) {
+    margin-right: -1px;
+}
+
+.foo:nth-child(3n+1) {
+    margin-left: 0;
+    clear: left;
+}
+
+.foo:first-child {
+    margin-left: 0;
+}
+
+@media screen and (min-width: 560px) {
+    .foo {
+        width: calc((100% - 48px) / 3);
+        margin-left: calc(24px);
+        margin-bottom: calc(24px);
+    }
+
+    .foo:nth-child(n) {
+        clear: none;
+        margin-left: calc(24px);
+        margin-right: 0;
+    }
+
+    .foo:nth-child(3n) {
+        margin-right: -1px;
+    }
+
+    .foo:nth-child(3n+1) {
+        margin-left: 0;
+        clear: left;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .foo {
+        width: calc((100% - 64px) / 3);
+        margin-left: calc(32px);
+        margin-bottom: calc(32px);
+    }
+
+    .foo:nth-child(n) {
+        clear: none;
+        margin-left: calc(32px);
+        margin-right: 0;
+    }
+
+    .foo:nth-child(3n) {
+        margin-right: -1px;
+    }
+
+    .foo:nth-child(3n+1) {
+        margin-left: 0;
+        clear: left;
+    }
+}
+{% endhighlight %}
+
+##### Breakpoints use
+
+It's best not to use this mixin inside a breakpoint since the mixin itself is creating media queries. So to avoid creating a LOT of duplicate code rather use the mixin itself to create breakpoints:
+
+{% highlight scss %}
+// BAD
+.foo {
+    @include gallery(6);
+    @include breakpoint($beta) {
+        @include gallery(4);
+    }
+}
+
+// GOOD
+.foo {
+    @include gallery(6, 0 to $beta);
+    @include gallery(4, $beta to $charlie, $defaultProperties: false);
+    @include gallery(3, $charlie to $delta, $defaultProperties: false);
+}
+
+// $defaultProperties set to false on all except first mixin
+// While this is not mandatory it is adviced to minimize compiled code
+{% endhighlight %}

@@ -1,57 +1,51 @@
 module.exports = function(grunt) {
-
     // measures the time each task takes
-    require('time-grunt')(grunt);
+    require("time-grunt")(grunt);
 
     // load time-grunt and all grunt plugins found in the package.json
-    require('jit-grunt')(grunt);
+    require("jit-grunt")(grunt);
 
     // grunt config
     grunt.initConfig({
-
-
         // Copy bower files
         copy: {
             css: {
                 files: [
                     {
                         expand: true,
-                        src: ['docs/css/*.css'],
-                        dest: 'docs/_site/css',
+                        src: ["docs/css/*.css"],
+                        dest: "docs/_site/css",
                         flatten: true
                     }
                 ]
             }
         },
 
-
         // Compile sass files
         sass: {
             options: {
-                outputStyle: 'expanded'
+                outputStyle: "expanded"
             },
             dist: {
                 files: {
-                    'docs/css/style.css': 'docs/_scss/style.scss',
-                    'tests/tests.css': 'tests/tests.scss'
+                    "docs/css/style.css": "docs/_scss/style.scss",
+                    "tests/tests.css": "tests/tests.scss"
                 }
             }
         },
 
-
         // Autoprefixer
         autoprefixer: {
             options: {
-                browsers: ['> 5%', 'last 2 versions']
+                browsers: ["> 5%", "last 2 versions"]
             },
             files: {
                 expand: true,
                 flatten: true,
-                src: 'docs/css/*.css',
-                dest: 'docs/css/'
+                src: "docs/css/*.css",
+                dest: "docs/css/"
             }
         },
-
 
         // CSSmin
         cssmin: {
@@ -66,11 +60,10 @@ module.exports = function(grunt) {
             },
             site: {
                 files: {
-                    'docs/css/style.css': 'docs/css/style.css'
+                    "docs/css/style.css": "docs/css/style.css"
                 }
             }
         },
-
 
         // Browser Sync
         browserSync: {
@@ -95,27 +88,18 @@ module.exports = function(grunt) {
             }
         },
 
-
         // Modernizr
         modernizr: {
             dist: {
-                "cache": true,
-                "dest": "docs/js/modernizr.js",
-                "options": [
-                    "html5shiv",
-                    "prefixedCSS",
-                    "setClasses"
-                ],
-                "uglify": true,
-                "tests": [
-                    'flexbox',
-                    'flexwrap'
-                ],
-                "crawl" : false,
-                "customTests" : []
+                cache: true,
+                dest: "docs/js/modernizr.js",
+                options: ["html5shiv", "prefixedCSS", "setClasses"],
+                uglify: true,
+                tests: ["flexbox", "flexwrap"],
+                crawl: false,
+                customTests: []
             }
         },
-
 
         // Uglify
         uglify: {
@@ -124,49 +108,46 @@ module.exports = function(grunt) {
             },
             build: {
                 files: {
-                    'docs/js/scripts.js': [
-                        'node_modules/smooth-scroll/dist/js/smooth-scroll.min.js',
-                        'node_modules/gumshoe/dist/js/gumshoe.js',
-                        'docs/_scripts/main.js'
+                    "docs/js/scripts.js": [
+                        "node_modules/smooth-scroll/dist/js/smooth-scroll.min.js",
+                        "node_modules/gumshoe/dist/js/gumshoe.js",
+                        "docs/_scripts/main.js"
                     ]
                 }
             }
         },
 
-
         // Shell commands
         shell: {
             jekyllBuild: {
-                command: 'cd docs; bundle exec jekyll build --safe --future --incremental --config _config.yml,_config.local.yml'
+                command:
+                    "cd docs; bundle exec jekyll build --safe --future --incremental --config _config.yml,_config.local.yml"
             }
         },
-
 
         // Watch files
         watch: {
             css: {
                 files: [
-                    'docs/_scss/*.scss',
-                    'docs/_scss/**/*.scss',
-                    'scss/*.scss',
-                    'scss/**/*.scss',
-                    'scss/**/**/*.scss',
-                    'scss/**/**/**/*.scss',
-                    'tests/*.scss',
-                    'tests/**/*.scss',
-                    'tests/**/**/*.scss'
+                    "docs/_scss/*.scss",
+                    "docs/_scss/**/*.scss",
+                    "scss/*.scss",
+                    "scss/**/*.scss",
+                    "scss/**/**/*.scss",
+                    "scss/**/**/**/*.scss",
+                    "tests/*.scss",
+                    "tests/**/*.scss",
+                    "tests/**/**/*.scss"
                 ],
-                tasks: ['sass', 'cssmin', 'autoprefixer', 'copy:css'],
+                tasks: ["sass", "cssmin", "autoprefixer", "copy:css"],
                 options: {
                     interrupt: true,
                     atBegin: true
                 }
             },
             javascript: {
-                files: [
-                    'docs/_scripts/*.js'
-                ],
-                tasks: ['uglify'],
+                files: ["docs/_scripts/*.js"],
+                tasks: ["uglify"],
                 options: {
                     interrupt: true,
                     atBegin: true
@@ -174,33 +155,36 @@ module.exports = function(grunt) {
             },
             jekyll: {
                 files: [
-                    'docs/_includes/*.*',
-                    'docs/_includes/**/*.*',
-                    'docs/_layouts/*.*',
-                    'docs/images/*.*',
-                    'docs/images/**/*.*',
-                    'docs/images/**/**/*.*',
-                    'docs/docs/**/*.*',
-                    'docs/docs/*.*',
-                    'docs/examples/**/*.*',
-                    'docs/examples/*.*',
-                    'docs/faq/**/*.*',
-                    'docs/faq/*.*',
-                    'docs/index.md',
-                    'docs/config.yml'
+                    "docs/_includes/*.*",
+                    "docs/_includes/**/*.*",
+                    "docs/_includes/**/**/*.*",
+                    "docs/_layouts/*.*",
+                    "docs/images/*.*",
+                    "docs/images/**/*.*",
+                    "docs/images/**/**/*.*",
+                    "docs/documentation/*.*",
+                    "docs/documentation/*.*",
+                    "docs/examples/**/*.*",
+                    "docs/examples/*.*",
+                    "docs/faq/**/*.*",
+                    "docs/faq/*.*",
+                    "docs/index.md",
+                    "docs/config.yml"
                 ],
-                tasks: ['shell:jekyllBuild'],
+                tasks: ["shell:jekyllBuild"],
                 options: {
                     interrupt: false,
                     atBegin: true
                 }
             }
         }
-
-
     });
 
     // The dev task will be used during development
-    grunt.registerTask('default', ['shell', 'modernizr', 'browserSync', 'watch']);
-
+    grunt.registerTask("default", [
+        "shell",
+        "modernizr",
+        "browserSync",
+        "watch"
+    ]);
 };

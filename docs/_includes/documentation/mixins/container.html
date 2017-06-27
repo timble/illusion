@@ -1,0 +1,56 @@
+### @mixin container
+
+Shouldn't be nested. Adds clearfix when used without flexbox and removes clearfix when used as flexbox. Adds a max-width and left and right padding following the responsive gutters.
+
+#### Arguments
+
+| Name | Type | Default | Description |
+| ---- | ---- | ------- | ----------- |
+| `flexbox` | `boolean` | `false` | Enables flexbox on container. For example `@include container(true);` will enable flexbox |
+
+#### Dependencies
+
+For flexbox to work properly it uses Modernizr `.flexbox.flexwrap`
+
+#### SCSS
+
+{% highlight css %}
+.foo {
+  @include container;
+}
+{% endhighlight %}
+
+#### CSS
+
+{% highlight css %}
+.foo {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1176px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.foo:before, .foo:after {
+  display: table;
+  content: " ";
+}
+
+.foo:after {
+  clear: both;
+}
+
+@media screen and (min-width: 560px) {
+  .foo {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .foo {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+{% endhighlight %}

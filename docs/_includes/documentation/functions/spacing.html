@@ -1,0 +1,19 @@
+### @function spacing
+
+Returns set spacing or calculate current spacing when inside breakpoint
+
+Accepts a value of 0.5, 1 or 2. If used in @include breakpoint it uses that current gutter. Also possible to define which 'size' it should use.
+
+#### SCSS
+
+{% highlight css %}
+@include breakpoint($charlie) {
+  padding-top: spacing();
+}
+{% endhighlight %}
+
+#### CSS
+
+{% highlight css %}
+Magic
+{% endhighlight %}

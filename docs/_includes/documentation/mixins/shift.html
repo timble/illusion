@@ -1,0 +1,65 @@
+### @mixin shift
+
+Visually change the order of elements...
+
+#### Arguments
+
+| Name | Type | Default | Description |
+| ---- | ---- | ------- | ----------- |
+| `shift` | `list` | - | .....  |
+| `fromto` | `list` | `false to false` | .....  |
+| `amount` | `number` | `1` | Gutter amount. defaults to `1` and can be set to `0.5`, `1` or `2` |
+| `defaultProperties` | `boolean` | `true` | If set to `false` the mixin won't add the `position` property |
+
+#### SCSS
+
+{% highlight css %}
+.foo {
+  @include shift(4);
+}
+{% endhighlight %}
+
+#### CSS
+
+{% highlight css %}
+.foo {
+    left: calc(((100% - 16px) / 2) + 16px);
+    position: relative;
+}
+
+@media screen and (min-width: 560px) {
+    .foo {
+        left: calc(((100% - 24px) / 2) + 24px);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .foo {
+        left: calc(((100% - 32px) / 2) + 32px);
+    }
+}
+{% endhighlight %}
+
+##### Breakpoints use
+
+It's best not to use this mixin inside a breakpoint since the mixin itself is creating media queries. So to avoid creating a LOT of duplicate code rather use the mixin itself to create breakpoints:
+
+{% highlight scss %}
+// BAD
+.foo {
+    @include shift(6);
+    @include breakpoint($beta) {
+        @include shift(4);
+    }
+}
+
+// GOOD
+.foo {
+    @include shift(6, 0 to $beta);
+    @include shift(4, $beta to $charlie, $defaultProperties: false);
+    @include shift(3, $charlie to $delta, $defaultProperties: false);
+}
+
+// $defaultProperties set to false on all except first mixin
+// While this is not mandatory it is adviced to minimize compiled code
+{% endhighlight %}

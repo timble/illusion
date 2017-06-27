@@ -1,7 +1,11 @@
 .foo {
-  @include flexbox($beta, $charlie);
+  @include flexbox($beta, $charlie) {
+    display: flex;
+  }
 }
 
 .foo {
-  @include no-flexbox;
+  @include no-flexbox {
+    display: table;
+  }
 }

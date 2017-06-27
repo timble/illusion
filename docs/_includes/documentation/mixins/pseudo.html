@@ -1,5 +1,30 @@
 ### @mixin psuedo
 
+#### SCSS
+
 {% highlight css %}
-@include psuedo();
+.foo {
+  @include psuedo(after) {
+    width: 24px;
+    height: 24px;
+    background: grey;
+  }
+}
+{% endhighlight %}
+
+#### CSS
+
+{% highlight css %}
+.foo {
+  position: relative;
+}
+
+.foo:after {
+  position: absolute;
+  content: " ";
+  display: block;
+  width: 24px;
+  height: 24px;
+  background: grey;
+}
 {% endhighlight %}

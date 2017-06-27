@@ -2,14 +2,15 @@
 
 @import "../scss/illusion";
 
-// Mixins
+// Grid
 //@import "mixins/container";
 //@import "mixins/span";
 //@import "mixins/gallery";
 //@import "mixins/shift";
 
+// Mixins
 //@import "mixins/accessibility";
-//@import "mixins/breakpoint";
+@import "mixins/breakpoint";
 //@import "mixins/button";
 //@import "mixins/clearfix";
 //@import "mixins/content-block";
@@ -27,4 +28,4 @@
 //@import "mixins/triangle";
 
 // Functions
-@import "functions/spacing";
+//@import "functions/spacing";

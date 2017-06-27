@@ -1,5 +1,21 @@
 ### @mixin modernizr
 
+#### SCSS
+
 {% highlight css %}
-@include modernizr();
+.foo {
+  @include modernizr(csscalc, flexbox) {
+    width: calc(100% - 20px);
+    display: flex;
+  }
+}
+{% endhighlight %}
+
+#### CSS
+
+{% highlight css %}
+.csscalc.flexbox .foo {
+  width: calc(100% - 20px);
+  display: flex;
+}
 {% endhighlight %}

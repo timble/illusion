@@ -55,7 +55,6 @@ Include Modernizr and at least add `JS - No JS detection` and `flexbox detection
 {% include documentation/mixins/font-smoothing.html %}
 {% include documentation/mixins/gallery.html %}
 {% include documentation/mixins/hover.html %}
-{% include documentation/mixins/ifbreakpoint.html %}
 {% include documentation/mixins/js-enabled.html %}
 {% include documentation/mixins/modernizr.html %}
 {% include documentation/mixins/pseudo.html %}

@@ -1,5 +1,17 @@
 ### @mixin transitation
 
+#### SCSS
+
 {% highlight css %}
-@include transition();
+.foo {
+  @include transition(opacity 1s, transform);
+}
+{% endhighlight %}
+
+#### CSS
+
+{% highlight css %}
+.foo {
+  transition: opacity 1s cubic-bezier(0.195, 0.4, 0.45, 0.785) 0ms, transform 0.2s cubic-bezier(0.195, 0.4, 0.45, 0.785) 0ms;
+}
 {% endhighlight %}

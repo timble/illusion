@@ -1,5 +1,26 @@
 ### @mixin ratio-block
 
+#### SCSS
+
 {% highlight css %}
-@include ratio-block();
+.foo {
+  @include ratio-block(4 to 3);
+}
+{% endhighlight %}
+
+#### CSS
+
+{% highlight css %}
+.foo:before {
+  display: block;
+  float: left;
+  content: " ";
+  padding-top: 75%;
+}
+
+.foo:after {
+  content: " ";
+  clear: left;
+  display: table;
+}
 {% endhighlight %}

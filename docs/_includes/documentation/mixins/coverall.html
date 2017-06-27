@@ -1,5 +1,23 @@
 ### @mixin coverall
 
+Cover entire closest element that has `position:` `absolute` or `relative`
+
+#### SCSS
+
 {% highlight css %}
-@include coverall();
+.foo {
+  @include coverall;
+}
+{% endhighlight %}
+
+#### CSS
+
+{% highlight css %}
+.foo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
 {% endhighlight %}

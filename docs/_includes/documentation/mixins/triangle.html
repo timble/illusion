@@ -2,6 +2,21 @@
 
 CSS only triangles using borders
 
+#### SCSS
+
 {% highlight css %}
-@include triangle();
+.foo {
+  @include triangle(top, 4px, blue);
+}
+{% endhighlight %}
+
+#### CSS
+
+{% highlight css %}
+.foo {
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 4px solid;
+  border-bottom-color: blue;
+}
 {% endhighlight %}

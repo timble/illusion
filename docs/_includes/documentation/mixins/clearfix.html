@@ -1,9 +1,33 @@
 ### @mixin clearfix
 
-Also clearing top-margin
+- Clears top and bottom floats.
+- Still using single colon for better browser compatibility
 
-Still using single colon for better browser compatibility
+#### SCSS
 
 {% highlight css %}
-@include clearfix();
+.bar {
+  @include clearfix;
+}
+
+.foo .bar {
+  @include clearfix(reset);
+}
+{% endhighlight %}
+
+#### CSS
+
+{% highlight css %}
+.bar:before, .bar:after {
+  display: table;
+  content: " ";
+}
+
+.bar:after {
+  clear: both;
+}
+
+.foo .bar:before, .foo .bar:after {
+  display: none;
+}
 {% endhighlight %}

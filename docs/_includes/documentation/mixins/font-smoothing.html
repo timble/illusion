@@ -4,6 +4,19 @@ Best to only use for light text on dark backgrounds.
 
 For regular dark text on light backgrounds the browser default is better
 
+#### SCSS
+
 {% highlight css %}
-@include font-smoothing();
+.foo {
+  @include font-smoothing;
+}
+{% endhighlight %}
+
+#### CSS
+
+{% highlight css %}
+.foo {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 {% endhighlight %}

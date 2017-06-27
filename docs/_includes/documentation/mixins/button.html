@@ -1,7 +1,22 @@
 ### @mixin button
 
-Can be used inside your own @mixin button(); and other elements that should behave like a button
+Can be used inside your own `@mixin button();` and other elements that should behave like a button. No styling is provided.
+
+#### SCSS
 
 {% highlight css %}
-@include button-structure();
+.foo {
+  @include button-structure;
+}
+{% endhighlight %}
+
+#### CSS
+
+{% highlight css %}
+.foo {
+  -webkit-appearance: none;
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+}
 {% endhighlight %}

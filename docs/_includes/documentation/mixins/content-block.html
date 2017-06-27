@@ -1,5 +1,23 @@
 ### @mixin content-block
 
+Adds a margin bottom to element and removes the margin bottom from the last element in it's parent.
+
+#### SCSS
+
 {% highlight css %}
-@include content-block();
+.foo {
+  @include content-block;
+}
+{% endhighlight %}
+
+#### CSS
+
+{% highlight css %}
+.foo {
+  margin-bottom: 24px;
+}
+
+.foo:last-child {
+  margin-bottom: 0;
+}
 {% endhighlight %}

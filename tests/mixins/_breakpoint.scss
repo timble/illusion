@@ -1,3 +1,5 @@
 .foo {
-  @include breakpoint($beta);
+  @include breakpoint($beta) {
+    width: auto;
+  }
 }

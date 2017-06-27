@@ -1,7 +1,23 @@
 ### @mixin breakpoint
 
-Sets a temporary global $inside-breakpoint variable to be used inside other mixins
+Sets a temporary global `$inside-breakpoint` variable to be used inside other mixins.
+
+#### SCSS
 
 {% highlight css %}
-@include breakpoint();
+.foo {
+  @include breakpoint($beta) {
+    width: auto;
+  }
+}
+{% endhighlight %}
+
+#### CSS
+
+{% highlight css %}
+@media screen and (min-width: 560px) {
+  .foo {
+    width: auto;
+  }
+}
 {% endhighlight %}

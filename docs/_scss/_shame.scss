@@ -22,7 +22,7 @@ header {
   @include spacing(vertical);
   overflow: hidden;
 
-  @include psuedo(before) {
+  @include pseudo(before) {
     z-index: -1;
     top: 0;
     left: 0;
@@ -227,7 +227,7 @@ pre {
   @include reset;
 
   li {
-    @include psuedo(before) {
+    @include pseudo(before) {
       left: 0;
       top: 8px;
       @include triangle(right, 4px, $color3);

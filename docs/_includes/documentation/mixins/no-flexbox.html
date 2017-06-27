@@ -1,4 +1,4 @@
-### @mixin flexbox
+### @mixin no-flexbox
 
 ...
 
@@ -17,8 +17,8 @@ For flexbox to work properly it uses Modernizr `.flexbox` and `.flexboxlegacy`
 
 {% highlight css %}
 .foo {
-  @include flexbox($beta, $charlie) {
-    display: flex;
+  @include no-flexbox {
+    display: table;
   }
 }
 {% endhighlight %}
@@ -26,10 +26,8 @@ For flexbox to work properly it uses Modernizr `.flexbox` and `.flexboxlegacy`
 #### SCSS
 
 {% highlight css %}
-@media (min-width: 560px) and (min-height: 768px) {
-  .flexbox .foo,
-  .flexboxlegacy .foo {
-    display: flex;
-  }
+.no-flexbox .foo,
+.no-flexboxlegacy .foo {
+  display: table;
 }
 {% endhighlight %}

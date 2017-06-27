@@ -3,9 +3,3 @@
     display: flex;
   }
 }
-
-.foo {
-  @include no-flexbox {
-    display: table;
-  }
-}

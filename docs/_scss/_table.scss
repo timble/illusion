@@ -56,7 +56,7 @@ th {
     overflow-y: hidden;
 
     tr:first-child {
-      @include psuedo(before) {
+      @include pseudo(before) {
         z-index: 1;
         width: 20px;
         height: 100%;
@@ -67,7 +67,7 @@ th {
     }
 
     tr:last-child {
-      @include psuedo(after) {
+      @include pseudo(after) {
         z-index: 1;
         width: 20px;
         height: 100%;

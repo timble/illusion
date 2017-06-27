@@ -1,10 +1,20 @@
-### @mixin psuedo
+### @mixin pseudo
+
+#### Arguments
+
+| Name | Type | Default | Description |
+| ---- | ---- | ------- | ----------- |
+| `pseudo` | `string` | after | Either `before` or `after` |
+| `parent-position` | `string` | relative | Set to `false` if you don't want one. Set to `fixed` or `absolute` if you don't want it to be `relative` |
+| `position` | `string` | absolute | Set to `false` if you don't want one. |
+| `content` | `string` | `" "` | ... |
+| `display` | `string` | `block` | ... |
 
 #### SCSS
 
 {% highlight css %}
 .foo {
-  @include psuedo(after) {
+  @include pseudo(after) {
     width: 24px;
     height: 24px;
     background: grey;

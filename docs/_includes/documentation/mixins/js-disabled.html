@@ -1,11 +1,11 @@
-### @mixin js-enabled
+### @mixin js-disabled
 
 #### SCSS
 
 {% highlight css %}
 .foo {
-  @include js-enabled {
-    display: none;
+  @include js-disabled {
+    display: block;
   }
 }
 {% endhighlight %}
@@ -13,7 +13,7 @@
 #### CSS
 
 {% highlight css %}
-.js .foo {
-  display: none;
+.no-js .foo {
+  display: block;
 }
 {% endhighlight %}

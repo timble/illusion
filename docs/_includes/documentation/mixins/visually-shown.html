@@ -1,0 +1,42 @@
+### @mixin visually-shown
+
+Visually show elements that were visually hidden before.
+
+#### Arguments
+
+| Name | Type | Default | Description |
+| ---- | ---- | ------- | ----------- |
+| `position` | `string` | `static` | ... |
+| `overflow` | `string` | `visible` | ... |
+| `backface-visibility` | `string` | `visible` | ... |
+| `clip` | `string` | `auto` | ... |
+| `height` | `string` | `auto` | ... |
+| `width` | `string` | `auto` | ... |
+| `margin` | `string` | `0` | ... |
+| `padding` | `string` | `0` | ... |
+| `border` | `string` | `none` | ... |
+
+#### SCSS
+
+{% highlight css %}
+.foo {
+  @include visually-shown;
+}
+{% endhighlight %}
+
+
+#### CSS
+
+{% highlight css %}
+.foo {
+  position: static;
+  overflow: visible;
+  backface-visibility: visible;
+  clip: auto;
+  height: auto;
+  width: auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+{% endhighlight %}

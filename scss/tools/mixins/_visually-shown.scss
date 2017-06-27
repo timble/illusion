@@ -1,0 +1,13 @@
+// Visually shown
+
+@mixin visually-shown($position: static, $overflow: visible, $backface-visibility: visible, $clip: auto, $height: auto, $width: auto, $margin: 0, $padding: 0, $border: none) {
+  position: $position;
+  overflow: $overflow;
+  backface-visibility: $backface-visibility;
+  clip: $clip;
+  height: $height;
+  width: $width;
+  margin: $margin;
+  padding: $padding;
+  border: $border;
+}

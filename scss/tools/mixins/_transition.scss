@@ -1,3 +1,22 @@
+// Default transition
+//
+// Usage:   @include transition(width, height 0.3s ease-in-out);
+// Output:  transition(width 0.2s, height 0.3s ease-in-out);
+//
+// Pass in any number of transitions
+
+@mixin transition($transitions...) {
+  $unfoldedTransitions: ();
+  @if length($transitions) == 0 {
+    $unfoldedTransitions: append($unfoldedTransitions, unfoldTransition(all), comma);
+  }
+  @each $transition in $transitions {
+    $unfoldedTransitions: append($unfoldedTransitions, unfoldTransition($transition), comma);
+  }
+  transition: $unfoldedTransitions;
+}
+
+
 // Default transition settings
 //
 // https://gist.github.com/tobiasahlin/7a421fb9306a4f518aab
@@ -23,23 +42,4 @@
   }
 
   @return $unfoldedTransition;
-}
-
-
-// Default transition
-//
-// Usage:   @include transition(width, height 0.3s ease-in-out);
-// Output:  transition(width 0.2s, height 0.3s ease-in-out);
-//
-// Pass in any number of transitions
-
-@mixin transition($transitions...) {
-  $unfoldedTransitions: ();
-  @if length($transitions) == 0 {
-    $unfoldedTransitions: append($unfoldedTransitions, unfoldTransition(all), comma);
-  }
-  @each $transition in $transitions {
-    $unfoldedTransitions: append($unfoldedTransitions, unfoldTransition($transition), comma);
-  }
-  transition: $unfoldedTransitions;
 }

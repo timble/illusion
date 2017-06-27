@@ -16,7 +16,7 @@
       display: flex;
       flex-wrap: wrap;
 
-      // Hide psuedo elements
+      // Hide pseudo elements
       // They are in the way for wrapping flex items on certain browsers
       @include clearfix(reset);
     }

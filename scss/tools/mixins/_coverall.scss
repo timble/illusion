@@ -1,26 +1,26 @@
 // Cover the entire parent element
 
-@mixin coverall($spacing: 0, $top: true, $right: true, $bottom: true, $left: true, $reset: false, $position: true) {
+@mixin coverall($offset: 0, $top: true, $right: true, $bottom: true, $left: true, $reset: false, $position: true) {
   @if $position == true {
     position: absolute;
   }
   @if $top == true {
-    top: $spacing;
+    top: $offset;
   } @else if $top != false {
     top: $top;
   }
   @if $right == true {
-    right: $spacing;
+    right: $offset;
   } @else if $right != false {
     right: $right;
   }
   @if $bottom == true {
-    bottom: $spacing;
+    bottom: $offset;
   } @else if $bottom != false {
     bottom: $bottom;
   }
   @if $left == true {
-    left: $spacing;
+    left: $offset;
   } @else if $left != false {
     left: $left;
   }

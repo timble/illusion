@@ -26,7 +26,6 @@
 @import "functions/spacing";
 
 // Mixins
-@import "mixins/accessibility";
 @import "mixins/button";
 @import "mixins/breakpoint";
 @import "mixins/clearfix";
@@ -35,14 +34,18 @@
 @import "mixins/flexbox";
 @import "mixins/font-smoothing";
 @import "mixins/hover";
+@import "mixins/js-disabled";
 @import "mixins/js-enabled";
 @import "mixins/modernizr";
+@import "mixins/no-flexbox";
 @import "mixins/pseudo";
 @import "mixins/ratio-block";
 @import "mixins/reset";
 @import "mixins/spacing";
 @import "mixins/transition";
 @import "mixins/triangle";
+@import "mixins/visually-hidden";
+@import "mixins/visually-shown";
 
 // Grid
 @import "mixins/grid/ifBreakpoint";

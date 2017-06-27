@@ -20,14 +20,3 @@
     }
   }
 }
-
-// No Flexbox
-
-@mixin no-flexbox {
-  @at-root {
-    .no-flexbox &,
-    .no-flexboxlegacy & {
-      @content
-    }
-  }
-}

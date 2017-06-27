@@ -44,7 +44,6 @@ Include Modernizr and at least add `JS - No JS detection` and `flexbox detection
 
 ## Mixins
 
-{% include documentation/mixins/accessibility.html %}
 {% include documentation/mixins/breakpoint.html %}
 {% include documentation/mixins/button.html %}
 {% include documentation/mixins/clearfix.html %}
@@ -55,8 +54,10 @@ Include Modernizr and at least add `JS - No JS detection` and `flexbox detection
 {% include documentation/mixins/font-smoothing.html %}
 {% include documentation/mixins/gallery.html %}
 {% include documentation/mixins/hover.html %}
+{% include documentation/mixins/js-disabled.html %}
 {% include documentation/mixins/js-enabled.html %}
 {% include documentation/mixins/modernizr.html %}
+{% include documentation/mixins/no-flexbox.html %}
 {% include documentation/mixins/pseudo.html %}
 {% include documentation/mixins/ratio-block.html %}
 {% include documentation/mixins/reset.html %}
@@ -65,6 +66,8 @@ Include Modernizr and at least add `JS - No JS detection` and `flexbox detection
 {% include documentation/mixins/span.html %}
 {% include documentation/mixins/transition.html %}
 {% include documentation/mixins/triangle.html %}
+{% include documentation/mixins/visually-hidden.html %}
+{% include documentation/mixins/visually-shown.html %}
 
 ---
 

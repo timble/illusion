@@ -1,0 +1,42 @@
+### @mixin visually-hidden
+
+Visually hide or show elements while keeping the element accessible for screenreaders.
+
+#### Arguments
+
+| Name | Type | Default | Description |
+| ---- | ---- | ------- | ----------- |
+| `position` | `string` | `absolute` | ... |
+| `overflow` | `string` | `hidden` | ... |
+| `backface-visibility` | `string` | `hidden` | ... |
+| `clip` | `string` | `rect(0 0 0 0)` | ... |
+| `height` | `string` | `1px` | ... |
+| `width` | `string` | `1px` | ... |
+| `margin` | `string` | `-1px` | ... |
+| `padding` | `string` | `0` | ... |
+| `border` | `string` | `none` | ... |
+
+#### SCSS
+
+{% highlight css %}
+.foo {
+  @include visually-hidden;
+}
+{% endhighlight %}
+
+
+#### CSS
+
+{% highlight css %}
+.foo {
+  position: absolute;
+  overflow: hidden;
+  backface-visibility: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+{% endhighlight %}

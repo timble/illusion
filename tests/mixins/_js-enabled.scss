@@ -2,8 +2,4 @@
   @include js-enabled {
     display: none;
   }
-
-  @include js-disabled {
-    display: block;
-  }
 }

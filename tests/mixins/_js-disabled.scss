@@ -1,0 +1,5 @@
+.foo {
+  @include js-disabled {
+    display: block;
+  }
+}

@@ -10,7 +10,7 @@ title: Documentation
 ### Step 1
 
 {% highlight bash %}
-$ bower install illusion --save //@TODO
+$ yarn add timble/illusion --dev
 {% endhighlight %}
 
 ### Step 2

@@ -45,7 +45,7 @@ title: Examples
             </div>
             <div class="form__group">
                 <label class="form__label" for="email">Email</label>
-                <input required class="form__input" type="email" name="email" value="" id="email">
+                <input required class="form__input" type="email" name="email" value="" id="email" disabled>
             </div>
 
             <div class="form__group">
@@ -54,26 +54,44 @@ title: Examples
             </div>
 
             <div class="form__group">
+                <label class="form__label" for="car">What car do you like</label>
+                <select class="form__input" id="car" name="car">
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="mercedes">Mercedes</option>
+                    <option value="audi">Audi</option>
+                </select>
+            </div>
+
+            <div class="form__group">
                 <fieldset>
-                    <div class="form__multiple-choice">
+                    <div class="multiple-choice">
                         <input id="check-newsletter1" type="checkbox" name="newsletter" value="Yes">
                         <label for="check-newsletter1">Option 1</label>
                     </div>
-                    <div class="form__multiple-choice">
+                    <div class="multiple-choice">
                         <input id="check-newsletter2" type="checkbox" name="newsletter" value="Yes">
                         <label for="check-newsletter2">Option 2</label>
+                    </div>
+                    <div class="multiple-choice">
+                        <input id="check-newsletter3" type="checkbox" name="newsletter" value="Yes">
+                        <label for="check-newsletter3">Option 3 (disabled)</label>
                     </div>
                 </fieldset>
             </div>
             <div class="form__group">
                 <fieldset>
-                    <div class="form__multiple-choice">
+                    <div class="multiple-choice">
                         <input id="radio-newsletter1" type="radio" name="newsletter" value="Yes">
                         <label for="radio-newsletter1">Option 1</label>
                     </div>
-                    <div class="form__multiple-choice">
+                    <div class="multiple-choice">
                         <input id="radio-newsletter2" type="radio" name="newsletter" value="Yes">
                         <label for="radio-newsletter2">Option 2</label>
+                    </div>
+                    <div class="multiple-choice">
+                        <input id="radio-newsletter3" type="radio" name="newsletter" value="Yes" disabled>
+                        <label for="radio-newsletter3">Option 3 (disabled)</label>
                     </div>
                 </fieldset>
             </div>

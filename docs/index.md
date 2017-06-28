@@ -33,23 +33,23 @@ Illusion is very opinionated. We believe in certain values and philosophies. Ill
 - Maintainable CSS
 - Harmonized design
 
-## 8 point responsive grid
+## 8 pixel responsive grid
 
 One of the most important aspects of a website is the grid it's based on. It can make a page feel balanced and in harmony when used right, but when used wrong a page may appear untrustworthy.
 
 Illusion uses a grid that:
-1. Is based on an 8 point grid
+1. Is based on an 8 pixel grid
 1. Has responsive gutters ranging from 16px to 32px (can be overwritten)
 1. Is using calc() and pixels so vertical gutters follow horizontal ones
 1. Comes with an optional fallback for the `<body>` element to have a set-width
 
-By placing everything on an [8 point grid](https://builttoadapt.io/intro-to-the-8-point-grid-system-d2573cde8632) you ensure that your design looks crisp on all screens. Even screens with a 1.5 dpi.
+By placing everything on an [8 pixel grid](https://builttoadapt.io/intro-to-the-8-point-grid-system-d2573cde8632) you ensure that your design looks crisp on all screens. Even screens with a 1.5 dpi.
 
-Exceptions could be fonts and their line-heights. For an optimal result you should try to maintain the line-height on the 8pt grid as much as possible. Whenever that's impossible because it looks weird you can always fall back to 4 pixel instead. You can have a line-height of 20px for example. It's adviced to keep the bottom margin on the 8pt grid.
+Exceptions could be fonts and their line-heights. For an optimal result you should try to maintain the line-height on the 8 pixel grid as much as possible. Whenever that's impossible because it looks weird you can always fall back to 4 pixel instead. You can have a line-height of 20px for example. It's adviced to keep the bottom margin on the 8 pixel grid.
 
-### How to maintain your 8pt grid
+### How to maintain your 8 pixel grid
 
-The grid mixins (span, gallery, spacing etc.) are fully based on the 8pt grid so there's nothing special you'll have to do there
+The `span`, `gallery` and `spacing` mixins are fully based on the 8 pixel grid so there's nothing special you'll have to do there
 
 Paragraphs, headings and other styled block elements have a standard 24px bottom-margin with an exception for the headings. Headings have a 16px bottom-margin to be a bit closer to the content it's representing to form a visual group.
 
@@ -92,9 +92,27 @@ $illusion-extendalize-paragraph: false;
 
 ### Level 2
 
-The second level adds default styling for forms and sets a fallback for the body element for older browsers.
+The second level adds default styling for certain elements. The following elements are available:
 
-Todo: explanantion
+#### Body fallback
+
+For browsers that do not support `CSS calc()` there's an option to set the body width to a certain width to make it look better on those older browsers.
+
+{% highlight css %}
+$illusion-body-fallback: true;
+$illusion-body-fallback-align: center;
+$illusion-body-fallback-width: 600px;
+{% endhighlight %}
+
+#### Forms
+
+Default form styling is available by setting `$illusion-form` to `true`. Border-width and focus color are two extended form options:
+
+{% highlight css %}
+$illusion-form: true;
+$illusion-form-border-width: 2px;
+$illusion-form-focus-color: #ffbf47;
+{% endhighlight %}
 
 ## Mixins
 

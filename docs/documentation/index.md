@@ -19,26 +19,35 @@ Include [Modernizr](https://modernizr.com/) and at least add `JS - No JS detecti
 
 ### Step 3
 
-- Include [Normalize](https://necolas.github.io/normalize.css/) and include it before anything else (Not included in Illusion).
-- Define your variables before loading illusion
-- Load illusion
-- Add your own mixins after illusion
-
-#### Your base SCSS file might look like this:
+Create a SCSS file, something like:
 
 {% highlight css %}
-// Normalize
+// Include Normalize before anything else
 @import "node_modules/normalize";
 
-// Variables - Hold your own variables as well as Illusion overrides
+// Define your variables before loading Illusion
 @import: "variables";
 
-// Import Illusion
+// Load Illusion
 @import "node_modules/illusion";
 
-// Mixins - You can overwrite Illusion mixins here if you wish
-@import "mixins";
+// Start writing code
+.foo {
+  @include gallery(4);
+}
 {% endhighlight %}
+
+---
+
+## Recommendations
+
+### Clean CSS
+
+Use [grunt-contrib-cssmin](https://github.com/gruntjs/grunt-contrib-cssmin) to eliminate duplicate code. Duplicate code is generated because Illusion doesn't know whether you already used a specific mixin in an element when you use it again.
+
+### Autoprefixer
+
+Use [autoprefixer](https://github.com/nDmitry/grunt-autoprefixer) to add the browser prefixes you need for your project.
 
 ---
 
@@ -105,7 +114,7 @@ $illusion-form: true;
 ## Mixins
 
 All settings are controlled by setting your own variables and load them before the Illusion variables are loaded.
- 
+
 Illusion comes with a great mixin and function library. All the parameters inside mixins are overwriteable.
 
 {% include documentation/mixins/breakpoint.html %}

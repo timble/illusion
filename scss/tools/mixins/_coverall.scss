@@ -1,6 +1,6 @@
 // Cover the entire parent element
 
-@mixin coverall($offset: 0, $top: true, $right: true, $bottom: true, $left: true, $reset: false, $position: absolute) {
+@mixin coverall($offset: 0, $top: true, $right: true, $bottom: true, $left: true, $position: absolute, $reset: false) {
   @if $position != false {
     position: $position;
   }

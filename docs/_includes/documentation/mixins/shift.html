@@ -2,14 +2,14 @@
 
 ### @mixin shift
 
-Visually change the order of elements...
+Visually change the order of elements.
 
 #### Arguments
 
 | Name | Type | Default | Description |
 | ---- | ---- | ------- | ----------- |
-| `shift` | `list` | - | .....  |
-| `fromto` | `list` | `false to false` | .....  |
+| `shift` | `list` | - | Set how many columns should be shifted. Accepts single value: `@include shift(2)` or list: `@include shift(3 of 12)`. Amount of columns defaults to `$illusion-grid-container`  |
+| `fromto` | `list` | `false to false` | Set starting and stopping breakpoints. Accepts single value: `@include shift(6, $beta)` or list: `@include shift(6, $beta to $charlie)`. The second (to) value only means that Illusion is not adding more media queries. The styling is not being reset on this 'to' breakpoint |
 | `amount` | `number` | `1` | Gutter amount. defaults to `1` and can be set to `0.5`, `1` or `2` |
 | `defaultProperties` | `boolean` | `true` | If set to `false` the mixin won't add the `position` property |
 

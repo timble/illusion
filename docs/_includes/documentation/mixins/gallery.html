@@ -8,12 +8,11 @@ Shortcut to create gallery-style grids. Adds clearing on nth-child items.
 
 | Name | Type | Default | Description |
 | ---- | ---- | ------- | ----------- |
-| `span` | `list` | - | .....  |
-| `fromto` | `list` | `false to false` | .....  |
+| `span` | `list` | - | Set how many columns should be spanned. Accepts single value: `@include gallery(6)` or list: `@include gallery(4 of 12)`. Amount of columns defaults to `$illusion-grid-container` |
+| `fromto` | `list` | `false to false` | Set starting and stopping breakpoints. Accepts single value: `@include gallery(6, $beta)` or list: `@include gallery(6, $beta to $charlie)`. The second (to) value only means that Illusion is not adding more media queries. The styling is not being reset on this 'to' breakpoint |
 | `amount` | `number` | `1` | Gutter amount. defaults to `1` and can be set to `0.5`, `1` or `2` |
-| `bottom` | `boolean` | `true` | Set to `false` if you don't want bottom gutters  |
-| `float` | `string` | `left` | .....  |
-| `defaultProperties` | `boolean` | `true` | If set to `false` the mixin won't add the `float` property nor the `margin` property on `:first-child` and `:last-child` |
+| `bottom` | `boolean` | `true` | Set to `false` if you don't want bottom gutters |
+| `defaultProperties` | `boolean` | `true` | If set to `false` the mixin won't add the `float` and `margin` property on `:first-child` and `:last-child` for cleaner code |
 
 #### SCSS
 

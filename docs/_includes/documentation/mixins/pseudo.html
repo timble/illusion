@@ -6,11 +6,11 @@
 
 | Name | Type | Default | Description |
 | ---- | ---- | ------- | ----------- |
-| `pseudo` | `string` | after | Either `before` or `after` |
-| `parent-position` | `string` | relative | Set to `false` if you don't want one. Set to `fixed` or `absolute` if you don't want it to be `relative` |
-| `position` | `string` | absolute | Set to `false` if you don't want one. |
-| `content` | `string` | `" "` | ... |
-| `display` | `string` | `block` | ... |
+| `pseudo` | `string` | `after` | Either `before` or `after` |
+| `parent-position` | `string` | `relative` | Set to `false` if you don't want to set the parent's `position`. Set to `fixed` or `absolute` if you don't want it to be `relative` |
+| `position` | `string` | `absolute` | Set to `false` if you don't want to set the pseudo element's `position`. Set to `static` or `relative` if you don't want it to be `absolute` |
+| `content` | `string` | `" "` | Defaults to a space but can be anything you want it to be |
+| `display` | `string` | `block` | Defaults to `display: block` but can be anything you want it to be |
 
 #### SCSS
 

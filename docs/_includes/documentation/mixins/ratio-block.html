@@ -2,11 +2,14 @@
 
 ### @mixin ratio-block
 
+Create blocks that keep set aspect ratio. Blocks will grow when content exceeds the content area. To stop this add an absolute positioned child the the ratio block.
+
 #### Arguments
 
 | Name | Type | Default | Description |
 | ---- | ---- | ------- | ----------- |
-| `ratio` | `string` | `16 to 9` | ... |
+| `ratio` | `list` | `16 by 9` | Width to height ratio |
+| `overflow` | `string` | `hidden` | Hides overflowing content when an absolute positioned child exceeds the content area |
 
 #### SCSS
 

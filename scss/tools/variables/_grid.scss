@@ -1,16 +1,18 @@
+// Grid
+
 $illusion-grid-container: 12 !default;
 $illusion-grid-maxwidth: $echo !default;
-$illusion-grid-breakpoints:   (
-        default: (
-                width: 0,
-                gutter: 16px
-        ),
-        beta: (
-                width: $beta,
-                gutter: 24px
-        ),
-        delta: (
-                width: $delta,
-                gutter: 32px
-        )
+$illusion-grid-breakpoints: (
+  default: (
+    width: 0,
+    gutter: 16px
+  ),
+  beta: (
+    width: $beta,
+    gutter: 24px
+  ),
+  delta: (
+    width: $delta,
+    gutter: 32px
+  )
 ) !default;

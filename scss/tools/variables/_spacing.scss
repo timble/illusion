@@ -1,10 +1,10 @@
 // Spacing settings
 //
-// Following the 8pt grid with the exception of 4px
+// Following the 8 pixel grid with the exception of 4px
 // Use the 4px only when the total width/height of the element will be dividable by 8 in the end
 
-$spacing-xs:  4px;
-$spacing-s:   8px;
-$spacing-m:   16px;
-$spacing-l:   24px;
-$spacing-xl:  32px;
+$spacing-xs:  4px !default;
+$spacing-s:   8px !default;
+$spacing-m:   16px !default;
+$spacing-l:   24px !default;
+$spacing-xl:  32px !default;

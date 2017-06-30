@@ -4,21 +4,18 @@
 @mixin triangle($direction: right, $size: 4px, $color: false) {
 
   // Top and bottom arrows
-
   @if $direction == top or $direction == bottom {
     border-left: $size solid transparent;
     border-right: $size solid transparent;
   }
 
   // Left and right arrows
-
   @if $direction == left or $direction == right {
     border-top: $size solid transparent;
     border-bottom: $size solid transparent;
   }
 
   // Top
-
   @if $direction == top {
     border-bottom: $size solid;
 
@@ -28,7 +25,6 @@
   }
 
   // Right
-
   @if $direction == right {
     border-left: $size solid;
 
@@ -38,7 +34,6 @@
   }
 
   // Bottom
-
   @if $direction == bottom {
     border-top: $size solid;
 
@@ -48,7 +43,6 @@
   }
 
   // Left
-
   @if $direction == left {
     border-right: $size solid;
 

@@ -1,9 +1,15 @@
-// No Flexbox
+// No flexbox
+//
+// 1. Make sure to place selector at root since we use modernizr (add classes to html tag)
+// 2. Check for modernizr classes
+//
+// Because we're adding .flexbox and .flexboxlegacy classes flexbox will only work when JS is enabled
+// This is a good thing since we're not sure what we're showing / hiding with JS that might mess with flexbox
 
 @mixin no-flexbox {
-  @at-root {
-    .no-flexbox &,
-    .no-flexboxlegacy & {
+  @at-root { // 1
+    .no-flexbox &, // 2
+    .no-flexboxlegacy & { // 2
       @content
     }
   }

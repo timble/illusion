@@ -1,19 +1,19 @@
 // Reset elements
 
-@mixin reset($margin: true, $padding: true, $list-style: true, $border: true, $background: true) {
-  @if $margin == true {
-    margin: 0;
+@mixin reset($margin: 0, $padding: 0, $list-style: none, $border: none, $background: transparent) {
+  @if $margin != false {
+    margin: $margin;
   }
-  @if $padding == true {
-    padding: 0;
+  @if $padding != false {
+    padding: $padding;
   }
-  @if $list-style == true {
-    list-style: none;
+  @if $list-style != false {
+    list-style: $list-style;
   }
-  @if $border == true {
-    border: none;
+  @if $border != false {
+    border: $border;
   }
-  @if $background == true {
-    background: transparent;
+  @if $background != false {
+    background: $background;
   }
 }

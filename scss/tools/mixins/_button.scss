@@ -7,9 +7,17 @@
 // 3. Line buttons vertically
 // 4. Appear clickable
 
-@mixin button-structure {
-  -webkit-appearance: none; // 1
-  display: inline-block; // 2
-  vertical-align: middle; // 3
-  cursor: pointer; // 4
+@mixin button-structure($appearance: none, $display: inline-block, $vertical-align: middle, $cursor: pointer) {
+  @if $appearance != false {
+    -webkit-appearance: $appearance; // 1
+  }
+  @if $display != false {
+    display: $display; // 2
+  }
+  @if $vertical-align != false {
+    vertical-align: $vertical-align; // 3
+  }
+  @if $cursor != false {
+    cursor: $cursor; // 4
+  }
 }

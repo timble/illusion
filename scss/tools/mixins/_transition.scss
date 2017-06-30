@@ -24,7 +24,7 @@
 @function unfoldTransition ($transition) {
   // Default values
   $property: all;
-  $duration: .2s;
+  $duration: $illusion-transition-duration;
   $easing: $illusion-transition-easing;
   $delay: $illusion-transition-delay;
   $defaultProperties: ($property, $duration, $easing, $delay);

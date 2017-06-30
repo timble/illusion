@@ -1,11 +1,15 @@
 // Aspect ratio blocks
 
-@mixin ratio-block($ratio: 16 to 9) {
+@mixin ratio-block($ratio: 16 by 9, $overflow: hidden) {
 
   // Variables
   $width: nth($ratio, 1);
   $height: nth($ratio, 3);
   $percent: ($height / $width) * 100%;
+
+  @if $overflow != false {
+    overflow: $overflow;
+  }
 
   &:before {
     display: block;

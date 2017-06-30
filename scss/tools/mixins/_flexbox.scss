@@ -1,4 +1,5 @@
 // Flexbox
+//
 // 1. Is flexbox variable set to true?
 // 2. Make sure to place selector at root since we use modernizr (add classes to html tag)
 // 3. Check for modernizr classes
@@ -9,8 +10,7 @@
 
 @mixin flexbox($horizontal: $flexbox-horizontal, $vertical: $flexbox-vertical) {
   @if $flexbox == true { // 1
-    @at-root {
-      // 2
+    @at-root { // 2
       .flexbox &, // 3
       .flexboxlegacy & { // 3
         @media (min-width: $horizontal) and (min-height: $vertical) { // 4

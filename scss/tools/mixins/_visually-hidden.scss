@@ -1,13 +1,31 @@
 // Visually hidden
 
 @mixin visually-hidden($position: absolute, $overflow: hidden, $backface-visibility: hidden, $clip: rect(0 0 0 0), $height: 1px, $width: 1px, $margin: -1px, $padding: 0, $border: none) {
-  position: $position;
-  overflow: $overflow;
-  backface-visibility: $backface-visibility;
-  clip: $clip;
-  height: $height;
-  width: $width;
-  margin: $margin;
-  padding: $padding;
-  border: $border;
+  @if $position != false {
+    position: $position;
+  }
+  @if $overflow != false {
+    overflow: $overflow;
+  }
+  @if $backface-visibility != false {
+    backface-visibility: $backface-visibility;
+  }
+  @if $clip != false {
+    clip: $clip;
+  }
+  @if $height != false {
+    height: $height;
+  }
+  @if $width != false {
+    width: $width;
+  }
+  @if $margin != false {
+    margin: $margin;
+  }
+  @if $padding != false {
+    padding: $padding;
+  }
+  @if $border != false {
+    border: $border;
+  }
 }

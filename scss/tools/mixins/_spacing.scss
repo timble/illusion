@@ -29,6 +29,8 @@
 
     // Only run between starting and stopping breakpoints
     @include ifBreakpoint($width) {
+
+      // Top
       @if ($side == all or $side == vertical or $side == top) and $skip != top {
         @if ($side == all or $side == vertical) and ($skip != bottom) {
           @if ($minus % 2 != 0) { @warn '$minus should be an even number'; }

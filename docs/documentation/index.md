@@ -15,11 +15,11 @@ $ yarn add timble/illusion --dev
 
 ### Step 2
 
-Include Modernizr and at least add `JS - No JS detection` and `flexbox detection` if you're gonna use flexbox.
+Include [Modernizr](https://modernizr.com/) and at least add `JS - No JS detection` and `flexbox detection` if you're gonna use flexbox.
 
 ### Step 3
 
-- Include Normalize and include it before anything else (Not included in Illusion).
+- Include [Normalize](https://necolas.github.io/normalize.css/) and include it before anything else (Not included in Illusion).
 - Define your variables before loading illusion
 - Load illusion
 - Add your own mixins after illusion
@@ -28,13 +28,13 @@ Include Modernizr and at least add `JS - No JS detection` and `flexbox detection
 
 {% highlight css %}
 // Normalize
-@import "bower_components/normalize";
+@import "node_modules/normalize";
 
 // Variables - Hold your own variables as well as Illusion overrides
 @import: "variables";
 
 // Import Illusion
-@import "bower_components/illusion";
+@import "node_modules/illusion";
 
 // Mixins - You can overwrite Illusion mixins here if you wish
 @import "mixins";
@@ -42,7 +42,71 @@ Include Modernizr and at least add `JS - No JS detection` and `flexbox detection
 
 ---
 
+## Base styling
+
+To stop all the copy pasting in this world we added some base styling in two levels.
+
+### Level 1: Extendalize
+
+The first level we call "Extendalize" and it basically [extends Normalize](https://github.com/timble/illusion/tree/master/scss/atoms) styling the way we think it should be.
+
+By default the extendalize styling is set to false and can be [configured using variables](https://github.com/timble/illusion/blob/master/scss/tools/variables/_extendalize.scss).
+
+#### Enable all extendalize features:
+
+{% highlight css %}
+$illusion-extendalize: true;
+{% endhighlight %}
+
+#### Enable individual extendalize features:
+
+{% highlight css %}
+$illusion-extendalize: false;
+$illusion-extendalize-boxsizing: true;
+$illusion-extendalize-svg: true;
+{% endhighlight %}
+
+#### Disable individual extendalize features:
+
+{% highlight css %}
+$illusion-extendalize: true;
+$illusion-extendalize-image: false;
+$illusion-extendalize-paragraph: false;
+{% endhighlight %}
+
+### Level 2: Element styling
+
+The second level adds default styling for certain elements. The following elements are available:
+
+#### Body fallback
+
+For browsers that do not support `CSS calc()` there's an option to set the body width to make it look better on those older browsers.
+
+Enable the body fallback styling by setting the following variable:
+
+{% highlight css %}
+$illusion-body-fallback: true;
+{% endhighlight %}
+
+[All options](https://github.com/timble/illusion/blob/master/scss/tools/variables/_body-fallback.scss).
+
+#### Forms
+
+Default [form styling](/examples/#form) is available.
+
+{% highlight css %}
+$illusion-form: true;
+{% endhighlight %}
+
+[All options](https://github.com/timble/illusion/blob/master/scss/tools/variables/_form.scss).
+
+---
+
 ## Mixins
+
+All settings are controlled by setting your own variables and load them before the Illusion variables are loaded.
+ 
+Illusion comes with a great mixin and function library. All the parameters inside mixins are overwriteable.
 
 {% include documentation/mixins/breakpoint.html %}
 {% include documentation/mixins/button.html %}
@@ -74,13 +138,3 @@ Include Modernizr and at least add `JS - No JS detection` and `flexbox detection
 ## Functions
 
 {% include documentation/functions/spacing.html %}
-
----
-
-## Accessible forms
-
-Forms are very important elements on your website. It is the way of getting connected with your audience. A lot of website hide their forms inside the styling of the page. Light grey borders with rounded corners and light shadows. More often that not these forms are not very accessible color contrast wise.
-
-You can include the forms by setting the $illusion-form: to yes. Large fileds and large radio and checkboxes.
-
-Based on BEM

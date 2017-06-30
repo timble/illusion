@@ -47,7 +47,7 @@ By placing everything on an [8 pixel grid](https://builttoadapt.io/intro-to-the-
 
 Exceptions could be fonts and their line-heights. For an optimal result you should try to maintain the line-height on the 8 pixel grid as much as possible. Whenever that's impossible because it looks weird you can always fall back to 4 pixel instead. You can have a line-height of 20px for example. It's adviced to keep the bottom margin on the 8 pixel grid.
 
-### How to maintain your 8 pixel grid
+### Maintain your 8 pixel grid
 
 The `span`, `gallery` and `spacing` mixins are fully based on the 8 pixel grid so there's nothing special you'll have to do there
 
@@ -57,63 +57,3 @@ For all other elements there are three more options to use
 1. Use good old [spacing variables](#) that don't grow with the responsive gutters.
 1. Use the [spacing mixin](#) to follow the responsive gutter.
 1. If you don't want to automatically follow the responsive gutter you can use the [spacing function](#).
-
-## Base styling
-
-To stop all the copy pasting in this world we added some base styling. There are two levels that create base styling.
-
-### Level 1
-
-The first level we call "Extendalize" and it basically extends Normalize styling the way we like it.
-
-For example we remove top margins of elements and apply a bottom margin to block level elements that need it. We also remove the bottom margin from the last element in a parent.
-
-#### Enable all extendalize features:
-
-{% highlight css %}
-$illusion-extendalize: true;
-{% endhighlight %}
-
-#### Enable individual extendalize features:
-
-{% highlight css %}
-$illusion-extendalize: false;
-$illusion-extendalize-boxsizing: true;
-$illusion-extendalize-svg: true;
-{% endhighlight %}
-
-#### Disable individual extendalize features:
-
-{% highlight css %}
-$illusion-extendalize: true;
-$illusion-extendalize-image: false;
-$illusion-extendalize-paragraph: false;
-{% endhighlight %}
-
-### Level 2
-
-The second level adds default styling for certain elements. The following elements are available:
-
-#### Body fallback
-
-For browsers that do not support `CSS calc()` there's an option to set the body width to a certain width to make it look better on those older browsers.
-
-{% highlight css %}
-$illusion-body-fallback: true;
-$illusion-body-fallback-align: center;
-$illusion-body-fallback-width: 600px;
-{% endhighlight %}
-
-#### Forms
-
-Default form styling is available by setting `$illusion-form` to `true`. Border-width and focus color are two extended form options:
-
-{% highlight css %}
-$illusion-form: true;
-$illusion-form-border-width: 2px;
-$illusion-form-focus-color: #ffbf47;
-{% endhighlight %}
-
-## Mixins
-
-Illusion comes with a great mixin and function library. More info here

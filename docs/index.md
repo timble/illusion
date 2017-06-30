@@ -43,7 +43,7 @@ By placing everything on an [8 pixel grid](https://builttoadapt.io/intro-to-the-
 
 Exceptions could be fonts and their line-heights. For an optimal result you should try to maintain the line-height on the 8 pixel grid as much as possible. Whenever that's impossible because it looks weird you can always fall back to 4 pixel instead. You can have a line-height of 20px for example. But it's advised to keep the bottom margin on the 8 pixel grid.
 
-### Maintain your 8 pixel grid
+### Maintain an 8 pixel grid
 
 The `span`, `gallery` and `spacing` mixins are fully based on the 8 pixel grid so there's nothing special you'll have to do there
 

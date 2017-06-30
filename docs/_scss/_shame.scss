@@ -12,8 +12,7 @@ main {
   position: relative;
 }
 
-header,
-footer {
+header, footer {
   color: white;
   @include font-smoothing;
 }
@@ -41,20 +40,6 @@ header {
       font-size: 32px;
       line-height: 48px;
     }
-
-    @include breakpoint($charlie) {
-      font-size: 48px;
-      line-height: 56px;
-    }
-  }
-}
-
-.header--large {
-  @include spacing(vertical, padding, 2);
-
-  h2 {
-    font-size: 16px;
-    line-height: 24px;
   }
 }
 
@@ -189,7 +174,6 @@ pre {
   @include content-block;
 }
 
-
 .button {
   background: #bdc3c7;
   padding: $spacing-m $spacing-l;
@@ -207,15 +191,14 @@ pre {
   margin-top: -($spacing-m);
 }
 
-.gallery-3,
-.gallery-12 {
+.gallery-3, .gallery-12 {
   @include clearfix;
   @include spacing(bottom, margin, -1);
 }
 
 .gallery__item {
   background: #bdc3c7;
-  padding: $spacing-m
+  padding: $spacing-m;
 }
 
 .gallery-3 {

@@ -2,7 +2,6 @@
 layout: default
 title: Illusion simplifies the creation of things for the web.
 description: Illusion is an opinionated Sass library that simplifies the creation of things for the web.
-header: large
 ---
 
 {% include layout/splitter.md title="Features" %}

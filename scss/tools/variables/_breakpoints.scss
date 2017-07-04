@@ -11,8 +11,13 @@ $echo:                  1112px !default;
 
 // The above values minus 1px to be used for min-max media queries
 
-$alpha--plus-min:      $alpha--plus - 1px !default;
-$beta-min:             $beta - 1px !default;
-$charlie-min:          $charlie - 1px !default;
-$delta-min:            $delta - 1px !default;
-$echo-min:             $echo - 1px !default;
+$alpha--plus-min:       $alpha--plus - 1px !default;
+$beta-min:              $beta - 1px !default;
+$charlie-min:           $charlie - 1px !default;
+$delta-min:             $delta - 1px !default;
+$echo-min:              $echo - 1px !default;
+
+
+// Set default to false so we can use spacing() function outside breakpoint
+
+$inside-breakpoint:     false;

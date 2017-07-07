@@ -12,6 +12,8 @@ Illusion is an opinionated, mobile-first, progressive enhanced, accessible, SCSS
 
 Illusion is built to be used on top of [Modernizr](https://modernizr.com/) and [Normalize](https://necolas.github.io/normalize.css/). When included, Illusion does nothing. Enable its base styling features by [setting SCSS variables](/documentation/#base-styling) or use the [mixins](/documentation/#mixins) or [functions](/documentation/#functions) library.
 
+![Illusion on the 8pixel grid](/images/illusion.gif)
+
 ## Why Illusion?
 
 We found ourselves copy-pasting code from project to project even though we already use several libraries. Our solution? We've created our own library!

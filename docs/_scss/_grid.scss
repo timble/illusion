@@ -22,8 +22,8 @@
   height: 100%; // Fill complete page
 
   @include gallery(6, 0 to $alpha--plus);
-  @include gallery(3, $alpha--plus to $beta);
-  @include gallery(2, $beta to $charlie);
+  @include gallery(4, $alpha--plus to $beta);
+  @include gallery(3, $beta to $charlie);
   @include gallery(1, $charlie);
 }
 

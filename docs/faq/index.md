@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Frequently Asked Questions
+description: The go-to place when you've got unanswered questions after reading the entire documentation site ;)
 ---
 
 {% include layout/splitter.md title="Questions" %}

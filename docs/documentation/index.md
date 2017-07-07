@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Documentation
+description: Documentation on how to get started with Illusion and an overview of available functions, mixins and styling.
 ---
 
 {% include layout/splitter.md %}

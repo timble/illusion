@@ -27,13 +27,13 @@
 {% endif %}
 
 {% if page.description %}
-<meta name="description" content="{{ page.description | strip_html | truncate: 160 }}" />
-<meta name="twitter:description" content="{{ page.description | strip_html | truncate: 160 }}" />
-<meta property="og:description" content="{{ page.description | strip_html | truncate: 160 }}" />
+<meta name="description" content="{{ page.description | markdownify | strip_html | truncate: 160 }}" />
+<meta name="twitter:description" content="{{ page.description | markdownify | strip_html | truncate: 160 }}" />
+<meta property="og:description" content="{{ page.description | markdownify | strip_html | truncate: 160 }}" />
 {% else %}
-<meta name="description" content="{{ page.content | strip_html | truncate: 160 }}" />
-<meta name="twitter:description" content="{{ page.content | strip_html | truncate: 160 }}" />
-<meta property="og:description" content="{{ page.content | strip_html | truncate: 160 }}" />
+<meta name="description" content="{{ page.content | markdownify | strip_html | truncate: 160 }}" />
+<meta name="twitter:description" content="{{ page.content | markdownify | strip_html | truncate: 160 }}" />
+<meta property="og:description" content="{{ page.content | markdownify | strip_html | truncate: 160 }}" />
 {% endif %}
 
 {% if page.image %}

@@ -2,12 +2,12 @@
 
 $illusion-grid-container: 12 !default;
 $illusion-grid-maxwidth: $echo !default;
-$illusion-grid-default-width: 0;
-$illusion-grid-default-gutter: 16px;
-$illusion-grid-beta-width: $beta;
-$illusion-grid-beta-gutter: 24px;
-$illusion-grid-delta-width: $delta;
-$illusion-grid-delta-gutter: 32px;
+$illusion-grid-default-width: 0 !default;
+$illusion-grid-default-gutter: 16px !default;
+$illusion-grid-beta-width: $beta !default;
+$illusion-grid-beta-gutter: 24px !default;
+$illusion-grid-delta-width: $delta !default;
+$illusion-grid-delta-gutter: 32px !default;
 $illusion-grid-breakpoints: (
   default: (
     width: $illusion-grid-default-width,

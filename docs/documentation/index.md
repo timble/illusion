@@ -125,6 +125,7 @@ Illusion comes with a great mixin and function library. All the parameters insid
 {% include documentation/mixins/content-block.html %}
 {% include documentation/mixins/coverall.html %}
 {% include documentation/mixins/flexbox.html %}
+{% include documentation/mixins/fluid-type.html %}
 {% include documentation/mixins/font-smoothing.html %}
 {% include documentation/mixins/gallery.html %}
 {% include documentation/mixins/hover.html %}
@@ -138,6 +139,7 @@ Illusion comes with a great mixin and function library. All the parameters insid
 {% include documentation/mixins/shift.html %}
 {% include documentation/mixins/spacing.html %}
 {% include documentation/mixins/span.html %}
+{% include documentation/mixins/svg-background.html %}
 {% include documentation/mixins/transition.html %}
 {% include documentation/mixins/triangle.html %}
 {% include documentation/mixins/visually-hidden.html %}

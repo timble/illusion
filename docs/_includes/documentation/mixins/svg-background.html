@@ -1,0 +1,37 @@
+---
+
+### @mixin svg-background
+
+Add an SVG icon as background to an element. Especially useful when trying to override 3rd party generated markup.
+
+#### Arguments
+
+| Name | Type | Default | Description |
+| ---- | ---- | ------- | ----------- |
+| `svg` | `string` | - | Accepts anything that nomally goes inside the `<svg></svg>` element. Although try to only use small single element SVG files for performance. Only use if you can't use a real SVG instead |
+| `color` | `string` | `black` | Color of the SVG. SVGs can only be one color |
+| `width` | `number` | `24` | The width the SVG background should be displayed as |
+| `height` | `number` | `false` | The height the SVG background should be displayed as. Set to false if it's the same as width |
+| `viewboxWidth` | `number` | `24` | The actual viewboxWidth number. See original SVG file for this number |
+| `viewboxHeight` | `number` | `false` | The actual viewboxHeight number. See original SVG file for this number. Set to false if it's the same as width |
+| `background-position` | `string` | `center` | The position of the SVG background |
+| `background-repeat` | `string` | `no-repeat` | Repeat or don't repeat the background |
+
+#### SCSS
+
+{% highlight css %}
+.foo {
+  @include svg-background('<g transform="matrix(2.18679,0,0,2.18679,5.43964,-0.0421697)"><path d="M5.9 5.3L0.5 0.1C0.4 0 0.2 0 0.1 0.1 0 0.2 0 0.4 0.1 0.5L5.2 5.5 0.1 10.5C0 10.6 0 10.8 0.1 10.9 0.2 11 0.2 11 0.3 11 0.4 11 0.5 11 0.5 10.9L5.9 5.7C6 5.6 6 5.4 5.9 5.3Z"/></g>', black, 16);
+}
+{% endhighlight %}
+
+#### CSS
+
+{% highlight css %}
+.foo {
+  background-image: url('data:image/svg+xml;utf-8,<svg style="fill: black;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><g transform="matrix(2.18679,0,0,2.18679,5.43964,-0.0421697)"><path d="M5.9 5.3L0.5 0.1C0.4 0 0.2 0 0.1 0.1 0 0.2 0 0.4 0.1 0.5L5.2 5.5 0.1 10.5C0 10.6 0 10.8 0.1 10.9 0.2 11 0.2 11 0.3 11 0.4 11 0.5 11 0.5 10.9L5.9 5.7C6 5.6 6 5.4 5.9 5.3Z"/></g></svg>');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 16px 16px;
+}
+{% endhighlight %}

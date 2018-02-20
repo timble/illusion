@@ -1,0 +1,16 @@
+// Example
+//
+// @include svg-background('<g transform="matrix(2.18679,0,0,2.18679,5.43964,-0.0421697)"><path d="M5.9 5.3L0.5 0.1C0.4 0 0.2 0 0.1 0.1 0 0.2 0 0.4 0.1 0.5L5.2 5.5 0.1 10.5C0 10.6 0 10.8 0.1 10.9 0.2 11 0.2 11 0.3 11 0.4 11 0.5 11 0.5 10.9L5.9 5.7C6 5.6 6 5.4 5.9 5.3Z"/></g>', black, 16);
+
+@mixin svg-background($svg, $color: black, $width: 24, $height: false, $viewboxWidth: 24, $viewboxHeight: false, $background-position: center, $background-repeat: no-repeat) {
+  @if $height == false {
+    $height: $width;
+  }
+  @if $viewboxHeight == false {
+    $viewboxHeight: $viewboxWidth;
+  }
+  background-image: url('data:image/svg+xml;utf-8,<svg style="fill: #{$color};" xmlns="http://www.w3.org/2000/svg" width="#{$width}" height="#{$height}" viewBox="0 0 #{$viewboxWidth} #{$viewboxHeight}">#{$svg}</svg>');
+  background-position: $background-position;
+  background-repeat: $background-repeat;
+  background-size: #{$width}px #{$height}px;
+}

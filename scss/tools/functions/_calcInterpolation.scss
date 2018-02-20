@@ -1,0 +1,18 @@
+// Calc interpolation
+
+@function calc-interpolation($min-screen, $min-value, $max-screen, $max-value) {
+
+  // Variables
+  $a: ($max-value - $min-value) / ($max-screen - $min-screen);
+  $b: $min-value - $a * $min-screen;
+
+  // Substract or multiply
+  $sign: "+";
+  @if ($b < 0) {
+    $sign: "-";
+    $b: abs($b);
+  }
+
+  // Return
+  @return calc(#{$a*100}vw #{$sign} #{$b});
+}

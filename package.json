@@ -1,7 +1,7 @@
 {
   "name": "illusion",
   "description": "Illusion simplifies the creation of things for the web.",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "homepage": "https://illusion.timble.net",
   "author": "The Illusion Authors (https://github.com/timble/illusion/graphs/contributors)",
   "repository": {

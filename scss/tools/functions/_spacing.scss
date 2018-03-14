@@ -2,8 +2,9 @@
 
 @function spacing($amount: 1, $breakpoint: false) {
 
-  @if ($amount != -0.5 and $amount != 0.5 and $amount != -1 and $amount != 1 and $amount != -2 and $amount != 2) {
-    @warn 'The `spacing` function is designed to work best with the following values: -0.5 | 0.5 | -1 | 1 | -2 | 2';
+  // Give a warning when $amount is not dividable by 0.5
+  @if ($amount % 0.5 != 0) {
+    @warn 'The `amount` in the `span` mixin is designed to work best with a number dividable by 0.5';
   }
 
   // Set default gutter to smallest one

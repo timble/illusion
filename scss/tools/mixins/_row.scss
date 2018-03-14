@@ -1,0 +1,15 @@
+// Row
+
+@mixin row($type: $illusion-grid-container-type) {
+
+  // Floats
+  @if $type != flex {
+    @include clearfix;
+  }
+
+  // Flexbox
+  @if $type == flex {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

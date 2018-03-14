@@ -1,0 +1,38 @@
+// Collapse
+//
+// Use as direct child of `@include span` element
+// Make sure there's no padding on the parent element
+
+@mixin collapse($sides: both, $multiplier: 1, $fromto: false) {
+
+  // Give a warning when $multiplier is not dividable by 0.5
+  @if ($multiplier % 0.5 != 0) {
+    @warn 'The `amount` in the `span` mixin is designed to work best with a number dividable by 0.5';
+  }
+
+  // Get new SCSS map
+  $grid-breakpoints: grid-breakpoints($fromto);
+
+  // Loop
+  @each $breakpoint, $values in $grid-breakpoints {
+
+    //Get values
+    $spacing: map-get($values, gutter);
+    $side: nth($sides, 1);
+    $width: map-get($values, width);
+
+    // Only run between starting and stopping breakpoints
+    @include ifBreakpoint($width) {
+
+      // Right
+      @if ($side == both or $side == right) {
+        margin-right: calc((-1 * #{$multiplier}) * #{$spacing});
+      }
+
+      // Right
+      @if ($side == both or $side == left) {
+        margin-left: calc((-1 * #{$multiplier}) * #{$spacing});
+      }
+    }
+  }
+}

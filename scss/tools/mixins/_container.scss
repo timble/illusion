@@ -1,6 +1,6 @@
 // Container
 
-@mixin container($flexbox: false, $alignment: center) {
+@mixin container($type: $illusion-grid-container-type, $alignment: center) {
 
   // Set default styling
   max-width: $illusion-grid-maxwidth + (largestGutter() * 2);
@@ -14,18 +14,12 @@
   }
 
   // Flexbox
-  @if $flexbox == false {
+  @if $type != flex {
     @include clearfix;
   }
-  @if $flexbox != false {
-    @include modernizr(flexbox, flexwrap) {
-      display: flex;
-      flex-wrap: wrap;
-
-      // Hide pseudo elements
-      // They are in the way for wrapping flex items on certain browsers
-      @include clearfix(reset);
-    }
+  @if $type == flex {
+    display: flex;
+    flex-wrap: wrap;
   }
 
   // Run through each breakpoint

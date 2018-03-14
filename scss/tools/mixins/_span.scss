@@ -29,20 +29,29 @@
 
     // Only run between starting and stopping breakpoints
     @include ifBreakpoint($breakpointWidth) {
+
+      // Width
       width: $columnWidth;
+
+      // Left margin
       margin-left: $columnMargin;
 
+      // Bottom margin
       @if $bottom != false {
         margin-bottom: $columnMargin;
       }
 
+      // Omega settings
       @if $omega != null {
         // Reset all previous NTH values and set new spacing
         @if $breakpointWidth != 0 {
           &:nth-child(n) {
-            clear: none;
             margin-left: $columnMargin;
             margin-right: 0;
+
+            @if $illusion-grid-type == float {
+              clear: none;
+            }
           }
         }
 
@@ -54,13 +63,19 @@
         // Clear the item after omega
         &:nth-child(#{$omega}n+1) {
           margin-left: 0;
-          clear: left;
+
+          @if $illusion-grid-type == float {
+            clear: left;
+          }
         }
       }
 
       @if $defaultProperties == true {
+
         // Float item
-        float: left;
+        @if $illusion-grid-type == float {
+          float: left;
+        }
 
         // No margin for first child
         &:first-child {

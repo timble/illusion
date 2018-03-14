@@ -51,16 +51,17 @@
         }
       }
 
-      // Set left
-      left: $left;
-
+      // Default properties
       @if $defaultProperties == true {
         // Relative positioning for shifting with `left`
         position: relative;
 
-        // Set to true so it only runs once
         $defaultProperties: false;
       }
+
+      // Set left
+      left: $left;
+
     }
   }
 }

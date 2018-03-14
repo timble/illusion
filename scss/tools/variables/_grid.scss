@@ -22,3 +22,5 @@ $illusion-grid-breakpoints: (
     gutter: $illusion-grid-delta-gutter
   )
 ) !default;
+$illusion-grid-type: flex !default;
+$illusion-grid-container-type: $illusion-grid-type !default;

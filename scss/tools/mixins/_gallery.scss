@@ -1,6 +1,6 @@
 // Gallery mixin
 
-@mixin gallery($span: $columns of $container, $fromto: false to false, $amount: 1, $bottom: true, $defaultProperties: true) {
+@mixin gallery($span: null, $fromto: false, $multiplier: 1, $bottom: true, $defaults: true) {
 
   // Span values
   $spanColumns: nth($span, 1);
@@ -8,5 +8,5 @@
   $spanAmount: $spanContainer / $spanColumns;
 
   // Span columns
-  @include span($span, $fromto, $amount, $bottom, $defaultProperties, $spanAmount);
+  @include span($span, $fromto, $multiplier, $bottom, $defaults, $spanAmount);
 }

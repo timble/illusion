@@ -1,9 +1,9 @@
 // Shift
 
-@mixin shift($shift: $columns of $container, $fromto: false to false, $amount: 1, $defaultProperties: true) {
+@mixin shift($shift: null, $fromto: false, $multiplier: 1, $defaults: true) {
 
-  // Give a warning when $amount is not dividable by 0.5
-  @if ($amount % 0.5 != 0) {
+  // Give a warning when $multiplier is not dividable by 0.5
+  @if ($multiplier % 0.5 != 0) {
     @warn 'The `amount` in the `span` mixin is designed to work best with a number dividable by 0.5';
   }
 
@@ -42,21 +42,21 @@
 
       @if $spanColumns != 0 {
         // Column values
-        $columnGutter: ($spanAmount - 1) * $breakpointGutter * $amount;
+        $columnGutter: ($spanAmount - 1) * $breakpointGutter * $multiplier;
 
         // Calculate left
-        $left: calc(((100% - #{$columnGutter}) / #{$spanAmount}) + #{$breakpointGutter * $amount});
+        $left: calc(((100% - #{$columnGutter}) / #{$spanAmount}) + #{$breakpointGutter * $multiplier});
         @if $negative == true {
-          $left: calc(((-100% - #{$breakpointGutter * $amount}) / #{$spanAmount}));
+          $left: calc(((-100% - #{$breakpointGutter * $multiplier}) / #{$spanAmount}));
         }
       }
 
       // Default properties
-      @if $defaultProperties == true {
+      @if $defaults == true {
         // Relative positioning for shifting with `left`
         position: relative;
 
-        $defaultProperties: false;
+        $defaults: false;
       }
 
       // Set left

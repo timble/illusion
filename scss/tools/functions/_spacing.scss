@@ -1,14 +1,14 @@
 // Returns set spacing or calculate current spacing when inside breakpoint
 
-@function spacing($amount: 1, $breakpoint: false) {
+@function spacing($multiplier: 1, $breakpoint: false) {
 
-  // Give a warning when $amount is not dividable by 0.5
-  @if ($amount % 0.5 != 0) {
+  // Give a warning when $multiplier is not dividable by 0.5
+  @if ($multiplier % 0.5 != 0) {
     @warn 'The `amount` in the `span` mixin is designed to work best with a number dividable by 0.5';
   }
 
   // Set default gutter to smallest one
-  $breakpointGutter: smallestGutter() * $amount;
+  $breakpointGutter: smallestGutter() * $multiplier;
 
   // If no breakpoint has been set calculate the current breakpoint gutter
   @if $breakpoint == false and $inside-breakpoint != false {
@@ -18,7 +18,7 @@
 
       // Values
       $width: map-get($values, width);
-      $gutter: map-get($values, gutter) * $amount;
+      $gutter: map-get($values, gutter) * $multiplier;
       $nextKey: map-get-next($illusion-grid-breakpoints, $breakpoint, #{lastValue()});
       $nextWidth: map-deep-get($illusion-grid-breakpoints, $nextKey, "width");
       $largestWidth: largestWidth();

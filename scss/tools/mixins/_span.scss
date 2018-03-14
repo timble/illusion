@@ -1,9 +1,9 @@
 // Span mixin
 
-@mixin span($span: $columns of $container, $fromto: false to false, $amount: 1, $bottom: false, $defaultProperties: true, $omega: null) {
+@mixin span($span: null, $fromto: false, $multiplier: 1, $bottom: false, $defaults: true, $omega: null) {
 
-  // Give a warning when $amount is not dividable by 0.5
-  @if ($amount % 0.5 != 0) {
+  // Give a warning when $multiplier is not dividable by 0.5
+  @if ($multiplier % 0.5 != 0) {
     @warn 'The `amount` in the `span` mixin is designed to work best with a number dividable by 0.5';
   }
 
@@ -23,9 +23,9 @@
     $spanAmount: $spanContainer / $spanColumns;
 
     // Column values
-    $columnGutter: ($spanAmount - 1) * $breakpointGutter * $amount;
+    $columnGutter: ($spanAmount - 1) * $breakpointGutter * $multiplier;
     $columnWidth: calc((100% - #{$columnGutter}) / #{$spanAmount});
-    $columnMargin: calc(#{$breakpointGutter * $amount});
+    $columnMargin: calc(#{$breakpointGutter * $multiplier});
 
     // Only run between starting and stopping breakpoints
     @include ifBreakpoint($breakpointWidth) {
@@ -70,7 +70,7 @@
         }
       }
 
-      @if $defaultProperties == true {
+      @if $defaults == true {
 
         // Float item
         @if $illusion-grid-type == float {
@@ -90,7 +90,7 @@
         }
 
         // Set to true so it only runs once
-        $defaultProperties: false;
+        $defaults: false;
       }
     }
   }

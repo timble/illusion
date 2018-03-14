@@ -1,15 +1,15 @@
 // Container
 
-@mixin container($type: $illusion-grid-container-type, $alignment: center) {
+@mixin container($type: $illusion-grid-container-type, $align: center) {
 
   // Set default styling
   max-width: $illusion-grid-maxwidth + (largestGutter() * 2);
 
   // Alignment
-  @if $alignment == center or $alignment == right {
+  @if $align == center or $align == right {
     margin-left: auto;
   }
-  @if $alignment == center or $alignment == left {
+  @if $align == center or $align == left {
     margin-right: auto;
   }
 

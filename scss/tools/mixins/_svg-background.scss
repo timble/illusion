@@ -9,7 +9,8 @@
   @if $viewboxHeight == false {
     $viewboxHeight: $viewboxWidth;
   }
-  background-image: url(str-replace('data:image/svg+xml;utf-8,<svg style="fill: #{$color};" xmlns="http://www.w3.org/2000/svg" width="#{$width}" height="#{$height}" viewBox="0 0 #{$viewboxWidth} #{$viewboxHeight}">#{$svg}</svg>', '#', '%23'));
+  $svg-url: svg-url('<svg style="fill: #{$color};" xmlns="http://www.w3.org/2000/svg" width="#{$width}" height="#{$height}" viewBox="0 0 #{$viewboxWidth} #{$viewboxHeight}">#{$svg}</svg>');
+  background-image: $svg-url;
   background-position: $background-position;
   background-repeat: $background-repeat;
   background-size: #{$width}px #{$height}px;

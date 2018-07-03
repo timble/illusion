@@ -1,6 +1,6 @@
 // Span mixin
 
-@mixin span($span: null, $fromto: false, $multiplier: 1, $bottom: false, $defaults: true, $omega: null) {
+@mixin span($span: null, $fromto: false, $multiplier: 1, $bottom: false, $defaults: true, $omega: null, $gutter: false) {
 
   // Give a warning when $multiplier is not dividable by 0.5
   @if ($multiplier % 0.5 != 0) {
@@ -9,6 +9,11 @@
 
   // Get new SCSS map
   $grid-breakpoints: grid-breakpoints($fromto);
+
+  // Map when gutter is set
+  @if ($gutter != false) {
+    $grid-breakpoints: grid-breakpoint($fromto, $gutter);
+  }
 
   // Loop
   @each $breakpoint, $values in $grid-breakpoints {

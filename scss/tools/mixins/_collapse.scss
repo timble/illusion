@@ -3,7 +3,7 @@
 // Use as direct child of `@include span` element
 // Make sure there's no padding on the parent element
 
-@mixin collapse($sides: both, $multiplier: 1, $fromto: false) {
+@mixin collapse($sides: both, $multiplier: 1, $fromto: false, $gutter: false) {
 
   // Give a warning when $multiplier is not dividable by 0.5
   @if ($multiplier % 0.5 != 0) {
@@ -12,6 +12,11 @@
 
   // Get new SCSS map
   $grid-breakpoints: grid-breakpoints($fromto);
+
+  // Map when gutter is set
+  @if ($gutter != false) {
+    $grid-breakpoints: grid-breakpoint($fromto, $gutter);
+  }
 
   // Loop
   @each $breakpoint, $values in $grid-breakpoints {

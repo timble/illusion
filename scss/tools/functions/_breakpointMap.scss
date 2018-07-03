@@ -22,8 +22,8 @@
     @if $width >= $from and $width < $to {
       $map: (
               #{$breakpoint}: (
-                      width: map-get($values, width),
-                      gutter: map-get($values, gutter)
+                      width: $width,
+                      gutter: $gutter
               )
       );
       $new-map: non-destructive-map-merge($new-map, $map);
@@ -34,7 +34,7 @@
       $map: (
               customFrom: (
                       width: $from,
-                      gutter: map-get($values, gutter)
+                      gutter: $gutter
               )
       );
       $new-map: non-destructive-map-merge($new-map, $map);
@@ -43,4 +43,30 @@
 
   // Return the new map
   @return $new-map;
+}
+
+
+// Simple map
+// Map with just 1 value for when $gutter is set
+
+@function grid-breakpoint($fromto, $gutter) {
+
+  // Variables
+  $from: getFrom($fromto);
+
+  // Set to 0 when $fromto is false
+  @if $from == false {
+    $from: 0;
+  }
+
+  // Create map
+  $map: (
+          default: (
+                  width: $from,
+                  gutter: $gutter
+          )
+  );
+
+  // Return the new map
+  @return $map;
 }

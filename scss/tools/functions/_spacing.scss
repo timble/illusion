@@ -4,7 +4,7 @@
 
   // Give a warning when $multiplier is not dividable by 0.5
   @if ($multiplier % 0.5 != 0) {
-    @warn 'The `amount` in the `span` mixin is designed to work best with a number dividable by 0.5';
+    @warn 'The `multiplier` in the `spacing` function is designed to work best with a number dividable by 0.5';
   }
 
   // Set default gutter to smallest one

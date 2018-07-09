@@ -1,0 +1,30 @@
+---
+
+### @mixin row
+
+#### Arguments
+
+| Name | Type | Default | Description |
+| ---- | ---- | ------- | ----------- |
+| `type` | `string` | `$illusion-grid-container-type` | Choose between clearfix (for floats) or flexbox container. Defaults to clearfix container. |
+
+#### SCSS
+
+{% highlight css %}
+.foo {
+  @include row();
+}
+{% endhighlight %}
+
+#### CSS
+
+{% highlight css %}
+.foo:before, .foo:after {
+  display: table;
+  content: " ";
+}
+
+.foo:after {
+  clear: both;
+}
+{% endhighlight %}

@@ -1,0 +1,45 @@
+---
+
+### @mixin collapse
+
+Use as direct child of `@include span` element. Make sure there's no padding on the parent element
+
+#### Arguments
+
+| Name | Type | Default | Description |
+| ---- | ---- | ------- | ----------- |
+| `sides` | `string` | `both` | Choose which side(s) to collapse gutter. Defaults to 'both' |
+| `multiplier` | `number` | `1` | Defaults to `1` and can be set to any number dividable by `0.5` |
+| `fromto` | `list` | `false to false` | Set starting and stopping breakpoints. Accepts single value: `@include collapse(both, 1, $beta)` or list: `@include collapse(both, 1, $beta to $charlie)`. The second (to) value only means that Illusion is not adding more media queries. The styling is not being reset on this 'to' breakpoint |
+| `gutter` | `string` | `false` | Custom gutter value for Illusion to calculate (`calc()`) with. |
+
+#### SCSS
+
+{% highlight css %}
+.foo {
+  @include collapse();
+}
+{% endhighlight %}
+
+#### CSS
+
+{% highlight css %}
+.foo {
+  margin-right: calc((-1 * 1) * 16px);
+  margin-left: calc((-1 * 1) * 16px);
+}
+
+@media screen and (min-width: 560px) {
+  .foo {
+    margin-right: calc((-1 * 1) * 24px);
+    margin-left: calc((-1 * 1) * 24px);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .foo {
+    margin-right: calc((-1 * 1) * 32px);
+    margin-left: calc((-1 * 1) * 32px);
+  }
+}
+{% endhighlight %}

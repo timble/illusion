@@ -7,7 +7,7 @@
    */
 
   p {
-    margin-top: 0; /* 1 */
-    @include content-block; /* 2 */
+    margin-top: $illusion-extendalize-paragraph-margin-top; /* 1 */
+    @include content-block($illusion-extendalize-paragraph-margin-bottom); /* 2 */
   }
 }

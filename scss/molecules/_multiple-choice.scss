@@ -1,123 +1,110 @@
-@if $illusion-form == true {
+@if ($illusion-form == true and $illusion-multiple-choice != false) or $illusion-multiple-choice == true {
   // Radio buttons & checkboxes
 
   // By default, multiple choice inputs stack vertically
   .multiple-choice {
-    display: block;
-    float: none;
-    clear: left;
-    position: relative;
-
-    padding: 0 0 0 40px;
-    margin-bottom: $spacing-m;
+    display: $illusion-multiple-choice-display;
+    float: $illusion-multiple-choice-float;
+    clear: $illusion-multiple-choice-clear;
+    position: $illusion-multiple-choice-position;
+    padding: $illusion-multiple-choice-padding;
+    margin-bottom: $illusion-multiple-choice-margin-bottom;
 
     @include breakpoint($beta) {
-      float: left;
+      float: $illusion-multiple-choice-beta-float;
     }
 
     // Absolutely position inputs within label, to allow text to wrap
     input {
-      position: absolute;
-      cursor: pointer;
-      left: 0;
-      top: 0;
-      width: 40px;
-      height: 40px;
-      z-index: 1;
-
-      margin: 0;
-      opacity: 0;
+      position: $illusion-multiple-choice-input-position;
+      cursor: $illusion-multiple-choice-input-cursor;
+      left: $illusion-multiple-choice-input-left;
+      top: $illusion-multiple-choice-input-top;
+      width: $illusion-multiple-choice-input-width;
+      height: $illusion-multiple-choice-input-height;
+      z-index: $illusion-multiple-choice-input-zindex;
+      margin: $illusion-multiple-choice-input-margin;
+      opacity: $illusion-multiple-choice-input-opacity;
     }
 
     label {
-      cursor: pointer;
-      padding: $spacing-s $spacing-m;
-      display: block;
+      cursor: $illusion-multiple-choice-label-cursor;
+      padding: $illusion-multiple-choice-label-padding;
+      display: $illusion-multiple-choice-label-display;
 
       // remove 300ms pause on mobile
       touch-action: manipulation;
     }
 
     // Bordered box for radio buttons and checkbox
-    [type=radio] + label:before,
-    [type=checkbox] + label:before {
-      content: "";
-      border: $illusion-form-border-width solid;
-      background: transparent;
-      width: 40px;
-      height: 40px;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-
-    // Rounded box for radio buttons
-    [type=radio] + label::before {
-      border-radius: 50%;
+    [type=radio] + label::before,
+    [type=checkbox] + label::before {
+      content: $illusion-multiple-choice-label-before-content;
+      border: $illusion-multiple-choice-label-before-border;
+      background: $illusion-multiple-choice-label-before-background;
+      width: $illusion-multiple-choice-label-before-width;
+      height: $illusion-multiple-choice-label-before-height;
+      position: $illusion-multiple-choice-label-before-position;
+      top: $illusion-multiple-choice-label-before-top;
+      left: $illusion-multiple-choice-label-before-left;
     }
 
     // Dot and checkmark
     [type=radio] + label::after,
     [type=checkbox] + label::after {
-      content: "";
-      border: 12px solid;
-      position: absolute;
-      opacity: 0;
-      transform: scale(0.5);
-      @include transition;
+      content: $illusion-multiple-choice-label-after-content;
+      border: $illusion-multiple-choice-label-after-border;
+      position: $illusion-multiple-choice-label-after-position;
+      opacity: $illusion-multiple-choice-label-after-opacity;
+      transform: $illusion-multiple-choice-label-after-transform;
+      @include transition();
+    }
+
+    // Rounded box for radio buttons
+    [type=radio] + label::before {
+      border-radius: $illusion-multiple-choice-label-radio-before-border-radius;
     }
 
     // Dot
     [type=radio] + label::after {
-      width: 0;
-      height: 0;
-      top: 8px;
-      left: 8px;
-      border-radius: 50%;
+      width: $illusion-multiple-choice-label-radio-after-width;
+      height: $illusion-multiple-choice-label-radio-after-height;
+      top: $illusion-multiple-choice-label-radio-after-top;
+      left: $illusion-multiple-choice-label-radio-after-left;
+      border-radius: $illusion-multiple-choice-label-radio-after-border-radius;
     }
 
     // Checkmark
     [type=checkbox] + label::after {
-      border-width: 0 0 6px 6px;
-      background: transparent;
-      width: 22px;
-      height: 12px;
-      top: 12px;
-      left: 9px;
-      transform: rotate(-45deg) scale(0.5);
+      border-width: $illusion-multiple-choice-label-checkbox-after-border-width;
+      background: $illusion-multiple-choice-label-checkbox-after-background;
+      width: $illusion-multiple-choice-label-checkbox-after-width;
+      height: $illusion-multiple-choice-label-checkbox-after-height;
+      top: $illusion-multiple-choice-label-checkbox-after-top;
+      left: $illusion-multiple-choice-label-checkbox-after-left;
+      transform: $illusion-multiple-choice-label-checkbox-after-transform;
     }
 
     // Selected state
     input:checked + label::after {
-      opacity: 1;
-      transform: rotate(-45deg) scale(1);
+      opacity: $illusion-multiple-choice-label-checked-after-opacity;
+      transform: $illusion-multiple-choice-label-checked-after-transform;
     }
 
     // Focused state
     [type=checkbox]:focus + label::before,
     [type=radio]:focus + label::before {
-      box-shadow: 0 0 0 3px $illusion-form-focus-color;
+      box-shadow: $illusion-multiple-choice-label-focus-before-box-shadow;
     }
 
     // Disabled state
     input:disabled {
-      opacity: 0;
+      opacity: $illusion-multiple-choice-input-disabled-opacity;
 
       + label {
-        opacity: 0.6;
-        cursor: not-allowed;
+        opacity: $illusion-multiple-choice-label-disabled-opacity;
+        cursor: $illusion-multiple-choice-label-disabled-cursor;
       }
-    }
-  }
-
-
-  /* Submit button */
-
-  [type=submit] {
-    @include button-structure;
-
-    &:focus {
-      outline: 3px solid $color-focus;
     }
   }
 }

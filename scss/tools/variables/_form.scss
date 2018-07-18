@@ -3,3 +3,78 @@
 $illusion-form: false !default;
 $illusion-form-border-width: 2px !default;
 $illusion-form-focus-color: $color-focus !default;
+$illusion-form-disabled-cursor: not-allowed !default;
+$illusion-form-disabled-opacity: 0.6 !default;
+$illusion-form-group-margin: $spacing-m !default;
+$illusion-form-label-display: inline-block !default;
+$illusion-form-label-padding: $spacing-s !default;
+$illusion-form-input-width: 100% !default;
+$illusion-form-input-padding: $spacing-xs $spacing-s !default;
+$illusion-form-input-border: $illusion-form-border-width solid !default;
+$illusion-form-input-line-height: $line-height + $spacing-xs !default;
+$illusion-form-input-focus-outline: 3px solid $illusion-form-focus-color !default;
+$illusion-form-input-focus-outline-offset: 0 !default;
+$illusion-form-input-border-radius: 0 !default;
+$illusion-form-select-line-height: $line-height + ($spacing-xs * 4) !default;
+$illusion-form-submit-focus-outline: 3px solid $color-focus !default;
+
+$illusion-multiple-choice: false !default;
+$illusion-multiple-choice-unit: 40px !default;
+$illusion-multiple-choice-display: block !default;
+$illusion-multiple-choice-float: none !default;
+$illusion-multiple-choice-clear: left !default;
+$illusion-multiple-choice-position: relative !default;
+$illusion-multiple-choice-padding: 0 0 0 $illusion-multiple-choice-unit !default;
+$illusion-multiple-choice-margin-bottom: $spacing-m !default;
+$illusion-multiple-choice-beta-float: left !default;
+$illusion-multiple-choice-input-position: absolute !default;
+$illusion-multiple-choice-input-cursor: pointer !default;
+$illusion-multiple-choice-input-left: 0 !default;
+$illusion-multiple-choice-input-top: 0 !default;
+$illusion-multiple-choice-input-width: $illusion-multiple-choice-unit !default;
+$illusion-multiple-choice-input-height: $illusion-multiple-choice-unit !default;
+$illusion-multiple-choice-input-zindex: 1 !default;
+$illusion-multiple-choice-input-margin: 0 !default;
+$illusion-multiple-choice-input-opacity: 0 !default;
+$illusion-multiple-choice-label-cursor: pointer !default;
+$illusion-multiple-choice-label-padding: $spacing-s $spacing-m !default;
+$illusion-multiple-choice-label-display: block !default;
+$illusion-multiple-choice-label-before-content: "" !default;
+$illusion-multiple-choice-label-before-border: $illusion-form-border-width solid !default;
+$illusion-multiple-choice-label-before-background: transparent !default;
+$illusion-multiple-choice-label-before-width: $illusion-multiple-choice-unit !default;
+$illusion-multiple-choice-label-before-height: $illusion-multiple-choice-unit !default;
+$illusion-multiple-choice-label-before-position: absolute !default;
+$illusion-multiple-choice-label-before-top: 0 !default;
+$illusion-multiple-choice-label-before-left: 0 !default;
+
+$illusion-multiple-choice-label-after-content: "" !default;
+$illusion-multiple-choice-label-after-border: 12px solid !default;
+$illusion-multiple-choice-label-after-position: absolute !default;
+$illusion-multiple-choice-label-after-opacity: 0 !default;
+$illusion-multiple-choice-label-after-transform: scale(0.5) !default;
+
+$illusion-multiple-choice-label-radio-before-border-radius: 50% !default;
+
+$illusion-multiple-choice-label-radio-after-width: 0 !default;
+$illusion-multiple-choice-label-radio-after-height: 0 !default;
+$illusion-multiple-choice-label-radio-after-top: 8px !default;
+$illusion-multiple-choice-label-radio-after-left: 8px !default;
+$illusion-multiple-choice-label-radio-after-border-radius: 50% !default;
+
+$illusion-multiple-choice-label-checkbox-after-border-width: 0 0 6px 6px !default;
+$illusion-multiple-choice-label-checkbox-after-background: transparent !default;
+$illusion-multiple-choice-label-checkbox-after-width: 22px !default;
+$illusion-multiple-choice-label-checkbox-after-height: 12px !default;
+$illusion-multiple-choice-label-checkbox-after-top: 12px !default;
+$illusion-multiple-choice-label-checkbox-after-left: 9px !default;
+$illusion-multiple-choice-label-checkbox-after-transform: rotate(-45deg) scale(0.5) !default;
+
+$illusion-multiple-choice-label-checked-after-opacity: 1 !default;
+$illusion-multiple-choice-label-checked-after-transform: rotate(-45deg) scale(1) !default;
+
+$illusion-multiple-choice-label-focus-before-box-shadow: 0 0 0 3px $illusion-form-focus-color !default;
+
+$illusion-multiple-choice-input-disabled-opacity: 0 !default;
+$illusion-multiple-choice-label-disabled-opacity: 0.6 !default;
+$illusion-multiple-choice-label-disabled-cursor: not-allowed !default;

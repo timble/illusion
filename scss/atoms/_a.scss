@@ -8,10 +8,10 @@
    */
 
   a {
-    color: inherit; /* 1 */
+    color: $illusion-extendalize-anchor-color; /* 1 */
 
     @include hover {
-      text-decoration: none; /* 2 */
+      text-decoration: $illusion-extendalize-anchor-hover-text-decoration; /* 2 */
     }
   }
 }

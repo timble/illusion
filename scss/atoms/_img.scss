@@ -8,11 +8,11 @@
    */
 
   img {
-    max-width: 100%; /* 1 */
-    height: auto; /* 2 */
+    max-width: $illusion-extendalize-image-max-width; /* 1 */
+    height: $illusion-extendalize-image-height; /* 2 */
 
     &:only-child {
-      vertical-align: middle; /* 3 */
+      vertical-align: $illusion-extendalize-image-vertical-align; /* 3 */
     }
   }
 }

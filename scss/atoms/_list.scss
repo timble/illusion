@@ -7,7 +7,7 @@
    */
 
   ul, ol {
-    margin-top: 0; /* 1 */
-    @include content-block; /* 2 */
+    margin-top: $illusion-extendalize-list-margin-top; /* 1 */
+    @include content-block($illusion-extendalize-list-margin-bottom); /* 2 */
   }
 }

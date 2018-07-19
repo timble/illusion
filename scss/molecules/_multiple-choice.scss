@@ -9,6 +9,7 @@
     position: $illusion-multiple-choice-position;
     padding: $illusion-multiple-choice-padding;
     margin-bottom: $illusion-multiple-choice-margin-bottom;
+    min-height: $illusion-multiple-choice-min-height;
 
     @include breakpoint($beta) {
       float: $illusion-multiple-choice-beta-float;
@@ -31,6 +32,8 @@
       cursor: $illusion-multiple-choice-label-cursor;
       padding: $illusion-multiple-choice-label-padding;
       display: $illusion-multiple-choice-label-display;
+      align-items: $illusion-multiple-choice-label-align-items;
+      min-height: $illusion-multiple-choice-label-min-height;
 
       // remove 300ms pause on mobile
       touch-action: manipulation;

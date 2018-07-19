@@ -8,12 +8,20 @@
    */
 
   svg {
-    width: 1em; /* 1 */
-    height: 1em; /* 1 */
-    fill: currentColor; /* 2 */
+    @if $illusion-extendalize-svg-width != false {
+      width: 1em; /* 1 */
+    }
+    @if $illusion-extendalize-svg-height != false {
+      height: 1em; /* 1 */
+    }
+    @if $illusion-extendalize-svg-color != false {
+      fill: currentColor; /* 2 */
+    }
   }
 
-  .svg-sprite {
-    display: none; /* 3 */
+  @if $illusion-extendalize-svg-sprite != false {
+    .svg-sprite {
+      display: $illusion-extendalize-svg-sprite-display; /* 3 */
+    }
   }
 }

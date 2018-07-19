@@ -1,17 +1,21 @@
 // Variables
+
+@import "variables/spacing";
 @import "variables/breakpoints";
+@import "variables/type";
+
 @import "variables/body-fallback";
 @import "variables/color";
 @import "variables/extendalize";
 @import "variables/flexbox";
 @import "variables/form";
 @import "variables/grid";
-@import "variables/spacing";
 @import "variables/svg";
 @import "variables/transition";
-@import "variables/type";
+
 
 // Functions
+
 @import "functions/mapGet";
 @import "functions/mapGetNext";
 @import "functions/mapMerge";
@@ -29,7 +33,9 @@
 @import "functions/strReplace";
 @import "functions/svg-url";
 
+
 // Mixins
+
 @import "mixins/breakpoint";
 @import "mixins/button";
 @import "mixins/clearfix";

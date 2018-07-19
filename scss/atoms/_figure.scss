@@ -4,9 +4,9 @@
    */
 
   figure {
-    margin-top: 0;
-    margin-right: 0;
-    margin-left: 0;
-    @include content-block;
+    margin-top: $illusion-extendalize-figure-margin-top;
+    margin-right: $illusion-extendalize-figure-margin-right;
+    margin-left: $illusion-extendalize-figure-margin-left;
+    @include content-block($illusion-extendalize-figure-margin-bottom);
   }
 }

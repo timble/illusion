@@ -8,8 +8,8 @@
    */
 
   address {
-    font-style: normal; /* 1 */
-    margin-top: 0; /* 2 */
-    @include content-block; /* 3 */
+    font-style: $illusion-extendalize-address-font-style; /* 1 */
+    margin-top: $illusion-extendalize-address-margin-top; /* 2 */
+    @include content-block($illusion-extendalize-address-margin-bottom); /* 3 */
   }
 }

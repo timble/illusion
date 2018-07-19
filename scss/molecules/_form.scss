@@ -6,14 +6,14 @@
 
     // Lighter fields for disabled fields
     [disabled] {
-      cursor: not-allowed;
-      opacity: 0.6;
+      cursor: $illusion-form-disabled-cursor;
+      opacity: $illusion-form-disabled-opacity;
     }
   }
 
   // Form group is used to wrap label and input pairs
   .form__group {
-    @include content-block;
+    @include content-block($illusion-form-group-margin);
   }
 
   .form__label,
@@ -23,19 +23,19 @@
   }
 
   .form__label {
-    display: inline-block;
-    padding-bottom: $spacing-s;
+    display: $illusion-form-label-display;
+    padding-bottom: $illusion-form-label-padding;
   }
 
   .form__input {
-    width: 100%;
-    padding: $spacing-xs $spacing-s;
-    border: $illusion-form-border-width solid;
-    line-height: $line-height + $spacing-xs;
+    width: $illusion-form-input-width;
+    padding: $illusion-form-input-padding;
+    border: $illusion-form-input-border;
+    line-height: $illusion-form-input-line-height;
 
     &:focus {
-      outline: 3px solid $color-focus;
-      outline-offset: 0;
+      outline: $illusion-form-input-focus-outline;
+      outline-offset: $illusion-form-input-focus-outline-offset;
     }
   }
 
@@ -43,11 +43,20 @@
   input.form__input,
   textarea.form__input {
     -webkit-appearance: none;
-    border-radius: 0;
+    border-radius: $illusion-form-input-border-radius;
   }
 
   // Set a height for select elements
   select {
-    height: $line-height + ($spacing-xs * 4);
+    height: $illusion-form-select-line-height;
+  }
+
+  /* Submit button */
+  [type=submit] {
+    @include button-structure();
+
+    &:focus {
+      outline: $illusion-form-submit-focus-outline;
+    }
   }
 }

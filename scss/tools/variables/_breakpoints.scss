@@ -1,9 +1,9 @@
 // Breakpoints
 // Default breakpoints following the 8pt grid
 
-$alpha:                 320px !default;
-$alpha--plus:           440px !default;
-$beta:                  560px !default;
+$alfa:                 320px !default;
+$alfa--plus:           440px !default;
+$bravo:                  560px !default;
 $charlie:               768px !default;
 $delta:                 1024px !default;
 $echo:                  1112px !default;
@@ -11,8 +11,8 @@ $echo:                  1112px !default;
 
 // The above values minus 1px to be used for min-max media queries
 
-$alpha--plus-min:       $alpha--plus - 1px !default;
-$beta-min:              $beta - 1px !default;
+$alfa--plus-min:       $alfa--plus - 1px !default;
+$bravo-min:              $bravo - 1px !default;
 $charlie-min:           $charlie - 1px !default;
 $delta-min:             $delta - 1px !default;
 $echo-min:              $echo - 1px !default;

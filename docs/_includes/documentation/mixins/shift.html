@@ -9,7 +9,7 @@ Visually change the order of elements.
 | Name | Type | Default | Description |
 | ---- | ---- | ------- | ----------- |
 | `shift` | `list` | - | Set how many columns should be shifted. Accepts single value: `@include shift(2)` or list: `@include shift(3 of 12)`. Amount of columns defaults to `$illusion-grid-container`  |
-| `fromto` | `list` | `false to false` | Set starting and stopping breakpoints. Accepts single value: `@include shift(6, $beta)` or list: `@include shift(6, $beta to $charlie)`. The second (to) value only means that Illusion is not adding more media queries. The styling is not being reset on this 'to' breakpoint |
+| `fromto` | `list` | `false to false` | Set starting and stopping breakpoints. Accepts single value: `@include shift(6, $bravo)` or list: `@include shift(6, $bravo to $charlie)`. The second (to) value only means that Illusion is not adding more media queries. The styling is not being reset on this 'to' breakpoint |
 | `multiplier` | `number` | `1` | Gutter multiplier. defaults to `1` and can be set to any number dividable by `0.5` |
 | `defaults` | `boolean` | `true` | If set to `false` the mixin won't add the `position` property |
 | `gutter` | `string` | `false` | Custom gutter value for Illusion to calculate (`calc()`) with. |
@@ -51,15 +51,15 @@ It's best not to use this mixin inside a breakpoint since the mixin itself is cr
 // BAD
 .foo {
     @include shift(6);
-    @include breakpoint($beta) {
+    @include breakpoint($bravo) {
         @include shift(4);
     }
 }
 
 // GOOD
 .foo {
-    @include shift(6, 0 to $beta);
-    @include shift(4, $beta to $charlie, $defaults: false);
+    @include shift(6, 0 to $bravo);
+    @include shift(4, $bravo to $charlie, $defaults: false);
     @include shift(3, $charlie to $delta, $defaults: false);
 }
 

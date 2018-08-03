@@ -21,9 +21,9 @@
   outline: 1px solid magenta; // Use outline not to mess with css positioning
   height: 100%; // Fill complete page
 
-  @include gallery(6, 0 to $alpha--plus);
-  @include gallery(4, $alpha--plus to $beta);
-  @include gallery(3, $beta to $charlie);
+  @include gallery(6, 0 to $alfa--plus);
+  @include gallery(4, $alfa--plus to $bravo);
+  @include gallery(3, $bravo to $charlie);
   @include gallery(1, $charlie);
 }
 

@@ -11,8 +11,8 @@
     margin-bottom: $illusion-multiple-choice-margin-bottom;
     min-height: $illusion-multiple-choice-min-height;
 
-    @include breakpoint($beta) {
-      float: $illusion-multiple-choice-beta-float;
+    @include breakpoint($bravo) {
+      float: $illusion-multiple-choice-bravo-float;
     }
 
     // Absolutely position inputs within label, to allow text to wrap

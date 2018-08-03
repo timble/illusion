@@ -2,8 +2,8 @@
 //
 // 1. Default is set to false since Illusion doesn't create code by default
 // 2. Align body to the left, right or center. Defaults to center
-// 3. Width of the body, defaults to $beta breakpoint
+// 3. Width of the body, defaults to $bravo breakpoint
 
 $illusion-body-fallback: false !default; // 1
 $illusion-body-fallback-align: center !default; // 2
-$illusion-body-fallback-width: $beta !default; // 3
+$illusion-body-fallback-width: $bravo !default; // 3

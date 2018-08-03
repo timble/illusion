@@ -9,7 +9,7 @@
 | Name | Type | Default | Description |
 | ---- | ---- | ------- | ----------- |
 | `span` | `list` | - | Set how many columns should be spanned. Accepts single value: `@include span(6)` or list: `@include span(4 of 12)`. Amount of columns defaults to `$illusion-grid-container` |
-| `fromto` | `list` | `false to false` | Set starting and stopping breakpoints. Accepts single value: `@include span(6, $beta)` or list: `@include span(6, $beta to $charlie)`. The second (to) value only means that Illusion is not adding more media queries. The styling is not being reset on this 'to' breakpoint. |
+| `fromto` | `list` | `false to false` | Set starting and stopping breakpoints. Accepts single value: `@include span(6, $bravo)` or list: `@include span(6, $bravo to $charlie)`. The second (to) value only means that Illusion is not adding more media queries. The styling is not being reset on this 'to' breakpoint. |
 | `multiplier` | `number` | `1` | Gutter multiplier. defaults to `1` and can be set to any number dividable by `0.5` |
 | `bottom` | `boolean` | `false` | When set to `true` it also adds a bottom gutter |
 | `defaults` | `boolean` | `true` | If set to `false` the mixin won't add the `float` and `margin` property on `:first-child` and `:last-child` |
@@ -63,15 +63,15 @@ It's best not to use this mixin inside a breakpoint since the mixin itself is cr
 // BAD
 .foo {
     @include span(6);
-    @include breakpoint($beta) {
+    @include breakpoint($bravo) {
         @include span(4);
     }
 }
 
 // GOOD
 .foo {
-    @include span(6, 0 to $beta);
-    @include span(4, $beta to $charlie, $defaults: false);
+    @include span(6, 0 to $bravo);
+    @include span(4, $bravo to $charlie, $defaults: false);
     @include span(3, $charlie to $delta, $defaults: false);
 }
 

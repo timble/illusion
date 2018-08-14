@@ -4,8 +4,8 @@ $illusion-grid-container: 12 !default;
 $illusion-grid-maxwidth: $echo !default;
 $illusion-grid-default-width: 0 !default;
 $illusion-grid-default-gutter: 16px !default;
-$illusion-grid-beta-width: $beta !default;
-$illusion-grid-beta-gutter: 24px !default;
+$illusion-grid-bravo-width: $bravo !default;
+$illusion-grid-bravo-gutter: 24px !default;
 $illusion-grid-delta-width: $delta !default;
 $illusion-grid-delta-gutter: 32px !default;
 $illusion-grid-breakpoints: (
@@ -13,9 +13,9 @@ $illusion-grid-breakpoints: (
     width: $illusion-grid-default-width,
     gutter: $illusion-grid-default-gutter
   ),
-  beta: (
-    width: $illusion-grid-beta-width,
-    gutter: $illusion-grid-beta-gutter
+  bravo: (
+    width: $illusion-grid-bravo-width,
+    gutter: $illusion-grid-bravo-gutter
   ),
   delta: (
     width: $illusion-grid-delta-width,

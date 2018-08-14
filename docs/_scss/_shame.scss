@@ -36,7 +36,7 @@ header {
     font-size: 24px;
     line-height: 32px;
 
-    @include breakpoint($beta) {
+    @include breakpoint($bravo) {
       font-size: 32px;
       line-height: 48px;
     }
@@ -65,7 +65,7 @@ nav {
   display: inline-block;
   width: 166px;
 
-  @include breakpoint($beta) {
+  @include breakpoint($bravo) {
     display: block;
     float: left;
   }
@@ -80,13 +80,13 @@ nav {
   margin-left: auto;
   margin-right: auto;
 
-  @include breakpoint($beta) {
+  @include breakpoint($bravo) {
     float: right;
     margin: $spacing-s 0;
   }
 
   li {
-    @include breakpoint($beta) {
+    @include breakpoint($bravo) {
       float: left;
       margin-left: $spacing-l;
     }
@@ -101,12 +101,12 @@ aside {
   display: block;
   width: 100%;
   @include spacing(vertical);
-  @include span(4, $beta to $delta);
+  @include span(4, $bravo to $delta);
   @include span(3, $delta);
   max-height: 100vh;
   overflow: auto;
 
-  @include breakpoint($beta) {
+  @include breakpoint($bravo) {
     position: sticky;
     top: 0;
   }
@@ -115,7 +115,7 @@ aside {
 article {
   display: block;
   width: 100%;
-  @include span(8, $beta to $delta);
+  @include span(8, $bravo to $delta);
   @include span(9, $delta);
   @include spacing(vertical);
 
@@ -203,18 +203,18 @@ pre {
 
 .gallery-3 {
   .gallery__item {
-    @include gallery(6, 0 to $alpha--plus);
-    @include gallery(4, $alpha--plus to $beta);
-    @include gallery(3, $beta to $charlie);
+    @include gallery(6, 0 to $alfa--plus);
+    @include gallery(4, $alfa--plus to $bravo);
+    @include gallery(3, $bravo to $charlie);
     @include gallery(4, $charlie);
   }
 }
 
 .gallery-12 {
   .gallery__item {
-    @include gallery(6, 0 to $alpha--plus);
-    @include gallery(4, $alpha--plus to $beta);
-    @include gallery(3, $beta to $charlie);
+    @include gallery(6, 0 to $alfa--plus);
+    @include gallery(4, $alfa--plus to $bravo);
+    @include gallery(3, $bravo to $charlie);
     @include gallery(1, $charlie);
   }
 }

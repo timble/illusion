@@ -4,60 +4,60 @@
 //
 // 1. To enable all extendalize options set to true
 
-$illusion-extendalize: false !default; // 1
-$illusion-extendalize-boxsizing: default !default;
+$illusion-extendalize:                                false !default; // 1
+$illusion-extendalize-boxsizing:                      default !default;
 
 // Anchor
-$illusion-extendalize-anchor: default !default;
-$illusion-extendalize-anchor-color: inherit !default;
-$illusion-extendalize-anchor-hover-text-decoration: none !default;
+$illusion-extendalize-anchor:                         default !default;
+$illusion-extendalize-anchor-color:                   inherit !default;
+$illusion-extendalize-anchor-hover-text-decoration:   none !default;
 
-$illusion-extendalize-address: default !default;
-$illusion-extendalize-address-font-style: normal !default;
-$illusion-extendalize-address-margin-top: $margin-top !default;
-$illusion-extendalize-address-margin-bottom: $spacing-m !default;
+$illusion-extendalize-address:                        default !default;
+$illusion-extendalize-address-font-style:             normal !default;
+$illusion-extendalize-address-margin-top:             $margin-top !default;
+$illusion-extendalize-address-margin-bottom:          $spacing-m !default;
 
-$illusion-extendalize-body: default !default;
-$illusion-extendalize-body-margin: 0 !default;
+$illusion-extendalize-body:                           default !default;
+$illusion-extendalize-body-margin:                    0 !default;
 
-$illusion-extendalize-fieldset: default !default;
-$illusion-extendalize-fieldset-width: 100% !default;
-$illusion-extendalize-fieldset-border: 0 none !default;
-$illusion-extendalize-fieldset-padding: 0 !default;
-$illusion-extendalize-fieldset-margin: 0 !default;
-$illusion-extendalize-legend-margin-bottom: $spacing-m !default;
+$illusion-extendalize-fieldset:                       default !default;
+$illusion-extendalize-fieldset-width:                 100% !default;
+$illusion-extendalize-fieldset-border:                0 none !default;
+$illusion-extendalize-fieldset-padding:               0 !default;
+$illusion-extendalize-fieldset-margin:                0 !default;
+$illusion-extendalize-legend-margin-bottom:           $spacing-m !default;
 
-$illusion-extendalize-figure: default !default;
-$illusion-extendalize-figure-margin-top: 0 !default;
-$illusion-extendalize-figure-margin-right: 0 !default;
-$illusion-extendalize-figure-margin-bottom: $spacing-m !default;
-$illusion-extendalize-figure-margin-left: 0 !default;
+$illusion-extendalize-figure:                         default !default;
+$illusion-extendalize-figure-margin-top:              0 !default;
+$illusion-extendalize-figure-margin-right:            0 !default;
+$illusion-extendalize-figure-margin-bottom:           $spacing-m !default;
+$illusion-extendalize-figure-margin-left:             0 !default;
 
-$illusion-extendalize-heading: default !default;
-$illusion-extendalize-heading-weight: $weight-bold !default;
-$illusion-extendalize-heading-font-size: inherit !default;
-$illusion-extendalize-heading-margin-top: 0 !default;
-$illusion-extendalize-heading-margin-bottom: $spacing-m !default;
+$illusion-extendalize-heading:                        default !default;
+$illusion-extendalize-heading-weight:                 $weight-bold !default;
+$illusion-extendalize-heading-font-size:              inherit !default;
+$illusion-extendalize-heading-margin-top:             0 !default;
+$illusion-extendalize-heading-margin-bottom:          $spacing-m !default;
 
-$illusion-extendalize-image: default !default;
-$illusion-extendalize-image-max-width: 100% !default;
-$illusion-extendalize-image-height: auto !default;
-$illusion-extendalize-image-vertical-align: middle !default;
+$illusion-extendalize-image:                          default !default;
+$illusion-extendalize-image-max-width:                100% !default;
+$illusion-extendalize-image-height:                   auto !default;
+$illusion-extendalize-image-vertical-align:           middle !default;
 
-$illusion-extendalize-list: default !default;
-$illusion-extendalize-list-margin-top: 0 !default;
-$illusion-extendalize-list-margin-bottom: $spacing-m !default;
+$illusion-extendalize-list:                           default !default;
+$illusion-extendalize-list-margin-top:                0 !default;
+$illusion-extendalize-list-margin-bottom:             $spacing-m !default;
 
-$illusion-extendalize-paragraph: default !default;
-$illusion-extendalize-paragraph-margin-top: 0 !default;
-$illusion-extendalize-paragraph-margin-bottom: $spacing-m !default;
+$illusion-extendalize-paragraph:                      default !default;
+$illusion-extendalize-paragraph-margin-top:           0 !default;
+$illusion-extendalize-paragraph-margin-bottom:        $spacing-m !default;
 
-$illusion-extendalize-picture: default !default;
-$illusion-extendalize-picture-img-vertical-align: middle !default;
+$illusion-extendalize-picture:                        default !default;
+$illusion-extendalize-picture-img-vertical-align:     middle !default;
 
-$illusion-extendalize-svg: default !default;
-$illusion-extendalize-svg-width: 1em !default;
-$illusion-extendalize-svg-height: 1em !default;
-$illusion-extendalize-svg-color: 1em !default;
-$illusion-extendalize-svg-sprite: true !default;
-$illusion-extendalize-svg-sprite-display: none !default;
+$illusion-extendalize-svg:                            default !default;
+$illusion-extendalize-svg-width:                      1em !default;
+$illusion-extendalize-svg-height:                     1em !default;
+$illusion-extendalize-svg-color:                      1em !default;
+$illusion-extendalize-svg-sprite:                     true !default;
+$illusion-extendalize-svg-sprite-display:             none !default;

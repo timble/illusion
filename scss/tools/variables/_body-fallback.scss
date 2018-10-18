@@ -4,6 +4,6 @@
 // 2. Align body to the left, right or center. Defaults to center
 // 3. Width of the body, defaults to $bravo breakpoint
 
-$illusion-body-fallback: false !default; // 1
-$illusion-body-fallback-align: center !default; // 2
-$illusion-body-fallback-width: $bravo !default; // 3
+$illusion-body-fallback:        false !default; // 1
+$illusion-body-fallback-align:  center !default; // 2
+$illusion-body-fallback-width:  $bravo !default; // 3

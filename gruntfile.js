@@ -5,6 +5,8 @@ module.exports = function(grunt) {
     // load time-grunt and all grunt plugins found in the package.json
     require("jit-grunt")(grunt);
 
+    const sass = require('node-sass');
+
     // grunt config
     grunt.initConfig({
         // Copy bower files
@@ -24,6 +26,7 @@ module.exports = function(grunt) {
         // Compile sass files
         sass: {
             options: {
+                implementation: sass,
                 outputStyle: "expanded"
             },
             dist: {
@@ -34,10 +37,12 @@ module.exports = function(grunt) {
             }
         },
 
-        // Autoprefixer
-        autoprefixer: {
+        // PostCSS
+        postcss: {
             options: {
-                browsers: ["> 5%", "last 2 versions"]
+                processors: [
+                    require('autoprefixer')({browsers: 'last 2 versions'})
+                ]
             },
             files: {
                 expand: true,
@@ -139,7 +144,7 @@ module.exports = function(grunt) {
                     "tests/**/*.scss",
                     "tests/**/**/*.scss"
                 ],
-                tasks: ["sass", "cssmin", "autoprefixer", "copy:css"],
+                tasks: ["sass", "postcss", "cssmin", "copy:css"],
                 options: {
                     interrupt: true,
                     atBegin: true

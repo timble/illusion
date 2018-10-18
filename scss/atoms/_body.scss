@@ -7,10 +7,10 @@
 
   body {
     margin: $illusion-extendalize-body-margin;
-    font-family: $font-family;
-    font-size: $font-size;
-    line-height: $line-height;
-    font-weight: $weight-normal;
-    color: $color-type;
+    font-family: $illusion-extendalize-body-font-family;
+    font-size: $illusion-extendalize-body-font-size;
+    line-height: $illusion-extendalize-body-line-height;
+    font-weight: $illusion-extendalize-body-font-weight;
+    color: $illusion-extendalize-body-color;
   }
 }

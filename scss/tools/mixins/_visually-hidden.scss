@@ -1,6 +1,6 @@
 // Visually hidden
 
-@mixin visually-hidden($position: absolute, $overflow: hidden, $backface-visibility: hidden, $clip: rect(0 0 0 0), $height: 1px, $width: 1px, $margin: -1px, $padding: 0, $border: none) {
+@mixin visually-hidden($position: $illusion-visually-hidden-position, $overflow: $illusion-visually-hidden-overflow, $backface-visibility: $illusion-visually-hidden-backface-visibility, $clip: $illusion-visually-hidden-clip, $height: $illusion-visually-hidden-height, $width: $illusion-visually-hidden-width, $margin: $illusion-visually-hidden-margin, $padding: $illusion-visually-hidden-padding, $border: $illusion-visually-hidden-border) {
   @if $position != false {
     position: $position;
   }

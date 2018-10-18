@@ -1,11 +1,11 @@
 // Pseudo elements
 
-@mixin pseudo($pseudo: after, $parent-position: relative, $position: absolute, $content: " ", $display: block) {
+@mixin pseudo($illusion-pseudo: $illusion-pseudo, $parent-position: $illusion-pseudo-parent-position, $position: $illusion-pseudo-position, $content: $illusion-pseudo-content, $display: $illusion-pseudo-display) {
   @if $parent-position != false {
     position: $parent-position;
   }
 
-  &:#{$pseudo} {
+  &:#{$illusion-pseudo} {
     @if $position != false {
       position: $position;
     }

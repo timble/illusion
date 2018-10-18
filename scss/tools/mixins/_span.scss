@@ -1,6 +1,6 @@
 // Span mixin
 
-@mixin span($span: null, $fromto: false, $multiplier: 1, $bottom: false, $defaults: true, $omega: null, $gutter: false) {
+@mixin span($span: $illusion-span-span, $fromto: $illusion-span-fromto, $multiplier: $illusion-span-multiplier, $bottom: $illusion-span-bottom, $defaults: $illusion-span-defaults, $omega: $illusion-span-omega, $gutter: $illusion-span-gutter) {
 
   // Give a warning when $multiplier is not dividable by 0.5
   @if ($multiplier % 0.5 != 0) {

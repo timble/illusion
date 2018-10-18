@@ -1,6 +1,6 @@
 // Container
 
-@mixin container($type: $illusion-grid-container-type, $align: center) {
+@mixin container($type: $illusion-grid-container-type, $align: $illusion-grid-container-align) {
 
   // Set default styling
   max-width: $illusion-grid-maxwidth + (largestGutter() * 2);

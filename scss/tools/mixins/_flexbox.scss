@@ -8,8 +8,8 @@
 // Because we're adding .flexbox and .flexboxlegacy classes flexbox will only work when JS is enabled
 // This is a good thing since we're not sure what we're showing / hiding with JS that might mess with flexbox
 
-@mixin flexbox($horizontal: $flexbox-horizontal, $vertical: $flexbox-vertical) {
-  @if $flexbox == true { // 1
+@mixin flexbox($horizontal: $illusion-flexbox-horizontal, $vertical: $illusion-flexbox-vertical) {
+  @if $illusion-flexbox == true { // 1
     @at-root { // 2
       .flexbox &, // 3
       .flexboxlegacy & { // 3

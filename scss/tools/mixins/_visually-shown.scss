@@ -1,6 +1,6 @@
 // Visually shown
 
-@mixin visually-shown($position: static, $overflow: visible, $backface-visibility: visible, $clip: auto, $height: auto, $width: auto, $margin: 0, $padding: 0, $border: none) {
+@mixin visually-hidden($position: $illusion-visually-shown-position, $overflow: $illusion-visually-shown-overflow, $backface-visibility: $illusion-visually-shown-backface-visibility, $clip: $illusion-visually-shown-clip, $height: $illusion-visually-shown-height, $width: $illusion-visually-shown-width, $margin: $illusion-visually-shown-margin, $padding: $illusion-visually-shown-padding, $border: $illusion-visually-shown-border) {
   @if $position != false {
     position: $position;
   }

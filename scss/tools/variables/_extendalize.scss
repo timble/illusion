@@ -19,6 +19,11 @@ $illusion-extendalize-address-margin-bottom:          $spacing-m !default;
 
 $illusion-extendalize-body:                           default !default;
 $illusion-extendalize-body-margin:                    0 !default;
+$illusion-extendalize-body-font-family:               $font-family !default;
+$illusion-extendalize-body-font-size:                 $font-size !default;
+$illusion-extendalize-body-line-height:               $line-height !default;
+$illusion-extendalize-body-font-weight:               $weight-normal !default;
+$illusion-extendalize-body-color:                     $color-type !default;
 
 $illusion-extendalize-fieldset:                       default !default;
 $illusion-extendalize-fieldset-width:                 100% !default;
@@ -38,6 +43,8 @@ $illusion-extendalize-heading-weight:                 $weight-bold !default;
 $illusion-extendalize-heading-font-size:              inherit !default;
 $illusion-extendalize-heading-margin-top:             0 !default;
 $illusion-extendalize-heading-margin-bottom:          $spacing-m !default;
+
+$illusion-extendalize-html-box-sizing:                border-box !default;
 
 $illusion-extendalize-image:                          default !default;
 $illusion-extendalize-image-max-width:                100% !default;

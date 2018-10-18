@@ -3,10 +3,17 @@
 // Following the 8 pixel grid with the exception of 4px
 // Use the 4px only when the total width/height of the element will be dividable by 8 in the end
 
-$spacing-xs:  4px !default;
-$spacing-s:   8px !default;
-$spacing-m:   16px !default;
-$spacing-l:   24px !default;
-$spacing-xl:  32px !default;
+$spacing-xs:                      4px !default;
+$spacing-s:                       8px !default;
+$spacing-m:                       16px !default;
+$spacing-l:                       24px !default;
+$spacing-xl:                      32px !default;
 
-$margin-top:  0 !default;
+$margin-top:                      0 !default;
+
+$illusion-spacing-sides:          all !default;
+$illusion-spacing-type:           padding !default;
+$illusion-spacing-multiplier:     1 !default;
+$illusion-spacing-fromto:         false !default;
+$illusion-spacing-lastchildnone:  false !default;
+$illusion-spacing-minus:          0 !default;

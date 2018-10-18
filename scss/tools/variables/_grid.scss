@@ -1,14 +1,14 @@
 // Grid
 
-$illusion-grid-container:       12 !default;
-$illusion-grid-maxwidth:        $echo !default;
-$illusion-grid-default-width:   0 !default;
-$illusion-grid-default-gutter:  16px !default;
-$illusion-grid-bravo-width:     $bravo !default;
-$illusion-grid-bravo-gutter:    24px !default;
-$illusion-grid-delta-width:     $delta !default;
-$illusion-grid-delta-gutter:    32px !default;
-$illusion-grid-breakpoints:     (
+$illusion-grid-container:         12 !default;
+$illusion-grid-maxwidth:          $echo !default;
+$illusion-grid-default-width:     0 !default;
+$illusion-grid-default-gutter:    16px !default;
+$illusion-grid-bravo-width:       $bravo !default;
+$illusion-grid-bravo-gutter:      24px !default;
+$illusion-grid-delta-width:       $delta !default;
+$illusion-grid-delta-gutter:      32px !default;
+$illusion-grid-breakpoints:       (
   default: (
     width:    $illusion-grid-default-width,
     gutter:   $illusion-grid-default-gutter
@@ -24,3 +24,5 @@ $illusion-grid-breakpoints:     (
 ) !default;
 $illusion-grid-type:              float !default;
 $illusion-grid-container-type:    $illusion-grid-type !default;
+$illusion-grid-container-align:   center !default;
+$illusion-grid-row-type:          $illusion-grid-container-type !default;

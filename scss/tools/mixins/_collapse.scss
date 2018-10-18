@@ -3,7 +3,7 @@
 // Use as direct child of `@include span` element
 // Make sure there's no padding on the parent element
 
-@mixin collapse($sides: both, $multiplier: 1, $fromto: false, $gutter: false) {
+@mixin collapse($sides: $illusion-collapse-sides, $multiplier: $illusion-collapse-multiplier, $fromto: $illusion-collapse-fromto, $gutter: $illusion-collapse-gutter) {
 
   // Give a warning when $multiplier is not dividable by 0.5
   @if ($multiplier % 0.5 != 0) {

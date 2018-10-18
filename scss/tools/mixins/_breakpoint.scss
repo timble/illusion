@@ -1,7 +1,7 @@
 // Breakpoint
 // Sets a temporary global $inside-breakpoint variable to be used inside other mixins
 
-@mixin breakpoint($width, $width--max: false) {
+@mixin breakpoint($width, $width--max: $illusion-breakpoint-width-max) {
   $inside-breakpoint: $width !global;
   @if $width--max == false {
     @media screen and (min-width: $width) {

@@ -1,23 +1,24 @@
 // Breakpoints
 // Default breakpoints following the 8pt grid
 
-$alfa:                320px !default;
-$alfa--plus:          440px !default;
-$bravo:               560px !default;
-$charlie:             768px !default;
-$delta:               1024px !default;
-$echo:                1112px !default;
+$alfa:                            320px !default;
+$alfa--plus:                      440px !default;
+$bravo:                           560px !default;
+$charlie:                         768px !default;
+$delta:                           1024px !default;
+$echo:                            1112px !default;
 
 
 // The above values minus 1px to be used for min-max media queries
 
-$alfa--plus-min:      $alfa--plus - 1px !default;
-$bravo-min:           $bravo - 1px !default;
-$charlie-min:         $charlie - 1px !default;
-$delta-min:           $delta - 1px !default;
-$echo-min:            $echo - 1px !default;
+$alfa--plus-min:                  $alfa--plus - 1px !default;
+$bravo-min:                       $bravo - 1px !default;
+$charlie-min:                     $charlie - 1px !default;
+$delta-min:                       $delta - 1px !default;
+$echo-min:                        $echo - 1px !default;
 
 
 // Set default to false so we can use spacing() function outside breakpoint
 
-$inside-breakpoint:   false;
+$illusion-breakpoint-width-max:   false !default;
+$inside-breakpoint:               false;

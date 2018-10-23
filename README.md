@@ -17,3 +17,4 @@ Illusion is an opinionated, mobile-first, progressive enhanced, accessible, SCSS
 - [Brouwer Tours](https://www.brouwertours.nl)
 - [Anton Goudsmit](http://antongoudsmit.nl)
 - [GGNet](http://ggnet.test/)
+- [Brouwer Tours](https://www.brouwertours.nl/)

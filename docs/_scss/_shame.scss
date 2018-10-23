@@ -28,8 +28,6 @@ header {
     width: 220%;
     height: 220%;
     background: linear-gradient(248deg, $color1, $color2, $color3);
-    transform: translate(0, 0);
-    animation: headerAnimate 20s ease infinite;
   }
 
   h1 {
@@ -40,18 +38,6 @@ header {
       font-size: 32px;
       line-height: 48px;
     }
-  }
-}
-
-@keyframes headerAnimate {
-  0% {
-    transform: translate(0, 0);
-  }
-  50% {
-    transform: translate(-50%, 0);
-  }
-  100% {
-    transform: translate(0, 0);
   }
 }
 

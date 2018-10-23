@@ -1,6 +1,6 @@
 // Shift
 
-@mixin shift($shift: null, $fromto: false, $multiplier: 1, $defaults: true, $gutter: false) {
+@mixin shift($shift: $illusion-shift, $fromto: $illusion-shift-fromto, $multiplier: $illusion-shift-multiplier, $defaults: $illusion-shift-defaults, $gutter: $illusion-shift-gutter) {
 
   // Give a warning when $multiplier is not dividable by 0.5
   @if ($multiplier % 0.5 != 0) {

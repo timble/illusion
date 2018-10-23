@@ -2,7 +2,7 @@
 // Also clearing top-margin
 // Still using single colon for better browser compatibility
 
-@mixin clearfix($reset: false) {
+@mixin clearfix($reset: $illusion-clearfix-reset) {
   @if $reset == false {
     &:before,
     &:after {

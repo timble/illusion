@@ -1,6 +1,6 @@
 // Row
 
-@mixin row($type: $illusion-grid-container-type) {
+@mixin row($type: $illusion-grid-row-type) {
 
   // Floats
   @if $type != flex {

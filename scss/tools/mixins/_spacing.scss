@@ -2,7 +2,7 @@
 //
 // Responsive spacing that follows the grid breakpoints
 
-@mixin spacing($sides: all, $type: padding, $multiplier: 1, $fromto: false, $lastchildnone: false, $minus: 0) {
+@mixin spacing($sides: $illusion-spacing-sides, $type: $illusion-spacing-type, $multiplier: $illusion-spacing-multiplier, $fromto: $illusion-spacing-fromto, $lastchildnone: $illusion-spacing-lastchildnone, $minus: $illusion-spacing-minus) {
 
   // Give a warning when $multiplier is not dividable by 0.5
   @if ($multiplier % 0.5 != 0) {

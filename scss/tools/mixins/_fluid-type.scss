@@ -1,6 +1,6 @@
 // Fluid type
 
-@mixin fluid-type($min-value: $fluid-type-min-value, $max-value: $fluid-type-max-value, $min-screen: $fluid-type-min-screen, $max-screen: $fluid-type-max-screen) {
+@mixin fluid-type($min-value: $illusion-fluid-type-min-value, $max-value: $illusion-fluid-type-max-value, $min-screen: $illusion-fluid-type-min-screen, $max-screen: $illusion-fluid-type-max-screen) {
   font-size: $min-value;
 
   @media screen and (min-width: $min-screen) {

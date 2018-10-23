@@ -2,7 +2,7 @@
 //
 // @include svg-background('<g transform="matrix(2.18679,0,0,2.18679,5.43964,-0.0421697)"><path d="M5.9 5.3L0.5 0.1C0.4 0 0.2 0 0.1 0.1 0 0.2 0 0.4 0.1 0.5L5.2 5.5 0.1 10.5C0 10.6 0 10.8 0.1 10.9 0.2 11 0.2 11 0.3 11 0.4 11 0.5 11 0.5 10.9L5.9 5.7C6 5.6 6 5.4 5.9 5.3Z"/></g>', black, 16);
 
-@mixin svg-background($svg, $color: $svg-background-color, $width: $svg-background-width, $height: $svg-background-height, $viewboxWidth: $svg-background-viewboxWidth, $viewboxHeight: $svg-background-viewboxHeight, $background-position: $svg-background-position, $background-repeat: $svg-background-repeat) {
+@mixin svg-background($svg, $color: $illusion-svg-background-color, $width: $illusion-svg-background-width, $height: $illusion-svg-background-height, $viewboxWidth: $illusion-svg-background-viewboxWidth, $viewboxHeight: $illusion-svg-background-viewboxHeight, $background-position: $illusion-svg-background-position, $background-repeat: $illusion-svg-background-repeat) {
   @if $height == false {
     $height: $width;
   }

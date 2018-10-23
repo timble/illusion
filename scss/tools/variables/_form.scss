@@ -12,6 +12,10 @@ $illusion-form-input-width:                                   100% !default;
 $illusion-form-input-padding:                                 $spacing-xs $spacing-s !default;
 $illusion-form-input-border:                                  $illusion-form-border-width solid !default;
 $illusion-form-input-line-height:                             $line-height + $spacing-xs !default;
+$illusion-form-input-min-height:                              $illusion-form-input-line-height + ($spacing-xs * 2) + ($illusion-form-border-width * 2) !default;
+$illusion-form-input-font-family:                             inherit !default;
+$illusion-form-input-font-weight:                             inherit !default;
+$illusion-form-input-color:                                   inherit !default;
 $illusion-form-input-focus-outline:                           3px solid $illusion-form-focus-color !default;
 $illusion-form-input-focus-outline-offset:                    0 !default;
 $illusion-form-input-border-radius:                           0 !default;
@@ -82,3 +86,46 @@ $illusion-multiple-choice-label-focus-before-box-shadow:      0 0 0 3px $illusio
 $illusion-multiple-choice-input-disabled-opacity:             0 !default;
 $illusion-multiple-choice-label-disabled-opacity:             0.6 !default;
 $illusion-multiple-choice-label-disabled-cursor:              not-allowed !default;
+
+$illusion-custom-select:                                      inherit !default;
+$illusion-custom-select-theme:                                inherit !default;
+$illusion-custom-select-position:                             relative !default;
+$illusion-custom-select-display:                              block !default;
+
+$illusion-custom-select-width:                                100% !default;
+$illusion-custom-select-margin:                               0 !default;
+$illusion-custom-select-padding:                              ($spacing-xs - ($illusion-form-border-width * 2)) ($spacing-s - ($illusion-form-border-width * 2)) !default;
+$illusion-custom-select-outline:                              none !default;
+$illusion-custom-select-height:                               $illusion-form-input-min-height - ($illusion-form-border-width * 2) !default;
+$illusion-custom-select-box-sizing:                           border-box !default;
+$illusion-custom-select-font-size:                            16px !default;
+$illusion-custom-select-border:                               $illusion-form-input-border !default;
+$illusion-custom-select-font-family:                          $illusion-form-input-font-family !default;
+$illusion-custom-select-font-weight:                          $illusion-form-input-font-weight !default;
+$illusion-custom-select-color:                                $illusion-form-input-color !default;
+$illusion-custom-select-line-height:                          $illusion-form-input-line-height + $illusion-form-border-width !default;
+$illusion-custom-select-padding-top:                          $spacing-xs !default;
+$illusion-custom-select-padding-bottom:                       $spacing-xs !default;
+$illusion-custom-select-padding-left:                         $spacing-s !default;
+
+$illusion-custom-select-arrow-content:                        " " !default;
+$illusion-custom-select-arrow-position:                       absolute !default;
+$illusion-custom-select-arrow-top:                            50% !default;
+$illusion-custom-select-arrow-right:                          $spacing-s !default;
+$illusion-custom-select-arrow-z-index:                        2 !default;
+$illusion-custom-select-arrow-pointer-events:                 none !default;
+$illusion-custom-select-arrow-width:                          0 !default;
+$illusion-custom-select-arrow-height:                         0 !default;
+$illusion-custom-select-arrow-size:                           6px !default;
+$illusion-custom-select-arrow-border-horizontal:              $illusion-custom-select-arrow-size solid transparent !default;
+$illusion-custom-select-arrow-border-top:                     $illusion-custom-select-arrow-size solid !default;
+$illusion-custom-select-arrow-margin-top:                     -($illusion-custom-select-arrow-size / 2) !default;
+$illusion-custom-select-arrow-display:                        block !default;
+
+$illusion-custom-select-padding-right:                        ($illusion-custom-select-arrow-right * 2) + ($illusion-custom-select-arrow-size * 2) !default;
+
+$illusion-custom-select-ms-focus-background:                  none !default;
+$illusion-custom-select-ms-focus-color:                       inherit !default;
+
+$illusion-custom-select-focus-outline:                        $illusion-form-input-focus-outline !default;
+$illusion-custom-select-focus-outline-offset:                 $illusion-form-border-width !default;

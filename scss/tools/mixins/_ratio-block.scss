@@ -1,6 +1,6 @@
 // Aspect ratio blocks
 
-@mixin ratio-block($ratio: 16 by 9, $overflow: hidden) {
+@mixin ratio-block($ratio: $illusion-ratio-block, $overflow: $illusion-ratio-block-overflow, $after: $illusion-ratio-block-after) {
 
   // Variables
   $width: nth($ratio, 1);
@@ -12,15 +12,17 @@
   }
 
   &:before {
-    display: block;
-    float: left;
-    content: " ";
+    display: $illusion-ratio-block-before-display;
+    float: $illusion-ratio-block-before-float;
+    content: $illusion-ratio-block-before-content;
     padding-top: $percent;
   }
 
-  &:after {
-    content: " ";
-    clear: left;
-    display: table;
+  @if $after != false {
+    &:after {
+      content: $illusion-ratio-block-after-content;
+      clear: $illusion-ratio-block-after-clear;
+      display: $illusion-ratio-block-after-display;
+    }
   }
 }

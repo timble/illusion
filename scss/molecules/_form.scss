@@ -32,6 +32,9 @@
     padding: $illusion-form-input-padding;
     border: $illusion-form-input-border;
     line-height: $illusion-form-input-line-height;
+    min-height: $illusion-form-input-min-height;
+    font-family: $illusion-form-input-font-family;
+    font-weight: $illusion-form-input-font-weight;
 
     &:focus {
       outline: $illusion-form-input-focus-outline;

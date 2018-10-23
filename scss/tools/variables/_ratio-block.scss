@@ -1,0 +1,11 @@
+// Ratio block
+
+$illusion-ratio-block:                16 by 9 !default;
+$illusion-ratio-block-overflow:       hidden !default;
+$illusion-ratio-block-before-display: block !default;
+$illusion-ratio-block-before-float:   left !default;
+$illusion-ratio-block-before-content: " " !default;
+$illusion-ratio-block-after:          true !default;
+$illusion-ratio-block-after-content:  " " !default;
+$illusion-ratio-block-after-clear:    left !default;
+$illusion-ratio-block-after-display:  table !default;

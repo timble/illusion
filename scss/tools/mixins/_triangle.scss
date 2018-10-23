@@ -1,7 +1,7 @@
 // Triangle
 // CSS only triangles using borders
 
-@mixin triangle($direction: right, $size: 4px, $color: false) {
+@mixin triangle($direction: $illusion-triangle-direction, $size: $illusion-triangle-size, $color: $illusion-triangle-color) {
 
   // Top and bottom arrows
   @if $direction == top or $direction == bottom {

@@ -1,11 +1,11 @@
 // Visually hidden
 
-$illusion-visually-shown-position:            absolute !default;
-$illusion-visually-shown-overflow:            hidden !default;
-$illusion-visually-shown-backface-visibility: hidden !default;
-$illusion-visually-shown-clip:                rect(0 0 0 0) !default;
-$illusion-visually-shown-height:              1px !default;
-$illusion-visually-shown-width:               1px !default;
-$illusion-visually-shown-margin:              -1px !default;
+$illusion-visually-shown-position:            static !default;
+$illusion-visually-shown-overflow:            visible !default;
+$illusion-visually-shown-backface-visibility: visible !default;
+$illusion-visually-shown-clip:                auto !default;
+$illusion-visually-shown-height:              auto !default;
+$illusion-visually-shown-width:               auto !default;
+$illusion-visually-shown-margin:              0!default;
 $illusion-visually-shown-padding:             0 !default;
 $illusion-visually-shown-border:              none !default;

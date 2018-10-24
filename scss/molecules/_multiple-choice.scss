@@ -8,8 +8,8 @@
     clear: $illusion-multiple-choice-clear;
     position: $illusion-multiple-choice-position;
     padding: $illusion-multiple-choice-padding;
-    margin-bottom: $illusion-multiple-choice-margin-bottom;
     min-height: $illusion-multiple-choice-min-height;
+    @include content-block($illusion-multiple-choice-margin-bottom);
 
     @include breakpoint($bravo) {
       float: $illusion-multiple-choice-bravo-float;

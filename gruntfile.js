@@ -41,7 +41,7 @@ module.exports = function(grunt) {
         postcss: {
             options: {
                 processors: [
-                    require('autoprefixer')({browsers: 'last 2 versions'})
+                    require('autoprefixer')({overrideBrowserslist: 'last 2 versions'})
                 ]
             },
             files: {
@@ -114,8 +114,8 @@ module.exports = function(grunt) {
             build: {
                 files: {
                     "docs/js/scripts.js": [
-                        "node_modules/smooth-scroll/dist/js/smooth-scroll.min.js",
-                        "node_modules/gumshoe/dist/js/gumshoe.js",
+                        "node_modules/smooth-scroll/dist/smooth-scroll.polyfills.min.js",
+                        "node_modules/gumshoejs/dist/gumshoe.polyfills.min.js",
                         "docs/_scripts/main.js"
                     ]
                 }

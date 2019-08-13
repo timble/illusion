@@ -24,10 +24,10 @@
     "grunt-postcss": "^0.9.0",
     "grunt-sass": "^3.0.0",
     "grunt-shell": "^2.1.*",
-    "gumshoe": "git+https://github.com/cferdinandi/gumshoe.git#master",
+    "gumshoejs": "^5.1.2",
     "jit-grunt": "^0.10.*",
     "node-sass": "4.9.4",
-    "smooth-scroll": "git+https://github.com/cferdinandi/smooth-scroll.git#master",
+    "smooth-scroll": "^16.1.0",
     "time-grunt": "^1.3.*"
   },
   "dependencies": {

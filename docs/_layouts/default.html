@@ -8,14 +8,14 @@
 </main>
 
 <script>
-    smoothScroll.init({
-        selector: '#markdown-toc a',
-        offset: 24
-    });
-    gumshoe.init({
-        selector: '#markdown-toc a',
-        activeClass: 'is-active'
-    });
+  var spyscroll = new Gumshoe('#markdown-toc a', {
+    navClass: 'is-active',
+    nested: true,
+    nestedClass: 'is-active'
+  });
+  var smooth = new SmoothScroll('#markdown-toc a', {
+    offset: 24
+  });
 </script>
 
 {% include footer.html %}

@@ -1,15 +1,15 @@
 {
   "name": "illusion",
   "description": "Illusion simplifies the creation of things for the web.",
-  "version": "5.0.0",
-  "homepage": "https://illusion.timble.net",
-  "author": "The Illusion Authors (https://github.com/timble/illusion/graphs/contributors)",
+  "version": "6.0.0",
+  "homepage": "https://illusion.marsvaardig.eu",
+  "author": "The Illusion Authors (https://github.com/marsvaardig/illusion/graphs/contributors)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/timble/illusion.git"
+    "url": "https://github.com/marsvaardig/illusion.git"
   },
   "bugs": {
-    "url": "https://github.com/timble/illusion/issues"
+    "url": "https://github.com/marsvaardig/illusion/issues"
   },
   "license": "MIT",
   "devDependencies": {

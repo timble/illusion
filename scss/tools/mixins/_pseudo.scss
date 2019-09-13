@@ -5,7 +5,7 @@
     position: $parent-position;
   }
 
-  &:#{$illusion-pseudo} {
+  &::#{$illusion-pseudo} {
     @if $position != false {
       position: $position;
     }

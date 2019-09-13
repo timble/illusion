@@ -4,19 +4,20 @@
 
 @mixin clearfix($reset: $illusion-clearfix-reset) {
   @if $reset == false {
-    &:before,
-    &:after {
+    &::before,
+    &::after {
       display: table;
       content: " ";
     }
 
-    &:after {
+    &::after {
       clear: both;
     }
   }
 
   @if $reset != false {
-    &:before, &:after {
+    &::before,
+    &::after {
       display: none;
     }
   }

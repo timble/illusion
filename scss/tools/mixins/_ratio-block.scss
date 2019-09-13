@@ -11,7 +11,7 @@
     overflow: $overflow;
   }
 
-  &:before {
+  &::before {
     display: $illusion-ratio-block-before-display;
     float: $illusion-ratio-block-before-float;
     content: $illusion-ratio-block-before-content;
@@ -19,7 +19,7 @@
   }
 
   @if $after != false {
-    &:after {
+    &::after {
       content: $illusion-ratio-block-after-content;
       clear: $illusion-ratio-block-after-clear;
       display: $illusion-ratio-block-after-display;

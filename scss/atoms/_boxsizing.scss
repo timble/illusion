@@ -7,7 +7,7 @@
     box-sizing: $illusion-extendalize-html-box-sizing;
   }
 
-  *, *:before, *:after {
+  *, *::before, *::after {
     box-sizing: inherit;
   }
 }

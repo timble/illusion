@@ -20,7 +20,7 @@
   }
 
   // Custom arrow
-  .custom-select:after {
+  .custom-select::after {
     content: $illusion-custom-select-arrow-content;
     position: $illusion-custom-select-arrow-position;
     top: $illusion-custom-select-arrow-top;
@@ -42,7 +42,7 @@
 
     // Display custom arrow
     /* autoprefixer: on */
-    .custom-select:after {
+    .custom-select::after {
       display: $illusion-custom-select-arrow-display;
     }
 
@@ -73,7 +73,7 @@
     }
 
     // Display custom arrow
-    .custom-select:after {
+    .custom-select::after {
       display: $illusion-custom-select-arrow-display;
     }
 

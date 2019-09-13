@@ -1,9 +1,17 @@
 // Hover mixin
 // Sets styling for both hover and focus
 
-@mixin hover {
-  &:hover,
-  &:focus {
-    @content;
+@mixin hover($focusWithin: false) {
+  @if ($focusWithin != false) {
+    &:hover,
+    &:focus,
+    &:focus-within {
+      @content;
+    }
+  } @else {
+    &:hover,
+    &:focus {
+      @content;
+    }
   }
 }

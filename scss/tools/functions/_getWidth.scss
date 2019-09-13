@@ -1,0 +1,48 @@
+// Returns gallery/span width
+
+@function getWidth($span: $illusion-span-span, $multiplier: $illusion-span-multiplier, $gutter: $illusion-span-gutter) {
+
+  // Give a warning when $multiplier is not dividable by 0.5
+  @if ($multiplier % 0.5 != 0) {
+    @warn 'The `multiplier` in the `getWidth` function is designed to work best with a number dividable by 0.5';
+  }
+
+  // Set default column width
+  $columnWidth: false;
+  $columnGutter: false;
+
+  // Set default gutter to smallest one
+  $breakpointGutter: smallestGutter() * $multiplier;
+
+  // Span values
+  $spanColumns: nth($span, 1);
+  $spanContainer: getcontainer($span);
+  $spanAmount: $spanContainer / $spanColumns;
+
+  // Run through each breakpoint and create a new map
+  @if $inside-breakpoint != false and $gutter == false {
+    @each $breakpoint, $values in $illusion-grid-breakpoints {
+
+      // Values
+      $mapWidth: map-get($values, width);
+      $mapGutter: map-get($values, gutter) * $multiplier;
+      $nextKey: map-get-next($illusion-grid-breakpoints, $breakpoint, #{lastValue()});
+      $nextWidth: map-deep-get($illusion-grid-breakpoints, $nextKey, "width");
+      $largestWidth: largestWidth();
+
+      // Create new temporary map and merge it with the current one
+      @if ($inside-breakpoint >= $mapWidth and $inside-breakpoint < $nextWidth) or ($inside-breakpoint >= $largestWidth) {
+        $columnGutter: ($spanAmount - 1) * $mapGutter * $multiplier;
+      }
+    }
+  } @else if $gutter != false {
+    $columnGutter: ($spanAmount - 1) * $gutter * $multiplier;
+  }
+  @else {
+    $columnGutter: ($spanAmount - 1) * $breakpointGutter * $multiplier;
+  }
+  // Calculate column width
+  $columnWidth: calc((100% - #{$columnGutter}) / #{$spanAmount});
+
+  @return $columnWidth;
+}

@@ -1,0 +1,6 @@
+// Returns gallery/span margin
+
+@function getMargin($multiplier: $illusion-span-multiplier) {
+  $breakpointGutter: spacing($multiplier);
+  @return $breakpointGutter;
+}

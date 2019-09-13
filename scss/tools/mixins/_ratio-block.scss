@@ -2,10 +2,8 @@
 
 @mixin ratio-block($ratio: $illusion-ratio-block, $overflow: $illusion-ratio-block-overflow, $after: $illusion-ratio-block-after) {
 
-  // Variables
-  $width: nth($ratio, 1);
-  $height: nth($ratio, 3);
-  $percent: ($height / $width) * 100%;
+  // Get percentage
+  $percent: calculateRatio($ratio);
 
   @if $overflow != false {
     overflow: $overflow;

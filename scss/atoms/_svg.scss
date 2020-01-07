@@ -9,10 +9,14 @@
 
   svg {
     @if $illusion-extendalize-svg-width != false {
-      width: 1em; /* 1 */
+      &:not([width]) {
+        width: 1em; /* 1 */
+      }
     }
     @if $illusion-extendalize-svg-height != false {
-      height: 1em; /* 1 */
+      &:not([height]) {
+        height: 1em; /* 1 */
+      }
     }
     @if $illusion-extendalize-svg-color != false {
       fill: currentColor; /* 2 */

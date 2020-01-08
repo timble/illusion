@@ -11,7 +11,7 @@ description: Documentation on how to get started with Illusion and an overview o
 ### Step 1
 
 {% highlight bash %}
-$ yarn add timble/illusion --dev
+$ yarn add marsvaardig/illusion --dev
 {% endhighlight %}
 
 ### Step 2
@@ -58,9 +58,9 @@ To stop all the copy pasting in this world we added some base styling in two lev
 
 ### Level 1: Extendalize
 
-The first level we call "Extendalize" and it basically [extends Normalize](https://github.com/timble/illusion/tree/master/scss/atoms) styling the way we think it should be.
+The first level we call "Extendalize" and it basically [extends Normalize](https://github.com/marsvaardig/illusion/tree/master/scss/atoms) styling the way we think it should be.
 
-By default the extendalize styling is set to false and can be [configured using variables](https://github.com/timble/illusion/blob/master/scss/tools/variables/_extendalize.scss).
+By default the extendalize styling is set to false and can be [configured using variables](https://github.com/marsvaardig/illusion/blob/master/scss/tools/variables/_extendalize.scss).
 
 #### Enable all extendalize features:
 
@@ -98,7 +98,7 @@ Enable the body fallback styling by setting the following variable:
 $illusion-body-fallback: true;
 {% endhighlight %}
 
-[All options](https://github.com/timble/illusion/blob/master/scss/tools/variables/_body-fallback.scss).
+[All options](https://github.com/marsvaardig/illusion/blob/master/scss/tools/variables/_body-fallback.scss).
 
 #### Forms
 
@@ -108,7 +108,7 @@ Default [form styling](/examples/#form) is available.
 $illusion-form: true;
 {% endhighlight %}
 
-[All options](https://github.com/timble/illusion/blob/master/scss/tools/variables/_form.scss).
+[All options](https://github.com/marsvaardig/illusion/blob/master/scss/tools/variables/_form.scss).
 
 ---
 

@@ -12,8 +12,10 @@ Returns set spacing or calculate current spacing, also within breakpoint
 #### SCSS
 
 {% highlight css %}
-@include breakpoint($bravo) {
-  padding-top: spacing();
+.foo {
+  @include breakpoint($bravo) {
+    padding-top: spacing();
+  }
 }
 {% endhighlight %}
 

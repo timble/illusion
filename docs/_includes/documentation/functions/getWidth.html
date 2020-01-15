@@ -15,8 +15,10 @@ Returns width, also within breakpoint
 #### SCSS
 
 {% highlight css %}
-@include breakpoint($bravo) {
-  width: getWidth(6);
+.foo {
+  @include breakpoint($bravo) {
+    width: getWidth(6);
+  }
 }
 {% endhighlight %}
 

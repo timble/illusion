@@ -13,8 +13,10 @@ Returns margin(gutter), also within breakpoint
 #### SCSS
 
 {% highlight css %}
-@include breakpoint($bravo) {
-  width: getMargin();
+.foo {
+  @include breakpoint($bravo) {
+    width: getMargin();
+  }
 }
 {% endhighlight %}
 

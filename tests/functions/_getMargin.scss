@@ -1,0 +1,5 @@
+.foo {
+  @include breakpoint($bravo) {
+    margin-top: getMargin();
+  }
+}

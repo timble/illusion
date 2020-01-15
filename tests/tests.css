@@ -1,0 +1,5 @@
+@media screen and (min-width: 560px) {
+  .foo {
+    width: calc((100% - 24px) / 2);
+  }
+}

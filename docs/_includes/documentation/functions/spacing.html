@@ -1,13 +1,18 @@
-### @function spacing
+### @function spacing()
 
-Returns set spacing or calculate current spacing when inside breakpoint
+Returns set spacing or calculate current spacing, also within breakpoint
 
-Accepts a value of 0.5, 1 or 2. If used in @include breakpoint it uses that current gutter. Also possible to define which 'size' it should use.
+#### Arguments
+
+| Name | Type | Default | Description |
+| ---- | ---- | ------- | ----------- |
+| `multiplier` | `number` | `1` | Gutter multiplier. defaults to `1` and can be set to any number dividable by `0.5` |
+| `breakpoint` | `string` | `false` | Specific breakpoint to use |
 
 #### SCSS
 
 {% highlight css %}
-@include breakpoint($charlie) {
+@include breakpoint($bravo) {
   padding-top: spacing();
 }
 {% endhighlight %}

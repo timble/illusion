@@ -1,0 +1,29 @@
+---
+
+### @function getMargin()
+
+Returns margin(gutter), also within breakpoint
+
+#### Arguments
+
+| Name | Type | Default | Description |
+| ---- | ---- | ------- | ----------- |
+| `multiplier` | `number` | `1` | Multiplier. defaults to `1` and can be set to any number dividable by `0.5` |
+
+#### SCSS
+
+{% highlight css %}
+@include breakpoint($bravo) {
+  width: getMargin();
+}
+{% endhighlight %}
+
+#### CSS
+
+{% highlight css %}
+@media screen and (min-width: 560px) {
+  .foo {
+    margin-top: 24px;
+  }
+}
+{% endhighlight %}

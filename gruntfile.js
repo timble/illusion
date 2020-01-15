@@ -1,11 +1,14 @@
 module.exports = function(grunt) {
+
     // measures the time each task takes
     require("time-grunt")(grunt);
 
     // load time-grunt and all grunt plugins found in the package.json
-    require("jit-grunt")(grunt);
+    require("jit-grunt")(grunt, {
+        versioncheck: "grunt-version-check"
+    });
 
-    const sass = require('node-sass');
+    const sass = require("node-sass");
 
     // grunt config
     grunt.initConfig({

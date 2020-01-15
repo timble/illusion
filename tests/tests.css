@@ -1,15 +1,30 @@
 .foo {
-  font-size: 16px;
+  max-width: 1176px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.foo::before, .foo::after {
+  display: table;
+  content: " ";
+}
+
+.foo::after {
+  clear: both;
 }
 
 @media screen and (min-width: 560px) {
   .foo {
-    font-size: calc(1.724137931vw + 6.3448275862px);
+    padding-left: 24px;
+    padding-right: 24px;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .foo {
-    font-size: 24px;
+    padding-left: 32px;
+    padding-right: 32px;
   }
 }

@@ -22,14 +22,14 @@ Create blocks that keep set aspect ratio. Blocks will grow when content exceeds 
 #### CSS
 
 {% highlight css %}
-.foo:before {
+.foo::before {
   display: block;
   float: left;
   content: " ";
   padding-top: 75%;
 }
 
-.foo:after {
+.foo::after {
   content: " ";
   clear: left;
   display: table;

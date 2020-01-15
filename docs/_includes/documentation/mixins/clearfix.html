@@ -27,16 +27,16 @@ Still using single colon for better browser compatibility.
 #### CSS
 
 {% highlight css %}
-.bar:before, .bar:after {
+.bar::before, .bar::after {
   display: table;
   content: " ";
 }
 
-.bar:after {
+.bar::after {
   clear: both;
 }
 
-.foo .bar:before, .foo .bar:after {
+.foo .bar::before, .foo .bar::after {
   display: none;
 }
 {% endhighlight %}

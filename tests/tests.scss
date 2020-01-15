@@ -3,7 +3,7 @@
 @import "../scss/illusion";
 
 // Functions
-@import "functions/calculateRatio";
+//@import "functions/calculateRatio";
 //@import "functions/getMargin";
 //@import "functions/getWidth";
 //@import "functions/spacing";
@@ -17,7 +17,7 @@
 //@import "mixins/content-block";
 //@import "mixins/coverall";
 //@import "mixins/flexbox";
-//@import "mixins/fluid-type";
+@import "mixins/fluid-property";
 //@import "mixins/font-smoothing";
 //@import "mixins/gallery";
 //@import "mixins/hover";

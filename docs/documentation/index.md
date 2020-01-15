@@ -126,7 +126,7 @@ Illusion comes with a great mixin and function library. All the parameters insid
 {% include documentation/mixins/content-block.html %}
 {% include documentation/mixins/coverall.html %}
 {% include documentation/mixins/flexbox.html %}
-{% include documentation/mixins/fluid-type.html %}
+{% include documentation/mixins/fluid-property.html %}
 {% include documentation/mixins/font-smoothing.html %}
 {% include documentation/mixins/gallery.html %}
 {% include documentation/mixins/hover.html %}

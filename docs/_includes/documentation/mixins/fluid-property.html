@@ -1,0 +1,42 @@
+---
+
+### @mixin fluid-property
+
+Fluid value between two breakpoints.
+
+#### Arguments
+
+| Name | Type | Default | Description |
+| ---- | ---- | ------- | ----------- |
+| `min-value` | `string` | `$fluid-property-min-value` | The minimum value |
+| `max-value` | `string` | `$fluid-property-max-value` | The maximum value |
+| `min-screen` | `string` | `$fluid-property-min-screen` | Breakpoint for fluid-property to kick in |
+| `max-screen` | `string` | `$fluid-property-max-screen` | Breakpoint for fluid-property to stop |
+
+#### SCSS
+
+{% highlight css %}
+.foo {
+  @include fluid-property(font-size, 16px, 24px);
+}
+{% endhighlight %}
+
+#### SCSS
+
+{% highlight css %}
+.foo {
+  font-size: 16px;
+}
+
+@media screen and (min-width: 560px) {
+  .foo {
+    font-size: calc(1.724137931vw + 6.3448275862px);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .foo {
+    font-size: 24px;
+  }
+}
+{% endhighlight %}

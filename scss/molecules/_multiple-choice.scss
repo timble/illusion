@@ -9,7 +9,10 @@
     position: $illusion-multiple-choice-position;
     padding: $illusion-multiple-choice-padding;
     min-height: $illusion-multiple-choice-min-height;
-    @include content-block($illusion-multiple-choice-margin-bottom);
+
+    @if ($illusion-extendalize-last-children != false) {
+      @include content-block($illusion-multiple-choice-margin-bottom);
+    }
 
     @include breakpoint($bravo) {
       float: $illusion-multiple-choice-bravo-float;

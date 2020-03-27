@@ -3,11 +3,15 @@
    * List
    *
    * 1. Remove top-margin, margins should live on bottom of elements
-   * 2. Set bottom margin to default line-height and remove for last-child
+   * 2. Set bottom margin to default line-height (and remove for last-child)
    */
 
   ul, ol {
     margin-top: $illusion-extendalize-list-margin-top; /* 1 */
-    @include content-block($illusion-extendalize-list-margin-bottom); /* 2 */
+    margin-bottom: $illusion-extendalize-list-margin-bottom; /* 2 */
+
+    @if ($illusion-extendalize-last-children != false) {
+      @include content-block($illusion-extendalize-list-margin-bottom); /* 2 */
+    }
   }
 }

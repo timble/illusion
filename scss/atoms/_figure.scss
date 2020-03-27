@@ -6,7 +6,11 @@
   figure {
     margin-top: $illusion-extendalize-figure-margin-top;
     margin-right: $illusion-extendalize-figure-margin-right;
+    margin-bottom: $illusion-extendalize-figure-margin-bottom;
     margin-left: $illusion-extendalize-figure-margin-left;
-    @include content-block($illusion-extendalize-figure-margin-bottom);
+
+    @if ($illusion-extendalize-last-children != false) {
+      @include content-block($illusion-extendalize-figure-margin-bottom);
+    }
   }
 }

@@ -9,8 +9,10 @@
     padding: $illusion-extendalize-fieldset-padding;
     margin: $illusion-extendalize-fieldset-margin;
 
-    legend {
-      @include content-block($illusion-extendalize-legend-margin-bottom);
+    @if ($illusion-extendalize-last-children != false) {
+      legend {
+        @include content-block($illusion-extendalize-legend-margin-bottom);
+      }
     }
   }
 }

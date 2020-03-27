@@ -4,12 +4,16 @@
    *
    * 1. Normal font style
    * 2. Remove top-margin, margins should live on bottom of elements
-   * 3. Set bottom margin to default line-height and remove for last-child
+   * 3. Set bottom margin to default line-height (and remove for last-child)
    */
 
   address {
     font-style: $illusion-extendalize-address-font-style; /* 1 */
     margin-top: $illusion-extendalize-address-margin-top; /* 2 */
-    @include content-block($illusion-extendalize-address-margin-bottom); /* 3 */
+    margin-bottom: $illusion-extendalize-address-margin-bottom; /* 3 */
+
+    @if ($illusion-extendalize-last-children != false) {
+      @include content-block($illusion-extendalize-address-margin-bottom); /* 3 */
+    }
   }
 }

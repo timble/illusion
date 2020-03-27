@@ -13,7 +13,9 @@
 
   // Form group is used to wrap label and input pairs
   .form__group {
-    @include content-block($illusion-form-group-margin);
+    @if ($illusion-extendalize-last-children != false) {
+      @include content-block($illusion-form-group-margin);
+    }
   }
 
   .form__label,

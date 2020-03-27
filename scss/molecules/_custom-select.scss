@@ -6,6 +6,7 @@
   .custom-select {
     position: $illusion-custom-select-position;
     display: $illusion-custom-select-display;
+    background: $illusion-custom-select-background;
   }
 
   // Native select invisible except for content
@@ -14,9 +15,19 @@
     margin: $illusion-custom-select-margin;
     padding: $illusion-custom-select-padding;
     outline: $illusion-custom-select-outline;
-    height: $illusion-custom-select-height;
     box-sizing: $illusion-custom-select-box-sizing;
     font-size: $illusion-custom-select-font-size;
+
+    &:not([multiple]) {
+      height: $illusion-custom-select-height;
+    }
+
+    &[multiple] {
+      position: relative;
+      z-index: 3;
+      min-height: $illusion-custom-select-multiple-height;
+      background: inherit;
+    }
   }
 
   // Custom arrow

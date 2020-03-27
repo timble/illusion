@@ -1,6 +1,7 @@
 // Form settings
 
 $illusion-form:                                               false !default;
+$illusion-form-background-color:                              $color-form-input !default;
 $illusion-form-border-width:                                  2px !default;
 $illusion-form-focus-color:                                   $color-focus !default;
 $illusion-form-disabled-cursor:                               not-allowed !default;
@@ -91,12 +92,14 @@ $illusion-custom-select:                                      inherit !default;
 $illusion-custom-select-theme:                                inherit !default;
 $illusion-custom-select-position:                             relative !default;
 $illusion-custom-select-display:                              block !default;
+$illusion-custom-select-background:                           $illusion-form-background-color !default;
 
 $illusion-custom-select-width:                                100% !default;
 $illusion-custom-select-margin:                               0 !default;
 $illusion-custom-select-padding:                              ($spacing-xs - ($illusion-form-border-width * 2)) ($spacing-s - ($illusion-form-border-width * 2)) !default;
 $illusion-custom-select-outline:                              none !default;
 $illusion-custom-select-height:                               $illusion-form-input-min-height - ($illusion-form-border-width * 2) !default;
+$illusion-custom-select-multiple-height:                      $illusion-custom-select-height * 2 !default;
 $illusion-custom-select-box-sizing:                           border-box !default;
 $illusion-custom-select-font-size:                            16px !default;
 $illusion-custom-select-border:                               $illusion-form-input-border !default;

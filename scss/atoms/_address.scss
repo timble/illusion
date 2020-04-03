@@ -8,12 +8,12 @@
    */
 
   address {
-    font-style: $illusion-extendalize-address-font-style; /* 1 */
-    margin-top: $illusion-extendalize-address-margin-top; /* 2 */
-    margin-bottom: $illusion-extendalize-address-margin-bottom; /* 3 */
+    @include property("font-style", $illusion-extendalize-address-font-style); // 1
+    @include property("margin-top", $illusion-extendalize-address-margin-top); // 2
+    @include property("margin-bottom", $illusion-extendalize-address-margin-bottom); // 3
 
     @if ($illusion-extendalize-last-children != false) {
-      @include content-block($illusion-extendalize-address-margin-bottom); /* 3 */
+      @include content-block($illusion-extendalize-address-margin-bottom); // 3
     }
   }
 }

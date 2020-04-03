@@ -1,0 +1,7 @@
+// Property
+
+@mixin property($property, $value) {
+  @if ($value != false) {
+    #{$property}: $value;
+  }
+}

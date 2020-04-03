@@ -3,49 +3,50 @@
   /* Highly based on https://github.com/filamentgroup/select-css */
 
   // Custom select container
-  .custom-select {
+  @include selectors($illusion-custom-select-selector) {
     position: $illusion-custom-select-position;
     display: $illusion-custom-select-display;
     background: $illusion-custom-select-background;
-  }
 
-  // Native select invisible except for content
-  .custom-select select {
-    width: $illusion-custom-select-width;
-    margin: $illusion-custom-select-margin;
-    padding: $illusion-custom-select-padding;
-    outline: $illusion-custom-select-outline;
-    box-sizing: $illusion-custom-select-box-sizing;
-    font-size: $illusion-custom-select-font-size;
+    // Native select invisible except for content
+    select {
+      width: $illusion-custom-select-width;
+      margin: $illusion-custom-select-margin;
+      padding: $illusion-custom-select-padding;
+      outline: $illusion-custom-select-outline;
+      box-sizing: $illusion-custom-select-box-sizing;
+      font-size: $illusion-custom-select-font-size;
 
-    &:not([multiple]) {
-      height: $illusion-custom-select-height;
+      &:not([multiple]) {
+        height: $illusion-custom-select-height;
+      }
+
+      &[multiple] {
+        position: relative;
+        z-index: 3;
+        min-height: $illusion-custom-select-multiple-height;
+        background: inherit;
+      }
     }
 
-    &[multiple] {
-      position: relative;
-      z-index: 3;
-      min-height: $illusion-custom-select-multiple-height;
-      background: inherit;
+    // Custom arrow
+    &::after {
+      content: $illusion-custom-select-arrow-content;
+      position: $illusion-custom-select-arrow-position;
+      top: $illusion-custom-select-arrow-top;
+      right: $illusion-custom-select-arrow-right;
+      z-index: $illusion-custom-select-arrow-z-index;
+      pointer-events: $illusion-custom-select-arrow-pointer-events;
+      width: $illusion-custom-select-arrow-width;
+      height: $illusion-custom-select-arrow-height;
+      border-left: $illusion-custom-select-arrow-border-horizontal;
+      border-right: $illusion-custom-select-arrow-border-horizontal;
+      border-top: $illusion-custom-select-arrow-border-top;
+      margin-top: $illusion-custom-select-arrow-margin-top;
+      display: none;
     }
   }
 
-  // Custom arrow
-  .custom-select::after {
-    content: $illusion-custom-select-arrow-content;
-    position: $illusion-custom-select-arrow-position;
-    top: $illusion-custom-select-arrow-top;
-    right: $illusion-custom-select-arrow-right;
-    z-index: $illusion-custom-select-arrow-z-index;
-    pointer-events: $illusion-custom-select-arrow-pointer-events;
-    width: $illusion-custom-select-arrow-width;
-    height: $illusion-custom-select-arrow-height;
-    border-left: $illusion-custom-select-arrow-border-horizontal;
-    border-right: $illusion-custom-select-arrow-border-horizontal;
-    border-top: $illusion-custom-select-arrow-border-top;
-    margin-top: $illusion-custom-select-arrow-margin-top;
-    display: none;
-  }
 
   // Custom styling when appearance is supported
   /* autoprefixer: ignore next */
@@ -53,16 +54,18 @@
 
     // Display custom arrow
     /* autoprefixer: on */
-    .custom-select::after {
-      display: $illusion-custom-select-arrow-display;
-    }
+    @include selectors($illusion-custom-select-selector) {
+      &::after {
+        display: $illusion-custom-select-arrow-display;
+      }
 
-    // Select styling
-    .custom-select select {
-      padding-right: $illusion-custom-select-padding-right;
-      background: none;
-      appearance: none;
-  }
+      // Select styling
+      select {
+        padding-right: $illusion-custom-select-padding-right;
+        background: none;
+        appearance: none;
+      }
+    }
   }
 
   // IE 10/11+ - This hides native dropdown button arrow so it will have the custom appearance.
@@ -74,51 +77,50 @@
   @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
 
     // Hide native arrow
-    .custom-select select::-ms-expand {
-      display: none;
-    }
+    @include selectors($illusion-custom-select-selector) {
+      select::-ms-expand {
+        display: none;
+      }
 
-    .custom-select select:focus::-ms-value {
-      background: $illusion-custom-select-ms-focus-background;
-      color: $illusion-custom-select-ms-focus-color;
-    }
+      select:focus::-ms-value {
+        background: $illusion-custom-select-ms-focus-background;
+        color: $illusion-custom-select-ms-focus-color;
+      }
 
-    // Display custom arrow
-    .custom-select::after {
-      display: $illusion-custom-select-arrow-display;
-    }
+      // Display custom arrow
+      &::after {
+        display: $illusion-custom-select-arrow-display;
+      }
 
-    // Styling select
-    .custom-select select {
-      padding-right: $illusion-custom-select-padding-right; // make room for the arrow
-      background: none;
+      // Styling select
+      select {
+        padding-right: $illusion-custom-select-padding-right; // make room for the arrow
+        background: none;
+      }
     }
   }
 
   @if ($illusion-custom-select-theme != false) or $illusion-custom-select-theme == true {
     // Theming custom-select
-    .custom-select {
+    #{$illusion-custom-select-selector} {
       border: $illusion-custom-select-border;
-    }
 
-    .custom-select select {
-      font-family: $illusion-custom-select-font-family;
-      font-weight: $illusion-custom-select-font-weight;
-      color: $illusion-custom-select-color;
-      border: none;
-      line-height: $illusion-custom-select-line-height;
-      padding-top: $illusion-custom-select-padding-top;
-      padding-bottom: $illusion-custom-select-padding-bottom;
-      padding-left: $illusion-custom-select-padding-left;
-    }
+      select {
+        font-family: $illusion-custom-select-font-family;
+        font-weight: $illusion-custom-select-font-weight;
+        color: $illusion-custom-select-color;
+        border: none;
+        line-height: $illusion-custom-select-line-height;
+        padding-top: $illusion-custom-select-padding-top;
+        padding-bottom: $illusion-custom-select-padding-bottom;
+        padding-left: $illusion-custom-select-padding-left;
 
-    // Focus style
-    .custom-select select:focus {
-      &:focus {
-        outline: $illusion-custom-select-focus-outline;
-        outline-offset: $illusion-custom-select-focus-outline-offset;
+        // Focus style
+        &:focus {
+          outline: $illusion-custom-select-focus-outline;
+          outline-offset: $illusion-custom-select-focus-outline-offset;
+        }
       }
     }
   }
 }
-

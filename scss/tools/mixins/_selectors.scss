@@ -1,0 +1,9 @@
+// Selectors
+
+@mixin selectors($selectors...) {
+  @each $selector in $selectors {
+    #{$selector} {
+      @content;
+    }
+  }
+}

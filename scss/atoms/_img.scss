@@ -8,11 +8,13 @@
    */
 
   img {
-    max-width: $illusion-extendalize-image-max-width; /* 1 */
-    height: $illusion-extendalize-image-height; /* 2 */
+    @include property("max-width", $illusion-extendalize-image-max-width); // 1
+    @include property("height", $illusion-extendalize-image-height); // 2
 
-    &:only-child {
-      vertical-align: $illusion-extendalize-image-vertical-align; /* 3 */
+    @if ($illusion-extendalize-image-vertical-align != false) {
+      &:only-child {
+        vertical-align: $illusion-extendalize-image-vertical-align; // 3
+      }
     }
   }
 }

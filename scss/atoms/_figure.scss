@@ -4,10 +4,10 @@
    */
 
   figure {
-    margin-top: $illusion-extendalize-figure-margin-top;
-    margin-right: $illusion-extendalize-figure-margin-right;
-    margin-bottom: $illusion-extendalize-figure-margin-bottom;
-    margin-left: $illusion-extendalize-figure-margin-left;
+    @include property("margin-top", $illusion-extendalize-figure-margin-top);
+    @include property("margin-right", $illusion-extendalize-figure-margin-right);
+    @include property("margin-bottom", $illusion-extendalize-figure-margin-bottom);
+    @include property("margin-left", $illusion-extendalize-figure-margin-left);
 
     @if ($illusion-extendalize-last-children != false) {
       @include content-block($illusion-extendalize-figure-margin-bottom);

@@ -7,11 +7,11 @@
    */
 
   ul, ol {
-    margin-top: $illusion-extendalize-list-margin-top; /* 1 */
-    margin-bottom: $illusion-extendalize-list-margin-bottom; /* 2 */
+    @include property("margin-top", $illusion-extendalize-list-margin-top); // 1
+    @include property("margin-bottom", $illusion-extendalize-list-margin-bottom); // 2
 
     @if ($illusion-extendalize-last-children != false) {
-      @include content-block($illusion-extendalize-list-margin-bottom); /* 2 */
+      @include content-block($illusion-extendalize-list-margin-bottom); // 2
     }
   }
 }

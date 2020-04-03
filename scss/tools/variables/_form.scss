@@ -1,14 +1,18 @@
 // Form settings
 
 $illusion-form:                                               false !default;
+$illusion-form-selector:                                      ".form" !default;
 $illusion-form-background-color:                              $color-form-input !default;
 $illusion-form-border-width:                                  2px !default;
 $illusion-form-focus-color:                                   $color-focus !default;
 $illusion-form-disabled-cursor:                               not-allowed !default;
 $illusion-form-disabled-opacity:                              0.6 !default;
+$illusion-form-group-selector:                                ".form__group" !default;
 $illusion-form-group-margin:                                  $spacing-m !default;
+$illusion-form-label-selector:                                ".form__label" !default;
 $illusion-form-label-display:                                 inline-block !default;
 $illusion-form-label-padding:                                 $spacing-s !default;
+$illusion-form-input-selector:                                ".form__input" !default;
 $illusion-form-input-width:                                   100% !default;
 $illusion-form-input-padding:                                 $spacing-xs $spacing-s !default;
 $illusion-form-input-border:                                  $illusion-form-border-width solid !default;
@@ -24,6 +28,7 @@ $illusion-form-select-line-height:                            $line-height + ($s
 $illusion-form-submit-focus-outline:                          3px solid $color-focus !default;
 
 $illusion-multiple-choice:                                    inherit !default;
+$illusion-multiple-choice-selector:                           ".multiple-choice" !default;
 $illusion-multiple-choice-unit:                               40px !default;
 $illusion-multiple-choice-display:                            block !default;
 $illusion-multiple-choice-float:                              none !default;
@@ -89,6 +94,7 @@ $illusion-multiple-choice-label-disabled-opacity:             0.6 !default;
 $illusion-multiple-choice-label-disabled-cursor:              not-allowed !default;
 
 $illusion-custom-select:                                      inherit !default;
+$illusion-custom-select-selector:                             ".custom-select" !default;
 $illusion-custom-select-theme:                                inherit !default;
 $illusion-custom-select-position:                             relative !default;
 $illusion-custom-select-display:                              block !default;

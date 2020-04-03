@@ -5,9 +5,11 @@
    * 1. Set img vertical align to middle within picture element
    */
 
-  picture {
-    img {
-      vertical-align: $illusion-extendalize-picture-img-vertical-align; /* 1 */
+  @if ($illusion-extendalize-picture-img-vertical-align != false) {
+    picture {
+      img {
+        vertical-align: $illusion-extendalize-picture-img-vertical-align; // 1
+      }
     }
   }
 }

@@ -1,7 +1,7 @@
 @if $illusion-form == true {
 
   // Form section is used to wrap .form-group
-  .form {
+  @include selectors($illusion-form-selector) {
     @include spacing(bottom, margin, $lastchildnone: true);
 
     // Lighter fields for disabled fields
@@ -12,24 +12,21 @@
   }
 
   // Form group is used to wrap label and input pairs
-  .form__group {
+  @include selectors($illusion-form-group-selector) {
     @if ($illusion-extendalize-last-children != false) {
       @include content-block($illusion-form-group-margin);
     }
   }
 
-  .form__label,
-  .form__input {
+  @include selectors($illusion-form-label-selector) {
     font-size: inherit;
     line-height: inherit;
-  }
-
-  .form__label {
     display: $illusion-form-label-display;
     padding-bottom: $illusion-form-label-padding;
   }
 
-  .form__input {
+  @include selectors($illusion-form-input-selector) {
+    font-size: inherit;
     width: $illusion-form-input-width;
     padding: $illusion-form-input-padding;
     border: $illusion-form-input-border;
@@ -37,18 +34,13 @@
     min-height: $illusion-form-input-min-height;
     font-family: $illusion-form-input-font-family;
     font-weight: $illusion-form-input-font-weight;
+    -webkit-appearance: none;
+    border-radius: $illusion-form-input-border-radius;
 
     &:focus {
       outline: $illusion-form-input-focus-outline;
       outline-offset: $illusion-form-input-focus-outline-offset;
     }
-  }
-
-  // Allow a qualifying element, remove rounded corners from inputs and textareas
-  input.form__input,
-  textarea.form__input {
-    -webkit-appearance: none;
-    border-radius: $illusion-form-input-border-radius;
   }
 
   // Set a height for select elements

@@ -2,7 +2,7 @@
   // Radio buttons & checkboxes
 
   // By default, multiple choice inputs stack vertically
-  .multiple-choice {
+  @include selectors($illusion-multiple-choice-selector) {
     display: $illusion-multiple-choice-display;
     float: $illusion-multiple-choice-float;
     clear: $illusion-multiple-choice-clear;

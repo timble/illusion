@@ -8,10 +8,12 @@
    */
 
   a {
-    color: $illusion-extendalize-anchor-color; /* 1 */
+    @include property("color", $illusion-extendalize-anchor-color); // 1
 
-    @include hover {
-      text-decoration: $illusion-extendalize-anchor-hover-text-decoration; /* 2 */
+    @if ($illusion-extendalize-anchor-hover-text-decoration != false) {
+      @include hover {
+        text-decoration: $illusion-extendalize-anchor-hover-text-decoration; // 2
+      }
     }
   }
 }

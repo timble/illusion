@@ -6,11 +6,11 @@
    */
 
   body {
-    margin: $illusion-extendalize-body-margin;
-    font-family: $illusion-extendalize-body-font-family;
-    font-size: $illusion-extendalize-body-font-size;
-    line-height: $illusion-extendalize-body-line-height;
-    font-weight: $illusion-extendalize-body-font-weight;
-    color: $illusion-extendalize-body-color;
+    @include property("margin", $illusion-extendalize-body-margin);
+    @include property("font-family", $illusion-extendalize-body-font-family);
+    @include property("font-size", $illusion-extendalize-body-font-size);
+    @include property("line-height", $illusion-extendalize-body-line-height);
+    @include property("font-weight", $illusion-extendalize-body-font-weight);
+    @include property("color", $illusion-extendalize-body-color);
   }
 }

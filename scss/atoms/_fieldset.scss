@@ -4,10 +4,10 @@
    */
 
   fieldset {
-    width: $illusion-extendalize-fieldset-width;
-    border: $illusion-extendalize-fieldset-border;
-    padding: $illusion-extendalize-fieldset-padding;
-    margin: $illusion-extendalize-fieldset-margin;
+    @include property("width", $illusion-extendalize-fieldset-width);
+    @include property("border", $illusion-extendalize-fieldset-border);
+    @include property("padding", $illusion-extendalize-fieldset-padding);
+    @include property("margin", $illusion-extendalize-fieldset-margin);
 
     @if ($illusion-extendalize-last-children != false) {
       legend {

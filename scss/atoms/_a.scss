@@ -1,10 +1,6 @@
 @if ($illusion-extendalize == true and $illusion-extendalize-anchor != false) or $illusion-extendalize-anchor == true {
   /**
    * Anchors
-   *
-   * 1. Inherit color to follow current text color. Useful in footer blocks etc.
-        Probably wise to change the anchor color in the main text to stand out a bit more
-   * 2. Remove text-decoration on hover and focus
    */
 
   a {

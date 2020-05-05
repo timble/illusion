@@ -1,19 +1,25 @@
 @if ($illusion-extendalize == true and $illusion-extendalize-address != false) or $illusion-extendalize-address == true {
   /**
    * Address
-   *
-   * 1. Normal font style
-   * 2. Remove top-margin, margins should live on bottom of elements
-   * 3. Set bottom margin to default line-height (and remove for last-child)
    */
 
   address {
-    @include property("font-style", $illusion-extendalize-address-font-style); // 1
-    @include property("margin-top", $illusion-extendalize-address-margin-top); // 2
-    @include property("margin-bottom", $illusion-extendalize-address-margin-bottom); // 3
+    @include property("margin-top", $illusion-extendalize-address-margin-top);
+    @include property("margin-bottom", $illusion-extendalize-address-margin-bottom);
+    @include property("font-style", $illusion-extendalize-address-font-style);
 
-    @if ($illusion-extendalize-last-children != false) {
-      @include content-block($illusion-extendalize-address-margin-bottom); // 3
+    // Remove first-child margin
+    @if ($illusion-extendalize-last-children-direction == top) {
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+
+    // Remove last-child margin
+    @if ($illusion-extendalize-last-children-direction == bottom) {
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 }

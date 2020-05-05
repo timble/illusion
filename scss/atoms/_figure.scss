@@ -9,8 +9,18 @@
     @include property("margin-bottom", $illusion-extendalize-figure-margin-bottom);
     @include property("margin-left", $illusion-extendalize-figure-margin-left);
 
-    @if ($illusion-extendalize-last-children != false) {
-      @include content-block($illusion-extendalize-figure-margin-bottom);
+    // Remove first-child margin
+    @if ($illusion-extendalize-last-children-direction == top) {
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+
+    // Remove last-child margin
+    @if ($illusion-extendalize-last-children-direction == bottom) {
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 }

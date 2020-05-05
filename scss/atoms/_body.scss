@@ -1,16 +1,14 @@
 @if ($illusion-extendalize == true and $illusion-extendalize-body != false) or $illusion-extendalize-body == true {
   /**
    * Body
-   *
-   * Set font values coming from variables
    */
 
   body {
     @include property("margin", $illusion-extendalize-body-margin);
     @include property("font-family", $illusion-extendalize-body-font-family);
     @include property("font-size", $illusion-extendalize-body-font-size);
-    @include property("line-height", $illusion-extendalize-body-line-height);
     @include property("font-weight", $illusion-extendalize-body-font-weight);
+    @include property("line-height", $illusion-extendalize-body-line-height);
     @include property("color", $illusion-extendalize-body-color);
   }
 }

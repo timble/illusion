@@ -1,31 +1,27 @@
 @if ($illusion-extendalize == true and $illusion-extendalize-svg != false) or $illusion-extendalize-svg == true {
   /**
    * SVG
-   *
-   * 1. Set with and height to 1em for easy use as icons
-   * 2. Set fill to currentcolor for easy use as icons
-   * 3. Hide svg-sprite for default when used as icons
    */
 
   svg {
     @if $illusion-extendalize-svg-width != false {
       &:not([width]) {
-        width: 1em; /* 1 */
+        width: 1em;
       }
     }
     @if $illusion-extendalize-svg-height != false {
       &:not([height]) {
-        height: 1em; /* 1 */
+        height: 1em;
       }
     }
     @if $illusion-extendalize-svg-color != false {
-      fill: currentColor; /* 2 */
+      fill: currentColor;
     }
   }
 
   @if $illusion-extendalize-svg-sprite != false {
     .svg-sprite {
-      display: $illusion-extendalize-svg-sprite-display; /* 3 */
+      display: $illusion-extendalize-svg-sprite-display;
     }
   }
 }

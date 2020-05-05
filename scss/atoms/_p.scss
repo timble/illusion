@@ -1,17 +1,24 @@
 @if ($illusion-extendalize == true and $illusion-extendalize-paragraph != false) or $illusion-extendalize-paragraph == true {
   /**
    * Paragraph
-   *
-   * 1. Remove top-margin, margins should live on bottom of elements
-   * 2. Set bottom margin to default line-height (and remove for last-child)
    */
 
   p {
     @include property("margin-top", $illusion-extendalize-paragraph-margin-top); // 1
     @include property("margin-bottom", $illusion-extendalize-paragraph-margin-bottom); // 2
 
-    @if ($illusion-extendalize-last-children != false) {
-      @include content-block($illusion-extendalize-paragraph-margin-bottom); // 2
+    // Remove first-child margin
+    @if ($illusion-extendalize-last-children-direction == top) {
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+
+    // Remove last-child margin
+    @if ($illusion-extendalize-last-children-direction == bottom) {
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 }

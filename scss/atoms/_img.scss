@@ -1,10 +1,6 @@
 @if ($illusion-extendalize == true and $illusion-extendalize-image != false) or $illusion-extendalize-image == true {
   /**
    * Image
-   *
-   * 1. Set max-width for responsive images
-   * 2. Set ehight to auto to keep aspect ratio
-   * 3. Vertical align middle for only child images to remove line-height bug when used in an anchor for example
    */
 
   img {

@@ -1,22 +1,26 @@
 @if ($illusion-extendalize == true and $illusion-extendalize-heading != false) or $illusion-extendalize-heading == true {
   /**
    * Heading
-   *
-   * 1. Set font-weight to bold to stand out
-   * 2. Reset font-size to be as big as parent font size.
-        Set font-sizes with classes
-   * 3. Remove top-margin, margins should live on bottom of elements
-   * 4. Set bottom margin to default line-height (and remove for last-child. A bit smaller to visually group headings with content below)
    */
 
   h1, h2, h3, h4, h5, h6 {
-    @include property("font-weight", $illusion-extendalize-heading-weight); // 1
-    @include property("font-size", $illusion-extendalize-heading-font-size); // 2
     @include property("margin-top", $illusion-extendalize-heading-margin-top); // 3
     @include property("margin-bottom", $illusion-extendalize-heading-margin-bottom); // 4
+    @include property("font-size", $illusion-extendalize-heading-font-size); // 2
+    @include property("font-weight", $illusion-extendalize-heading-weight); // 1
 
-    @if ($illusion-extendalize-last-children != false) {
-      @include content-block($illusion-extendalize-heading-margin-bottom); // 4
+    // Remove first-child margin
+    @if ($illusion-extendalize-last-children-direction == top) {
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+
+    // Remove last-child margin
+    @if ($illusion-extendalize-last-children-direction == bottom) {
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 }

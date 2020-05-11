@@ -52,6 +52,7 @@ $illusion-multiple-choice-label-padding:                      $spacing-xs $spaci
 $illusion-multiple-choice-label-display:                      flex !default;
 $illusion-multiple-choice-label-align-items:                  center !default;
 $illusion-multiple-choice-label-min-height:                   $illusion-multiple-choice-unit !default;
+$illusion-multiple-choice-label-flex-wrap:                    nowrap !default;
 $illusion-multiple-choice-label-before-content:               "" !default;
 $illusion-multiple-choice-label-before-border:                $illusion-form-border-width solid !default;
 $illusion-multiple-choice-label-before-background:            transparent !default;

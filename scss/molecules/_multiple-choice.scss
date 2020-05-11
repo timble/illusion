@@ -37,6 +37,7 @@
       display: $illusion-multiple-choice-label-display;
       align-items: $illusion-multiple-choice-label-align-items;
       min-height: $illusion-multiple-choice-label-min-height;
+      flex-wrap: $illusion-multiple-choice-label-flex-wrap;
 
       // remove 300ms pause on mobile
       touch-action: manipulation;

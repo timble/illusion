@@ -3,8 +3,8 @@
 
 @mixin breakpoint($width, $width--max: $illusion-breakpoint-width-max, $type: $illusion-breakpoint-type) {
   $inside-breakpoint: $width !global;
-  $bp-width: if($type == inherit, $width, strip-unit($width)#{$illusion-breakpoint-type});
-  $bp-width--max: if($type == inherit, $width--max, strip-unit($width--max)#{$illusion-breakpoint-type});
+  $bp-width: if($type == inherit, $width, #{strip-unit($width)}#{$illusion-breakpoint-type});
+  $bp-width--max: if($type == inherit, $width--max, #{strip-unit($width--max)}#{$illusion-breakpoint-type});
   @if $width--max == false {
     @media screen and (min-width: $bp-width) {
       @content;

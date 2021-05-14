@@ -1,7 +1,7 @@
 {
   "name": "illusion",
   "description": "Illusion simplifies the creation of things for the web.",
-  "version": "6.2.2",
+  "version": "6.3.0",
   "homepage": "https://illusion.marsvaardig.eu",
   "author": "The Illusion Authors (https://github.com/marsvaardig/illusion/graphs/contributors)",
   "repository": {

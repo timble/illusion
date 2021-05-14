@@ -1,0 +1,8 @@
+// Stack
+// ==========================================================================
+
+@mixin stack($value: $illusion-stack-value) {
+  & > * + * {
+    margin-top: $value;
+  }
+}

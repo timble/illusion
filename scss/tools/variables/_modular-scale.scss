@@ -1,0 +1,36 @@
+// Modular scale
+// ==========================================================================
+
+// Default ratio
+$illusion-ms-ratio:                   1.5 !default;
+
+// Default scale
+$illusion-ms0:                        1 !default;
+$illusion-ms-grid:                    0 !default;
+$illusion-ms-grid-multiplier:         -.5 !default;
+$illusion-ms-grid-item:               0 !default;
+$illusion-ms-grid-item-multiplier:    .5 !default;
+
+// Smaller scales
+$illusion-ms-1:                       $illusion-ms0 / $illusion-ms-ratio !default;
+$illusion-ms-2:                       $illusion-ms-1 / $illusion-ms-ratio !default;
+$illusion-ms-3:                       $illusion-ms-2 / $illusion-ms-ratio !default;
+$illusion-ms-4:                       $illusion-ms-3 / $illusion-ms-ratio !default;
+
+// Bigger scales
+$illusion-ms1:                        $illusion-ms0 * $illusion-ms-ratio !default;
+$illusion-ms2:                        $illusion-ms1 * $illusion-ms-ratio !default;
+$illusion-ms3:                        $illusion-ms2 * $illusion-ms-ratio !default;
+$illusion-ms4:                        $illusion-ms3 * $illusion-ms-ratio !default;
+
+$illusion-ms-sizes: (
+        -4: $illusion-ms-4,
+        -3: $illusion-ms-3,
+        -2: $illusion-ms-2,
+        -1: $illusion-ms-1,
+        0: $illusion-ms0,
+        1: $illusion-ms1,
+        2: $illusion-ms2,
+        3: $illusion-ms3,
+        4: $illusion-ms4,
+) !default;

@@ -1,0 +1,15 @@
+// Modular scale
+// ==========================================================================
+// Function to be used in combination with the modular scale variables.
+// Defaults to em to make sure larger fonts have a larger scale
+// Possible to set to rem if you want to ignore the current element size
+
+@function ms($size: 0, $type: em) {
+  $ms-size: map-get($illusion-ms-sizes, $size);
+  // Support for non default values
+  @if ($ms-size == null) {
+    $ms-size: $size;
+  }
+  $value: #{$ms-size}#{$type};
+  @return $value;
+}

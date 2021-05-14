@@ -21,4 +21,5 @@ $echo-min:                        $echo - 1px !default;
 // Set default to false so we can use spacing() function outside breakpoint
 
 $illusion-breakpoint-width-max:   false !default;
+$illusion-breakpoint-type:        inherit !default;
 $inside-breakpoint:               false;

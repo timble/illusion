@@ -1,0 +1,15 @@
+// Cluster
+
+@mixin cluster($margin: $illusion-cluster-margin) {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: calc(#{$margin} * -1);
+  margin-left: calc(#{$margin} * -1);
+
+  > * {
+    margin-bottom: $margin;
+    margin-left: $margin;
+  }
+}

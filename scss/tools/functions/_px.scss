@@ -1,0 +1,15 @@
+// Pixels to rem
+// ==========================================================================
+// Actually only correct on a 0px wide viewport. Based on rem which itself is
+// growing. Makes it possible to add interface components based on a default
+// pixel size
+
+@function px($size, $type: rem) {
+  $value: $size / $root-site-font-size;
+
+  @if ($type != false) {
+    $value: #{($size / $root-site-font-size)}#{$type};
+  }
+
+  @return $value;
+}

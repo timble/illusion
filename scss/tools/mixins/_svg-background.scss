@@ -13,5 +13,5 @@
   background-image: $svg-url;
   background-position: $background-position;
   background-repeat: $background-repeat;
-  background-size: #{$width}#{unit} #{$height}#{unit};
+  background-size: #{$width}#{$unit} #{$height}#{$unit};
 }

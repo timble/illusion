@@ -1,13 +1,30 @@
 // Fluid property
 
 @mixin fluid-property($property, $min-value: $illusion-fluid-property-min-value, $max-value: $illusion-fluid-property-max-value, $min-screen: $illusion-fluid-property-min-screen, $max-screen: $illusion-fluid-property-max-screen) {
-  #{$property}: $min-value;
 
-  @include breakpoint($min-screen) {
-    #{$property}: calc-interpolation($min-screen, $min-value, $max-screen, $max-value);
-  }
+  // Variables
+  $u1: unit($min-screen);
+  $u2: unit($max-screen);
+  $u3: unit($min-value);
+  $u4: unit($max-value);
 
-  @include breakpoint($max-screen) {
-    #{$property}: $max-value;
+  @if $u1 == $u2 and $u3 == $u4 {
+    #{$property}: $min-value;
+
+    @if ($illusion-fluid-property-clamp == false) {
+      @include breakpoint($min-screen) {
+        #{$property}: calc-interpolation($min-screen, $min-value, $max-screen, $max-value);
+      }
+    }
+
+    @include breakpoint($max-screen) {
+      #{$property}: $max-value;
+    }
+
+    @if ($illusion-fluid-property-clamp != false) {
+      @supports (top: clamp(1em, 1vw, 2em)) {
+        #{$property}: clamp(#{$min-value}, calc(#{$min-value} + #{strip-unit($max-value - $min-value)} * ((100vw - #{$min-screen}) / #{strip-unit($max-screen - $min-screen)} * #{$max-screen / $min-screen})), #{$max-value});
+      }
+    }
   }
 }

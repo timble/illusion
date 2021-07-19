@@ -1,6 +1,6 @@
 // Cluster
 
-@mixin cluster($margin: $illusion-cluster-margin, $justify-content: flex-start) {
+@mixin cluster($margin: $illusion-cluster-margin, $flex-wrap: $illusion-cluster-flex-wrap, $align-items: $illusion-cluster-align-items, $justify-content: $illusion-cluster-justify-content) {
   display: flex;
   flex-wrap: wrap;
   align-items: center;

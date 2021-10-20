@@ -5,11 +5,11 @@
 @mixin spacing($sides: $illusion-spacing-sides, $type: $illusion-spacing-type, $multiplier: $illusion-spacing-multiplier, $fromto: $illusion-spacing-fromto, $lastchildnone: $illusion-spacing-lastchildnone, $minus: $illusion-spacing-minus) {
 
   // Give a warning when $multiplier is not dividable by 0.5
-  @if ($multiplier % 0.5 != 0 and $display-warnings != false) {
+  @if ($multiplier % 0.5 != 0 and $illusion-display-warnings != false) {
     @warn 'The `multiplier` in the `spacing` mixin is designed to work best with a number dividable by 0.5';
   }
 
-  @if ($type != padding and $type != margin and $display-warnings != false) {
+  @if ($type != padding and $type != margin and $illusion-display-warnings != false) {
     @warn 'It might be best to use the spacing function instead of the spacing mixin for what you are trying to do.';
   }
 
@@ -34,7 +34,7 @@
       // Top
       @if ($side == all or $side == vertical or $side == top) and $skip != top {
         @if ($side == all or $side == vertical) and ($skip != bottom) {
-          @if ($minus % 2 != 0 and $display-warnings != false) { @warn '$minus should be an even number'; }
+          @if ($minus % 2 != 0 and $illusion-display-warnings != false) { @warn '$minus should be an even number'; }
           $subtract: $minus * 0.5;
         }
         #{$type}-top: $spacing - $subtract;
@@ -49,7 +49,7 @@
       // Right
       @if ($side == all or $side == horizontal or $side == right) and $skip != right {
         @if ($side == all or $side == horizontal) and ($skip != left) {
-          @if ($minus % 2 != 0 and $display-warnings != false) { @warn '$minus should be an even number'; }
+          @if ($minus % 2 != 0 and $illusion-display-warnings != false) { @warn '$minus should be an even number'; }
           $subtract: $minus * 0.5;
         }
         #{$type}-right: $spacing - $subtract;
@@ -64,7 +64,7 @@
       // Bottom
       @if ($side == all or $side == vertical or $side == bottom) and $skip != bottom {
         @if ($side == all or $side == vertical) and ($skip != top) {
-          @if ($minus % 2 != 0 and $display-warnings != false) { @warn '$minus should be an even number'; }
+          @if ($minus % 2 != 0 and $illusion-display-warnings != false) { @warn '$minus should be an even number'; }
           $subtract: $minus * 0.5;
         }
         #{$type}-bottom: $spacing - $subtract;
@@ -79,7 +79,7 @@
       // Left
       @if ($side == all or $side == horizontal or $side == left) and $skip != left {
         @if ($side == all or $side == horizontal) and ($skip != right) {
-          @if ($minus % 2 != 0 and $display-warnings != false) { @warn '$minus should be an even number'; }
+          @if ($minus % 2 != 0 and $illusion-display-warnings != false) { @warn '$minus should be an even number'; }
           $subtract: $minus * 0.5;
         }
         #{$type}-left: $spacing - $subtract;

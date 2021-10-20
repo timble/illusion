@@ -69,19 +69,19 @@
         }
       }
 
-      @if ($display-warnings != false) {
+      @if ($illusion-display-warnings != false) {
         @warn 'No next map item for key #{$key}';
       }
       @return $fallback;
     }
 
-    @if ($display-warnings != false) {
+    @if ($illusion-display-warnings != false) {
       @warn 'No valid key #{$key} in map';
     }
     @return $fallback;
   }
 
-  @if ($display-warnings != false) {
+  @if ($illusion-display-warnings != false) {
     @warn 'No valid map';
   }
   @return $fallback;

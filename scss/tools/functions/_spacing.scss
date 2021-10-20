@@ -3,7 +3,7 @@
 @function spacing($multiplier: 1, $breakpoint: false) {
 
   // Give a warning when $multiplier is not dividable by 0.5
-  @if ($multiplier % 0.5 != 0 and $display-warnings != false) {
+  @if ($multiplier % 0.5 != 0 and $illusion-display-warnings != false) {
     @warn 'The `multiplier` in the `spacing` function is designed to work best with a number dividable by 0.5';
   }
 

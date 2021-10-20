@@ -1,5 +1,7 @@
 // Fluid property
 
+@use "sass:math";
+
 @mixin fluid-property($property, $min-value: $illusion-fluid-property-min-value, $max-value: $illusion-fluid-property-max-value, $min-screen: $illusion-fluid-property-min-screen, $max-screen: $illusion-fluid-property-max-screen) {
 
   // Variables
@@ -23,7 +25,7 @@
 
     @if ($illusion-fluid-property-clamp != false) {
       @supports (top: clamp(1em, 1vw, 2em)) {
-        #{$property}: clamp(#{$min-value}, calc(#{$min-value} + #{strip-unit($max-value - $min-value)} * ((100vw - #{$min-screen}) / #{strip-unit($max-screen - $min-screen)} * #{$max-screen / $min-screen})), #{$max-value});
+        #{$property}: clamp(#{$min-value}, calc(#{$min-value} + #{strip-unit($max-value - $min-value)} * ((100vw - #{$min-screen}) / #{strip-unit($max-screen - $min-screen)} * #{math.div($max-screen, $min-screen)})), #{$max-value});
       }
     }
   }

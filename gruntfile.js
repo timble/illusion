@@ -8,7 +8,7 @@ module.exports = function(grunt) {
         versioncheck: "grunt-version-check"
     });
 
-    const sass = require("node-sass");
+    const sass = require("sass");
 
     // grunt config
     grunt.initConfig({

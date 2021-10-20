@@ -1,9 +1,11 @@
 // Shift
 
+@use "sass:math";
+
 @mixin shift($shift: $illusion-shift, $fromto: $illusion-shift-fromto, $multiplier: $illusion-shift-multiplier, $defaults: $illusion-shift-defaults, $gutter: $illusion-shift-gutter) {
 
   // Give a warning when $multiplier is not dividable by 0.5
-  @if ($multiplier % 0.5 != 0) {
+  @if ($multiplier % 0.5 != 0 and $display-warnings != false) {
     @warn 'The `multiplier` in the `shift` mixin is designed to work best with a number dividable by 0.5';
   }
 
@@ -25,7 +27,7 @@
     // Shift values
     $spanColumns: nth($shift, 1);
     $spanContainer: getcontainer($shift);
-    $spanAmount: $spanContainer / $spanColumns;
+    $spanAmount: math.div($spanContainer, $spanColumns);
 
     // Negative
     $negative: false;
@@ -36,7 +38,7 @@
 
     // Calculate after negative test
     @if $spanColumns != 0 {
-      $spanAmount: $spanContainer / $spanColumns;
+      $spanAmount: math.div($spanContainer, $spanColumns);
     }
 
     // Only run between starting and stopping breakpoints

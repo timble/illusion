@@ -1,9 +1,11 @@
 // Span mixin
 
+@use "sass:math";
+
 @mixin span($span: $illusion-span-span, $fromto: $illusion-span-fromto, $multiplier: $illusion-span-multiplier, $bottom: $illusion-span-bottom, $defaults: $illusion-span-defaults, $omega: $illusion-span-omega, $gutter: $illusion-span-gutter, $includeWidth: $illusion-span-includeWidth, $includeMargin: $illusion-span-includeMargin) {
 
   // Give a warning when $multiplier is not dividable by 0.5
-  @if ($multiplier % 0.5 != 0) {
+  @if ($multiplier % 0.5 != 0 and $display-warnings != false) {
     @warn 'The `multiplier` in the `span` mixin is designed to work best with a number dividable by 0.5';
   }
 
@@ -25,7 +27,7 @@
     // Span values
     $spanColumns: nth($span, 1);
     $spanContainer: getcontainer($span);
-    $spanAmount: $spanContainer / $spanColumns;
+    $spanAmount: math.div($spanContainer, $spanColumns);
 
     // Column values
     $columnGutter: ($spanAmount - 1) * $breakpointGutter * $multiplier;

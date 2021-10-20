@@ -1,10 +1,12 @@
 // Calc interpolation
 
+@use "sass:math";
+
 @function calc-interpolation($min-screen, $min-value, $max-screen, $max-value) {
 
   // Variables
   $value-unit: get-unit($min-value);
-  $a: (strip-unit($max-value) - strip-unit($min-value)) / (strip-unit($max-screen) - strip-unit($min-screen));
+  $a: math.div(strip-unit($max-value) - strip-unit($min-value), strip-unit($max-screen) - strip-unit($min-screen));
   $b: strip-unit($min-value) - $a * strip-unit($min-screen);
 
   // Substract or multiply

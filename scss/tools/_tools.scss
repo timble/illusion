@@ -1,4 +1,7 @@
 // Variables
+@use "sass:math";
+
+$display-warnings: true !default;
 
 @import "variables/spacing";
 @import "variables/breakpoints";

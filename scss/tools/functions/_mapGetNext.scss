@@ -69,14 +69,20 @@
         }
       }
 
-      @warn 'No next map item for key #{$key}';
+      @if ($display-warnings != false) {
+        @warn 'No next map item for key #{$key}';
+      }
       @return $fallback;
     }
 
-    @warn 'No valid key #{$key} in map';
+    @if ($display-warnings != false) {
+      @warn 'No valid key #{$key} in map';
+    }
     @return $fallback;
   }
 
-  @warn 'No valid map';
+  @if ($display-warnings != false) {
+    @warn 'No valid map';
+  }
   @return $fallback;
 }

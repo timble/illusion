@@ -1,6 +1,8 @@
 // Function to create an optimized svg url
 // https://codepen.io/jakob-e/pen/doMoML?editors=0100
 
+@use "sass:math";
+
 @function svg-url($svg){
 
   // Add missing namespace
@@ -13,7 +15,7 @@
   $encoded:'';
   $slice: 2000;
   $index: 0;
-  $loops: ceil(str-length($svg)/$slice);
+  $loops: ceil(math.div(str-length($svg), $slice));
   @for $i from 1 through $loops {
     $chunk: str-slice($svg, $index, $index + $slice - 1);
 

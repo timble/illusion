@@ -12,10 +12,10 @@ $illusion-ms-grid-item:               0 !default;
 $illusion-ms-grid-item-multiplier:    .5 !default;
 
 // Smaller scales
-$illusion-ms-1:                       $illusion-ms0 / $illusion-ms-ratio !default;
-$illusion-ms-2:                       $illusion-ms-1 / $illusion-ms-ratio !default;
-$illusion-ms-3:                       $illusion-ms-2 / $illusion-ms-ratio !default;
-$illusion-ms-4:                       $illusion-ms-3 / $illusion-ms-ratio !default;
+$illusion-ms-1:                       math.div($illusion-ms0, $illusion-ms-ratio) !default;
+$illusion-ms-2:                       math.div($illusion-ms-1, $illusion-ms-ratio) !default;
+$illusion-ms-3:                       math.div($illusion-ms-2, $illusion-ms-ratio) !default;
+$illusion-ms-4:                       math.div($illusion-ms-3, $illusion-ms-ratio) !default;
 
 // Bigger scales
 $illusion-ms1:                        $illusion-ms0 * $illusion-ms-ratio !default;

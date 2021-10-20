@@ -1,11 +1,13 @@
 // Gallery mixin
 
+@use "sass:math";
+
 @mixin gallery($span: $illusion-gallery-span, $fromto: $illusion-gallery-fromto, $multiplier: $illusion-gallery-multiplier, $bottom: $illusion-gallery-bottom, $defaults: $illusion-gallery-defaults, $gutter: $illusion-gallery-gutter, $includeWidth: $illusion-gallery-includeWidth, $includeMargin: $illusion-gallery-includeMargin) {
 
   // Span values
   $spanColumns: nth($span, 1);
   $spanContainer: getcontainer($span);
-  $spanAmount: $spanContainer / $spanColumns;
+  $spanAmount: math.div($spanContainer, $spanColumns);
 
   // Span columns
   @include span($span, $fromto, $multiplier, $bottom, $defaults, $spanAmount, $gutter, $includeWidth, $includeMargin);

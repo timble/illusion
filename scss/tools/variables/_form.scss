@@ -64,7 +64,7 @@ $illusion-multiple-choice-label-before-left:                  0 !default;
 
 $illusion-multiple-choice-label-after-content:                "" !default;
 $illusion-multiple-choice-label-after-size:                   ($illusion-multiple-choice-unit - ($illusion-form-border-width * 8)) !default;
-$illusion-multiple-choice-label-after-border:                 ($illusion-multiple-choice-label-after-size / 2) solid !default;
+$illusion-multiple-choice-label-after-border:                 math.div($illusion-multiple-choice-label-after-size, 2) solid !default;
 $illusion-multiple-choice-label-after-position:               absolute !default;
 $illusion-multiple-choice-label-after-opacity:                0 !default;
 $illusion-multiple-choice-label-after-transform:              scale(0.5) !default;
@@ -80,7 +80,7 @@ $illusion-multiple-choice-label-radio-after-border-radius:    50% !default;
 $illusion-multiple-choice-label-checkbox-after-border-width:  0 0 ($illusion-multiple-choice-unit * 0.12) ($illusion-multiple-choice-unit * 0.12) !default;
 $illusion-multiple-choice-label-checkbox-after-background:    transparent !default;
 $illusion-multiple-choice-label-checkbox-after-width:         ($illusion-multiple-choice-label-after-size - $illusion-form-border-width) !default;
-$illusion-multiple-choice-label-checkbox-after-height:        ($illusion-multiple-choice-label-after-size / 2) !default;
+$illusion-multiple-choice-label-checkbox-after-height:        math.div($illusion-multiple-choice-label-after-size, 2) !default;
 $illusion-multiple-choice-label-checkbox-after-top:           (($illusion-multiple-choice-unit - $illusion-multiple-choice-label-after-size) * 0.75) !default;
 $illusion-multiple-choice-label-checkbox-after-left:          (($illusion-multiple-choice-unit - $illusion-multiple-choice-label-after-size) * 0.6) !default;
 $illusion-multiple-choice-label-checkbox-after-transform:     rotate(-45deg) scale(0.5) !default;
@@ -129,7 +129,7 @@ $illusion-custom-select-arrow-height:                         0 !default;
 $illusion-custom-select-arrow-size:                           6px !default;
 $illusion-custom-select-arrow-border-horizontal:              $illusion-custom-select-arrow-size solid transparent !default;
 $illusion-custom-select-arrow-border-top:                     $illusion-custom-select-arrow-size solid !default;
-$illusion-custom-select-arrow-margin-top:                     -($illusion-custom-select-arrow-size / 2) !default;
+$illusion-custom-select-arrow-margin-top:                     -(math.div($illusion-custom-select-arrow-size, 2)) !default;
 $illusion-custom-select-arrow-display:                        block !default;
 
 $illusion-custom-select-padding-right:                        ($illusion-custom-select-arrow-right * 2) + ($illusion-custom-select-arrow-size * 2) !default;

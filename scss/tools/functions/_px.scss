@@ -4,11 +4,13 @@
 // growing. Makes it possible to add interface components based on a default
 // pixel size
 
+@use "sass:math";
+
 @function px($size, $type: rem) {
-  $value: $size / $root-site-font-size;
+  $value: math.div($size, $root-site-font-size);
 
   @if ($type != false) {
-    $value: #{($size / $root-site-font-size)}#{$type};
+    $value: #{math.div($size, $root-site-font-size)}#{$type};
   }
 
   @return $value;

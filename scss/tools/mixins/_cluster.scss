@@ -1,15 +1,23 @@
 // Cluster
 
 @mixin cluster($margin: $illusion-cluster-margin, $flex-wrap: $illusion-cluster-flex-wrap, $align-items: $illusion-cluster-align-items, $justify-content: $illusion-cluster-justify-content) {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: $justify-content;
-  margin-bottom: calc(#{$margin} * -1);
-  margin-left: calc(#{$margin} * -1);
+  @if $illusion-logical-properties {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: $justify-content;
+    gap: $margin;
+  } @else {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: $justify-content;
+    margin-bottom: calc(#{$margin} * -1);
+    margin-left: calc(#{$margin} * -1);
 
-  > * {
-    margin-bottom: $margin;
-    margin-left: $margin;
+    > * {
+      margin-bottom: $margin;
+      margin-left: $margin;
+    }
   }
 }

@@ -67,7 +67,7 @@
       }
 
       // Set left
-      left: $left;
+      @include property("left", $left);
 
     }
   }

@@ -2,17 +2,17 @@
 
 @mixin content-block($spacing: $illusion-content-block-spacing, $location: $illusion-content-block-location ) {
   @if $location == top {
-    margin-top: $spacing;
+    @include property("margin-top", $spacing);
 
     &:first-child {
-      margin-top: 0;
+      @include property("margin-top", 0);
     }
   }
   @if $location == bottom {
-    margin-bottom: $spacing;
+    @include property("margin-bottom", $spacing);
 
     &:last-child {
-      margin-bottom: 0;
+      @include property("margin-bottom", 0);
     }
   }
 }

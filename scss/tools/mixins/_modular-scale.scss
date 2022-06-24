@@ -18,19 +18,29 @@
   @else if ($multiplier != 1) {
     $ms-amount: map-get($illusion-ms-sizes, $amount) * $multiplier;
   }
-  // Default
-  @if ($subtractFrom) {
-    #{$property}: calc(#{$subtractFrom} - (#{ms(1, rem)} * #{$ms-amount * $illusion-fallback-amount}));
+
+  // Logical properties?
+  @if $illusion-logical-properties {
+    @if ($subtractFrom) {
+      #{$property}: calc(#{$subtractFrom} - (var(--spacing) * #{$ms-amount}));
+    } @else {
+      #{$property}: calc(var(--spacing) * #{$ms-amount});
+    }
   } @else {
-    #{$property}: calc(#{ms(1, rem)} * #{$ms-amount * $illusion-fallback-amount});
-  }
-  // Fallback
-  @if ($illusion-fallback == false) {
-    @supports (--css: variables) {
-      @if ($subtractFrom) {
-        #{$property}: calc(#{$subtractFrom} - (var(--spacing) * #{$ms-amount}));
-      } @else {
-        #{$property}: calc(var(--spacing) * #{$ms-amount});
+    // Default
+    @if ($subtractFrom) {
+      #{$property}: calc(#{$subtractFrom} - (#{ms(1, rem)} * #{$ms-amount * $illusion-fallback-amount}));
+    } @else {
+      #{$property}: calc(#{ms(1, rem)} * #{$ms-amount * $illusion-fallback-amount});
+    }
+    // Fallback
+    @if ($illusion-fallback == false) {
+      @supports (--css: variables) {
+        @if ($subtractFrom) {
+          #{$property}: calc(#{$subtractFrom} - (var(--spacing) * #{$ms-amount}));
+        } @else {
+          #{$property}: calc(var(--spacing) * #{$ms-amount});
+        }
       }
     }
   }

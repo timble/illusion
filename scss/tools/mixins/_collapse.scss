@@ -31,12 +31,12 @@
 
       // Right
       @if ($side == both or $side == right) {
-        margin-right: calc((-1 * #{$multiplier}) * #{$spacing});
+        @include property("margin-right", calc((-1 * #{$multiplier}) * #{$spacing}));
       }
 
       // Right
       @if ($side == both or $side == left) {
-        margin-left: calc((-1 * #{$multiplier}) * #{$spacing});
+        @include property("margin-left", calc((-1 * #{$multiplier}) * #{$spacing}));
       }
     }
   }

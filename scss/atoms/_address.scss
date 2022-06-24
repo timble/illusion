@@ -11,14 +11,14 @@
     // Remove first-child margin
     @if ($illusion-extendalize-last-children-direction == top) {
       &:first-child {
-        margin-top: 0;
+        @include property("margin-top", 0);
       }
     }
 
     // Remove last-child margin
     @if ($illusion-extendalize-last-children-direction == bottom) {
       &:last-child {
-        margin-bottom: 0;
+        @include property("margin-bottom", 0);
       }
     }
   }

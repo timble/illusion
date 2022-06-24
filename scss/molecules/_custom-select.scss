@@ -10,7 +10,7 @@
 
     // Native select invisible except for content
     select {
-      width: $illusion-custom-select-width;
+      @include property("width", $illusion-custom-select-width);
       margin: $illusion-custom-select-margin;
       padding: $illusion-custom-select-padding;
       outline: $illusion-custom-select-outline;
@@ -18,13 +18,13 @@
       font-size: $illusion-custom-select-font-size;
 
       &:not([multiple]) {
-        height: $illusion-custom-select-height;
+        @include property("height", $illusion-custom-select-height);
       }
 
       &[multiple] {
         position: relative;
         z-index: 3;
-        min-height: $illusion-custom-select-multiple-height;
+        @include property("min-height", $illusion-custom-select-multiple-height);
         background: inherit;
       }
     }
@@ -33,16 +33,16 @@
     &::after {
       content: $illusion-custom-select-arrow-content;
       position: $illusion-custom-select-arrow-position;
-      top: $illusion-custom-select-arrow-top;
-      right: $illusion-custom-select-arrow-right;
+      @include property("top", $illusion-custom-select-arrow-top);
+      @include property("right", $illusion-custom-select-arrow-right);
       z-index: $illusion-custom-select-arrow-z-index;
       pointer-events: $illusion-custom-select-arrow-pointer-events;
-      width: $illusion-custom-select-arrow-width;
-      height: $illusion-custom-select-arrow-height;
-      border-left: $illusion-custom-select-arrow-border-horizontal;
-      border-right: $illusion-custom-select-arrow-border-horizontal;
-      border-top: $illusion-custom-select-arrow-border-top;
-      margin-top: $illusion-custom-select-arrow-margin-top;
+      @include property("width", $illusion-custom-select-arrow-width);
+      @include property("height", $illusion-custom-select-arrow-height);
+      @include property("border-left", $illusion-custom-select-arrow-border-horizontal);
+      @include property("border-right", $illusion-custom-select-arrow-border-horizontal);
+      @include property("border-top", $illusion-custom-select-arrow-border-top);
+      @include property("margin-top", $illusion-custom-select-arrow-margin-top);
       display: none;
     }
   }
@@ -61,7 +61,7 @@
 
       // Select styling
       select {
-        padding-right: $illusion-custom-select-padding-right;
+        @include property("padding-right", $illusion-custom-select-padding-right);
         background: none;
         appearance: none;
       }
@@ -111,9 +111,9 @@
         color: $illusion-custom-select-color;
         border: none;
         line-height: $illusion-custom-select-line-height;
-        padding-top: $illusion-custom-select-padding-top;
-        padding-bottom: $illusion-custom-select-padding-bottom;
-        padding-left: $illusion-custom-select-padding-left;
+        @include property("padding-top", $illusion-custom-select-padding-top);
+        @include property("padding-bottom", $illusion-custom-select-padding-bottom);
+        @include property("padding-left", $illusion-custom-select-padding-left);
 
         // Focus style
         &:focus {

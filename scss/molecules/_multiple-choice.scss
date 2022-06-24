@@ -8,7 +8,7 @@
     clear: $illusion-multiple-choice-clear;
     position: $illusion-multiple-choice-position;
     padding: $illusion-multiple-choice-padding;
-    min-height: $illusion-multiple-choice-min-height;
+    @include property("min-height", $illusion-multiple-choice-min-height);
 
     @if ($illusion-extendalize-last-children != false) {
       @include content-block($illusion-multiple-choice-margin-bottom);
@@ -22,10 +22,10 @@
     input {
       position: $illusion-multiple-choice-input-position;
       cursor: $illusion-multiple-choice-input-cursor;
-      left: $illusion-multiple-choice-input-left;
-      top: $illusion-multiple-choice-input-top;
-      width: $illusion-multiple-choice-input-width;
-      height: $illusion-multiple-choice-input-height;
+      @include property("left", $illusion-multiple-choice-input-left);
+      @include property("top", $illusion-multiple-choice-input-top);
+      @include property("width", $illusion-multiple-choice-input-width);
+      @include property("height", $illusion-multiple-choice-input-height);
       z-index: $illusion-multiple-choice-input-zindex;
       margin: $illusion-multiple-choice-input-margin;
       opacity: $illusion-multiple-choice-input-opacity;
@@ -36,7 +36,7 @@
       padding: $illusion-multiple-choice-label-padding;
       display: $illusion-multiple-choice-label-display;
       align-items: $illusion-multiple-choice-label-align-items;
-      min-height: $illusion-multiple-choice-label-min-height;
+      @include property("min-height", $illusion-multiple-choice-label-min-height);
       flex-wrap: $illusion-multiple-choice-label-flex-wrap;
 
       // remove 300ms pause on mobile
@@ -49,11 +49,11 @@
       content: $illusion-multiple-choice-label-before-content;
       border: $illusion-multiple-choice-label-before-border;
       background: $illusion-multiple-choice-label-before-background;
-      width: $illusion-multiple-choice-label-before-width;
-      height: $illusion-multiple-choice-label-before-height;
+      @include property("width", $illusion-multiple-choice-label-before-width);
+      @include property("height", $illusion-multiple-choice-label-before-height);
       position: $illusion-multiple-choice-label-before-position;
-      top: $illusion-multiple-choice-label-before-top;
-      left: $illusion-multiple-choice-label-before-left;
+      @include property("top", $illusion-multiple-choice-label-before-top);
+      @include property("left", $illusion-multiple-choice-label-before-left);
     }
 
     // Dot and checkmark
@@ -74,10 +74,10 @@
 
     // Dot
     [type=radio] + label::after {
-      width: $illusion-multiple-choice-label-radio-after-width;
-      height: $illusion-multiple-choice-label-radio-after-height;
-      top: $illusion-multiple-choice-label-radio-after-top;
-      left: $illusion-multiple-choice-label-radio-after-left;
+      @include property("width", $illusion-multiple-choice-label-radio-after-width);
+      @include property("height", $illusion-multiple-choice-label-radio-after-height);
+      @include property("top", $illusion-multiple-choice-label-radio-after-top);
+      @include property("left", $illusion-multiple-choice-label-radio-after-left);
       border-radius: $illusion-multiple-choice-label-radio-after-border-radius;
     }
 
@@ -85,10 +85,10 @@
     [type=checkbox] + label::after {
       border-width: $illusion-multiple-choice-label-checkbox-after-border-width;
       background: $illusion-multiple-choice-label-checkbox-after-background;
-      width: $illusion-multiple-choice-label-checkbox-after-width;
-      height: $illusion-multiple-choice-label-checkbox-after-height;
-      top: $illusion-multiple-choice-label-checkbox-after-top;
-      left: $illusion-multiple-choice-label-checkbox-after-left;
+      @include property("width", $illusion-multiple-choice-label-checkbox-after-width);
+      @include property("height", $illusion-multiple-choice-label-checkbox-after-height);
+      @include property("top", $illusion-multiple-choice-label-checkbox-after-top);
+      @include property("left", $illusion-multiple-choice-label-checkbox-after-left);
       transform: $illusion-multiple-choice-label-checkbox-after-transform;
     }
 

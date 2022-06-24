@@ -3,14 +3,14 @@
 @mixin container($type: $illusion-grid-container-type, $align: $illusion-grid-container-align) {
 
   // Set default styling
-  max-width: $illusion-grid-maxwidth + (largestGutter() * 2);
+  @include property("max-width", $illusion-grid-maxwidth + (largestGutter() * 2));
 
   // Alignment
   @if $align == center or $align == right {
-    margin-left: auto;
+    @include property("margin-left", auto);
   }
   @if $align == center or $align == left {
-    margin-right: auto;
+    @include property("margin-right", auto);
   }
 
   // Flexbox
@@ -25,8 +25,8 @@
   // Run through each breakpoint
   @each $breakpoint, $values in $illusion-grid-breakpoints {
     @include ifBreakpoint(map-get($values, width)) {
-      padding-left: map-get($values, gutter);
-      padding-right: map-get($values, gutter);
+      @include property("padding-left", map-get($values, gutter));
+      @include property("padding-right", map-get($values, gutter));
     }
   }
 }

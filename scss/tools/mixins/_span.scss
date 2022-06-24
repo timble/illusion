@@ -39,17 +39,17 @@
 
       // Width
       @if $includeWidth != false {
-        width: $columnWidth;
+        @include property("width", $columnWidth);
       }
 
       // Left margin
       @if $includeMargin != false {
-        margin-left: $columnMargin;
+        @include property("margin-left", $columnMargin);
       }
 
       // Bottom margin
       @if $bottom != false {
-        margin-bottom: $columnMargin;
+        @include property("margin-bottom", $columnMargin);
       }
 
       // Omega settings
@@ -57,8 +57,8 @@
         // Reset all previous NTH values and set new spacing
         @if $breakpointWidth != 0 {
           &:nth-child(n) {
-            margin-left: $columnMargin;
-            margin-right: 0;
+            @include property("margin-left", $columnMargin);
+            @include property("margin-right", 0);
 
             @if $illusion-grid-type == float {
               clear: none;
@@ -68,12 +68,12 @@
 
         // sub-pixel rounding fix
         &:nth-child(#{$omega}n) {
-          margin-right: -1px;
+          @include property("margin-right", -1px);
         }
 
         // Clear the item after omega
         &:nth-child(#{$omega}n+1) {
-          margin-left: 0;
+          @include property("margin-left", 0);
 
           @if $illusion-grid-type == float {
             clear: left;
@@ -85,18 +85,22 @@
 
         // Float item
         @if $illusion-grid-type == float {
-          float: left;
+          @if $illusion-logical-properties {
+            float: inline-start;
+          } @else {
+            float: left;
+          }
         }
 
         // No margin for first child
         &:first-child {
-          margin-left: 0;
+          @include property("margin-left", 0);
         }
 
         // sub-pixel rounding fix
         @if $omega == null {
           &:last-child {
-            margin-right: -1px;
+            @include property("margin-right", -1px);
           }
         }
 

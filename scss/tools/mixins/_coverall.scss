@@ -5,30 +5,30 @@
     position: $position;
   }
   @if $top == true {
-    top: $offset;
+    @include property("top", $offset);
   } @else if $top != false {
-    top: $top;
+    @include property("top", $top);
   }
   @if $right == true {
-    right: $offset;
+    @include property("right", $offset);
   } @else if $right != false {
-    right: $right;
+    @include property("right", $right);
   }
   @if $bottom == true {
-    bottom: $offset;
+    @include property("bottom", $offset);
   } @else if $bottom != false {
-    bottom: $bottom;
+    @include property("bottom", $bottom);
   }
   @if $left == true {
-    left: $offset;
+    @include property("left", $offset);
   } @else if $left != false {
-    left: $left;
+    @include property("left", $left);
   }
   @if $reset == true {
     position: $illusion-coverall-reset-position;
-    top: $illusion-coverall-reset-top;
-    right: $illusion-coverall-reset-right;
-    bottom: $illusion-coverall-reset-bottom;
-    left: $illusion-coverall-reset-left;
+    @include property("top", $illusion-coverall-reset-top);
+    @include property("right", $illusion-coverall-reset-right);
+    @include property("bottom", $illusion-coverall-reset-bottom);
+    @include property("left", $illusion-coverall-reset-left);
   }
 }

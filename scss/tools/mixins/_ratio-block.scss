@@ -13,7 +13,7 @@
     display: $illusion-ratio-block-before-display;
     float: $illusion-ratio-block-before-float;
     content: $illusion-ratio-block-before-content;
-    padding-top: $percent;
+    @include property("padding-top", $percent);
   }
 
   @if $after != false {

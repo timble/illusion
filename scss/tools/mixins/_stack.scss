@@ -3,6 +3,6 @@
 
 @mixin stack($value: $illusion-stack-value) {
   & > * + * {
-    margin-top: $value;
+    @include property("margin-top", $value);
   }
 }

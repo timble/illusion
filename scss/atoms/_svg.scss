@@ -6,12 +6,12 @@
   svg {
     @if $illusion-extendalize-svg-width != false {
       &:not([width]) {
-        width: 1em;
+        @include property("width", 1em);
       }
     }
     @if $illusion-extendalize-svg-height != false {
       &:not([height]) {
-        height: 1em;
+        @include property("height", 1em);
       }
     }
     @if $illusion-extendalize-svg-color != false {

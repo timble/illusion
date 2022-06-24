@@ -1,6 +1,14 @@
 // Property
 
 @mixin property($property, $value) {
+  // Change properties to logical properties
+  @if $illusion-logical-properties {
+    @each $prop, $val in $illusion-logical-properties-map {
+      @if ($prop == $property) {
+        $property: $val;
+      }
+    }
+  }
   @if ($value != false) {
     #{$property}: $value;
   }

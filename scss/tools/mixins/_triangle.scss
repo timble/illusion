@@ -5,49 +5,49 @@
 
   // Top and bottom arrows
   @if $direction == top or $direction == bottom {
-    border-left: $size solid transparent;
-    border-right: $size solid transparent;
+    @include property("border-left", $size solid transparent);
+    @include property("border-right", $size solid transparent);
   }
 
   // Left and right arrows
   @if $direction == left or $direction == right {
-    border-top: $size solid transparent;
-    border-bottom: $size solid transparent;
+    @include property("border-top", $size solid transparent);
+    @include property("border-bottom", $size solid transparent);
   }
 
   // Top
   @if $direction == top {
-    border-bottom: $size solid;
+    @include property("border-bottom", $size solid);
 
     @if $color {
-      border-bottom-color: $color;
+      @include property("border-bottom-color", $color);
     }
   }
 
   // Right
   @if $direction == right {
-    border-left: $size solid;
+    @include property("border-left", $size solid);
 
     @if $color {
-      border-left-color: $color;
+      @include property("border-left-color", $color);
     }
   }
 
   // Bottom
   @if $direction == bottom {
-    border-top: $size solid;
+    @include property("border-top", $size solid);
 
     @if $color {
-      border-top-color: $color;
+      @include property("border-top-color", $color);
     }
   }
 
   // Left
   @if $direction == left {
-    border-right: $size solid;
+    @include property("border-right", $size solid);
 
     @if $color {
-      border-right-color: $color;
+      @include property("border-right-color", $color);
     }
   }
 }

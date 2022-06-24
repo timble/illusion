@@ -22,16 +22,16 @@
     font-size: inherit;
     line-height: inherit;
     display: $illusion-form-label-display;
-    padding-bottom: $illusion-form-label-padding;
+    @include property("padding-bottom", $illusion-form-label-padding);
   }
 
   @include selectors($illusion-form-input-selector) {
     font-size: inherit;
-    width: $illusion-form-input-width;
+    @include property("width", $illusion-form-input-width);
     padding: $illusion-form-input-padding;
     border: $illusion-form-input-border;
     line-height: $illusion-form-input-line-height;
-    min-height: $illusion-form-input-min-height;
+    @include property("min-height", $illusion-form-input-min-height);
     font-family: $illusion-form-input-font-family;
     font-weight: $illusion-form-input-font-weight;
     -webkit-appearance: none;
@@ -45,7 +45,7 @@
 
   // Set a height for select elements
   select {
-    height: $illusion-form-select-line-height;
+    @include property("height", $illusion-form-select-line-height);
   }
 
   /* Submit button */

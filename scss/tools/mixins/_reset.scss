@@ -2,10 +2,10 @@
 
 @mixin reset($margin: $illusion-reset-margin, $padding: $illusion-reset-padding, $list-style: $illusion-reset-list-style, $border: $illusion-reset-border, $background: $illusion-reset-background) {
   @if $margin != false {
-    margin: $margin;
+    @include property("margin", $margin);
   }
   @if $padding != false {
-    padding: $padding;
+    @include property("padding", $padding);
   }
   @if $list-style != false {
     list-style: $list-style;

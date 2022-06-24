@@ -24,8 +24,28 @@
         $property: $val;
       }
     }
-  }
-  @if ($value != false) {
+    @if ($value != false) {
+      @if ($property == 'margin' or $property == 'padding') and length($value) != 1 {
+        @if length($value) == 4 {
+          #{$property}-block-start: nth($value, 1);
+          #{$property}-inline-end: nth($value, 2);
+          #{$property}-block-end: nth($value, 3);
+          #{$property}-inline-start: nth($value, 4);
+        }
+        @if length($value) == 3 {
+          #{$property}-block-start: nth($value, 1);
+          #{$property}-inline: nth($value, 2);
+          #{$property}-block-end: nth($value, 3);
+        }
+        @if length($value) == 2 {
+          #{$property}-block: nth($value, 1);
+          #{$property}-inline: nth($value, 2);
+        }
+      } @else {
+        #{$property}: $value;
+      }
+    }
+  } @else if ($value != false) {
     #{$property}: $value;
   }
 }

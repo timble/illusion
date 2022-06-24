@@ -7,7 +7,7 @@
     @include property("float", $illusion-multiple-choice-float);
     @include property("clear", $illusion-multiple-choice-clear);
     position: $illusion-multiple-choice-position;
-    padding: $illusion-multiple-choice-padding;
+    @include property("padding", $illusion-multiple-choice-padding);
     @include property("min-height", $illusion-multiple-choice-min-height);
 
     @if ($illusion-extendalize-last-children != false) {
@@ -27,13 +27,13 @@
       @include property("width", $illusion-multiple-choice-input-width);
       @include property("height", $illusion-multiple-choice-input-height);
       z-index: $illusion-multiple-choice-input-zindex;
-      margin: $illusion-multiple-choice-input-margin;
+      @include property("margin", $illusion-multiple-choice-input-margin);
       opacity: $illusion-multiple-choice-input-opacity;
     }
 
     label {
       cursor: $illusion-multiple-choice-label-cursor;
-      padding: $illusion-multiple-choice-label-padding;
+      @include property("padding", $illusion-multiple-choice-label-padding);
       display: $illusion-multiple-choice-label-display;
       align-items: $illusion-multiple-choice-label-align-items;
       @include property("min-height", $illusion-multiple-choice-label-min-height);

@@ -28,7 +28,7 @@
   @include selectors($illusion-form-input-selector) {
     font-size: inherit;
     @include property("width", $illusion-form-input-width);
-    padding: $illusion-form-input-padding;
+    @include property("padding", $illusion-form-input-padding);
     border: $illusion-form-input-border;
     line-height: $illusion-form-input-line-height;
     @include property("min-height", $illusion-form-input-min-height);

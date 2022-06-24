@@ -11,8 +11,8 @@
     // Native select invisible except for content
     select {
       @include property("width", $illusion-custom-select-width);
-      margin: $illusion-custom-select-margin;
-      padding: $illusion-custom-select-padding;
+      @include property("margin", $illusion-custom-select-margin);
+      @include property("padding", $illusion-custom-select-padding);
       outline: $illusion-custom-select-outline;
       box-sizing: $illusion-custom-select-box-sizing;
       font-size: $illusion-custom-select-font-size;

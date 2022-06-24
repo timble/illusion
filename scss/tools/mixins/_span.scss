@@ -76,7 +76,7 @@
           @include property("margin-left", 0);
 
           @if $illusion-grid-type == float {
-            clear: left;
+            @include property("clear", left);
           }
         }
       }
@@ -85,11 +85,7 @@
 
         // Float item
         @if $illusion-grid-type == float {
-          @if $illusion-logical-properties {
-            float: inline-start;
-          } @else {
-            float: left;
-          }
+          @include property("float", "left");
         }
 
         // No margin for first child

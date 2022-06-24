@@ -11,7 +11,7 @@
 
   &::before {
     display: $illusion-ratio-block-before-display;
-    float: $illusion-ratio-block-before-float;
+    @include property("float", $illusion-ratio-block-before-float);
     content: $illusion-ratio-block-before-content;
     @include property("padding-top", $percent);
   }
@@ -19,7 +19,7 @@
   @if $after != false {
     &::after {
       content: $illusion-ratio-block-after-content;
-      clear: $illusion-ratio-block-after-clear;
+      @include property("clear", $illusion-ratio-block-after-clear);
       display: $illusion-ratio-block-after-display;
     }
   }

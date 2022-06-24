@@ -4,8 +4,8 @@
   // By default, multiple choice inputs stack vertically
   @include selectors($illusion-multiple-choice-selector) {
     display: $illusion-multiple-choice-display;
-    float: $illusion-multiple-choice-float;
-    clear: $illusion-multiple-choice-clear;
+    @include property("float", $illusion-multiple-choice-float);
+    @include property("clear", $illusion-multiple-choice-clear);
     position: $illusion-multiple-choice-position;
     padding: $illusion-multiple-choice-padding;
     @include property("min-height", $illusion-multiple-choice-min-height);
@@ -15,7 +15,7 @@
     }
 
     @include breakpoint($bravo) {
-      float: $illusion-multiple-choice-bravo-float;
+      @include property("float", $illusion-multiple-choice-bravo-float);
     }
 
     // Absolutely position inputs within label, to allow text to wrap

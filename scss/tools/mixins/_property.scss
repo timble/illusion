@@ -5,6 +5,22 @@
   @if $illusion-logical-properties {
     @each $prop, $val in $illusion-logical-properties-map {
       @if ($prop == $property) {
+        @if $prop == 'float' or $prop == 'clear' {
+          @if $val == 'right' {
+            $value: inline-end
+          }
+          @if $val == 'left' {
+            $value: inline-start
+          }
+        }
+        @if $prop == 'text-align' {
+          @if $value == 'right' {
+            $value: end
+          }
+          @if $value == 'left' {
+            $value: start
+          }
+        }
         $property: $val;
       }
     }
